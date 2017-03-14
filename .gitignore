@@ -1,0 +1,10 @@
+*~
+
+build/
+
+prd.xml
+rns_i.xml
+rns_v.xml
+rns.xml
+*_products.xml
+*_entries.xml

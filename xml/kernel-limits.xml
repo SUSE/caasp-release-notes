@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"[
+<!ENTITY % myents SYSTEM "release-notes.ent" >
+%myents;
+]>
+
+
+<section id="TechInfo.Kernel">
+ <title>Kernel Limits</title>
+ <para><ulink url="http://www.suse.com/products/server/technical-information/#Kernel"/>
+ </para>
+ <!-- FIXME for 12 SP2? aginies says values should still be fine but might still
+ be updated before release. - sknorr, 2016-06-13 -->
+ <para>This table summarizes the various limits which exist in our
+ recent kernels and utilities (if related) for &sles; &this-version;.</para>
+
+ <informaltable frame="all">
+  <tgroup cols='5'>
+   <colspec colnum="1" colname="feature"/>
+   <colspec colnum="2" colname="x86-64"/>
+   <colspec colnum="3" colname="z"/>
+   <colspec colnum="4" colname="power"/>
+   <colspec colnum="5" colname="aarch64"/>
+   <thead>
+    <row>
+     <entry><emphasis>&slsa; &this-version; (Linux &kernel-version;)</emphasis></entry>
+     <entry>AMD64/Intel 64 (x86_64)</entry>
+     <entry>&ibmz; (s390x)</entry>
+     <entry>POWER (ppc64le)</entry>
+     <!-- AArch64 for SLES 12 SP2 values per bsc#988955. -->
+     <entry>AArch64 (ARMv8)</entry>
+    </row>
+   </thead>
+   <tbody>
+    <row>
+     <entry>
+      <para>CPU bits</para>
+     </entry>
+     <entry>
+      <para>64</para>
+     </entry>
+     <entry>
+      <para>64</para>
+     </entry>
+     <entry>
+      <para>64</para>
+     </entry>
+     <entry>
+      <para>64</para>
+     </entry>
+    </row>
+    <row>
+     <entry>
+      <para>Maximum number of logical CPUs</para>
+     </entry>
+     <!-- FATE#316883 -->
+     <entry>
+      <para>8192</para>
+     </entry>
+     <entry>
+      <para>256</para>
+     </entry>
+     <!-- FATE#315438 -->
+     <entry>
+      <para>2048</para>
+     </entry>
+     <entry>
+      <para>128</para>
+     </entry>
+    </row>
+    <row>
+     <entry>
+      <para>Maximum amount of RAM (theoretical/certified)</para>
+     </entry>
+     <entry>
+      <para>&gt; 1 PiB/64 TiB</para>
+     </entry>
+     <entry>
+      <para>10 TiB/256 GiB</para>
+     </entry>
+     <!-- FATE#315439 -->
+     <entry>
+      <para>1 PiB/64 TiB</para>
+     </entry>
+     <entry>
+      <para>256 TiB/n.a.</para>
+     </entry>
+    </row>
+    <row>
+     <entry>
+      <para>Maximum amount of user space/kernel space</para>
+     </entry>
+     <entry>
+      <para>128 TiB/128 TiB</para>
+     </entry>
+     <entry>
+      <para>n.a.</para>
+     </entry>
+     <entry>
+      <para>2 TiB/2 EiB</para>
+     </entry>
+     <entry>
+      <para>256 TiB/128 TiB</para>
+     </entry>
+    </row>
+    <row>
+     <entry>
+      <!-- bnc#708969 -->
+      <para>Maximum amount of swap space</para>
+     </entry>
+     <entry namest="x86-64" nameend="aarch64">
+      <para>Up to 29 * 64 GB (x86_64) or 30 * 64 GB (other architectures)</para>
+     </entry>
+    </row>
+    <row>
+     <entry>
+      <para>Maximum number of processes</para>
+     </entry>
+     <entry namest="x86-64" nameend="aarch64">
+      <para>1048576</para>
+     </entry>
+    </row>
+    <row>
+     <entry>
+      <para>Maximum number of threads per process</para>
+     </entry>
+     <entry namest="x86-64" nameend="aarch64">
+      <para>Upper limit depends on memory and other parameters (tested with more than 120,000).</para>
+     </entry>
+    </row>
+    <row>
+     <entry>
+      <para>Maximum size per block device</para>
+     </entry>
+     <entry namest="x86-64" nameend="aarch64">
+      <para>Up to 8 EiB on all 64-bit architectures</para>
+     </entry>
+    </row>
+    <row>
+     <!-- bnc#550958 -->
+     <entry>
+      <para>FD_SETSIZE</para>
+     </entry>
+     <entry namest="x86-64" nameend="aarch64">
+      <para>1024</para>
+     </entry>
+    </row>
+   </tbody>
+  </tgroup>
+ </informaltable>
+</section>

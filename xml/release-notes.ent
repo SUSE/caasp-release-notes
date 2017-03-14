@@ -1,0 +1,37 @@
+<!ENTITY rnotes "Release Notes">
+<!ENTITY rversion "@VERSION@">
+
+<!ENTITY yast "YaST">
+<!ENTITY autoyast "AutoYaST">
+
+<!ENTITY suse "SUSE">
+<!ENTITY this-ga "1.0">
+<!-- Not yet sure that we are using SP's for CaaSP -->
+<!ENTITY this-sp "">
+<!ENTITY this-version "&this-ga; &this-sp;">
+<!ENTITY next-sp "">
+<!ENTITY next-version "2.0">
+<!ENTITY opensuse "open&suse;">
+<!ENTITY sle "&suse; Linux Enterprise">
+<!ENTITY sled "&sle; Desktop">
+<!ENTITY sles "&sle; Server">
+<!ENTITY caasp "Containers as a Service Platform">
+<!ENTITY sleha "&sle; High Availability Extension">
+<!ENTITY slehag "Geo Clustering for &sleha;">
+<!ENTITY slert "&sle; Real Time">
+<!ENTITY ha-guide "High Availability Guide">
+<!ENTITY sdk "Software Development Kit">
+<!ENTITY slesdk "&sle; &sdk;">
+<!ENTITY we "Workstation Extension">
+<!ENTITY slewe "&sle; &we;">
+<!ENTITY slea "SLE">
+<!ENTITY slda "&slea;D">
+<!ENTITY slsa "&slea;S">
+<!ENTITY haa "&slea; HA">
+<!ENTITY haga "&slea; HA Geo">
+<!ENTITY slewea "&sle;-WE">
+<!ENTITY caaspa "CaaSP">
+<!ENTITY sdka "&slea; &sdk;">
+<!ENTITY ibmz "IBM z Systems">
+<!ENTITY kernel-version "4.4">
+<!ENTITY mdash "—">
