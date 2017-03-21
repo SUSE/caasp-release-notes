@@ -15,7 +15,8 @@
 <!ENTITY sle "&suse; Linux Enterprise">
 <!ENTITY sled "&sle; Desktop">
 <!ENTITY sles "&sle; Server">
-<!ENTITY caasp "Containers as a Service Platform">
+<!-- "Container" is in singular! -->
+<!ENTITY caasp "&suse; Container as a Service Platform">
 <!ENTITY sleha "&sle; High Availability Extension">
 <!ENTITY slehag "Geo Clustering for &sleha;">
 <!ENTITY slert "&sle; Real Time">

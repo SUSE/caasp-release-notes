@@ -53,32 +53,17 @@
  <section id="Intro">
   <title>&caasp;</title>
 
-  <remark> SLE definition: general information </remark>
-
-  <!-- Marketing, Kerry Kim, 2009-02-09 -->
-  <!-- Changed by MgE, 2012-02-02 -->
-  <!-- Feedback by Robert, 2012-02-27 -->
-
-  <para> &caaspa; is a highly reliable, scalable, and secure server operating system, built to
-   power mission-critical workloads in both physical and virtual environments. It is an affordable,
-   interoperable, and manageable open source foundation. With it, enterprises can cost-effectively
-   deliver core business services, enable secure networks, and simplify the management of their
-   heterogeneous IT infrastructure, maximizing efficiency and value. </para>
-  <para> The only enterprise Linux recommended by Microsoft and SAP, &caaspa; is optimized to
-   deliver high-performance mission-critical services, as well as edge of network, and web
-   infrastructure workloads. </para>
-  <section id="Intro.Interoperability">
-   <title>Interoperability and Hardware Support</title>
-  <para> Designed for interoperability, &caaspa; integrates into classical Unix as well as Windows
-   environments, supports open standard interfaces for systems management, and has been
-   certified for IPv6 compatibility.</para>
-  <para> This modular, general purpose operating system runs on four processor architectures and is
-   available with optional extensions that provide advanced capabilities for tasks such as real time
-   computing and high availability clustering. </para>
-  <para> &caaspa; is optimized to run as a high performing guest on leading hypervisors and
-   supports an unlimited number of virtual machines per physical system with a single subscription,
-   making it the perfect guest operating system for virtual computing. </para>
-  </section>
+  <!-- FIXME: Needs input from marketing re: general product information.
+  Current text is from SLES. -->
+  <para>
+   &caaspa; is a highly reliable, scalable, and secure server operating
+   system, built to power mission-critical workloads in both physical and
+   virtual environments. It is an affordable, interoperable, and manageable
+   open source foundation. With it, enterprises can cost-effectively deliver
+   core business services, enable secure networks, and simplify the
+   management of their heterogeneous IT infrastructure, maximizing efficiency
+   and value.
+  </para>
   <section id="Intro.Lifecycle">
    <title>Support and Life Cycle</title>
    <para>
@@ -102,24 +87,16 @@
     given service pack.
    </para>
    <para>
-For more information, check our Support Policy page <ulink
-url="https://www.suse.com/support/policy.html"/> or the Long Term
-Service Pack Support Page <ulink
-url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/>.
+    For more information, check our Support Policy page
+    <ulink url="https://www.suse.com/support/policy.html"/> or the Long Term
+    Service Pack Support Page
+    <ulink url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/>.
    </para>
   </section>
 
-  <section id="Intro.New">
+  <!-- Start using this section  -->
+  <!-- <section id="Intro.New">
    <title>What Is New?</title>
-
-   <remark> Marketing POV. </remark>
-   <para/>
-   <remark> ** Update information : link to severity ratings documentation ** Installation : change,
-    new kernel, compatibility ** features : features description (not technical) ** System update :
-    link to the documentation (not just the tittle) ** Update related notes : specific change to
-    focus on.
-    BNC#898123
-   </remark>
 
    <para>&caaspa; &this-version; introduces a number of
    innovative changes. Here are some of the highlights:</para>
@@ -127,92 +104,10 @@ url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/
    <itemizedlist>
     <listitem>
      <para>
-      Robustness on administrative errors and improved management
-      capabilities with full system rollback based on Btrfs as the
-      default file system for the operating system partition and the
-      Snapper technology of &suse;.
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      An overhaul of the installer introduces a new workflow that allows
-      you to register your system and receive all available maintenance
-      updates as part of the installation.
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      &caaspa; Modules offer a choice of
-      supplemental packages, ranging from tools for Web Development and
-      Scripting, through a Cloud Management module, all the way to a
-      sneak preview of upcoming management tooling called
-      Advanced Systems Management.  Modules are part of your &caaspa;
-      subscription, are technically delivered as
-      online repositories, and differ from the base of &caaspa;
-      only by their life cycle. For more information about modules, see
-      <xref linkend="Intro.Module"/>.
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      New core technologies like systemd (replacing the time-honored
-      System V-based init process) and Wicked (introducing a modern,
-      dynamic network configuration infrastructure).
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      The open-source database system MariaDB is fully supported now.
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      Support for open-vm-tools together with VMware for better
-      integration into VMware-based hypervisor environments.
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      Linux Containers are integrated into the virtualization management
-      infrastructure (libvirt).  Docker is provided as a fully supported
-      technology. For more details, see
-      <ulink url="https://www.suse.com/promo/sle/docker/"/>.
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      Support for the AArch64 architecture (64-bit ARMv8) and the 64-bit
-      Little-Endian variant of the IBM POWER architecture. Additionally, we
-      continue to support the Intel 64/AMD64 and &ibmz; architectures.
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      GNOME 3.20 gives users a modern desktop
-      environment with a choice of several different look and feel
-      options, including a special <emphasis>&sle; Classic</emphasis> mode
-      for easier migration from earlier &sled; environments.
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      For users wishing to use the full range of productivity
-      applications of a Desktop with their &caaspa;,
-      we are now offering &slewe; (requires a &sled; subscription).
-     </para>
-    </listitem>
-    <listitem>
-     <para>
-      Integration with the new &suse; Customer Center, the new central web
-      portal from &suse; to manage Subscriptions, Entitlements, and provide access
-      to Support.
+       ...
      </para>
     </listitem>
    </itemizedlist>
-
-
-  <!-- FATE#312947 -->
-   <remark> This is Read Me First information. </remark>
 
    <para>
     If you are upgrading from a previous &caaspa; release, you should review at
@@ -237,7 +132,7 @@ url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/
     </listitem>
    </itemizedlist>
 
-  </section>
+  </section> -->
 
   <section id="Intro.Documentation">
    <title>Documentation and Other Information</title>
@@ -259,32 +154,21 @@ url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/
       <para>Check the <filename>ChangeLog</filename> file in the top level of the media for a
        chronological log of all changes made to the updated packages. </para>
      </listitem>
-     <listitem>
+     <!-- Apparently, there will be no on-media documentation. -->
+     <!-- <listitem>
       <para> Find more information in the <filename>docu</filename> directory of the media of
        &caaspa; &this-version;. This directory includes PDF versions of the
        &caaspa; &this-version; Installation Quick Start and Deployment Guides. Documentation (if installed) is
        available below the <filename>/usr/share/doc/</filename> directory of an installed system.
       </para>
-     </listitem>
+     </listitem> -->
      <listitem>
-      <!-- msvec and marketing, 2013-05-13 -->
-      <!-- moved from the abstract to this location -->
-      <!-- moved here to the beginning, because 'mustread'now comes
-       later... -->
-
       <para>
-       <!-- fixme: see bnc#733012 --> These &rnotes; are identical across all architectures, and
-       the most recent version is always available online at <ulink
-        url="http://www.suse.com/releasenotes/"/>. Some entries are listed twice, if they are
-       important and belong to more than one section. <!-- <ulink -->
-       <!-- url="http://www.novell.com/linux/releasenotes/x86_64/SUSE-SLES/11-SP2/"/>, -->
-       <!-- <ulink -->
-       <!-- url="http://www.novell.com/linux/releasenotes/s390x/SUSE-SLES/11-SP2/"/>, -->
-       <!-- etc. -->
-       <!--
-         The URL-template ist
-         <filename>http://www.novell.com/linux/releasenotes/&lt;ARCH&gt;/&lt;PRODUCT&gt;/&lt;Version&gt;/</filename>.
-     -->
+       These &rnotes; are identical across all architectures, and the most
+       recent version is always available online at
+       <ulink url="http://www.suse.com/releasenotes/"/>. Some entries may be
+       listed twice, if they are important and belong to more than one
+       section.
       </para>
      </listitem>
     </itemizedlist>
@@ -308,7 +192,6 @@ url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/
      </listitem>
     </itemizedlist>
    </section>
-
   </section>
 
   <section id="Intro.Sourcecode">
@@ -318,40 +201,45 @@ url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/
    <para>
     This &suse; product includes materials licensed to &suse; under the GNU
     General Public License (GPL). The GPL requires &suse; to provide the
-    source code that corresponds to the GPL-licensed material. The
-    source code is available for download at <ulink
-    url="http://www.suse.com/download-linux/source-code.html"/>. Also,
-    for up to three years after distribution of the &suse; product, upon
-    request, &suse; will mail a copy of the source code.  Requests should
-    be sent by e-mail to <ulink
-    url="mailto:sle_source_request@suse.com"/> or as otherwise
-    instructed at <ulink
-    url="http://www.suse.com/download-linux/source-code.html"/>.  &suse;
-    may charge a reasonable fee to recover distribution costs.
+    source code that corresponds to the GPL-licensed material. The source
+    code is available for download at
+    <ulink url="http://www.suse.com/download-linux/source-code.html"/>.
+   </para>
+   <para>
+    Also, for up to three years after distribution of the &suse; product,
+    upon request, &suse; will mail a copy of the source code. Requests should
+    be sent by e-mail to <ulink url="mailto:sle_source_request@suse.com"/> or
+    as otherwise instructed at
+    <ulink url="http://www.suse.com/download-linux/source-code.html"/>.
+    &suse; may charge a reasonable fee to recover distribution costs.
    </para>
   </section>
   <section id="Intro.Support">
-   <title>Support Statement for &caaspa;</title>
+   <title>Support Statement for &caasp;</title>
    <para> To receive support, you need an appropriate subscription with &suse;. For more
     information, see <ulink url="http://www.suse.com/products/server/services-and-support/"/>. </para>
     <para> The following definitions apply: </para>
     <variablelist>
-     <!-- Now using http://support.novell.com/products/server/supported_packages/
-  -->
      <varlistentry>
       <term>L1</term>
       <listitem>
-       <para> Problem determination, which means technical support designed to provide compatibility
-        information, usage support, ongoing maintenance, information gathering and basic
-        troubleshooting using available documentation. </para>
+       <para>
+        Problem determination, which means technical support designed to
+        provide compatibility information, usage support, ongoing
+        maintenance, information gathering and basic troubleshooting using
+        available documentation.
+       </para>
       </listitem>
      </varlistentry>
      <varlistentry>
       <term>L2</term>
       <listitem>
-       <para> Problem isolation, which means technical support designed to analyze data, reproduce
-        customer problems, isolate problem area and provide a resolution for problems not resolved by
-        Level 1 or alternatively prepare for Level 3. </para>
+       <para>
+        Problem isolation, which means technical support designed to analyze
+        data, reproduce customer problems, isolate problem area and provide a
+        resolution for problems not resolved by Level 1 or alternatively
+       prepare for Level 3.
+       </para>
       </listitem>
      </varlistentry>
      <varlistentry>
@@ -361,7 +249,6 @@ url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/
         engaging engineering to resolve product defects which have been identified by Level 2
         Support. </para>
       </listitem>
-
      </varlistentry>
     </variablelist>
 
@@ -388,11 +275,15 @@ url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/
       </para>
      </listitem>
      <listitem>
-      <para> packages provided as part of the Software Development Kit (SDK) </para>
+      <para>
+       packages provided as part of the Software Development Kit (SDK)
+      </para>
      </listitem>
     </itemizedlist>
-    <para> &suse; will only support the usage of original (that is, unchanged and un-recompiled)
-     packages. </para>
+    <para>
+     &suse; will only support the usage of original (that is, unchanged and
+     un-recompiled) packages.
+    </para>
   </section>
 
   <section id="Intro.Support.General" role="remove-empty">
@@ -406,17 +297,16 @@ url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/
    <para/>
   </section>
 
-  <section id="Intro.Support.Techpreviews.Overview" role="remove-empty">
+  <section id="Intro.Support.Techpreviews" role="remove-empty">
    <title>Technology Previews</title>
 
-   <remark> ** clear statement of TP (no support) ** Title of the TP ** full description of the TP
-    ** link to official documentation (external) ** link to SUSE's documentation </remark>
-
-   <!-- bnc#662712 -->
-   <para> Technology previews are packages, stacks, or features delivered by &suse; which
-    are not supported. They may be functionally incomplete, unstable or in other ways not suitable
-    for production use. They are included for your convenience and give you a
-    chance to test new technologies within an enterprise environment. </para>
+   <para>
+    Technology previews are packages, stacks, or features delivered by &suse;
+    which are not supported. They may be functionally incomplete, unstable or
+    in other ways not suitable for production use. They are included for your
+    convenience and give you a chance to test new technologies within an
+    enterprise environment.
+   </para>
 
    <para>
     Whether a technology preview becomes a fully supported technology later
@@ -425,165 +315,20 @@ url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/
     to providing a supported version of such technologies in the future.
    </para>
 
-   <para>Give your &suse; representative feedback, including your experience and use case.
+   <para>
+    Give your &suse; representative feedback, including your experience and
+    use case.
    </para>
 
-   <section id="Intro.Support.Techpreviews" role="remove-empty">
-    <title>Technology Previews for All Architectures</title>
-    <para/>
-   </section>
-
-   <section id="Intro.Support.Techpreviews.AArch64" role="remove-empty">
-    <title>Technology Previews for AArch64 (ARMv8)</title>
-    <para/>
-   </section>
-
-   <section id="Intro.Support.Techpreviews.x86_64" role="remove-empty">
-    <title>Technology Previews for AMD64/Intel 64 64-Bit (x86_64)</title>
-    <para/>
-   </section>
-
-   <section id="Intro.Support.Techpreviews.SystemZ" role="remove-empty">
-    <title>Technology Previews for &ibmz; (s390x)</title>
-    <para/>
-   </section>
-
-   <section id="Intro.Support.Techpreviews.Power" role="remove-empty">
-    <title>Technology Previews for POWER (ppc64le)</title>
-    <para/>
-   </section>
   </section>
 
-  <section id="Intro.ModuleExtensionRelated">
-   <title>Modules, Extensions, and Related Products</title>
+  <section id="Intro.Derived_Products">
+   <title>Derived and Related Products</title>
    <para>
     This section comprises information about modules and extensions for &caaspa;
     &this-version;. Modules and extensions add parts or functionality to the
     system.
    </para>
-
-   <section id="Intro.Module">
-    <title>Available Modules</title>
-    <para>
-     Modules are fully supported parts of &caaspa; with a different life
-     cycle and update timeline. They are a set of packages, have a clearly
-     defined scope and are delivered via an online channel only. Release notes
-     for modules are contained in this
-     document<phrase role="check-xref">, see
-     <xref linkend="Packages.Modules"/></phrase>.
-    </para>
-    <para>
-     The following modules are available for &caaspa; &this-version;:
-    </para>
-    <informaltable>
-     <tgroup cols="3">
-      <colspec colnum="1" colname="name" colwidth="40*"/>
-      <colspec colnum="2" colname="content" colwidth="50*"/>
-      <colspec colnum="3" colname="cycle" colwidth="25*"/>
-      <thead>
-       <row>
-        <entry>Name</entry>
-        <entry>Content</entry>
-        <entry>Life Cycle</entry>
-       </row>
-      </thead>
-      <tbody>
-       <row>
-        <entry>Advanced Systems Management Module</entry>
-        <entry>CFEngine, Puppet and the Machinery tool</entry>
-        <entry>Frequent releases</entry>
-       </row>
-       <row>
-        <entry>Certifications Module<emphasis role="bold">*</emphasis></entry>
-        <entry>FIPS 140-2 certification-specific packages</entry>
-        <entry>Certification-dependant</entry>
-       </row>
-       <row>
-        <entry>Containers Module</entry>
-        <entry>Docker, tools, prepackaged images</entry>
-        <entry>Frequent releases</entry>
-       </row>
-       <row>
-        <entry>HPC Module</entry>
-        <entry>Tools and libraries related to High Performance Computing (HPC)</entry>
-        <entry>Frequent releases</entry>
-       </row>
-       <row>
-        <entry>Legacy Module<emphasis role="bold">*</emphasis></entry>
-        <entry>Sendmail, old IMAP stack, old Java, …</entry>
-        <entry>Until September 2017</entry>
-       </row>
-       <row>
-        <entry>Public Cloud Module</entry>
-        <entry>Public cloud initialization code and tools</entry>
-        <entry>Frequent releases</entry>
-       </row>
-       <row>
-        <entry>Toolchain Module</entry>
-        <entry>GNU Compiler Collection (GCC)</entry>
-        <entry>Yearly delivery</entry>
-       </row>
-       <row>
-        <entry>Web and Scripting Module</entry>
-        <entry>PHP, Python, Ruby on Rails</entry>
-        <entry>3 years, ~18 months overlap</entry>
-       </row>
-      </tbody>
-     </tgroup>
-    </informaltable>
-    <para>
-     <emphasis role="bold">*</emphasis> Module is not available for the AArch64
-     architecture.
-    </para>
-   </section>
-
-   <section id="Intro.Extension">
-    <title>Available Extensions</title>
-    <para>
-     Extensions add extra functionality to the system and require their own
-     registration key, usually at additional cost. Extensions are delivered
-     via an online channel or physical media. In many cases, extensions have
-     their own release notes documents that are available from
-     <ulink url="https://www.suse.com/releasenotes/"/>.
-    </para>
-    <para>
-     The following extensions are available for &caaspa; &this-version;:
-    </para>
-    <itemizedlist>
-     <listitem>
-      <para>&sle; Live Patching: <ulink url="https://www.suse.com/products/live-patching"/></para>
-     </listitem>
-     <listitem>
-      <para>
-       &sleha;: <ulink url="https://www.suse.com/products/highavailability"/>
-      </para>
-     </listitem>
-     <listitem>
-      <para>
-       &slehag;: <ulink url="https://www.suse.com/products/highavailability/geo-clustering"/>
-      </para>
-     </listitem>
-     <listitem>
-      <para>
-       &slert;: <ulink url="https://www.suse.com/products/realtime"/>
-      </para>
-     </listitem>
-     <listitem>
-      <para>
-       &slesdk;
-      </para>
-     </listitem>
-     <listitem>
-      <para>
-       &slewe;: <ulink url="https://www.suse.com/products/workstation-extension"/>
-      </para>
-     </listitem>
-    </itemizedlist>
-   </section>
-  <section id="Intro.Derived_Products">
-   <title>Derived and Related Products</title>
-   <remark> Marketing POV. </remark>
-
    <para>
     This sections lists derived and related products. In many cases, these
     products have their own release notes documents that are available from
@@ -598,6 +343,9 @@ url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/
      <para>&sled;: <ulink url="https://www.suse.com/products/desktop"/></para>
     </listitem>
     <listitem>
+     <para>SUSE Linux Enterprise Server: <ulink url="https://www.suse.com/products/server/"/></para>
+    </listitem>
+    <listitem>
      <para>SUSE Linux Enterprise Server for SAP Applications: <ulink url="https://www.suse.com/products/sles-for-sap"/></para>
     </listitem>
     <listitem>
@@ -607,7 +355,6 @@ url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/
      <para>SUSE OpenStack Cloud: <ulink url="https://www.suse.com/products/suse-openstack-cloud"/></para>
     </listitem>
    </itemizedlist>
-  </section>
   </section>
 
   <section id="Intro.Certification">
@@ -906,38 +653,19 @@ url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/
 
   <section id="Packages.New" role="remove-empty">
    <title>New Packages</title>
-
-   <remark> *** Description of the new package with direct link to the official website (need the
-    URL tag) *** Version and release of the package *** Why this new package: enhancements request
-    *** link to the official documentation *** link to the SUSE's documentation *** Dependencies and
-    Build requires </remark>
    <para/>
   </section>
   <section id="Packages.Update" role="remove-empty">
    <title>Updated Packages</title>
-   <remark> *** Description of the new package with direct link to the official website *** version
-    comparison table from previous SP/product *** Bugs fixed since previous SP/Product (link to
-    Bugzilla) *** Enhancements request (link to Fate number) *** link to the official documentation
-    *** link to the SUSE's documentation *** Security fixes (link to CVE or SUSE's security web
-    site), link to PIF *** Changelog diff (all other information non relative to security/fate/bugs) </remark>
    <para/>
-
   </section>
-
   <section id="Packages.Deprecated" role="remove-empty">
    <title>Removed and Deprecated Functionality</title>
-   <remark>
-    ** Why this choice?
-    ** How to handle this deprecation in your system
-    ** specific case (LTSS etc.)
-   </remark>
    <para/>
-
    </section>
 
    <section id="Packages.Deprecated.Future" role="remove-empty">
     <title>Packages and Features to Be Removed in the Future</title>
-
     <para/>
    </section>
   </section>
@@ -945,15 +673,6 @@ url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/
   <section id="Packages.Packaging" role="remove-empty">
    <title>Changes in Packaging and Delivery</title>
    <para/>
-  </section>
-
-  <section id="Packages.Modules" role="remove-empty">
-   <title>Modules</title>
-   <para>
-    This section contains information about important changes to modules. For
-    more information about available modules, see
-    <xref linkend="Intro.Module"/>.
-   </para>
   </section>
 
   <section id="SDK" role="remove-empty">
@@ -1008,9 +727,6 @@ url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/
   <title>Miscellaneous</title>
   <para/>
  </section>
-
- <!-- Legal notice copied from SLED release notes, mge@novell.com, 2010-05-07 -->
- <!-- Legal notice updated, to smell more like SUSE -->
 
  <section id="Legal">
   <title>Legal Notices</title>
