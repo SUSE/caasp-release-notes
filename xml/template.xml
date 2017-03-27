@@ -414,13 +414,14 @@
     <ulink url="https://www.suse.com/documentation/sles-12/book_sle_deployment/data/cha_update_sle.html"/>.
    </para>
   </section>
-  <section>
+  <!-- FIXME: There is no IPA:AI yet. So, this wouldn't build after merging. -->
+  <!-- <section>
    <title>For More Information</title>
    <para>
     For more information, see <xref linkend="InfraPackArch.ArchIndependent"/>
     and the sections relating to your respective hardware architecture.
    </para>
-  </section>
+  </section> -->
  </section>
 
  <section id="InfraPackArch" role="remove-empty">
