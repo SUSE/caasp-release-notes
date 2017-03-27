@@ -17,6 +17,7 @@
 <!ENTITY sles "&sle; Server">
 <!-- "Container" is in singular! -->
 <!ENTITY caasp "&suse; Container as a Service Platform">
+<!ENTITY mos "&slea; MicroOS">
 <!ENTITY sleha "&sle; High Availability Extension">
 <!ENTITY slehag "Geo Clustering for &sleha;">
 <!ENTITY slert "&sle; Real Time">

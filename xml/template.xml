@@ -24,13 +24,10 @@
   <productnumber>&this-version;</productnumber>
   <date><?dbtimestamp format="Y-m-d"?></date>
   <abstract>
-   <!-- msvec and marketing, 2013-05-13 -->
-   <!-- new initial para -->
    <para>
-    This document provides guidance and an overview to high level
-    general features and updates for &caasp; &this-version;. Besides architecture or
-    product-specific information, it also describes the capabilities and
-    limitations of &caasp; &this-version;.
+    This document provides guidance and an overview to high level general
+    features and updates for &caasp; &this-version;. It describes the
+    capabilities and limitations of &caasp; &this-version;.
    </para>
    <para>
     If you are skipping one or more service packs, check the release notes of
@@ -51,19 +48,127 @@
  </articleinfo>
 
  <section id="Intro">
-  <title>&caasp;</title>
+  <title>&caasp; &this-version;</title>
 
-  <!-- FIXME: Needs input from marketing re: general product information.
-  Current text is from SLES. -->
   <para>
-   &caaspa; is a highly reliable, scalable, and secure server operating
-   system, built to power mission-critical workloads in both physical and
-   virtual environments. It is an affordable, interoperable, and manageable
-   open source foundation. With it, enterprises can cost-effectively deliver
-   core business services, enable secure networks, and simplify the
-   management of their heterogeneous IT infrastructure, maximizing efficiency
-   and value.
+   &caasp; combines the benefits of an enterprise ready OS with the agility of a fast development containers orchestration platform.
   </para>
+  <para>
+   &mos; is a modern Linux Operating System, designed for containers and
+   optimized for large, clustered deployments. &mos; inherits the benefits of
+   &slea; while redefining the operating system into a small, efficient and
+   reliable distribution.
+  </para>
+  <!-- FIXME: Plagiarism..!
+  https://thenewstack.io/docker-fuels-rethinking-operating-system - sknorr,
+  2017-03-27 -->
+  <para>
+   An orchestration framework is required to optimize the use of containers
+   in both stand alone and hybrid environments. Tools such as Kubernetes
+   provide a platform for automating deployment, scaling, and operations of
+   application containers across clusters of hosts, providing
+   container-centric infrastructure.
+  </para>
+  <para>
+   The idea of a minimalist operating system is not new. Stripped-down
+   operating systems have long been embedded in electronic systems, ranging
+   from traffic lights to digital video recordings. And minimal operating
+   systems, often based on Linux, that can boot from a CD or even floppy
+   disks, have been around since the 1990s. But these operating systems were
+   typically designed to run only a single node.
+  </para>
+  <para>
+   &mos; is designed for a world in which the entire data center is treated
+   as one giant operating system that spans hundreds or even thousands of
+   nodes. This is leading to new thinking about operating systems.
+  </para>
+  <para>
+   With &mos;, you get an orchestration platform that gives you the ability
+   to quickly and efficiently respond to changing demands:
+  </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     Deploy applications quickly and predictably.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Scale applications on the fly.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Seamlessly roll out new features.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Optimize hardware use by using only the resources you need.
+    </para>
+   </listitem>
+  </itemizedlist>
+  <para>
+   &caasp; integrates the two main components of this platform and simplifies
+   running applications in public and private clouds.
+  </para>
+
+
+  <!-- FIXME: TechInfo, as defined by FATE category?? - sknorr, 2017-03-27 -->
+  <section id="Intro.Advantages">
+   <title>Advantages of &caasp;</title>
+   <para>
+    A Container as a Service (CaaS) platform is software that allows
+    customers to provision, manage, and scale container-based applications.
+    SUSE offering is a container application development and hosting platform
+    that automates the tedious management tasks allowing customers to focus
+    on development and writing apps to meet business goals.
+   </para>
+   <para>
+    Main Benefits:
+   </para>
+   <itemizedlist>
+    <listitem>
+     <formalpara>
+      <title>Enable DevOps and Microservices Applications:</title>
+      <para>
+       Develop, deploy, and automate modular, reliable, and serviceable
+       applications across infrastructure, regardless of the application's
+       architecture.
+      </para>
+     </formalpara>
+    </listitem>
+    <listitem>
+     <formalpara>
+      <title>Enterprise-Grade Security and Scalability:</title>
+      <para>
+       The foundation of &caasp; is our &slea; operating system which
+       provides a stable and reliable environment for enterprise applications.
+      </para>
+     </formalpara>
+    </listitem>
+    <listitem>
+     <formalpara>
+      <title>Run Everywhere:</title>
+      <para>
+       The ability to quickly and intelligently respond to demand across
+       private and public clouds is key for the success of each company.
+       &caasp; will help customer to manage peak demand without downtime or
+       manual intervention.
+      </para>
+     </formalpara>
+    </listitem>
+    <listitem>
+     <formalpara>
+      <title>Accelerate Business Innovation:</title>
+      <para>
+       Go from concept to production faster. Give developers and operations teams the tools they need to iterate faster and reduce time between application releases.
+      </para>
+     </formalpara>
+    </listitem>
+   </itemizedlist>
+  </section>
+
   <section id="Intro.Lifecycle">
    <title>Support and Life Cycle</title>
    <para>
@@ -71,9 +176,8 @@
     technology leader with a proven history of delivering enterprise-quality
     support services.
    </para>
-   <!-- bnc#821338, bnc#828478, bnc#882262 -->
-   <para>
-    <!-- FIXME FIXME FIXME: This is wrong. At best. - sknorr, 2017-03-14 -->
+   <!-- FIXME: Commented because this is probably wrong. - sknorr, 2017-03-27 -->
+   <!-- <para>
     &caaspa; &this-version; has a 13-year life cycle, with 10 years of General
     Support and 3 years of Extended Support.
     The current version (&this-version;) will be fully maintained and supported
@@ -85,7 +189,7 @@
     the support you get an additional 12 to 36 months in twelve month
     increments, providing a total of 3 to 5 years of support on any
     given service pack.
-   </para>
+   </para> -->
    <para>
     For more information, check our Support Policy page
     <ulink url="https://www.suse.com/support/policy.html"/> or the Long Term
@@ -94,7 +198,8 @@
    </para>
   </section>
 
-  <!-- Start using this section  -->
+  <!-- FIXME: Start using this section with version 1.1... - sknorr,
+  2017-03-27 -->
   <!-- <section id="Intro.New">
    <title>What Is New?</title>
 
@@ -153,6 +258,13 @@
      <listitem>
       <para>Check the <filename>ChangeLog</filename> file in the top level of the media for a
        chronological log of all changes made to the updated packages. </para>
+     </listitem>
+     <listitem>
+      <para>
+       <!-- FIXME: Find out exact URL - sknorr, 2017-03-27 -->
+       Documentation for &caaspa; is provided online at
+       <literal>https://www.suse.com/documentation</literal>.
+      </para>
      </listitem>
      <!-- Apparently, there will be no on-media documentation. -->
      <!-- <listitem>
@@ -216,9 +328,14 @@
   </section>
   <section id="Intro.Support">
    <title>Support Statement for &caasp;</title>
-   <para> To receive support, you need an appropriate subscription with &suse;. For more
-    information, see <ulink url="http://www.suse.com/products/server/services-and-support/"/>. </para>
-    <para> The following definitions apply: </para>
+   <para>
+    To receive support, you need an appropriate subscription with &suse;. For
+    more information, see
+    <ulink url="http://www.suse.com/products/server/services-and-support/"/>.
+   </para>
+   <para>
+    The following definitions apply:
+   </para>
     <variablelist>
      <varlistentry>
       <term>L1</term>
@@ -238,16 +355,18 @@
         Problem isolation, which means technical support designed to analyze
         data, reproduce customer problems, isolate problem area and provide a
         resolution for problems not resolved by Level 1 or alternatively
-       prepare for Level 3.
+        prepare for Level 3.
        </para>
       </listitem>
      </varlistentry>
      <varlistentry>
       <term>L3</term>
       <listitem>
-       <para> Problem resolution, which means technical support designed to resolve problems by
+       <para>
+        Problem resolution, which means technical support designed to resolve problems by
         engaging engineering to resolve product defects which have been identified by Level 2
-        Support. </para>
+        Support.
+       </para>
       </listitem>
      </varlistentry>
     </variablelist>
@@ -402,7 +521,8 @@
     This section includes information related to the initial installation of &caaspa; &this-version;.
     For information about installing, see
     <citetitle>Deployment Guide</citetitle> at
-    <ulink url="https://www.suse.com/documentation/sles-12/book_sle_deployment/data/book_sle_deployment.html"/>.
+    <!-- FIXME: find correct URL! - sknorr, 2017-03-27 -->
+    <ulink url="https://www.suse.com/documentation"/>.
    </para>
   </section>
   <section id="InstUpgrade.Upgrade" role="remove-empty">
@@ -411,7 +531,8 @@
     This section includes upgrade-related information for &caaspa; &this-version;.
     For information about general preparations and supported upgrade methods
     and paths, see the documentation at
-    <ulink url="https://www.suse.com/documentation/sles-12/book_sle_deployment/data/cha_update_sle.html"/>.
+    <!-- FIXME: find correct URL! - sknorr, 2017-03-27 -->
+    <ulink url="https://www.suse.com/documentation"/>.
    </para>
   </section>
   <!-- FIXME: There is no IPA:AI yet. So, this wouldn't build after merging. -->
