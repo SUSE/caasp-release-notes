@@ -14,8 +14,8 @@
  <articleinfo>
   <?dbsuse-bugtracker
    url="https://bugzilla.suse.com/enter_bug.cgi"
-   product="CaaSP 1.0"
-   component="Release Notes"
+   product="SUSE Container as a  Service Platform 1 .0 (CaaSP/MicroOS)"
+   component="Documentation"
    assignee="sknorr@suse.com" ?>
   <releaseinfo>&rversion;</releaseinfo>
   <productname>
@@ -30,15 +30,14 @@
     capabilities and limitations of &caasp; &this-version;.
    </para>
    <para>
-    If you are skipping one or more service packs, check the release notes of
-    the skipped service packs as well. Release notes usually only list
-    changes that happened between two subsequent releases. If you are only
-    reading the release notes of the current release, you could miss
-    important changes.
+    If you are skipping one or more releases, check the release notes of the
+    skipped releases as well. Release notes usually only list changes that
+    happened between two subsequent releases. If you are only reading the
+    release notes of the current release, you could miss important changes.
    </para>
    <para>
     General documentation can be found at:
-    <ulink url="http://www.suse.com/documentation/sles-12/"/>.
+    <ulink url="http://www.suse.com/documentation/"/>.
    </para>
    <para>
     <!-- FIXME! -->
@@ -51,7 +50,8 @@
   <title>&caasp; &this-version;</title>
 
   <para>
-   &caasp; combines the benefits of an enterprise ready OS with the agility of a fast development containers orchestration platform.
+   &caasp; combines the benefits of an enterprise ready OS with the agility
+   of a fast development containers orchestration platform.
   </para>
   <para>
    &mos; is a modern Linux Operating System, designed for containers and
@@ -64,23 +64,20 @@
   2017-03-27 -->
   <para>
    An orchestration framework is required to optimize the use of containers
-   in both stand alone and hybrid environments. Tools such as Kubernetes
+   in both stand-alone and hybrid environments. Tools such as Kubernetes
    provide a platform for automating deployment, scaling, and operations of
    application containers across clusters of hosts, providing
    container-centric infrastructure.
   </para>
   <para>
    The idea of a minimalist operating system is not new. Stripped-down
-   operating systems have long been embedded in electronic systems, ranging
-   from traffic lights to digital video recordings. And minimal operating
-   systems, often based on Linux, that can boot from a CD or even floppy
-   disks, have been around since the 1990s. But these operating systems were
-   typically designed to run only a single node.
+   operating systems have long been embedded in electronic systems. However,
+   such operating systems were typically designed to run only a single node.
   </para>
   <para>
    &mos; is designed for a world in which the entire data center is treated
    as one giant operating system that spans hundreds or even thousands of
-   nodes. This is leading to new thinking about operating systems.
+   nodes.
   </para>
   <para>
    With &mos;, you get an orchestration platform that gives you the ability
@@ -118,14 +115,14 @@
   <section id="Intro.Advantages">
    <title>Advantages of &caasp;</title>
    <para>
-    A Container as a Service (CaaS) platform is software that allows
-    customers to provision, manage, and scale container-based applications.
-    SUSE offering is a container application development and hosting platform
-    that automates the tedious management tasks allowing customers to focus
-    on development and writing apps to meet business goals.
+    &caasp; allows you to provision, manage, and scale container-based
+    applications.
+    &suse; offers a application development and hosting platform for containers
+    that automates the tedious management tasks. This allows you to focus
+    on development and writing apps that meet business goals.
    </para>
    <para>
-    Main Benefits:
+    The main benefits of &caasp; are:
    </para>
    <itemizedlist>
     <listitem>
@@ -151,10 +148,9 @@
      <formalpara>
       <title>Run Everywhere:</title>
       <para>
-       The ability to quickly and intelligently respond to demand across
-       private and public clouds is key for the success of each company.
-       &caasp; will help customer to manage peak demand without downtime or
-       manual intervention.
+       You have the ability to quickly and intelligently respond to demand
+       across private and public clouds. &caasp; helps you manage peak demand
+       without downtime or manual intervention.
       </para>
      </formalpara>
     </listitem>
@@ -162,7 +158,9 @@
      <formalpara>
       <title>Accelerate Business Innovation:</title>
       <para>
-       Go from concept to production faster. Give developers and operations teams the tools they need to iterate faster and reduce time between application releases.
+       Go faster from concept to production. Give developers and operations
+       teams the tools they need to iterate faster and reduce time between
+       application releases.
       </para>
      </formalpara>
     </listitem>
@@ -178,10 +176,10 @@
    </para>
    <!-- FIXME: Commented because this is probably wrong. - sknorr, 2017-03-27 -->
    <!-- <para>
-    &caaspa; &this-version; has a 13-year life cycle, with 10 years of General
+    &caasp; &this-version; has a 13-year life cycle, with 10 years of General
     Support and 3 years of Extended Support.
     The current version (&this-version;) will be fully maintained and supported
-    until 6 months after the release of &caaspa; &next-version;.
+    until 6 months after the release of &caasp; &next-version;.
    </para>
    <para>
     If you need additional time to design, validate and
@@ -203,7 +201,7 @@
   <!-- <section id="Intro.New">
    <title>What Is New?</title>
 
-   <para>&caaspa; &this-version; introduces a number of
+   <para>&caasp; &this-version; introduces a number of
    innovative changes. Here are some of the highlights:</para>
 
    <itemizedlist>
@@ -215,7 +213,7 @@
    </itemizedlist>
 
    <para>
-    If you are upgrading from a previous &caaspa; release, you should review at
+    If you are upgrading from a previous &caasp; release, you should review at
     least the following sections:
    </para>
 
@@ -262,15 +260,15 @@
      <listitem>
       <para>
        <!-- FIXME: Find out exact URL - sknorr, 2017-03-27 -->
-       Documentation for &caaspa; is provided online at
-       <literal>https://www.suse.com/documentation</literal>.
+       Documentation for &caasp; is provided online at
+       <ulink url="https://www.suse.com/documentation"/>.
       </para>
      </listitem>
      <!-- Apparently, there will be no on-media documentation. -->
      <!-- <listitem>
       <para> Find more information in the <filename>docu</filename> directory of the media of
-       &caaspa; &this-version;. This directory includes PDF versions of the
-       &caaspa; &this-version; Installation Quick Start and Deployment Guides. Documentation (if installed) is
+       &caasp; &this-version;. This directory includes PDF versions of the
+       &caasp; &this-version; Installation Quick Start and Deployment Guides. Documentation (if installed) is
        available below the <filename>/usr/share/doc/</filename> directory of an installed system.
       </para>
      </listitem> -->
@@ -292,12 +290,12 @@
      <listitem>
       <para>
        <ulink url="http://www.suse.com/documentation/sles-12/"/>
-       contains additional or updated documentation for &caaspa; &this-version;.
+       contains additional or updated documentation for &caasp; &this-version;.
       </para>
      </listitem>
      <listitem>
       <para>
-       Find a collection of White Papers in the &caaspa; Resource Library
+       Find a collection of White Papers in the &caasp; Resource Library
        at <ulink
        url="https://www.suse.com/products/server/resource-library"/>.
       </para>
@@ -372,7 +370,7 @@
     </variablelist>
 
     <para>
-     For contracted customers and partners, &caaspa; &this-version; and its
+     For contracted customers and partners, &caasp; &this-version; and its
      Modules are delivered with L3 support for all packages, except the
      following:
     </para>
@@ -444,11 +442,6 @@
   <section id="Intro.Derived_Products">
    <title>Derived and Related Products</title>
    <para>
-    This section comprises information about modules and extensions for &caaspa;
-    &this-version;. Modules and extensions add parts or functionality to the
-    system.
-   </para>
-   <para>
     This sections lists derived and related products. In many cases, these
     products have their own release notes documents that are available from
     <ulink url="https://www.suse.com/releasenotes/"/>.
@@ -476,9 +469,10 @@
    </itemizedlist>
   </section>
 
-  <section id="Intro.Certification">
+  <!-- Does not currently apply. - sknorr, 2017-03-28 -->
+  <!-- <section id="Intro.Certification">
    <title>Security, Standards, and Certification</title>
-   <para>&caaspa; &this-version; has been submitted to the certification bodies for:</para>
+   <para>&caasp; &this-version; has been submitted to the certification bodies for:</para>
    <itemizedlist>
     <listitem>
      <para><ulink url="http://www.commoncriteriaportal.org/">Common Criteria Certification</ulink></para>
@@ -488,7 +482,7 @@
     </listitem>
    </itemizedlist>
    <para>For more information about certification, see <ulink url="https://www.suse.com/security/certificates.html"></ulink>.</para>
-  </section>
+  </section> -->
  </section>
 
  <!-- ============================================================== -->
@@ -497,7 +491,7 @@
 
  <section id="InstUpgrade">
   <title>Installation and Upgrade</title>
-  <para>&caaspa; can be deployed in several ways:</para>
+  <para>&caasp; can be deployed in several ways:</para>
   <itemizedlist>
    <listitem>
     <para>Physical machine</para>
@@ -518,7 +512,7 @@
   <section id="InstUpgrade.Installation" role="remove-empty">
    <title>Installation</title>
    <para>
-    This section includes information related to the initial installation of &caaspa; &this-version;.
+    This section includes information related to the initial installation of &caasp; &this-version;.
     For information about installing, see
     <citetitle>Deployment Guide</citetitle> at
     <!-- FIXME: find correct URL! - sknorr, 2017-03-27 -->
@@ -528,21 +522,20 @@
   <section id="InstUpgrade.Upgrade" role="remove-empty">
    <title>Upgrade-Related Notes</title>
    <para>
-    This section includes upgrade-related information for &caaspa; &this-version;.
+    This section includes upgrade-related information for &caasp; &this-version;.
     For information about general preparations and supported upgrade methods
     and paths, see the documentation at
     <!-- FIXME: find correct URL! - sknorr, 2017-03-27 -->
     <ulink url="https://www.suse.com/documentation"/>.
    </para>
   </section>
-  <!-- FIXME: There is no IPA:AI yet. So, this wouldn't build after merging. -->
-  <!-- <section>
+  <section>
    <title>For More Information</title>
    <para>
     For more information, see <xref linkend="InfraPackArch.ArchIndependent"/>
     and the sections relating to your respective hardware architecture.
    </para>
-  </section> -->
+  </section>
  </section>
 
  <section id="InfraPackArch" role="remove-empty">
@@ -558,14 +551,11 @@
  <section id="InfraPackArch.ArchIndependent" role="remove-empty">
   <title>Architecture Independent Information</title>
 
-  <remark> This is highly technical * Know issues categorized ** full description of the problem **
-   how to reproduce the issue ** link to Bugzilla number ** command line change/configuration change
-   ** work around if available
-  </remark>
-  <para>
+  <!-- FIXME: There is only x86-64 -> find a better text. - sknorr, 2017-03-28 -->
+  <!-- <para>
    Information in this section pertains to all architectures supported by
-   &caaspa; &this-version;.
-  </para>
+   &caasp; &this-version;.
+  </para> -->
 
   <section id="InfraPackArch.ArchIndependent.Kernel" role="remove-empty">
    <title>Kernel</title>
@@ -573,8 +563,6 @@
   </section>
   <section id="InfraPackArch.ArchIndependent.Kernel_Modules" role="remove-empty">
    <title>Kernel Modules</title>
-   <!-- 2014-03-19, ke: bnc#869159 -->
-   <!-- 2014-04-29, ke: find the same text in the SLED RN -->
    <para>
     An important requirement for every enterprise operating system is the
     level of support available for specific environments.  Kernel
@@ -621,20 +609,8 @@
   <section id="InfraPackArch.ArchIndependent.Virtualization" role="remove-empty">
    <title>Virtualization</title>
    <para/>
-   <section id="InfraPackArch.ArchIndependent.Virtualization.KVM" role="remove-empty">
-    <title>KVM</title>
-    <para/>
-   </section>
-   <section id="InfraPackArch.ArchIndependent.Virtualization.XEN" role="remove-empty">
-    <title>Xen</title>
-    <para/>
-   </section>
    <section id="InfraPackArch.ArchIndependent.Virtualization.Containers" role="remove-empty">
     <title>Containers</title>
-    <para/>
-   </section>
-   <section id="InfraPackArch.ArchIndependent.Virtualization.libvirt" role="remove-empty">
-    <title>libvirt</title>
     <para/>
    </section>
    <section id="InfraPackArch.ArchIndependent.Virtualization.Other" role="remove-empty">
@@ -649,33 +625,34 @@
   </section>
  </section>
 
-  <section id="InfraPackArch.x86_64" role="remove-empty">
-   <title>AMD64/Intel 64 (x86_64) Specific Information</title>
-   <para>
-    Information in this section pertains to the version of &caaspa; &this-version;
-    for the AMD64/Intel 64 architectures.
-   </para>
+ <section id="InfraPackArch.x86_64" role="remove-empty">
+  <title>AMD64/Intel 64 (x86_64) Specific Information</title>
+  <para>
+   Information in this section pertains to the version of &caasp; &this-version;
+   for the AMD64/Intel 64 architectures.
+  </para>
 
-   <section id="InfraPackArch.x86_64.System" role="remove-empty">
-    <title>System and Vendor Specific Information</title>
-    <para/>
-   </section>
-
-   <section id="InfraPackArch.x86_64.Virtualization" role="remove-empty">
-    <title>Virtualization</title>
-
-    <para/>
-   </section>
-   <section id="InfraPackArch.x86_64.RAS" role="remove-empty">
-    <title>Reliability, Availability, Serviceability (RAS)</title>
-    <para />
-   </section>
+  <section id="InfraPackArch.x86_64.System" role="remove-empty">
+   <title>System and Vendor Specific Information</title>
+   <para/>
   </section>
 
-  <section id="InfraPackArch.Power" role="remove-empty">
+  <section id="InfraPackArch.x86_64.Virtualization" role="remove-empty">
+   <title>Virtualization</title>
+
+   <para/>
+  </section>
+  <section id="InfraPackArch.x86_64.RAS" role="remove-empty">
+   <title>Reliability, Availability, Serviceability (RAS)</title>
+   <para />
+  </section>
+ </section>
+
+  <!-- There is only x86-64. - sknorr, 2017-03-28 -->
+  <!--<section id="InfraPackArch.Power" role="remove-empty">
    <title>POWER (ppc64le) Specific Information</title>
    <para>
-    Information in this section pertains to the version of &caaspa; &this-version;
+    Information in this section pertains to the version of &caasp; &this-version;
     for the POWER architecture.
    </para>
   </section>
@@ -683,7 +660,7 @@
   <section id="InfraPackArch.SystemZ" role="remove-empty">
    <title>&ibmz; (s390x) Specific Information</title>
    <para>
-    Information in this section pertains to the version of &caaspa; &this-version;
+    Information in this section pertains to the version of &caasp; &this-version;
     for the &ibmz; architecture.
     For more information, see
     <ulink url="http://www.ibm.com/developerworks/linux/linux390/documentation_novell_suse.html"/>
@@ -725,16 +702,15 @@
    </section>
 
    <section id="InfraPackArch.SystemZ.Misc" role="remove-empty">
-    <!-- entries from SP1 RNs -->
     <title>Miscellaneous</title>
     <para/>
    </section>
-  </section>
+  </section> -->
 
   <section id="InfraPackArch.AArch64" role="remove-empty">
    <title>ARM 64-Bit (AArch64) Specific Information</title>
    <para>
-    Information in this section pertains to the version of &caaspa; &this-version;
+    Information in this section pertains to the version of &caasp; &this-version;
     for the AArch64 architecture.
    </para>
   </section>
@@ -762,12 +738,11 @@
   </section>
  </section>
 
- <section id="Packages">
+ <section id="Packages" role="remove-empty">
   <title>Packages and Functionality Changes</title>
   <para>
    This section comprises changes to packages, such as additions, updates,
-   removals and changes to the package layout of software. It also contains
-   information about modules available for &caaspa;.
+   removals and changes to the package layout of software.
    <phrase role="check-xref">For information about changes to package
    management tools, such as Zypper or RPM, see
    <xref linkend="InfraPackArch.ArchIndependent.SystemsManagement"/>.</phrase>
@@ -804,31 +779,45 @@
 
  <section id="TechInfo">
   <title>Technical Information</title>
-  <para> This section contains information about system limits, a number of technical changes and
-   enhancements for the experienced user. </para>
-  <!-- bnc#483250 -->
-  <para>When talking about CPUs, we use the following terminology:</para>
+  <para>
+   This section contains information about system limits, a number of
+   technical changes and enhancements for the experienced user.
+  </para>
+  <para>
+   When talking about CPUs, we use the following terminology:
+  </para>
   <variablelist>
    <varlistentry>
     <term>CPU Socket</term>
     <listitem>
-     <para>The visible physical entity, as it is typically mounted to a motherboard or an
-      equivalent.</para>
+     <para>
+      The visible physical entity, as it is typically mounted to a
+      motherboard or an equivalent.
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
     <term>CPU Core</term>
     <listitem>
-     <para>The (usually not visible) physical entity as reported by the CPU vendor.</para>
-     <para>On &ibmz;, this is equivalent to an IFL.</para>
+     <para>
+      The (usually not visible) physical entity as reported by the CPU vendor.
+     </para>
+     <!-- There is only x86-64. - sknorr, 2017-03-28 -->
+     <!-- <para>
+      On &ibmz;, this is equivalent to an IFL.
+     </para> -->
     </listitem>
    </varlistentry>
    <varlistentry>
     <term>Logical CPU</term>
     <listitem>
-     <para>This is what the Linux Kernel recognizes as a "CPU".</para>
-     <para>We avoid the word "thread" (which is sometimes used), as the word "thread" would also
-      become ambiguous subsequently.</para>
+     <para>
+      This is what the Linux Kernel recognizes as a <quote>CPU</quote>.
+     </para>
+     <para>
+      We avoid the word <quote>thread</quote> (which is sometimes used), as
+      the word <quote>thread</quote> would also become ambiguous subsequently.
+     </para>
     </listitem>
    </varlistentry>
    <varlistentry>
@@ -840,8 +829,6 @@
   </variablelist>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="kernel-limits.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="kvm-limits.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xen-limits.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="filesystems.xml"/>
  </section>
 
@@ -873,49 +860,48 @@
   </para>
 
   <para>
-   Any products or technical information provided under this Agreement
-   may be subject to U.S.  export controls and the trade laws of other
-   countries. You agree to comply with all export control regulations
-   and to obtain any required licenses or classifications to export,
-   re-export, or import deliverables. You agree not to export or
-   re-export to entities on the current U.S.  export exclusion lists or
-   to any embargoed or terrorist countries as specified in U.S. export
-   laws. You agree to not use deliverables for prohibited nuclear,
-   missile, or chemical/biological weaponry end uses. Refer to
-   <ulink url="http://www.suse.com/company/legal/"/> for more
-   information on exporting &suse; software. &suse; assumes no
-   responsibility for your failure to obtain any necessary export
-   approvals.
+   Any products or technical information provided under this Agreement may be
+   subject to U.S. export controls and the trade laws of other countries. You
+   agree to comply with all export control regulations and to obtain any
+   required licenses or classifications to export, re-export, or import
+   deliverables. You agree not to export or re-export to entities on the
+   current U.S. export exclusion lists or to any embargoed or terrorist
+   countries as specified in U.S. export laws. You agree to not use
+   deliverables for prohibited nuclear, missile, or chemical/biological
+   weaponry end uses. Refer to
+   <ulink url="http://www.suse.com/company/legal/"/> for more information on
+   exporting &suse; software. &suse; assumes no responsibility for your
+   failure to obtain any necessary export approvals.
   </para>
 
-   <para>
-    Copyright © 2010-<?dbtimestamp format="Y" ?> SUSE LLC. This release notes document is
-    licensed under a Creative Commons Attribution-NoDerivs 3.0 United
-    States License (CC-BY-ND-3.0 US, <ulink
-    url="http://creativecommons.org/licenses/by-nd/3.0/us/"/>).
-   </para>
+  <para> 
+   Copyright © 2010-<?dbtimestamp format="Y" ?> SUSE LLC. This release notes
+   document is licensed under a Creative Commons Attribution-NoDerivs 3.0
+   United States License (CC-BY-ND-3.0 US,
+   <ulink url="http://creativecommons.org/licenses/by-nd/3.0/us/"/>).
+  </para>
 
-   <para>
-    &suse; has intellectual property rights relating to technology
-    embodied in the product that is described in this document. In
-    particular, and without limitation, these intellectual property
-    rights may include one or more of the U.S. patents listed at <ulink
-    url="http://www.suse.com/company/legal/"/> and one or more
-    additional patents or pending patent applications in the U.S. and
-    other countries.
-   </para>
+  <para>
+   &suse; has intellectual property rights relating to technology
+   embodied in the product that is described in this document. In
+   particular, and without limitation, these intellectual property
+   rights may include one or more of the U.S. patents listed at <ulink
+   url="http://www.suse.com/company/legal/"/> and one or more
+   additional patents or pending patent applications in the U.S. and
+   other countries.
+  </para>
 
-   <para>
-    For &suse; trademarks, see &suse; Trademark and Service Mark list
-    (<ulink url="http://www.suse.com/company/legal/"/>).  All
-    third-party trademarks are the property of their respective
-    owners.
-   </para>
+  <para>
+   For &suse; trademarks, see &suse; Trademark and Service Mark list
+   (<ulink url="http://www.suse.com/company/legal/"/>).  All
+   third-party trademarks are the property of their respective
+   owners.
+  </para>
 
  </section>
  <section>
   <title>Colophon</title>
-  <para> Thanks for using &caaspa; in your business. </para>
-  <para> The &caaspa; Team. </para>
+  <para> Thanks for using &caasp; in your business. </para>
+  <para> The &caasp; Team. </para>
  </section>
 </article>

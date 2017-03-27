@@ -10,348 +10,172 @@
  </para>
 
  <section id="TechInfo.Filesystems.Comparison">
- <title>Comparison of Supported File Systems</title>
+  <title>Comparison of Supported File Systems</title>
 
- <para>
-  &sle; was the first enterprise Linux distribution to support journaling file
-  systems and logical volume managers back in 2000. Later, we introduced XFS to
-  Linux, which today is seen as the primary work horse for large-scale file
-  systems, systems with heavy load and multiple parallel reading and writing
-  operations. With &sle; 12, we went the next step of innovation and started
-  using the copy-on-write file system Btrfs as the default for the operating
-  system, to support system snapshots and rollback.
- </para>
+  <para>
+   &sle; was the first enterprise Linux distribution to support journaling file
+   systems and logical volume managers back in 2000. Later, we introduced XFS to
+   Linux, which today is seen as the primary work horse for large-scale file
+   systems, systems with heavy load and multiple parallel reading and writing
+   operations. With &sle; 12, we went the next step of innovation and started
+   using the copy-on-write file system Btrfs as the default for the operating
+   system, to support system snapshots and rollback.
+  </para>
 
- <para>
-  <!-- bnc#903673: use ascii symbols -->
-  <simplelist>
-   <member><emphasis role="bold">+</emphasis> supported</member>
-   <member><emphasis role="bold">–</emphasis> unsupported</member>
-  </simplelist>
- </para>
- <informaltable frame='all'>
-  <tgroup cols="6">
-   <colspec colnum="1" colname="c1" colwidth="28*"/>
-   <colspec colnum="2" colname="c2" colwidth="18*"/>
-   <colspec colnum="3" colname="c3" colwidth="18*"/>
-   <colspec colnum="4" colname="c4" colwidth="18*"/>
-   <colspec colnum="5" colname="c5" colwidth="18*"/>
-   <colspec colnum="6" colname="c6" colwidth="18*"/>
-   <thead>
-    <row>
-     <entry>Feature</entry>
-     <entry>Btrfs</entry>
-     <entry>XFS</entry>
-     <entry>Ext4</entry>
-     <entry>ReiserFS **</entry>
-     <entry>OCFS 2 ***</entry>
-    </row>
-   </thead>
-   <tbody>
-        <row>
-        <entry>
-         <para>Data/metadata journaling</para>
-        </entry>
-        <entry>
-         <para>N/A *</para>
-        </entry>
-        <entry>
-         <para>– / +</para>
-        </entry>
-        <entry/>
-        <entry>
-         <para>– / +</para>
-        </entry>
-        <entry>
-         <para>– / +</para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>Journal internal/external</para>
-        </entry>
-        <entry>
-         <para>N/A *</para>
-        </entry>
-        <entry>
-         <para>+ / +</para>
-        </entry>
-        <entry>
-         <para>+ / –</para>
-        </entry>
-        <entry/>
-       </row>
-       <row>
-        <entry>
-         <para>Offline extend/shrink</para>
-        </entry>
-        <entry>
-         <para>+ / +</para>
-        </entry>
-        <entry>
-         <para>– / –</para>
-        </entry>
-        <entry>
-         <para>+ / +</para>
-        </entry>
-        <entry>
-         <para>+ / –</para>
-        </entry>
-        <entry/>
-       </row>
-       <row>
-        <entry>
-         <para>Online extend/shrink</para>
-        </entry>
-        <entry>
-         <para>+ / +</para>
-        </entry>
-        <entry>
-         <para>+ / –</para>
-        </entry>
-        <entry>
-         <para>+ / –</para>
-        </entry>
-        <entry>
-         <para>+ / –</para>
-        </entry>
-        <entry>
-         <para>+ / –</para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>Inode allocation map</para>
-        </entry>
-        <entry>
-         <para>B-tree</para>
-        </entry>
-        <entry>
-         <para>B+-tree</para>
-        </entry>
-        <entry>
-         <para>table</para>
-        </entry>
-        <entry>
-         <para>u. B*-tree</para>
-        </entry>
-        <entry>
-         <para>table</para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>Sparse files</para>
-        </entry>
-        <entry>
-         <para>+</para>
-        </entry>
-        <entry/>
-       </row>
-       <row>
-        <entry>
-         <para>Tail packing</para>
-        </entry>
-        <entry>
-         <para>+</para>
-        </entry>
-        <entry>
-         <para>–</para>
-        </entry>
-        <entry>
-         <para>+</para>
-        </entry>
-        <entry>
-         <para>–</para>
-        </entry>
-        <entry/>
-       </row>
-       <row>
-        <entry>
-         <para>Defrag</para>
-        </entry>
-        <entry>
-         <para>+</para>
-        </entry>
-        <entry>
-         <para>–</para>
-        </entry>
-        <entry/>
-       </row>
-       <row>
-        <entry>
-         <para>ExtAttr/ACLs</para>
-        </entry>
-        <entry>
-         <para>+ / +</para>
-        </entry>
-        <entry/>
-       </row>
-       <row>
-        <entry>
-         <para>Quotas</para>
-        </entry>
-        <entry>
-         <para>+</para>
-        </entry>
-        <entry/>
-       </row>
-       <row>
-        <entry>
-         <para>Dump/restore</para>
-        </entry>
-        <entry>
-         <para>–</para>
-        </entry>
-        <entry>
-         <para>+</para>
-        </entry>
-        <entry>
-         <para>–</para>
-        </entry>
-        <entry/>
-       </row>
-       <row>
-        <entry>
-         <para>Block size default</para>
-        </entry>
-        <entry namest="c2" nameend="c6">
-         <para>4 KiB</para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>Maximum file system size</para>
-        </entry>
-        <entry>
-         <para>16 EiB</para>
-        </entry>
-        <entry>
-         <para>8 EiB</para>
-        </entry>
-        <entry>
-         <para>1 EiB</para>
-        </entry>
-        <entry>
-         <para>16 TiB</para>
-        </entry>
-        <entry>
-         <para>4 PiB</para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>Maximum file size</para>
-        </entry>
-        <entry>
-         <para>16 EiB</para>
-        </entry>
-        <entry>
-         <para>8 EiB</para>
-        </entry>
-        <entry>
-         <para>1 EiB</para>
-        </entry>
-        <entry>
-         <para>1 EiB</para>
-        </entry>
-        <entry>
-         <para>4 PiB</para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>Support in products</para>
-        </entry>
-        <entry>
-         <para>&slea;</para>
-        </entry>
-        <entry>
-         <para>&slea;</para>
-        </entry>
-        <entry>
-         <para>&slea;</para>
-        </entry>
-        <entry>
-         <para>&slea;</para>
-        </entry>
-        <entry>
-         <para>&haa;</para>
-        </entry>
-       </row>
-   </tbody>
-  </tgroup>
- </informaltable>
+  <para>
+   <simplelist>
+    <member><emphasis role="bold">+</emphasis> supported</member>
+    <member><emphasis role="bold">–</emphasis> unsupported</member>
+   </simplelist>
+  </para>
 
- <!-- FIXME: Better make these footnotes? Need to check compatibility of the
- yast XSL stylesheet first. - sknorr, 2016-07-14 -->
- <itemizedlist>
-  <listitem>
-   <para>
-    <emphasis role="bold">*</emphasis> Btrfs is a copy-on-write file system.
-    Rather than journaling changes before writing them in-place, it writes them
-    to a new location and then links the new location in. Until the last write,
-    the new changes are not <quote>committed</quote>. Due to the nature of the
-    file system, quotas are implemented based on subvolumes
-    (<literal>qgroups</literal>).
-   </para>
-   <para>
-    The block size default varies with different host architectures. 64 KiB is
-    used on POWER, 4 KiB on most other systems. The actual size used can be
-    checked with the command
-    <command>getconf <replaceable>PAGE_SIZE</replaceable></command>.
-   </para>
-  </listitem>
-  <listitem>
-   <para>
-    <emphasis role="bold">**</emphasis> ReiserFS is supported for existing file
-    systems. The creation of new ReiserFS file systems is discouraged.
-   </para>
-  </listitem>
-  <listitem>
-   <para>
-    <emphasis role="bold">***</emphasis> OCFS2 is fully supported as part of the
-    &sleha;.
-   </para>
-  </listitem>
- </itemizedlist>
+  <informaltable frame='all'>
+   <tgroup cols="6">
+    <colspec colnum="1" colname="c1" colwidth="28*"/>
+    <colspec colnum="2" colname="c2" colwidth="18*"/>
+    <thead>
+     <row>
+      <entry>Feature</entry>
+      <entry>Btrfs</entry>
+     </row>
+    </thead>
+    <tbody>
+     <row>
+      <entry>
+       <para>Data/metadata journaling</para>
+      </entry>
+      <entry>
+       <para>N/A *</para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>Journal internal/external</para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>Offline extend/shrink</para>
+      </entry>
+      <entry>
+       <para>+ / +</para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>Online extend/shrink</para>
+      </entry>
+      <entry>
+       <para>+ / +</para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>Inode allocation map</para>
+      </entry>
+      <entry>
+       <para>B-tree</para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>Sparse files</para>
+      </entry>
+      <entry>
+       <para>+</para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>Tail packing</para>
+      </entry>
+      <entry>
+       <para>+</para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>Defrag</para>
+      </entry>
+      <entry>
+       <para>+</para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>ExtAttr/ACLs</para>
+      </entry>
+      <entry>
+       <para>+ / +</para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>Quotas</para>
+      </entry>
+      <entry>
+       <para>+</para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>Dump/restore</para>
+      </entry>
+      <entry>
+       <para>–</para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>Block size default</para>
+      </entry>
+      <entry>
+       <para>4 KiB</para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>Maximum file system size</para>
+      </entry>
+      <entry>
+       <para>16 EiB</para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>Maximum file size</para>
+      </entry>
+      <entry>
+       <para>16 EiB</para>
+      </entry>
+     </row>
+    </tbody>
+   </tgroup>
+  </informaltable>
 
- <!-- FIXME: We speak about 32-bit systems below. That can't be right. -
- sknorr, 2016-07-14 -->
- <para>
-  The maximum file size above can be larger than the file system's actual
-  size due to usage of sparse blocks. Note that unless a file system
-  comes with large file support (LFS), the maximum file size on a 32-bit
-  system is 2 GB (2^31 bytes). Currently all of our standard file systems
-  (including Ext3 and ReiserFS) have LFS, which gives a maximum file
-  size of 2^63 bytes in theory. The numbers in the above tables assume
-  that the file systems are using 4 KiB block size. When using different
-  block sizes, the results are different, but 4 KiB reflects the most
-  common standard.
- </para>
- <para>
-  In this document: 1024 Bytes = 1 KiB; 1024 KiB = 1 MiB; 1024 MiB = 1
-  GiB; 1024 GiB = 1 TiB; 1024 TiB = 1 PiB; 1024 PiB = 1 EiB. See also
-  <ulink url="http://physics.nist.gov/cuu/Units/binary.html"/>.
- </para>
- <para>
-  <!-- bnc#608543 and bnc#574572 -->
-  NFSv4 with IPv6 is only supported for the client side. An NFSv4 server
-  with IPv6 is not supported.
- </para>
- <para>
-  <!-- bnc#606288 -->
-  The version of Samba shipped with &sles; &this-version; delivers integration
-  with Windows 7 Active Directory domains. In addition, we provide the
-  clustered version of Samba as part of &sleha; &this-version;.
- </para>
+  <para>
+   The maximum file size above can be larger than the file system's actual
+   size due to usage of sparse blocks. Note that unless a file system
+   comes with large file support (LFS), the maximum file size on a 32-bit
+   system is 2 GB (2^31 bytes). Currently all of our standard file systems
+   (including Ext3 and ReiserFS) have LFS, which gives a maximum file
+   size of 2^63 bytes in theory. The numbers in the above tables assume
+   that the file systems are using 4 KiB block size. When using different
+   block sizes, the results are different, but 4 KiB reflects the most
+   common standard.
+  </para>
+  <para>
+   In this document: 1024 Bytes = 1 KiB; 1024 KiB = 1 MiB; 1024 MiB = 1
+   GiB; 1024 GiB = 1 TiB; 1024 TiB = 1 PiB; 1024 PiB = 1 EiB. See also
+   <ulink url="http://physics.nist.gov/cuu/Units/binary.html"/>.
+  </para>
  </section>
 
  <section>
   <title>Supported Btrfs Features</title>
   <para>
    The following table lists supported and unsupported Btrfs features across
-   multiple &slsa; versions.
+   multiple &caasp; versions.
   </para>
  <para>
   <simplelist>
@@ -370,7 +194,6 @@
     <colspec colnum="5" colname="12SP2" colwidth="17*"/>
     <thead>
      <row>
-      <!-- Remove unsupported OS's. -->
       <entry>Feature</entry>
       <entry>&slsa; 11 SP4</entry>
       <entry>&slsa; 12 GA</entry>
