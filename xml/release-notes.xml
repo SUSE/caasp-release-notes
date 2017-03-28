@@ -11,14 +11,14 @@
    component="Documentation"
    assignee="sknorr@suse.com" ?>
   <releaseinfo>@VERSION@</releaseinfo><productname><phrase os="sles">SUSE Container as a Service Platform</phrase></productname>
-  <productnumber>1.0 </productnumber><date>
+  <productnumber>1.0</productnumber><date>
 <?dbtimestamp format="Y-m-d"?></date>
   <abstract>
    <para>
     This document provides guidance and an overview to high level general
-    features and updates for SUSE Container as a Service Platform 1.0 . It
+    features and updates for SUSE Container as a Service Platform 1.0. It
     describes the capabilities and limitations of SUSE Container as a
-    Service Platform 1.0 .
+    Service Platform 1.0.
    </para>
 
    <para>
@@ -363,7 +363,7 @@
       <para>
        <ulink url="http://www.suse.com/documentation/sles-12/"/> contains
        additional or updated documentation for SUSE Container as a Service
-       Platform 1.0 .
+       Platform 1.0.
       </para>
      </listitem>
      <listitem>
@@ -549,7 +549,7 @@
    <title>Installation</title>
    <para>
     This section includes information related to the initial installation of
-    SUSE Container as a Service Platform 1.0 . For information about
+    SUSE Container as a Service Platform 1.0. For information about
     installing, see <citetitle>Deployment Guide</citetitle> at
 <!-- FIXME: find correct URL! - sknorr, 2017-03-27 -->
     <ulink url="https://www.suse.com/documentation"/>.
@@ -764,7 +764,7 @@
    <para>
     This table summarizes the various limits which exist in our recent
     kernels and utilities (if related) for SUSE Container as a Service
-    Platform 1.0 .
+    Platform 1.0.
    </para>
    <informaltable frame="all">
     <tgroup cols="2">
@@ -772,7 +772,7 @@
      <colspec colnum="2" colname="x86-64"/>
      <thead>
       <row>
-       <entry><emphasis>SUSE Container as a Service Platform 1.0  (Linux 4.4)</emphasis>
+       <entry><emphasis>SUSE Container as a Service Platform 1.0 (Linux 4.4)</emphasis>
        </entry>
        <entry>AMD64/Intel 64 (x86_64)</entry>
       </row>
