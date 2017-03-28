@@ -1,2 +1,11 @@
+1.0.20170328
+- Updated template text
+- Updated release notes from FATE
+- New entries:
+  - System Requirements (FATE#323106)
+  - Kubernetes (FATE#323125)
+  - Administration Dashboard (FATE#323126)
+
+
 0.0.20170314
 - Created repo
