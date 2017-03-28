@@ -15,7 +15,7 @@
  </para>
 
  <informaltable frame="all">
-  <tgroup cols='5'>
+  <tgroup cols='2'>
    <colspec colnum="1" colname="feature"/>
    <colspec colnum="2" colname="x86-64"/>
    <thead>

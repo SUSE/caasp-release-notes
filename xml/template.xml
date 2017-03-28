@@ -51,18 +51,93 @@
 
   <para>
    &caasp; combines the benefits of an enterprise ready OS with the agility
-   of a fast development containers orchestration platform.
+   of an orchestration platform for container development.
   </para>
   <para>
+   The basis of &caasp; is &mos;.
    &mos; is a modern Linux Operating System, designed for containers and
    optimized for large, clustered deployments. &mos; inherits the benefits of
-   &slea; while redefining the operating system into a small, efficient and
+   &sle; while redefining the operating system into a small, efficient and
    reliable distribution.
   </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     Ready to run out of the box: Not just a Bash login prompt where you need
+     to configure everything
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Btrfs with snapshots and rollback for transactional updates
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Read-only file system with OverlayFS for <filename>/etc</filename>
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     <command>cloud-init</command> for initial configuration (Network,
+     Accounts, Salt)
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Salt for full system configuration
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Controller node with dashboard to manage cluster
+    </para>
+   </listitem>
+  </itemizedlist>
+  <para>
+   &mos; comes with a novel file system configuration based on Btrfs and
+   OverlayFS:
+  </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     The base OS and snapshots are read-only
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Subvolumes for data storage are read-write
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     OverlayFS is used for <filename>/etc</filename> (for
+     <command>cloud-init</command> and Salt)
+    </para>
+   </listitem>
+  </itemizedlist>
+  <para>
+   To manage &mos; deployments, <command>cloud-init</command> is used:
+  </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     Very flexible and already well-known by administrators in the cloud
+     environment
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     <command>cloud-init</command> has been enhanced to be able to configure
+     Zypp repositories and read configuration from local directories
+    </para>
+   </listitem>
+  </itemizedlist>
+
   <!-- FIXME: Plagiarism..!
   https://thenewstack.io/docker-fuels-rethinking-operating-system - sknorr,
   2017-03-27 -->
-  <para>
+  <!-- <para>
    An orchestration framework is required to optimize the use of containers
    in both stand-alone and hybrid environments. Tools such as Kubernetes
    provide a platform for automating deployment, scaling, and operations of
@@ -108,8 +183,7 @@
   <para>
    &caasp; integrates the two main components of this platform and simplifies
    running applications in public and private clouds.
-  </para>
-
+  </para> -->
 
   <!-- FIXME: TechInfo, as defined by FATE category?? - sknorr, 2017-03-27 -->
   <section id="Intro.Advantages">
@@ -117,7 +191,7 @@
    <para>
     &caasp; allows you to provision, manage, and scale container-based
     applications.
-    &suse; offers a application development and hosting platform for containers
+    &suse; offers an application development and hosting platform for containers
     that automates the tedious management tasks. This allows you to focus
     on development and writing apps that meet business goals.
    </para>
@@ -439,7 +513,8 @@
 
   </section>
 
-  <section id="Intro.Derived_Products">
+  <!-- Removed as requested by aherzig. - sknorr, 2017-03-28 -->
+  <!-- <section id="Intro.Derived_Products">
    <title>Derived and Related Products</title>
    <para>
     This sections lists derived and related products. In many cases, these
@@ -467,7 +542,7 @@
      <para>SUSE OpenStack Cloud: <ulink url="https://www.suse.com/products/suse-openstack-cloud"/></para>
     </listitem>
    </itemizedlist>
-  </section>
+  </section> -->
 
   <!-- Does not currently apply. - sknorr, 2017-03-28 -->
   <!-- <section id="Intro.Certification">
@@ -491,7 +566,7 @@
 
  <section id="InstUpgrade">
   <title>Installation and Upgrade</title>
-  <para>&caasp; can be deployed in several ways:</para>
+  <!-- <para>&caasp; can be deployed in several ways:</para>
   <itemizedlist>
    <listitem>
     <para>Physical machine</para>
@@ -508,7 +583,7 @@
    <listitem>
     <para>Application containers</para>
    </listitem>
-  </itemizedlist>
+  </itemizedlist>-->
   <section id="InstUpgrade.Installation" role="remove-empty">
    <title>Installation</title>
    <para>

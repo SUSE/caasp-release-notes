@@ -13,13 +13,9 @@
   <title>Comparison of Supported File Systems</title>
 
   <para>
-   &sle; was the first enterprise Linux distribution to support journaling file
-   systems and logical volume managers back in 2000. Later, we introduced XFS to
-   Linux, which today is seen as the primary work horse for large-scale file
-   systems, systems with heavy load and multiple parallel reading and writing
-   operations. With &sle; 12, we went the next step of innovation and started
-   using the copy-on-write file system Btrfs as the default for the operating
-   system, to support system snapshots and rollback.
+   &caasp; &this-version; exclusively supports the file system types Btrfs
+   and OverlayFS. A read-only Btrfs file system is used for the root
+   partition which enables transactional updates.
   </para>
 
   <para>
@@ -30,7 +26,7 @@
   </para>
 
   <informaltable frame='all'>
-   <tgroup cols="6">
+   <tgroup cols="2">
     <colspec colnum="1" colname="c1" colwidth="28*"/>
     <colspec colnum="2" colname="c2" colwidth="18*"/>
     <thead>
@@ -155,11 +151,7 @@
 
   <para>
    The maximum file size above can be larger than the file system's actual
-   size due to usage of sparse blocks. Note that unless a file system
-   comes with large file support (LFS), the maximum file size on a 32-bit
-   system is 2 GB (2^31 bytes). Currently all of our standard file systems
-   (including Ext3 and ReiserFS) have LFS, which gives a maximum file
-   size of 2^63 bytes in theory. The numbers in the above tables assume
+   size due to usage of sparse blocks. The numbers in the above tables assume
    that the file systems are using 4 KiB block size. When using different
    block sizes, the results are different, but 4 KiB reflects the most
    common standard.
@@ -186,209 +178,122 @@
   <!-- Table according to bsc#979501, this attachment:
   https://bugzilla.suse.com/attachment.cgi?id=687340 -->
   <informaltable>
-   <tgroup cols="5">
+   <tgroup cols="2">
     <colspec colnum="1" colname="feature" colwidth="32*"/>
-    <colspec colnum="2" colname="11SP4" colwidth="17*"/>
-    <colspec colnum="3" colname="12GA" colwidth="17*"/>
-    <colspec colnum="4" colname="12SP1" colwidth="17*"/>
-    <colspec colnum="5" colname="12SP2" colwidth="17*"/>
+    <colspec colnum="2" colname="1-0" colwidth="17*"/>
     <thead>
      <row>
       <entry>Feature</entry>
-      <entry>&slsa; 11 SP4</entry>
-      <entry>&slsa; 12 GA</entry>
-      <entry>&slsa; 12 SP1</entry>
-      <entry>&slsa; 12 SP2</entry>
+      <entry>&caasp; 1.0</entry>
      </row>
     </thead>
     <tbody>
      <row>
       <entry>Copy on Write</entry>
       <entry>+</entry>
-      <entry>+</entry>
-      <entry>+</entry>
-      <entry>+</entry>
      </row>
      <row>
       <entry>Snapshots/Subvolumes</entry>
-      <entry>+</entry>
-      <entry>+</entry>
-      <entry>+</entry>
       <entry>+</entry>
      </row>
      <row>
       <entry>Metadata Integrity</entry>
       <entry>+</entry>
-      <entry>+</entry>
-      <entry>+</entry>
-      <entry>+</entry>
      </row>
      <row>
       <entry>Data Integrity</entry>
-      <entry>+</entry>
-      <entry>+</entry>
-      <entry>+</entry>
       <entry>+</entry>
      </row>
      <row>
       <entry>Online Metadata Scrubbing</entry>
       <entry>+</entry>
-      <entry>+</entry>
-      <entry>+</entry>
-      <entry>+</entry>
      </row>
      <row>
       <entry>Automatic Defragmentation</entry>
-       <entry>–</entry>
-       <entry>–</entry>
-       <entry>–</entry>
        <entry>–</entry>
       </row>
      <row>
       <entry>Manual Defragmentation</entry>
        <entry>+</entry>
-       <entry>+</entry>
-       <entry>+</entry>
-       <entry>+</entry>
       </row>
      <row>
       <entry>In-band Deduplication</entry>
-      <entry>–</entry>
-      <entry>–</entry>
-      <entry>–</entry>
       <entry>–</entry>
      </row>
      <row>
       <entry>Out-of-band Deduplication</entry>
       <entry>+</entry>
-      <entry>+</entry>
-      <entry>+</entry>
-      <entry>+</entry>
      </row>
      <row>
       <entry>Quota Groups</entry>
-      <entry>+</entry>
-      <entry>+</entry>
-      <entry>+</entry>
       <entry>+</entry>
      </row>
      <row>
       <entry>Metadata Duplication</entry>
       <entry>+</entry>
-      <entry>+</entry>
-      <entry>+</entry>
-      <entry>+</entry>
      </row>
      <row>
       <entry>Multiple Devices</entry>
-      <entry>–</entry>
-      <entry>+</entry>
-      <entry>+</entry>
       <entry>+</entry>
      </row>
      <row>
       <entry>RAID 0</entry>
-      <entry>–</entry>
-      <entry>+</entry>
-      <entry>+</entry>
       <entry>+</entry>
      </row>
      <row>
       <entry>RAID 1</entry>
-      <entry>–</entry>
-      <entry>+</entry>
-      <entry>+</entry>
       <entry>+</entry>
      </row>
      <row>
       <entry>RAID 10</entry>
-      <entry>–</entry>
-      <entry>+</entry>
-      <entry>+</entry>
       <entry>+</entry>
      </row>
      <row>
       <entry>RAID 5</entry>
        <entry>–</entry>
-       <entry>–</entry>
-       <entry>–</entry>
-       <entry>–</entry>
       </row>
      <row>
       <entry>RAID 6</entry>
        <entry>–</entry>
-       <entry>–</entry>
-       <entry>–</entry>
-       <entry>–</entry>
        </row>
      <row>
       <entry>Hot Add/Remove</entry>
-       <entry>–</entry>
-       <entry>+</entry>
-       <entry>+</entry>
        <entry>+</entry>
        </row>
      <row>
       <entry>Device Replace</entry>
        <entry>–</entry>
-       <entry>–</entry>
-       <entry>–</entry>
-       <entry>–</entry>
        </row>
      <row>
       <entry>Seeding Devices</entry>
        <entry>–</entry>
-       <entry>–</entry>
-       <entry>–</entry>
-       <entry>–</entry>
      </row>
      <row>
       <entry>Compression</entry>
-      <entry>–</entry>
-      <entry>–</entry>
-      <entry>+</entry>
       <entry>+</entry>
      </row>
      <row>
       <entry>Big Metadata Blocks</entry>
-      <entry>–</entry>
-      <entry>+</entry>
-      <entry>+</entry>
       <entry>+</entry>
      </row>
      <row>
       <entry>Skinny Metadata</entry>
-      <entry>–</entry>
-      <entry>+</entry>
-      <entry>+</entry>
       <entry>+</entry>
      </row>
      <row>
       <entry>Send Without File Data</entry>
-      <entry>–</entry>
-      <entry>+</entry>
-      <entry>+</entry>
       <entry>+</entry>
      </row>
      <row>
       <entry>Send/Receive</entry>
-      <entry>–</entry>
-      <entry>–</entry>
-      <entry>–</entry>
       <entry>+</entry>
      </row>
      <row>
       <entry>Inode Cache</entry>
       <entry>–</entry>
-      <entry>–</entry>
-      <entry>–</entry>
-      <entry>–</entry>
      </row>
      <row>
       <entry>Fallocate with Hole Punch</entry>
-      <entry>–</entry>
-      <entry>–</entry>
-      <entry>–</entry>
       <entry>+</entry>
      </row>
     </tbody>
