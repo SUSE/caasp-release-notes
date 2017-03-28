@@ -43,19 +43,93 @@
   <title>SUSE Container as a Service Platform 1.0</title>
   <para>
    SUSE Container as a Service Platform combines the benefits of an
-   enterprise ready OS with the agility of a fast development containers
-   orchestration platform.
+   enterprise ready OS with the agility of an orchestration platform for
+   container development.
   </para>
   <para>
-   SLE MicroOS is a modern Linux Operating System, designed for containers
-   and optimized for large, clustered deployments. SLE MicroOS inherits the
-   benefits of SLE while redefining the operating system into a small,
-   efficient and reliable distribution.
+   The basis of SUSE Container as a Service Platform is SLE MicroOS. SLE
+   MicroOS is a modern Linux Operating System, designed for containers and
+   optimized for large, clustered deployments. SLE MicroOS inherits the
+   benefits of SUSE Linux Enterprise while redefining the operating system
+   into a small, efficient and reliable distribution.
   </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     Ready to run out of the box: Not just a Bash login prompt where you
+     need to configure everything
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Btrfs with snapshots and rollback for transactional updates
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Read-only file system with OverlayFS for <filename>/etc</filename>
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     <command>cloud-init</command> for initial configuration (Network,
+     Accounts, Salt)
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Salt for full system configuration
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Controller node with dashboard to manage cluster
+    </para>
+   </listitem>
+  </itemizedlist>
+  <para>
+   SLE MicroOS comes with a novel file system configuration based on Btrfs
+   and OverlayFS:
+  </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     The base OS and snapshots are read-only
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Subvolumes for data storage are read-write
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     OverlayFS is used for <filename>/etc</filename> (for
+     <command>cloud-init</command> and Salt)
+    </para>
+   </listitem>
+  </itemizedlist>
+  <para>
+   To manage SLE MicroOS deployments, <command>cloud-init</command> is used:
+  </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     Very flexible and already well-known by administrators in the cloud
+     environment
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     <command>cloud-init</command> has been enhanced to be able to configure
+     Zypp repositories and read configuration from local directories
+    </para>
+   </listitem>
+  </itemizedlist>
 <!-- FIXME: Plagiarism..!
   https://thenewstack.io/docker-fuels-rethinking-operating-system - sknorr,
   2017-03-27 -->
-  <para>
+<!-- <para>
    An orchestration framework is required to optimize the use of containers
    in both stand-alone and hybrid environments. Tools such as Kubernetes
    provide a platform for automating deployment, scaling, and operations of
@@ -68,13 +142,13 @@
    such operating systems were typically designed to run only a single node.
   </para>
   <para>
-   SLE MicroOS is designed for a world in which the entire data center is
-   treated as one giant operating system that spans hundreds or even
-   thousands of nodes.
+   &mos; is designed for a world in which the entire data center is treated
+   as one giant operating system that spans hundreds or even thousands of
+   nodes.
   </para>
   <para>
-   With SLE MicroOS, you get an orchestration platform that gives you the
-   ability to quickly and efficiently respond to changing demands:
+   With &mos;, you get an orchestration platform that gives you the ability
+   to quickly and efficiently respond to changing demands:
   </para>
   <itemizedlist>
    <listitem>
@@ -99,10 +173,9 @@
    </listitem>
   </itemizedlist>
   <para>
-   SUSE Container as a Service Platform integrates the two main components
-   of this platform and simplifies running applications in public and
-   private clouds.
-  </para>
+   &caasp; integrates the two main components of this platform and simplifies
+   running applications in public and private clouds.
+  </para> -->
 <!-- FIXME: TechInfo, as defined by FATE category?? - sknorr, 2017-03-27 -->
 <!--v Items below imported from FATE-->
 <!--^ End of Items imported from FATE-->
@@ -110,7 +183,7 @@
    <title>Advantages of SUSE Container as a Service Platform</title>
    <para>
     SUSE Container as a Service Platform allows you to provision, manage,
-    and scale container-based applications. SUSE offers a application
+    and scale container-based applications. SUSE offers an application
     development and hosting platform for containers that automates the
     tedious management tasks. This allows you to focus on development and
     writing apps that meet business goals.
@@ -404,52 +477,36 @@
 <!--^ End of Items imported from FATE-->
   </section>
 <!-- see fate#316990 -->
-  <section id="Intro.Derived_Products">
+<!-- Removed as requested by aherzig. - sknorr, 2017-03-28 -->
+<!-- <section id="Intro.Derived_Products">
    <title>Derived and Related Products</title>
    <para>
     This sections lists derived and related products. In many cases, these
     products have their own release notes documents that are available from
     <ulink url="https://www.suse.com/releasenotes/"/>.
    </para>
+
    <itemizedlist>
     <listitem>
-     <para>
-      SUSE Enterprise Storage:
-      <ulink url="https://www.suse.com/products/suse-enterprise-storage"/>
-     </para>
+     <para>SUSE Enterprise Storage: <ulink url="https://www.suse.com/products/suse-enterprise-storage"/></para>
     </listitem>
     <listitem>
-     <para>
-      SUSE Linux Enterprise Desktop:
-      <ulink url="https://www.suse.com/products/desktop"/>
-     </para>
+     <para>&sled;: <ulink url="https://www.suse.com/products/desktop"/></para>
     </listitem>
     <listitem>
-     <para>
-      SUSE Linux Enterprise Server:
-      <ulink url="https://www.suse.com/products/server/"/>
-     </para>
+     <para>SUSE Linux Enterprise Server: <ulink url="https://www.suse.com/products/server/"/></para>
     </listitem>
     <listitem>
-     <para>
-      SUSE Linux Enterprise Server for SAP Applications:
-      <ulink url="https://www.suse.com/products/sles-for-sap"/>
-     </para>
+     <para>SUSE Linux Enterprise Server for SAP Applications: <ulink url="https://www.suse.com/products/sles-for-sap"/></para>
     </listitem>
     <listitem>
-     <para>
-      SUSE Manager:
-      <ulink url="https://www.suse.com/products/suse-manager"/>
-     </para>
+     <para>SUSE Manager: <ulink url="https://www.suse.com/products/suse-manager"/></para>
     </listitem>
     <listitem>
-     <para>
-      SUSE OpenStack Cloud:
-      <ulink url="https://www.suse.com/products/suse-openstack-cloud"/>
-     </para>
+     <para>SUSE OpenStack Cloud: <ulink url="https://www.suse.com/products/suse-openstack-cloud"/></para>
     </listitem>
    </itemizedlist>
-  </section>
+  </section> -->
 <!-- Does not currently apply. - sknorr, 2017-03-28 -->
 <!-- <section id="Intro.Certification">
    <title>Security, Standards, and Certification</title>
@@ -470,36 +527,24 @@
 <!-- ============================================================== -->
  <section id="InstUpgrade">
   <title>Installation and Upgrade</title>
-  <para>
-   SUSE Container as a Service Platform can be deployed in several ways:
-  </para>
+<!-- <para>&caasp; can be deployed in several ways:</para>
   <itemizedlist>
    <listitem>
-    <para>
-     Physical machine
-    </para>
+    <para>Physical machine</para>
    </listitem>
    <listitem>
-    <para>
-     Virtual host
-    </para>
+    <para>Virtual host</para>
    </listitem>
    <listitem>
-    <para>
-     Virtual machine
-    </para>
+    <para>Virtual machine</para>
    </listitem>
    <listitem>
-    <para>
-     System containers
-    </para>
+    <para>System containers</para>
    </listitem>
    <listitem>
-    <para>
-     Application containers
-    </para>
+    <para>Application containers</para>
    </listitem>
-  </itemizedlist>
+  </itemizedlist>-->
   <section id="InstUpgrade.Installation" remap="InstUpgrade:Installation">
    <title>Installation</title>
    <para>
@@ -722,7 +767,7 @@
     Platform 1.0 .
    </para>
    <informaltable frame="all">
-    <tgroup cols="5">
+    <tgroup cols="2">
      <colspec colnum="1" colname="feature"/>
      <colspec colnum="2" colname="x86-64"/>
      <thead>
@@ -855,14 +900,9 @@
    <section id="TechInfo.Filesystems.Comparison">
     <title>Comparison of Supported File Systems</title>
     <para>
-     SUSE Linux Enterprise was the first enterprise Linux distribution to
-     support journaling file systems and logical volume managers back in
-     2000. Later, we introduced XFS to Linux, which today is seen as the
-     primary work horse for large-scale file systems, systems with heavy
-     load and multiple parallel reading and writing operations. With SUSE
-     Linux Enterprise 12, we went the next step of innovation and started
-     using the copy-on-write file system Btrfs as the default for the
-     operating system, to support system snapshots and rollback.
+     SUSE Container as a Service Platform 1.0 exclusively supports the file
+     system types Btrfs and OverlayFS. A read-only Btrfs file system is used
+     for the root partition which enables transactional updates.
     </para>
     <para>
      <simplelist>
@@ -871,7 +911,7 @@
      </simplelist>
     </para>
     <informaltable frame="all">
-     <tgroup cols="6">
+     <tgroup cols="2">
       <colspec colnum="1" colname="c1" colwidth="28*"/>
       <colspec colnum="2" colname="c2" colwidth="18*"/>
       <thead>
@@ -1049,14 +1089,10 @@
     </informaltable>
     <para>
      The maximum file size above can be larger than the file system's actual
-     size due to usage of sparse blocks. Note that unless a file system
-     comes with large file support (LFS), the maximum file size on a 32-bit
-     system is 2 GB (2^31 bytes). Currently all of our standard file systems
-     (including Ext3 and ReiserFS) have LFS, which gives a maximum file size
-     of 2^63 bytes in theory. The numbers in the above tables assume that
-     the file systems are using 4 KiB block size. When using different block
-     sizes, the results are different, but 4 KiB reflects the most common
-     standard.
+     size due to usage of sparse blocks. The numbers in the above tables
+     assume that the file systems are using 4 KiB block size. When using
+     different block sizes, the results are different, but 4 KiB reflects
+     the most common standard.
     </para>
     <para>
      In this document: 1024 Bytes = 1 KiB; 1024 KiB = 1 MiB; 1024 MiB = 1
@@ -1079,209 +1115,122 @@
 <!-- Table according to bsc#979501, this attachment:
   https://bugzilla.suse.com/attachment.cgi?id=687340 -->
     <informaltable>
-     <tgroup cols="5">
+     <tgroup cols="2">
       <colspec colnum="1" colname="feature" colwidth="32*"/>
-      <colspec colnum="2" colname="11SP4" colwidth="17*"/>
-      <colspec colnum="3" colname="12GA" colwidth="17*"/>
-      <colspec colnum="4" colname="12SP1" colwidth="17*"/>
-      <colspec colnum="5" colname="12SP2" colwidth="17*"/>
+      <colspec colnum="2" colname="1-0" colwidth="17*"/>
       <thead>
        <row>
         <entry>Feature</entry>
-        <entry>SLES 11 SP4</entry>
-        <entry>SLES 12 GA</entry>
-        <entry>SLES 12 SP1</entry>
-        <entry>SLES 12 SP2</entry>
+        <entry>SUSE Container as a Service Platform 1.0</entry>
        </row>
       </thead>
       <tbody>
        <row>
         <entry>Copy on Write</entry>
         <entry>+</entry>
-        <entry>+</entry>
-        <entry>+</entry>
-        <entry>+</entry>
        </row>
        <row>
         <entry>Snapshots/Subvolumes</entry>
-        <entry>+</entry>
-        <entry>+</entry>
-        <entry>+</entry>
         <entry>+</entry>
        </row>
        <row>
         <entry>Metadata Integrity</entry>
         <entry>+</entry>
-        <entry>+</entry>
-        <entry>+</entry>
-        <entry>+</entry>
        </row>
        <row>
         <entry>Data Integrity</entry>
-        <entry>+</entry>
-        <entry>+</entry>
-        <entry>+</entry>
         <entry>+</entry>
        </row>
        <row>
         <entry>Online Metadata Scrubbing</entry>
         <entry>+</entry>
-        <entry>+</entry>
-        <entry>+</entry>
-        <entry>+</entry>
        </row>
        <row>
         <entry>Automatic Defragmentation</entry>
-        <entry>–</entry>
-        <entry>–</entry>
-        <entry>–</entry>
         <entry>–</entry>
        </row>
        <row>
         <entry>Manual Defragmentation</entry>
         <entry>+</entry>
-        <entry>+</entry>
-        <entry>+</entry>
-        <entry>+</entry>
        </row>
        <row>
         <entry>In-band Deduplication</entry>
-        <entry>–</entry>
-        <entry>–</entry>
-        <entry>–</entry>
         <entry>–</entry>
        </row>
        <row>
         <entry>Out-of-band Deduplication</entry>
         <entry>+</entry>
-        <entry>+</entry>
-        <entry>+</entry>
-        <entry>+</entry>
        </row>
        <row>
         <entry>Quota Groups</entry>
-        <entry>+</entry>
-        <entry>+</entry>
-        <entry>+</entry>
         <entry>+</entry>
        </row>
        <row>
         <entry>Metadata Duplication</entry>
         <entry>+</entry>
-        <entry>+</entry>
-        <entry>+</entry>
-        <entry>+</entry>
        </row>
        <row>
         <entry>Multiple Devices</entry>
-        <entry>–</entry>
-        <entry>+</entry>
-        <entry>+</entry>
         <entry>+</entry>
        </row>
        <row>
         <entry>RAID 0</entry>
-        <entry>–</entry>
-        <entry>+</entry>
-        <entry>+</entry>
         <entry>+</entry>
        </row>
        <row>
         <entry>RAID 1</entry>
-        <entry>–</entry>
-        <entry>+</entry>
-        <entry>+</entry>
         <entry>+</entry>
        </row>
        <row>
         <entry>RAID 10</entry>
-        <entry>–</entry>
-        <entry>+</entry>
-        <entry>+</entry>
         <entry>+</entry>
        </row>
        <row>
         <entry>RAID 5</entry>
         <entry>–</entry>
-        <entry>–</entry>
-        <entry>–</entry>
-        <entry>–</entry>
        </row>
        <row>
         <entry>RAID 6</entry>
         <entry>–</entry>
-        <entry>–</entry>
-        <entry>–</entry>
-        <entry>–</entry>
        </row>
        <row>
         <entry>Hot Add/Remove</entry>
-        <entry>–</entry>
-        <entry>+</entry>
-        <entry>+</entry>
         <entry>+</entry>
        </row>
        <row>
         <entry>Device Replace</entry>
         <entry>–</entry>
-        <entry>–</entry>
-        <entry>–</entry>
-        <entry>–</entry>
        </row>
        <row>
         <entry>Seeding Devices</entry>
         <entry>–</entry>
-        <entry>–</entry>
-        <entry>–</entry>
-        <entry>–</entry>
        </row>
        <row>
         <entry>Compression</entry>
-        <entry>–</entry>
-        <entry>–</entry>
-        <entry>+</entry>
         <entry>+</entry>
        </row>
        <row>
         <entry>Big Metadata Blocks</entry>
-        <entry>–</entry>
-        <entry>+</entry>
-        <entry>+</entry>
         <entry>+</entry>
        </row>
        <row>
         <entry>Skinny Metadata</entry>
-        <entry>–</entry>
-        <entry>+</entry>
-        <entry>+</entry>
         <entry>+</entry>
        </row>
        <row>
         <entry>Send Without File Data</entry>
-        <entry>–</entry>
-        <entry>+</entry>
-        <entry>+</entry>
         <entry>+</entry>
        </row>
        <row>
         <entry>Send/Receive</entry>
-        <entry>–</entry>
-        <entry>–</entry>
-        <entry>–</entry>
         <entry>+</entry>
        </row>
        <row>
         <entry>Inode Cache</entry>
         <entry>–</entry>
-        <entry>–</entry>
-        <entry>–</entry>
-        <entry>–</entry>
        </row>
        <row>
         <entry>Fallocate with Hole Punch</entry>
-        <entry>–</entry>
-        <entry>–</entry>
-        <entry>–</entry>
         <entry>+</entry>
        </row>
       </tbody>
