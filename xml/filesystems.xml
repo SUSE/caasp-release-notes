@@ -14,8 +14,8 @@
 
   <para>
    &caasp; &this-version; exclusively supports the file system types Btrfs
-   and OverlayFS. A read-only Btrfs file system is used for the root
-   partition which enables transactional updates.
+   and OverlayFS. The root file system is a read-only Btrfs which enables
+   transactional updates.
   </para>
 
   <para>

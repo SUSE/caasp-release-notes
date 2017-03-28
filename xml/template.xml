@@ -332,12 +332,6 @@
        chronological log of all changes made to the updated packages. </para>
      </listitem>
      <listitem>
-      <para>
-       <!-- FIXME: Find out exact URL - sknorr, 2017-03-27 -->
-       Documentation for &caasp; is provided online at
-       <ulink url="https://www.suse.com/documentation"/>.
-      </para>
-     </listitem>
      <!-- Apparently, there will be no on-media documentation. -->
      <!-- <listitem>
       <para> Find more information in the <filename>docu</filename> directory of the media of
@@ -363,18 +357,18 @@
     <itemizedlist>
      <listitem>
       <para>
-       <ulink url="http://www.suse.com/documentation/sles-12/"/>
+       <ulink url="http://www.suse.com/documentation"/>
        contains additional or updated documentation for &caasp; &this-version;.
       </para>
      </listitem>
-     <listitem>
+     <!-- <listitem>
       <para>
        Find a collection of White Papers in the &caasp; Resource Library
        at <ulink
        url="https://www.suse.com/products/server/resource-library"/>.
       </para>
      </listitem>
-    </itemizedlist>
+    </itemizedlist> -->
    </section>
   </section>
 
@@ -587,7 +581,8 @@
   <section id="InstUpgrade.Installation" role="remove-empty">
    <title>Installation</title>
    <para>
-    This section includes information related to the initial installation of &caasp; &this-version;.
+    This section includes information related to the initial installation of
+    &caasp; &this-version;.
     For information about installing, see
     <citetitle>Deployment Guide</citetitle> at
     <!-- FIXME: find correct URL! - sknorr, 2017-03-27 -->
@@ -780,7 +775,7 @@
     <title>Miscellaneous</title>
     <para/>
    </section>
-  </section> -->
+  </section>
 
   <section id="InfraPackArch.AArch64" role="remove-empty">
    <title>ARM 64-Bit (AArch64) Specific Information</title>
@@ -788,7 +783,7 @@
     Information in this section pertains to the version of &caasp; &this-version;
     for the AArch64 architecture.
    </para>
-  </section>
+  </section> -->
 
   <section id="Driver_Updates" role="remove-empty">
   <title>Driver Updates</title>
