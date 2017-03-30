@@ -331,7 +331,6 @@
       <para>Check the <filename>ChangeLog</filename> file in the top level of the media for a
        chronological log of all changes made to the updated packages. </para>
      </listitem>
-     <listitem>
      <!-- Apparently, there will be no on-media documentation. -->
      <!-- <listitem>
       <para> Find more information in the <filename>docu</filename> directory of the media of
@@ -367,8 +366,8 @@
        at <ulink
        url="https://www.suse.com/products/server/resource-library"/>.
       </para>
-     </listitem>
-    </itemizedlist> -->
+     </listitem> -->
+    </itemizedlist>
    </section>
   </section>
 
