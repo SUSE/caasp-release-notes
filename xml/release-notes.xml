@@ -330,13 +330,6 @@
        packages.
       </para>
      </listitem>
-     <listitem>
-      <para>
-<!-- FIXME: Find out exact URL - sknorr, 2017-03-27 -->
-       Documentation for SUSE Container as a Service Platform is provided
-       online at <ulink url="https://www.suse.com/documentation"/>.
-      </para>
-     </listitem>
 <!-- Apparently, there will be no on-media documentation. -->
 <!-- <listitem>
       <para> Find more information in the <filename>docu</filename> directory of the media of
@@ -361,18 +354,18 @@
     <itemizedlist>
      <listitem>
       <para>
-       <ulink url="http://www.suse.com/documentation/sles-12/"/> contains
-       additional or updated documentation for SUSE Container as a Service
+       <ulink url="http://www.suse.com/documentation"/> contains additional
+       or updated documentation for SUSE Container as a Service
        Platform 1.0.
       </para>
      </listitem>
-     <listitem>
+<!-- <listitem>
       <para>
-       Find a collection of White Papers in the SUSE Container as a Service
-       Platform Resource Library at
-       <ulink url="https://www.suse.com/products/server/resource-library"/>.
+       Find a collection of White Papers in the &caasp; Resource Library
+       at <ulink
+       url="https://www.suse.com/products/server/resource-library"/>.
       </para>
-     </listitem>
+     </listitem> -->
     </itemizedlist>
    </section>
   </section>
@@ -578,6 +571,11 @@
        There are kernel limits on x86-64
       </para>
      </listitem>
+     <listitem>
+      <para>
+       VNC Installations are not supported in this Beta
+      </para>
+     </listitem>
     </itemizedlist>
    </section>
 <!--^ End of Items imported from FATE-->
@@ -600,6 +598,18 @@
    &caasp; &this-version;.
   </para> -->
 <!--v Items below imported from FATE-->
+  <section role="notoc" id="fate-323184" remap="InfraPackArch:ArchIndependent">
+<!-- sort_key="None"; non-rn-fate-cats=""; -->
+<!-- href="https://fate.novell.com/323184" -->
+   <title>Transactional Updates</title>
+   <para>
+    A "transactional update" is an atomic update. It is either fully applied
+    or not at all. The update does not influence the running system. The
+    update can be rolled back, this means that if the update fails or if the
+    update is not compatible, you can quickly restore the situation from
+    before the update.
+   </para>
+  </section>
   <section role="notoc" id="fate-323126" remap="InfraPackArch:ArchIndependent">
 <!-- sort_key="None"; non-rn-fate-cats=""; -->
 <!-- href="https://fate.novell.com/323126" -->
@@ -699,6 +709,14 @@
     <title>Miscellaneous</title>
     <para/>
    </section>
+  </section>
+
+  <section id="InfraPackArch.AArch64" role="remove-empty">
+   <title>ARM 64-Bit (AArch64) Specific Information</title>
+   <para>
+    Information in this section pertains to the version of &caasp; &this-version;
+    for the AArch64 architecture.
+   </para>
   </section> -->
  <section id="TechInfo" remap="TechInfo">
   <title>Technical Information</title>
@@ -901,8 +919,8 @@
     <title>Comparison of Supported File Systems</title>
     <para>
      SUSE Container as a Service Platform 1.0 exclusively supports the file
-     system types Btrfs and OverlayFS. A read-only Btrfs file system is used
-     for the root partition which enables transactional updates.
+     system types Btrfs and OverlayFS. The root file system is a read-only
+     Btrfs which enables transactional updates.
     </para>
     <para>
      <simplelist>
