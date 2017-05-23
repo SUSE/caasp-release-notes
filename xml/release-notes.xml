@@ -47,9 +47,9 @@
    container development.
   </para>
   <para>
-   The basis of SUSE Container as a Service Platform is SLE MicroOS. SLE
+   The basis of SUSE Container as a Service Platform is SUSE MicroOS. SUSE
    MicroOS is a modern Linux Operating System, designed for containers and
-   optimized for large, clustered deployments. SLE MicroOS inherits the
+   optimized for large, clustered deployments. SUSE MicroOS inherits the
    benefits of SUSE Linux Enterprise while redefining the operating system
    into a small, efficient and reliable distribution.
   </para>
@@ -83,12 +83,12 @@
    </listitem>
    <listitem>
     <para>
-     Controller node with dashboard to manage cluster
+     Administration node with dashboard to manage cluster
     </para>
    </listitem>
   </itemizedlist>
   <para>
-   SLE MicroOS comes with a novel file system configuration based on Btrfs
+   SUSE MicroOS comes with a novel file system configuration based on Btrfs
    and OverlayFS:
   </para>
   <itemizedlist>
@@ -110,7 +110,8 @@
    </listitem>
   </itemizedlist>
   <para>
-   To manage SLE MicroOS deployments, <command>cloud-init</command> is used:
+   To manage SUSE MicroOS deployments, <command>cloud-init</command> is
+   used:
   </para>
   <itemizedlist>
    <listitem>
@@ -563,7 +564,18 @@
      </listitem>
      <listitem>
       <para>
-       There is a minimal file system size
+       Minimal file system size for the root file system: 30 GB
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       Minimal file system size for swap: 2 GB (exact size defined by
+       AutoYaST at runtime)
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       Disk space for containers and container images
       </para>
      </listitem>
      <listitem>
@@ -577,6 +589,29 @@
       </para>
      </listitem>
     </itemizedlist>
+   </section>
+   <section role="notoc" id="fate-322275" remap="InstUpgrade:Installation">
+<!-- sort_key="None"; non-rn-fate-cats=""; -->
+<!-- href="https://fate.novell.com/322275" -->
+    <title>Installing Systems from Online Repositories</title>
+    <para>
+     <emphasis>To install SLES, you need the installation media. If you also
+     mirror the repositories, for example with SMT, this means that
+     effectively you need to download all packages twice: once as a part of
+     the media and additionally from the online repository.</emphasis>
+    </para>
+    <para>
+     For such scenarios, we provide packages named
+     <literal>tftpboot-installation-*</literal> in the product repositories.
+     These packages include an installer prepared for a network boot
+     environment (PXE).
+    </para>
+    <para>
+     To use them, configure the PXE environment (DHCP, TFTP servers) and
+     install the package for the respective product and architecture. Make
+     sure to adjust the included configuration, so that the correct local
+     URLs are passed to the installer.
+    </para>
    </section>
 <!--^ End of Items imported from FATE-->
   </section>
@@ -622,8 +657,8 @@
     life cycle of the product using maintenance updates.
    </para>
    <para>
-    Velum is containerized, and runs on top of the control node together
-    with additional containers.
+    Velum is containerized, and runs on top of the administration node
+    together with additional containers.
    </para>
    <para>
     Velum is developed in the open at
