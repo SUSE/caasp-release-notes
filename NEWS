@@ -1,3 +1,10 @@
+1.0.20170626 (tracked in bsc#1045984)
+- Updated release notes from FATE
+- Changed entries:
+  - System Requirements (FATE#323106)
+      [Removed text snippet "in this beta"]
+
+
 1.0.20170523
 - Updated template text
   - Terminology fixed: SUSE MicroOS, administration node (bsc#1039424)
