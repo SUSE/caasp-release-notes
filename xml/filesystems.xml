@@ -151,7 +151,7 @@
 
   <para>
    The maximum file size above can be larger than the file system's actual
-   size due to usage of sparse blocks. The numbers in the above tables assume
+   size because of usage of sparse blocks. The numbers in the above tables assume
    that the file systems are using 4 KiB block size. When using different
    block sizes, the results are different, but 4 KiB reflects the most
    common standard.

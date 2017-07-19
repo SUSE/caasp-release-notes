@@ -25,15 +25,9 @@
   <date><?dbtimestamp format="Y-m-d"?></date>
   <abstract>
    <para>
-    This document provides guidance and an overview to high level general
+    This document provides guidance and an overview of high-level general
     features and updates for &caasp; &this-version;. It describes the
     capabilities and limitations of &caasp; &this-version;.
-   </para>
-   <para>
-    If you are skipping one or more releases, check the release notes of the
-    skipped releases as well. Release notes usually only list changes that
-    happened between two subsequent releases. If you are only reading the
-    release notes of the current release, you could miss important changes.
    </para>
    <para>
     General documentation can be found at:
@@ -41,7 +35,7 @@
    </para>
    <para>
     <!-- FIXME! -->
-    Product to be released: July 2017
+    Product to be released: August 2017
    </para>
   </abstract>
  </articleinfo>
@@ -222,7 +216,7 @@
      <formalpara>
       <title>Run Everywhere:</title>
       <para>
-       You have the ability to quickly and intelligently respond to demand
+       You can quickly and intelligently respond to demand
        across private and public clouds. &caasp; helps you manage peak demand
        without downtime or manual intervention.
       </para>
@@ -275,7 +269,7 @@
   <!-- <section id="Intro.New">
    <title>What Is New?</title>
 
-   <para>&caasp; &this-version; introduces a number of
+   <para>&caasp; &this-version; introduces several
    innovative changes. Here are some of the highlights:</para>
 
    <itemizedlist>
@@ -314,7 +308,7 @@
   <section id="Intro.Documentation">
    <title>Documentation and Other Information</title>
    <para/>
-   <section>
+   <section id="Intro.Documentation.Media">
     <title>Available on the Product Media</title>
     <itemizedlist>
      <listitem>
@@ -332,17 +326,21 @@
        chronological log of all changes made to the updated packages. </para>
      </listitem>
      <!-- Apparently, there will be no on-media documentation. -->
-     <!-- <listitem>
-      <para> Find more information in the <filename>docu</filename> directory of the media of
-       &caasp; &this-version;. This directory includes PDF versions of the
-       &caasp; &this-version; Installation Quick Start and Deployment Guides. Documentation (if installed) is
-       available below the <filename>/usr/share/doc/</filename> directory of an installed system.
-      </para>
-     </listitem> -->
      <listitem>
       <para>
-       These &rnotes; are identical across all architectures, and the most
-       recent version is always available online at
+       Find more information in the <filename>docu</filename> directory of
+       the media of &caasp; &this-version;.
+       <!-- This directory includes PDF versions of the
+       &caasp; &this-version; Installation Quick Start and Deployment Guides.
+       Documentation (if installed) is available below the
+       <filename>/usr/share/doc/</filename> directory of an installed system.
+       -->
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       <!--These &rnotes; are identical across all architectures, and the-->
+       The most recent version is always available online at
        <ulink url="http://www.suse.com/releasenotes/"/>. Some entries may be
        listed twice, if they are important and belong to more than one
        section.
@@ -351,15 +349,16 @@
     </itemizedlist>
    </section>
 
-   <section>
+   <section id="Intro.Documentation.External">
     <title>Externally Provided Documentation</title>
-    <itemizedlist>
-     <listitem>
+     <!-- <itemizedlist>-->
+      <!-- <listitem>-->
       <para>
-       <ulink url="http://www.suse.com/documentation"/>
-       contains additional or updated documentation for &caasp; &this-version;.
+       Documentation for &caasp; &this-version; is available at
+       <ulink url="http://www.suse.com/documentation"/>.
+       <!-- FIXME:  -->
       </para>
-     </listitem>
+     <!-- </listitem>-->
      <!-- <listitem>
       <para>
        Find a collection of White Papers in the &caasp; Resource Library
@@ -367,7 +366,7 @@
        url="https://www.suse.com/products/server/resource-library"/>.
       </para>
      </listitem> -->
-    </itemizedlist>
+<!--    </itemizedlist>-->
    </section>
   </section>
 
@@ -419,7 +418,7 @@
        <para>
         Problem isolation, which means technical support designed to analyze
         data, reproduce customer problems, isolate problem area and provide a
-        resolution for problems not resolved by Level 1 or alternatively
+        resolution for problems not resolved by Level 1 or
         prepare for Level 3.
        </para>
       </listitem>
@@ -557,68 +556,9 @@
  <!-- =============== Technical Part Starts Here =================== -->
  <!-- ============================================================== -->
 
- <section id="InstUpgrade">
-  <title>Installation and Upgrade</title>
-  <!-- <para>&caasp; can be deployed in several ways:</para>
-  <itemizedlist>
-   <listitem>
-    <para>Physical machine</para>
-   </listitem>
-   <listitem>
-    <para>Virtual host</para>
-   </listitem>
-   <listitem>
-    <para>Virtual machine</para>
-   </listitem>
-   <listitem>
-    <para>System containers</para>
-   </listitem>
-   <listitem>
-    <para>Application containers</para>
-   </listitem>
-  </itemizedlist>-->
-  <section id="InstUpgrade.Installation" role="remove-empty">
-   <title>Installation</title>
-   <para>
-    This section includes information related to the initial installation of
-    &caasp; &this-version;.
-    For information about installing, see
-    <citetitle>Deployment Guide</citetitle> at
-    <!-- FIXME: find correct URL! - sknorr, 2017-03-27 -->
-    <ulink url="https://www.suse.com/documentation"/>.
-   </para>
-  </section>
-  <section id="InstUpgrade.Upgrade" role="remove-empty">
-   <title>Upgrade-Related Notes</title>
-   <para>
-    This section includes upgrade-related information for &caasp; &this-version;.
-    For information about general preparations and supported upgrade methods
-    and paths, see the documentation at
-    <!-- FIXME: find correct URL! - sknorr, 2017-03-27 -->
-    <ulink url="https://www.suse.com/documentation"/>.
-   </para>
-  </section>
-  <section>
-   <title>For More Information</title>
-   <para>
-    For more information, see <xref linkend="InfraPackArch.ArchIndependent"/>
-    and the sections relating to your respective hardware architecture.
-   </para>
-  </section>
- </section>
-
- <section id="InfraPackArch" role="remove-empty">
-  <title>Infrastructure, Package and Architecture Specific Information</title>
-  <para/>
-  <remark>
-   This is only an alibi section. Nothing should be in here, everything should
-   be in subordinate sections... - sknorr, 2016-09-07
-  </remark>
- </section>
-
  <!-- Arch Independent -->
  <section id="InfraPackArch.ArchIndependent" role="remove-empty">
-  <title>Architecture Independent Information</title>
+  <title>Features</title>
 
   <!-- FIXME: There is only x86-64 -> find a better text. - sknorr, 2017-03-28 -->
   <!-- <para>
@@ -692,6 +632,47 @@
    <title>Miscellaneous</title>
    <para/>
   </section>
+ </section>
+
+ <section id="InstUpgrade">
+  <title>Installation and Upgrade</title> 
+  <section id="InstUpgrade.Installation" role="remove-empty">
+   <title>Installation</title>
+   <para>
+    This section includes information related to the initial installation of
+    &caasp; &this-version;.
+    For information about installing, see
+    <citetitle>Deployment Guide</citetitle> at
+    <!-- FIXME: find correct URL! - sknorr, 2017-03-27 -->
+    <ulink url="https://www.suse.com/documentation"/>.
+   </para>
+  </section>
+  <section id="InstUpgrade.Upgrade" role="remove-empty">
+   <title>Upgrade-Related Notes</title>
+   <para>
+    This section includes upgrade-related information for &caasp; &this-version;.
+    For information about general preparations and supported upgrade methods
+    and paths, see the documentation at
+    <!-- FIXME: find correct URL! - sknorr, 2017-03-27 -->
+    <ulink url="https://www.suse.com/documentation"/>.
+   </para>
+  </section>
+  <section id="InstUpgrade.More">
+   <title>For More Information</title>
+   <para>
+    For more information, see <xref linkend="InfraPackArch.ArchIndependent"/>
+    and the sections relating to your respective hardware architecture.
+   </para>
+  </section>
+ </section>
+
+ <section id="InfraPackArch" role="remove-empty">
+  <title>Infrastructure, Package and Architecture Specific Information</title>
+  <para/>
+  <remark>
+   This is only an alibi section. Nothing should be in here, everything should
+   be in subordinate sections... - sknorr, 2016-09-07
+  </remark>
  </section>
 
  <section id="InfraPackArch.x86_64" role="remove-empty">
@@ -849,7 +830,7 @@
  <section id="TechInfo">
   <title>Technical Information</title>
   <para>
-   This section contains information about system limits, a number of
+   This section contains information about system limits, several
    technical changes and enhancements for the experienced user.
   </para>
   <para>
@@ -861,7 +842,7 @@
     <listitem>
      <para>
       The visible physical entity, as it is typically mounted to a
-      motherboard or an equivalent.
+      mainboard or an equivalent.
      </para>
     </listitem>
    </varlistentry>
