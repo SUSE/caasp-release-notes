@@ -1,3 +1,18 @@
+1.0.20170721
+- Updated template text
+  - Fixed product string for Bugzilla (bsc#1049081)
+- Updated release notes from FATE
+- Changed entries:
+  - Installing Systems from Online Repositories (FATE#323752)
+      [make text more specific to CaaS Platform, bsc#1047885, replaces
+      FATE#322275]
+  - System Requirements (FATE#323106)
+      [Updated RAM and disk requirements, bsc#1041299]
+  - Kubernetes (FATE#323125), Administration Dashboard (FATE#323126),
+    Transactional Updates (FATE#323184)
+      [Recategorization]
+
+
 1.0.20170626 (tracked in bsc#1045984)
 - Updated release notes from FATE
 - Changed entries:

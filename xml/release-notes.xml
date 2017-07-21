@@ -7,7 +7,7 @@
  <title>Release Notes</title>
  <articleinfo>
 <?dbsuse-bugtracker url="https://bugzilla.suse.com/enter_bug.cgi"
-   product="SUSE Container as a  Service Platform 1 .0 (CaaSP/MicroOS)"
+   product="SUSE Container as a Service Platform 1.0"
    component="Documentation"
    assignee="sknorr@suse.com" ?>
   <releaseinfo>@VERSION@</releaseinfo><productname><phrase os="sles">SUSE Container as a Service Platform</phrase></productname>
@@ -15,27 +15,15 @@
 <?dbtimestamp format="Y-m-d"?></date>
   <abstract>
    <para>
-    This document provides guidance and an overview to high level general
+    This document provides guidance and an overview of high-level general
     features and updates for SUSE Container as a Service Platform 1.0. It
     describes the capabilities and limitations of SUSE Container as a
     Service Platform 1.0.
    </para>
 
    <para>
-    If you are skipping one or more releases, check the release notes of the
-    skipped releases as well. Release notes usually only list changes that
-    happened between two subsequent releases. If you are only reading the
-    release notes of the current release, you could miss important changes.
-   </para>
-
-   <para>
     General documentation can be found at:
     <ulink url="http://www.suse.com/documentation/"/>.
-   </para>
-
-   <para>
-<!-- FIXME! -->
-    Product to be released: July 2017
    </para>
   </abstract>
  </articleinfo>
@@ -217,10 +205,9 @@
      <formalpara>
       <title>Run Everywhere:</title>
       <para>
-       You have the ability to quickly and intelligently respond to demand
-       across private and public clouds. SUSE Container as a Service
-       Platform helps you manage peak demand without downtime or manual
-       intervention.
+       You can quickly and intelligently respond to demand across private
+       and public clouds. SUSE Container as a Service Platform helps you
+       manage peak demand without downtime or manual intervention.
       </para>
      </formalpara>
     </listitem>
@@ -269,7 +256,7 @@
 <!-- <section id="Intro.New">
    <title>What Is New?</title>
 
-   <para>&caasp; &this-version; introduces a number of
+   <para>&caasp; &this-version; introduces several
    innovative changes. Here are some of the highlights:</para>
 
    <itemizedlist>
@@ -308,7 +295,7 @@
    <para/>
 <!--v Items below imported from FATE-->
 <!--^ End of Items imported from FATE-->
-   <section>
+   <section id="Intro.Documentation.Media">
     <title>Available on the Product Media</title>
     <itemizedlist>
      <listitem>
@@ -332,17 +319,21 @@
       </para>
      </listitem>
 <!-- Apparently, there will be no on-media documentation. -->
-<!-- <listitem>
-      <para> Find more information in the <filename>docu</filename> directory of the media of
-       &caasp; &this-version;. This directory includes PDF versions of the
-       &caasp; &this-version; Installation Quick Start and Deployment Guides. Documentation (if installed) is
-       available below the <filename>/usr/share/doc/</filename> directory of an installed system.
-      </para>
-     </listitem> -->
      <listitem>
       <para>
-       These Release Notes are identical across all architectures, and the
-       most recent version is always available online at
+       Find more information in the <filename>docu</filename> directory of
+       the media of SUSE Container as a Service Platform 1.0.
+<!-- This directory includes PDF versions of the
+       &caasp; &this-version; Installation Quick Start and Deployment Guides.
+       Documentation (if installed) is available below the
+       <filename>/usr/share/doc/</filename> directory of an installed system.
+       -->
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+<!--These &rnotes; are identical across all architectures, and the-->
+       The most recent version is always available online at
        <ulink url="http://www.suse.com/releasenotes/"/>. Some entries may be
        listed twice, if they are important and belong to more than one
        section.
@@ -350,16 +341,16 @@
      </listitem>
     </itemizedlist>
    </section>
-   <section>
+   <section id="Intro.Documentation.External">
     <title>Externally Provided Documentation</title>
-    <itemizedlist>
-     <listitem>
-      <para>
-       <ulink url="http://www.suse.com/documentation"/> contains additional
-       or updated documentation for SUSE Container as a Service
-       Platform 1.0.
-      </para>
-     </listitem>
+<!-- <itemizedlist>-->
+<!-- <listitem>-->
+    <para>
+     Documentation for SUSE Container as a Service Platform 1.0 is
+     available at <ulink url="http://www.suse.com/documentation"/>.
+<!-- FIXME:  -->
+    </para>
+<!-- </listitem>-->
 <!-- <listitem>
       <para>
        Find a collection of White Papers in the &caasp; Resource Library
@@ -367,7 +358,7 @@
        url="https://www.suse.com/products/server/resource-library"/>.
       </para>
      </listitem> -->
-    </itemizedlist>
+<!--    </itemizedlist>-->
    </section>
   </section>
   <section id="Intro.Sourcecode" remap="Intro:Sourcecode">
@@ -420,8 +411,8 @@
       <para>
        Problem isolation, which means technical support designed to analyze
        data, reproduce customer problems, isolate problem area and provide a
-       resolution for problems not resolved by Level 1 or alternatively
-       prepare for Level 3.
+       resolution for problems not resolved by Level 1 or prepare for Level
+       3.
       </para>
      </listitem>
     </varlistentry>
@@ -519,114 +510,9 @@
 <!-- ============================================================== -->
 <!-- =============== Technical Part Starts Here =================== -->
 <!-- ============================================================== -->
- <section id="InstUpgrade">
-  <title>Installation and Upgrade</title>
-<!-- <para>&caasp; can be deployed in several ways:</para>
-  <itemizedlist>
-   <listitem>
-    <para>Physical machine</para>
-   </listitem>
-   <listitem>
-    <para>Virtual host</para>
-   </listitem>
-   <listitem>
-    <para>Virtual machine</para>
-   </listitem>
-   <listitem>
-    <para>System containers</para>
-   </listitem>
-   <listitem>
-    <para>Application containers</para>
-   </listitem>
-  </itemizedlist>-->
-  <section id="InstUpgrade.Installation" remap="InstUpgrade:Installation">
-   <title>Installation</title>
-   <para>
-    This section includes information related to the initial installation of
-    SUSE Container as a Service Platform 1.0. For information about
-    installing, see <citetitle>Deployment Guide</citetitle> at
-<!-- FIXME: find correct URL! - sknorr, 2017-03-27 -->
-    <ulink url="https://www.suse.com/documentation"/>.
-   </para>
-<!--v Items below imported from FATE-->
-   <section role="notoc" id="fate-323106" remap="InstUpgrade:Installation">
-<!-- sort_key="None"; non-rn-fate-cats=""; -->
-<!-- href="https://fate.novell.com/323106" -->
-    <title>System Requirements</title>
-    <para>
-     CaaSP has the following system requirements:
-    </para>
-    <itemizedlist>
-     <listitem>
-      <para>
-       Btrfs with snapshots
-      </para>
-     </listitem>
-     <listitem>
-      <para>
-       Minimal file system size for the root file system: 30 GB
-      </para>
-     </listitem>
-     <listitem>
-      <para>
-       Minimal file system size for swap: 2 GB (exact size defined by
-       AutoYaST at runtime)
-      </para>
-     </listitem>
-     <listitem>
-      <para>
-       Disk space for containers and container images
-      </para>
-     </listitem>
-     <listitem>
-      <para>
-       There are kernel limits on x86-64
-      </para>
-     </listitem>
-     <listitem>
-      <para>
-       VNC Installations are not supported
-      </para>
-     </listitem>
-    </itemizedlist>
-   </section>
-   <section role="notoc" id="fate-322275" remap="InstUpgrade:Installation">
-<!-- sort_key="None"; non-rn-fate-cats=""; -->
-<!-- href="https://fate.novell.com/322275" -->
-    <title>Installing Systems from Online Repositories</title>
-    <para>
-     <emphasis>To install SLES, you need the installation media. If you also
-     mirror the repositories, for example with SMT, this means that
-     effectively you need to download all packages twice: once as a part of
-     the media and additionally from the online repository.</emphasis>
-    </para>
-    <para>
-     For such scenarios, we provide packages named
-     <literal>tftpboot-installation-*</literal> in the product repositories.
-     These packages include an installer prepared for a network boot
-     environment (PXE).
-    </para>
-    <para>
-     To use them, configure the PXE environment (DHCP, TFTP servers) and
-     install the package for the respective product and architecture. Make
-     sure to adjust the included configuration, so that the correct local
-     URLs are passed to the installer.
-    </para>
-   </section>
-<!--^ End of Items imported from FATE-->
-  </section>
-  <section>
-   <title>For More Information</title>
-   <para>
-    For more information, see
-    <xref linkend="InfraPackArch.ArchIndependent"/> and the sections
-    relating to your respective hardware architecture.
-   </para>
-  </section>
- </section>
 <!-- Arch Independent -->
  <section id="InfraPackArch.ArchIndependent" remap="InfraPackArch:ArchIndependent">
-  <title>Architecture Independent Information</title>
+  <title>Features</title>
 <!-- FIXME: There is only x86-64 -> find a better text. - sknorr, 2017-03-28 -->
 <!-- <para>
    Information in this section pertains to all architectures supported by
@@ -686,6 +572,95 @@
    </para>
   </section>
 <!--^ End of Items imported from FATE-->
+ </section>
+ <section id="InstUpgrade">
+  <title>Installation and Upgrade</title>
+  <section id="InstUpgrade.Installation" remap="InstUpgrade:Installation">
+   <title>Installation</title>
+   <para>
+    This section includes information related to the initial installation of
+    SUSE Container as a Service Platform 1.0. For information about
+    installing, see <citetitle>Deployment Guide</citetitle> at
+<!-- FIXME: find correct URL! - sknorr, 2017-03-27 -->
+    <ulink url="https://www.suse.com/documentation"/>.
+   </para>
+<!--v Items below imported from FATE-->
+   <section role="notoc" id="fate-323106" remap="InstUpgrade:Installation">
+<!-- sort_key="1"; non-rn-fate-cats=""; -->
+<!-- href="https://fate.novell.com/323106" -->
+    <title>System Requirements</title>
+    <para>
+     SUSE CaaS Platform has the following system requirements:
+    </para>
+    <itemizedlist>
+     <listitem>
+      <para>
+       Minimal amount of RAM: 8 GB
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       Minimal file system size for the root file system: 40 GB (as Btrfs
+       with snapshots), additional disk space for containers and container
+       images may be required
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       Minimal file system size for swap: 2 GB (exact size defined by
+       AutoYaST at runtime)
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       Kernel limits are documented in <xref linkend="TechInfo.Kernel"/>
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       VNC installations are not supported
+      </para>
+     </listitem>
+    </itemizedlist>
+   </section>
+   <section role="notoc" id="fate-323752" remap="InstUpgrade:Installation">
+<!-- sort_key="None"; non-rn-fate-cats=""; -->
+<!-- href="https://fate.novell.com/323752" -->
+    <title>Installing Systems from Online Repositories</title>
+    <para>
+     <emphasis>To install CaaS Platform, you need the installation media. If
+     you also mirror the repositories, for example with SMT, this means that
+     effectively you need to download all packages twice: once as a part of
+     the media and additionally from the online repository.</emphasis>
+    </para>
+    <para>
+     For such scenarios, we provide a package named
+     <literal>tftpboot-installation-CAASP-1.0</literal> in the product
+     repositories. This package include an installer prepared for a network
+     boot environment (PXE).
+    </para>
+    <para>
+     To use this package, configure the PXE environment (DHCP, TFTP servers)
+     and install the package for the respective product and architecture.
+     Make sure to adjust the included configuration, so that the correct
+     local URLs are passed to the installer.
+    </para>
+    <para>
+     For more information about the procedure, see the <emphasis>SUSE CaaS
+     Platform 1.0 Deployment Guide</emphasis> at
+     <ulink url="https://suse.com/documentation"/>.
+    </para>
+   </section>
+<!--^ End of Items imported from FATE-->
+  </section>
+  <section id="InstUpgrade.More">
+   <title>For More Information</title>
+   <para>
+    For more information, see
+    <xref linkend="InfraPackArch.ArchIndependent"/> and the sections
+    relating to your respective hardware architecture.
+   </para>
+  </section>
  </section>
 <!-- There is only x86-64. - sknorr, 2017-03-28 -->
 <!--<section id="InfraPackArch.Power" role="remove-empty">
@@ -756,8 +731,8 @@
  <section id="TechInfo" remap="TechInfo">
   <title>Technical Information</title>
   <para>
-   This section contains information about system limits, a number of
-   technical changes and enhancements for the experienced user.
+   This section contains information about system limits, several technical
+   changes and enhancements for the experienced user.
   </para>
   <para>
    When talking about CPUs, we use the following terminology:
@@ -767,8 +742,8 @@
     <term>CPU Socket</term>
     <listitem>
      <para>
-      The visible physical entity, as it is typically mounted to a
-      motherboard or an equivalent.
+      The visible physical entity, as it is typically mounted to a mainboard
+      or an equivalent.
      </para>
     </listitem>
    </varlistentry>
@@ -1142,7 +1117,7 @@
     </informaltable>
     <para>
      The maximum file size above can be larger than the file system's actual
-     size due to usage of sparse blocks. The numbers in the above tables
+     size because of usage of sparse blocks. The numbers in the above tables
      assume that the file systems are using 4 KiB block size. When using
      different block sizes, the results are different, but 4 KiB reflects
      the most common standard.
