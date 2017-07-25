@@ -238,20 +238,14 @@
     technology leader with a proven history of delivering enterprise-quality
     support services.
    </para>
-   <!-- FIXME: Commented because this is probably wrong. - sknorr, 2017-03-27 -->
-   <!-- <para>
-    &caasp; &this-version; has a 13-year life cycle, with 10 years of General
-    Support and 3 years of Extended Support.
-    The current version (&this-version;) will be fully maintained and supported
-    until 6 months after the release of &caasp; &next-version;.
-   </para>
    <para>
-    If you need additional time to design, validate and
-    test your upgrade plans, Long Term Service Pack Support can extend
-    the support you get an additional 12 to 36 months in twelve month
-    increments, providing a total of 3 to 5 years of support on any
-    given service pack.
-   </para> -->
+    The support for version &caasp; &this-version; ends with the release of
+    version &next-version;. We offer rolling updates allowing customers to
+    upgrade the system via a maintenance update. When releasing version
+    &next-version;, SUSE will offer maintenance updates including packages
+    enabling our customers to move to version &next-version; via a simple
+    update.
+   </para>
    <para>
     For more information, check our Support Policy page
     <ulink url="https://www.suse.com/support/policy.html"/>.
