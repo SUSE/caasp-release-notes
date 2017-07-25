@@ -7,8 +7,11 @@
 
 <section id="TechInfo.Kernel">
  <title>Kernel Limits</title>
- <para><ulink url="http://www.suse.com/products/server/technical-information/#Kernel"/>
- </para>
+ <!-- FIXME: Update link when product is actually out. The current link is
+ still for SLES. (Limits are the same, but we should still get a CaaSP page
+ for this.) - sknorr, 2017-07-25 -->
+ <!-- <para><ulink url="http://www.suse.com/products/server/technical-information/#Kernel"/>
+ </para> -->
  <para>
   This table summarizes the various limits which exist in our recent kernels
   and utilities (if related) for &caasp; &this-version;.
@@ -21,7 +24,7 @@
    <thead>
     <row>
      <entry><emphasis>&caasp; &this-version; (Linux &kernel-version;)</emphasis></entry>
-     <entry>AMD64/Intel 64 (x86_64)</entry>
+     <entry>Intel 64/AMD64 (x86-64)</entry>
     </row>
    </thead>
    <tbody>
@@ -63,7 +66,7 @@
       <para>Maximum amount of swap space</para>
      </entry>
      <entry>
-      <para>Up to 29 * 64 GB (x86_64) or 30 * 64 GB (other architectures)</para>
+      <para>Up to 29 * 64 GB</para>
      </entry>
     </row>
     <row>
@@ -87,7 +90,7 @@
       <para>Maximum size per block device</para>
      </entry>
      <entry>
-      <para>Up to 8 EiB on all 64-bit architectures</para>
+      <para>Up to 8 EiB</para>
      </entry>
     </row>
     <row>

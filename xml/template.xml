@@ -26,7 +26,7 @@
   <abstract>
    <para>
     This document provides guidance and an overview of high-level general
-    features and updates for &caasp; &this-version;. It describes the
+    features and updates for &caasp-long; &this-version;. It describes the
     capabilities and limitations of &caasp; &this-version;.
    </para>
    <para>
@@ -40,7 +40,7 @@
   <title>&caasp; &this-version;</title>
 
   <para>
-   &caasp; combines the benefits of an enterprise ready OS with the agility
+   &caasp-long; combines the benefits of an enterprise ready OS with the agility
    of an orchestration platform for container development.
   </para>
   <para>
@@ -203,7 +203,7 @@
      <formalpara>
       <title>Enterprise-Grade Security and Scalability:</title>
       <para>
-       The foundation of &caasp; is our &slea; operating system which
+       The foundation of &caasp; is our &sle; platform which
        provides a stable and reliable environment for enterprise applications.
       </para>
      </formalpara>
@@ -254,9 +254,7 @@
    </para> -->
    <para>
     For more information, check our Support Policy page
-    <ulink url="https://www.suse.com/support/policy.html"/> or the Long Term
-    Service Pack Support Page
-    <ulink url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/>.
+    <ulink url="https://www.suse.com/support/policy.html"/>.
    </para>
   </section>
 
@@ -432,8 +430,8 @@
     </variablelist>
 
     <para>
-     For contracted customers and partners, &caasp; &this-version; and its
-     Modules are delivered with L3 support for all packages, except the
+     For contracted customers and partners, &caasp; &this-version;
+     is delivered with L3 support for all packages, except the
      following:
     </para>
     <itemizedlist>
