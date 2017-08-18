@@ -150,6 +150,15 @@
   </informaltable>
 
   <para>
+   <emphasis role="bold">*</emphasis> Btrfs is a copy-on-write file system.
+   Instead of journaling changes before writing them in-place, it writes them
+   to a new location and then links the new location in. Until the last write,
+   the changes are not <quote>committed</quote>. Because of the nature of the
+   file system, quotas are implemented based on subvolumes
+   (<literal>qgroups</literal>).
+  </para>
+
+  <para>
    The maximum file size above can be larger than the file system's actual
    size because of usage of sparse blocks. The numbers in the above tables assume
    that the file systems are using 4 KiB block size. When using different
