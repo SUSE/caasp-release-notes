@@ -252,6 +252,81 @@
    </para>
   </section>
 
+  <section id="Intro.Requirements">
+   <title>Requirements</title>
+   <para>
+    This section lists requirements that &caasp; has on its running
+    environment and underlying hardware.
+   </para>
+   <section id="Intro.Requirement.Environment">
+    <title>Supported Environments</title>
+    <!-- via FATE#323832 -->
+    <para>
+     SUSE currently supports clusters of up to 25 nodes (this number will
+     increase in the future). Storage can be provided using &ses;, NFS, or
+     hostpath.
+    </para>
+    <para>
+     Regarding deployment scenarios, &suse; supports &caasp; running:
+    </para>
+    <itemizedlist>
+     <listitem>
+      <para>
+       On bare metal: any SLES 12 x86_64 certified hardware
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       Virtualized: running under the following hypervisors: KVM,
+       Xen, VMware, and Hyper-V.
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       On private and public clouds using &soc; 7
+      </para>
+     </listitem>
+    </itemizedlist>
+   </section>
+   <section id="Intro.Requirement.System">
+    <!-- via FATE#323106 -->
+    <title>System Requirements</title>
+    <para>
+     &caasp; has the following system requirements:
+    </para>
+    <itemizedlist>
+     <listitem>
+      <para>
+       Minimal amount of RAM: 8 GB
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       Minimal file system size for the root file system: 40 GB (as Btrfs
+       with snapshots), additional disk space for containers and container
+       images may be required
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       Minimal file system size for swap: 2 GB (exact size defined by
+       AutoYaST at runtime)
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       Kernel limits are documented in <xref linkend="TechInfo.Kernel"/>
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       VNC installations are not supported
+      </para>
+     </listitem>
+    </itemizedlist>
+   </section>
+  </section>
+
   <!-- FIXME: Start using this section with version 1.1... - sknorr,
   2017-03-27 -->
   <!-- <section id="Intro.New">

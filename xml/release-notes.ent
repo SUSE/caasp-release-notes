@@ -15,6 +15,8 @@
 <!ENTITY caasp "&suse; CaaS Platform">
 <!ENTITY caasp-long "&suse; CaaS (Container as a Service) Platform">
 <!ENTITY mos "&suse; MicroOS">
+<!ENTITY ses "&suse; Enterprise Storage">
+<!ENTITY soc "&suse; OpenStack Cloud">
 <!ENTITY sleha "&sle; High Availability Extension">
 <!ENTITY slehag "Geo Clustering for &sleha;">
 <!ENTITY slert "&sle; Real Time">
