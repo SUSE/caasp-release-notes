@@ -7,10 +7,9 @@
 
 <section id="TechInfo.Kernel">
  <title>Kernel Limits</title>
- <!-- FIXME: Update link when product is actually out. The current link is
- still for SLES. (Limits are the same, but we should still get a CaaSP page
- for this.) - sknorr, 2017-07-25 -->
- <!-- <para><ulink url="http://www.suse.com/products/server/technical-information/#Kernel"/>
+ <!-- FIXME: The current link is for SLES. Limits are the same, but we should still get a CaaSP page
+ for this. - sknorr, 2017-07-25 -->
+ <!-- <para><ulink url="https://www.suse.com/products/server/technical-information/#Kernel"/>
  </para> -->
  <para>
   This table summarizes the various limits which exist in our recent kernels

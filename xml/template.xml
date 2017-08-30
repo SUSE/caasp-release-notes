@@ -3,7 +3,7 @@
                  type="text/xml"
                  title="Profiling step"?>
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-	 "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd"
 [
   <!ENTITY % myents SYSTEM "release-notes.ent" >
   %myents;
@@ -29,7 +29,7 @@
    </para>
    <para>
     General documentation can be found at:
-    <ulink url="http://www.suse.com/documentation/"/>.
+    <ulink url="&doc-url;"/>.
    </para>
   </abstract>
  </articleinfo>
@@ -416,7 +416,7 @@
       <!-- <listitem>-->
       <para>
        Documentation for &caasp; &this-version; is available at
-       <ulink url="http://www.suse.com/documentation"/>.
+       <ulink url="&doc-url;"/>.
        <!-- FIXME:  -->
       </para>
      <!-- </listitem>-->
@@ -440,14 +440,14 @@
     General Public License (GPL). The GPL requires &suse; to provide the
     source code that corresponds to the GPL-licensed material. The source
     code is available for download at
-    <ulink url="http://www.suse.com/download-linux/source-code.html"/>.
+    <ulink url="https://www.suse.com/download-linux/source-code.html"/>.
    </para>
    <para>
     Also, for up to three years after distribution of the &suse; product,
     upon request, &suse; will mail a copy of the source code. Requests should
     be sent by e-mail to <ulink url="mailto:sle_source_request@suse.com"/> or
     as otherwise instructed at
-    <ulink url="http://www.suse.com/download-linux/source-code.html"/>.
+    <ulink url="https://www.suse.com/download-linux/source-code.html"/>.
     &suse; may charge a reasonable fee to recover distribution costs.
    </para>
   </section>
@@ -456,7 +456,7 @@
    <para>
     To receive support, you need an appropriate subscription with &suse;. For
     more information, see
-    <ulink url="http://www.suse.com/products/server/services-and-support/"/>.
+    <ulink url="https://www.suse.com/products/server/services-and-support/"/>.
    </para>
    <para>
     The following definitions apply:
@@ -704,8 +704,7 @@
     &caasp; &this-version;.
     For information about installing, see
     <citetitle>Deployment Guide</citetitle> at
-    <!-- FIXME: find correct URL! - sknorr, 2017-03-27 -->
-    <ulink url="https://www.suse.com/documentation"/>.
+    <ulink url="&doc-url;"/>.
    </para>
   </section>
   <section id="InstUpgrade.Upgrade" role="remove-empty">
@@ -714,8 +713,7 @@
     This section includes upgrade-related information for &caasp; &this-version;.
     For information about general preparations and supported upgrade methods
     and paths, see the documentation at
-    <!-- FIXME: find correct URL! - sknorr, 2017-03-27 -->
-    <ulink url="https://www.suse.com/documentation"/>.
+    <ulink url="&doc-url;"/>.
    </para>
   </section>
   <section id="InstUpgrade.More">
@@ -980,7 +978,7 @@
    countries as specified in U.S. export laws. You agree to not use
    deliverables for prohibited nuclear, missile, or chemical/biological
    weaponry end uses. Refer to
-   <ulink url="http://www.suse.com/company/legal/"/> for more information on
+   <ulink url="https://www.suse.com/company/legal/"/> for more information on
    exporting &suse; software. &suse; assumes no responsibility for your
    failure to obtain any necessary export approvals.
   </para>
@@ -989,7 +987,7 @@
    Copyright © 2010-<?dbtimestamp format="Y" ?> SUSE LLC. This release notes
    document is licensed under a Creative Commons Attribution-NoDerivs 3.0
    United States License (CC-BY-ND-3.0 US,
-   <ulink url="http://creativecommons.org/licenses/by-nd/3.0/us/"/>).
+   <ulink url="https://creativecommons.org/licenses/by-nd/3.0/us/"/>).
   </para>
 
   <para>
@@ -997,14 +995,14 @@
    embodied in the product that is described in this document. In
    particular, and without limitation, these intellectual property
    rights may include one or more of the U.S. patents listed at <ulink
-   url="http://www.suse.com/company/legal/"/> and one or more
+   url="https://www.suse.com/company/legal/"/> and one or more
    additional patents or pending patent applications in the U.S. and
    other countries.
   </para>
 
   <para>
    For &suse; trademarks, see &suse; Trademark and Service Mark list
-   (<ulink url="http://www.suse.com/company/legal/"/>).  All
+   (<ulink url="https://www.suse.com/company/legal/"/>).  All
    third-party trademarks are the property of their respective
    owners.
   </para>
