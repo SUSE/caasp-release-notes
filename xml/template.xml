@@ -18,15 +18,13 @@
    component="Documentation"
    assignee="sknorr@suse.com" ?>
   <releaseinfo>&rversion;</releaseinfo>
-  <productname>
-   <phrase os="sles">&caasp;</phrase>
-  </productname>
+  <productname>&caasp;</productname>
   <productnumber>&this-version;</productnumber>
   <date><?dbtimestamp format="Y-m-d"?></date>
   <abstract>
    <para>
     This document provides guidance and an overview of high-level general
-    features and updates for &caasp-long; &this-version;. It describes the
+    features and updates for &caasp; &this-version;. It describes the
     capabilities and limitations of &caasp; &this-version;.
    </para>
    <para>
@@ -1011,10 +1009,5 @@
    owners.
   </para>
 
- </section>
- <section>
-  <title>Colophon</title>
-  <para> Thanks for using &caasp; in your business. </para>
-  <para> The &caasp; Team. </para>
  </section>
 </article>

@@ -13,7 +13,7 @@
 <!ENTITY sles "&sle; Server">
 <!-- "Container" is in singular! -->
 <!ENTITY caasp "&suse; CaaS Platform">
-<!ENTITY caasp-long "&suse; CaaS (Container as a Service) Platform">
+<!ENTITY caasp-long "&suse; CaaS Platform (Container as a Service Platform)">
 <!ENTITY mos "&suse; MicroOS">
 <!ENTITY ses "&suse; Enterprise Storage">
 <!ENTITY soc "&suse; OpenStack Cloud">
