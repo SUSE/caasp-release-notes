@@ -1,3 +1,20 @@
+1.0.20170830 (tracked in bsc#1056506)
+- Updated template text
+  - Always use CaaS Platform as the product name (bsc#1054988)
+  - Added Requirements section (FATE#323832, FATE#323106)
+  - Added missing footnote about Btrfs and Journaling (bsc#1053039)
+  - Added information about life cycle (bsc#1050455)
+  - Fixed wording in several places (bsc#1047883)
+- Updated release notes from FATE
+- Changed entries:
+  - Kubernetes (FATE#323125, bsc#1047883)
+      [Wording fix]
+  - Installing Systems from Online Repositories (FATE#323752)
+      [Typo fix]
+  - System Requirements (FATE#323106)
+      [Moved to a better position within the document]
+
+
 1.0.20170721
 - Updated template text
   - Fixed product string for Bugzilla (bsc#1049081)

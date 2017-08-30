@@ -10,36 +10,35 @@
    product="SUSE Container as a Service Platform 1.0"
    component="Documentation"
    assignee="sknorr@suse.com" ?>
-  <releaseinfo>@VERSION@</releaseinfo><productname><phrase os="sles">SUSE Container as a Service Platform</phrase></productname>
+  <releaseinfo>@VERSION@</releaseinfo><productname>SUSE CaaS Platform</productname>
   <productnumber>1.0</productnumber><date>
 <?dbtimestamp format="Y-m-d"?></date>
   <abstract>
    <para>
     This document provides guidance and an overview of high-level general
-    features and updates for SUSE Container as a Service Platform 1.0. It
-    describes the capabilities and limitations of SUSE Container as a
-    Service Platform 1.0.
+    features and updates for SUSE CaaS Platform 1.0. It describes the
+    capabilities and limitations of SUSE CaaS Platform 1.0.
    </para>
 
    <para>
     General documentation can be found at:
-    <ulink url="http://www.suse.com/documentation/"/>.
+    <ulink url="https://www.suse.com/documentation/suse-caasp-1/"/>.
    </para>
   </abstract>
  </articleinfo>
  <section id="Intro" remap="Intro">
-  <title>SUSE Container as a Service Platform 1.0</title>
+  <title>SUSE CaaS Platform 1.0</title>
   <para>
-   SUSE Container as a Service Platform combines the benefits of an
-   enterprise ready OS with the agility of an orchestration platform for
-   container development.
+   SUSE CaaS Platform (Container as a Service Platform) combines the
+   benefits of an enterprise ready OS with the agility of an orchestration
+   platform for container development.
   </para>
   <para>
-   The basis of SUSE Container as a Service Platform is SUSE MicroOS. SUSE
-   MicroOS is a modern Linux Operating System, designed for containers and
-   optimized for large, clustered deployments. SUSE MicroOS inherits the
-   benefits of SUSE Linux Enterprise while redefining the operating system
-   into a small, efficient and reliable distribution.
+   The basis of SUSE CaaS Platform is SUSE MicroOS. SUSE MicroOS is a modern
+   Linux Operating System, designed for containers and optimized for large,
+   clustered deployments. SUSE MicroOS inherits the benefits of SUSE Linux
+   Enterprise while redefining the operating system into a small, efficient
+   and reliable distribution.
   </para>
   <itemizedlist>
    <listitem>
@@ -169,16 +168,16 @@
 <!--v Items below imported from FATE-->
 <!--^ End of Items imported from FATE-->
   <section id="Intro.Advantages">
-   <title>Advantages of SUSE Container as a Service Platform</title>
+   <title>Advantages of SUSE CaaS Platform</title>
    <para>
-    SUSE Container as a Service Platform allows you to provision, manage,
-    and scale container-based applications. SUSE offers an application
-    development and hosting platform for containers that automates the
-    tedious management tasks. This allows you to focus on development and
-    writing apps that meet business goals.
+    SUSE CaaS Platform allows you to provision, manage, and scale
+    container-based applications. SUSE offers an application development and
+    hosting platform for containers that automates the tedious management
+    tasks. This allows you to focus on development and writing apps that
+    meet business goals.
    </para>
    <para>
-    The main benefits of SUSE Container as a Service Platform are:
+    The main benefits of SUSE CaaS Platform are:
    </para>
    <itemizedlist>
     <listitem>
@@ -195,8 +194,8 @@
      <formalpara>
       <title>Enterprise-Grade Security and Scalability:</title>
       <para>
-       The foundation of SUSE Container as a Service Platform is our SLE
-       operating system which provides a stable and reliable environment for
+       The foundation of SUSE CaaS Platform is our SUSE Linux Enterprise
+       platform which provides a stable and reliable environment for
        enterprise applications.
       </para>
      </formalpara>
@@ -206,8 +205,8 @@
       <title>Run Everywhere:</title>
       <para>
        You can quickly and intelligently respond to demand across private
-       and public clouds. SUSE Container as a Service Platform helps you
-       manage peak demand without downtime or manual intervention.
+       and public clouds. SUSE CaaS Platform helps you manage peak demand
+       without downtime or manual intervention.
       </para>
      </formalpara>
     </listitem>
@@ -226,30 +225,96 @@
   <section id="Intro.Lifecycle">
    <title>Support and Life Cycle</title>
    <para>
-    SUSE Container as a Service Platform is backed by award-winning support
-    from SUSE, an established technology leader with a proven history of
-    delivering enterprise-quality support services.
-   </para>
-<!-- FIXME: Commented because this is probably wrong. - sknorr, 2017-03-27 -->
-<!-- <para>
-    &caasp; &this-version; has a 13-year life cycle, with 10 years of General
-    Support and 3 years of Extended Support.
-    The current version (&this-version;) will be fully maintained and supported
-    until 6 months after the release of &caasp; &next-version;.
+    SUSE CaaS Platform is backed by award-winning support from SUSE, an
+    established technology leader with a proven history of delivering
+    enterprise-quality support services.
    </para>
    <para>
-    If you need additional time to design, validate and
-    test your upgrade plans, Long Term Service Pack Support can extend
-    the support you get an additional 12 to 36 months in twelve month
-    increments, providing a total of 3 to 5 years of support on any
-    given service pack.
-   </para> -->
+    The support for version SUSE CaaS Platform 1.0 ends with the release of
+    version 2.0. We offer rolling updates allowing customers to upgrade the
+    system via a maintenance update. When releasing version 2.0, SUSE will
+    offer maintenance updates including packages enabling our customers to
+    move to version 2.0 via a simple update.
+   </para>
    <para>
     For more information, check our Support Policy page
-    <ulink url="https://www.suse.com/support/policy.html"/> or the Long Term
-    Service Pack Support Page
-    <ulink url="https://www.suse.com/support/programs/long-term-service-pack-support.html"/>.
+    <ulink url="https://www.suse.com/support/policy.html"/>.
    </para>
+  </section>
+  <section id="Intro.Requirements">
+   <title>Requirements</title>
+   <para>
+    This section lists requirements that SUSE CaaS Platform has on its
+    running environment and underlying hardware.
+   </para>
+   <section id="Intro.Requirement.Environment">
+    <title>Supported Environments</title>
+<!-- via FATE#323832 -->
+    <para>
+     SUSE currently supports clusters of up to 25 nodes (this number will
+     increase in the future). Storage can be provided using SUSE Enterprise
+     Storage, NFS, or hostpath.
+    </para>
+    <para>
+     Regarding deployment scenarios, SUSE supports SUSE CaaS Platform
+     running:
+    </para>
+    <itemizedlist>
+     <listitem>
+      <para>
+       On bare metal: any SLES 12 x86_64 certified hardware
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       Virtualized: running under the following hypervisors: KVM, Xen,
+       VMware, and Hyper-V.
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       On private and public clouds using SUSE OpenStack Cloud 7
+      </para>
+     </listitem>
+    </itemizedlist>
+   </section>
+   <section id="Intro.Requirement.System">
+<!-- via FATE#323106 -->
+    <title>System Requirements</title>
+    <para>
+     SUSE CaaS Platform has the following system requirements:
+    </para>
+    <itemizedlist>
+     <listitem>
+      <para>
+       Minimal amount of RAM: 8 GB
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       Minimal file system size for the root file system: 40 GB (as Btrfs
+       with snapshots), additional disk space for containers and container
+       images may be required
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       Minimal file system size for swap: 2 GB (exact size defined by
+       AutoYaST at runtime)
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       Kernel limits are documented in <xref linkend="TechInfo.Kernel"/>
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       VNC installations are not supported
+      </para>
+     </listitem>
+    </itemizedlist>
+   </section>
   </section>
 <!-- FIXME: Start using this section with version 1.1... - sknorr,
   2017-03-27 -->
@@ -322,7 +387,7 @@
      <listitem>
       <para>
        Find more information in the <filename>docu</filename> directory of
-       the media of SUSE Container as a Service Platform 1.0.
+       the media of SUSE CaaS Platform 1.0.
 <!-- This directory includes PDF versions of the
        &caasp; &this-version; Installation Quick Start and Deployment Guides.
        Documentation (if installed) is available below the
@@ -346,8 +411,8 @@
 <!-- <itemizedlist>-->
 <!-- <listitem>-->
     <para>
-     Documentation for SUSE Container as a Service Platform 1.0 is
-     available at <ulink url="http://www.suse.com/documentation"/>.
+     Documentation for SUSE CaaS Platform 1.0 is available at
+     <ulink url="https://www.suse.com/documentation/suse-caasp-1/"/>.
 <!-- FIXME:  -->
     </para>
 <!-- </listitem>-->
@@ -370,25 +435,25 @@
     General Public License (GPL). The GPL requires SUSE to provide the
     source code that corresponds to the GPL-licensed material. The source
     code is available for download at
-    <ulink url="http://www.suse.com/download-linux/source-code.html"/>.
+    <ulink url="https://www.suse.com/download-linux/source-code.html"/>.
    </para>
    <para>
     Also, for up to three years after distribution of the SUSE product, upon
     request, SUSE will mail a copy of the source code. Requests should be
     sent by e-mail to <ulink url="mailto:sle_source_request@suse.com"/> or
     as otherwise instructed at
-    <ulink url="http://www.suse.com/download-linux/source-code.html"/>. SUSE
-    may charge a reasonable fee to recover distribution costs.
+    <ulink url="https://www.suse.com/download-linux/source-code.html"/>.
+    SUSE may charge a reasonable fee to recover distribution costs.
    </para>
 <!--v Items below imported from FATE-->
 <!--^ End of Items imported from FATE-->
   </section>
   <section id="Intro.Support" remap="Intro:Support">
-   <title>Support Statement for SUSE Container as a Service Platform</title>
+   <title>Support Statement for SUSE CaaS Platform</title>
    <para>
     To receive support, you need an appropriate subscription with SUSE. For
     more information, see
-    <ulink url="http://www.suse.com/products/server/services-and-support/"/>.
+    <ulink url="https://www.suse.com/products/server/services-and-support/"/>.
    </para>
    <para>
     The following definitions apply:
@@ -428,9 +493,8 @@
     </varlistentry>
    </variablelist>
    <para>
-    For contracted customers and partners, SUSE Container as a Service
-    Platform 1.0 and its Modules are delivered with L3 support for all
-    packages, except the following:
+    For contracted customers and partners, SUSE CaaS Platform 1.0 is
+    delivered with L3 support for all packages, except the following:
    </para>
    <itemizedlist>
     <listitem>
@@ -557,7 +621,7 @@
    <title>Kubernetes</title>
    <para>
     Over the life cycle of a SUSE Container as a Service Platform version,
-    there will be updates to major Kubernetes upstream releases (and some
+    there may be updates to major Kubernetes upstream releases (and some
     minor releases also). However, the version provided in SUSE Container as
     a Service Platform will trail the upstream version by up to 6 months, to
     be able to provide additional QA.
@@ -579,50 +643,11 @@
    <title>Installation</title>
    <para>
     This section includes information related to the initial installation of
-    SUSE Container as a Service Platform 1.0. For information about
-    installing, see <citetitle>Deployment Guide</citetitle> at
-<!-- FIXME: find correct URL! - sknorr, 2017-03-27 -->
-    <ulink url="https://www.suse.com/documentation"/>.
+    SUSE CaaS Platform 1.0. For information about installing, see
+    <citetitle>Deployment Guide</citetitle> at
+    <ulink url="https://www.suse.com/documentation/suse-caasp-1/"/>.
    </para>
 <!--v Items below imported from FATE-->
-   <section role="notoc" id="fate-323106" remap="InstUpgrade:Installation">
-<!-- sort_key="1"; non-rn-fate-cats=""; -->
-<!-- href="https://fate.novell.com/323106" -->
-    <title>System Requirements</title>
-    <para>
-     SUSE CaaS Platform has the following system requirements:
-    </para>
-    <itemizedlist>
-     <listitem>
-      <para>
-       Minimal amount of RAM: 8 GB
-      </para>
-     </listitem>
-     <listitem>
-      <para>
-       Minimal file system size for the root file system: 40 GB (as Btrfs
-       with snapshots), additional disk space for containers and container
-       images may be required
-      </para>
-     </listitem>
-     <listitem>
-      <para>
-       Minimal file system size for swap: 2 GB (exact size defined by
-       AutoYaST at runtime)
-      </para>
-     </listitem>
-     <listitem>
-      <para>
-       Kernel limits are documented in <xref linkend="TechInfo.Kernel"/>
-      </para>
-     </listitem>
-     <listitem>
-      <para>
-       VNC installations are not supported
-      </para>
-     </listitem>
-    </itemizedlist>
-   </section>
    <section role="notoc" id="fate-323752" remap="InstUpgrade:Installation">
 <!-- sort_key="None"; non-rn-fate-cats=""; -->
 <!-- href="https://fate.novell.com/323752" -->
@@ -636,7 +661,7 @@
     <para>
      For such scenarios, we provide a package named
      <literal>tftpboot-installation-CAASP-1.0</literal> in the product
-     repositories. This package include an installer prepared for a network
+     repositories. This package includes an installer prepared for a network
      boot environment (PXE).
     </para>
     <para>
@@ -648,7 +673,7 @@
     <para>
      For more information about the procedure, see the <emphasis>SUSE CaaS
      Platform 1.0 Deployment Guide</emphasis> at
-     <ulink url="https://suse.com/documentation"/>.
+     <ulink url="https://www.suse.com/documentation/suse-caasp-1/"/>.
     </para>
    </section>
 <!--^ End of Items imported from FATE-->
@@ -786,13 +811,13 @@
 <!--^ End of Items imported from FATE-->
   <section id="TechInfo.Kernel">
    <title>Kernel Limits</title>
-   <para>
-    <ulink url="http://www.suse.com/products/server/technical-information/#Kernel"/>
-   </para>
+<!-- FIXME: The current link is for SLES. Limits are the same, but we should still get a CaaSP page
+ for this. - sknorr, 2017-07-25 -->
+<!-- <para><ulink url="https://www.suse.com/products/server/technical-information/#Kernel"/>
+ </para> -->
    <para>
     This table summarizes the various limits which exist in our recent
-    kernels and utilities (if related) for SUSE Container as a Service
-    Platform 1.0.
+    kernels and utilities (if related) for SUSE CaaS Platform 1.0.
    </para>
    <informaltable frame="all">
     <tgroup cols="2">
@@ -800,9 +825,9 @@
      <colspec colnum="2" colname="x86-64"/>
      <thead>
       <row>
-       <entry><emphasis>SUSE Container as a Service Platform 1.0 (Linux 4.4)</emphasis>
+       <entry><emphasis>SUSE CaaS Platform 1.0 (Linux 4.4)</emphasis>
        </entry>
-       <entry>AMD64/Intel 64 (x86_64)</entry>
+       <entry>Intel 64/AMD64 (x86-64)</entry>
       </row>
      </thead>
      <tbody>
@@ -863,7 +888,7 @@
        </entry>
        <entry>
         <para>
-         Up to 29 * 64 GB (x86_64) or 30 * 64 GB (other architectures)
+         Up to 29 * 64 GB
         </para>
        </entry>
       </row>
@@ -900,7 +925,7 @@
        </entry>
        <entry>
         <para>
-         Up to 8 EiB on all 64-bit architectures
+         Up to 8 EiB
         </para>
        </entry>
       </row>
@@ -928,9 +953,9 @@
    <section id="TechInfo.Filesystems.Comparison">
     <title>Comparison of Supported File Systems</title>
     <para>
-     SUSE Container as a Service Platform 1.0 exclusively supports the file
-     system types Btrfs and OverlayFS. The root file system is a read-only
-     Btrfs which enables transactional updates.
+     SUSE CaaS Platform 1.0 exclusively supports the file system types Btrfs
+     and OverlayFS. The root file system is a read-only Btrfs which enables
+     transactional updates.
     </para>
     <para>
      <simplelist>
@@ -1116,6 +1141,14 @@
      </tgroup>
     </informaltable>
     <para>
+     <emphasis role="bold">*</emphasis> Btrfs is a copy-on-write file
+     system. Instead of journaling changes before writing them in-place, it
+     writes them to a new location and then links the new location in. Until
+     the last write, the changes are not <quote>committed</quote>. Because
+     of the nature of the file system, quotas are implemented based on
+     subvolumes (<literal>qgroups</literal>).
+    </para>
+    <para>
      The maximum file size above can be larger than the file system's actual
      size because of usage of sparse blocks. The numbers in the above tables
      assume that the file systems are using 4 KiB block size. When using
@@ -1132,7 +1165,7 @@
     <title>Supported Btrfs Features</title>
     <para>
      The following table lists supported and unsupported Btrfs features
-     across multiple SUSE Container as a Service Platform versions.
+     across multiple SUSE CaaS Platform versions.
     </para>
     <para>
      <simplelist>
@@ -1149,7 +1182,7 @@
       <thead>
        <row>
         <entry>Feature</entry>
-        <entry>SUSE Container as a Service Platform 1.0</entry>
+        <entry>SUSE CaaS Platform 1.0</entry>
        </row>
       </thead>
       <tbody>
@@ -1295,39 +1328,30 @@
    countries as specified in U.S. export laws. You agree to not use
    deliverables for prohibited nuclear, missile, or chemical/biological
    weaponry end uses. Refer to
-   <ulink url="http://www.suse.com/company/legal/"/> for more information on
-   exporting SUSE software. SUSE assumes no responsibility for your failure
-   to obtain any necessary export approvals.
+   <ulink url="https://www.suse.com/company/legal/"/> for more information
+   on exporting SUSE software. SUSE assumes no responsibility for your
+   failure to obtain any necessary export approvals.
   </para>
   <para>
    Copyright © 2010-
 <?dbtimestamp format="Y" ?>
    SUSE LLC. This release notes document is licensed under a Creative
    Commons Attribution-NoDerivs 3.0 United States License (CC-BY-ND-3.0 US,
-   <ulink url="http://creativecommons.org/licenses/by-nd/3.0/us/"/>).
+   <ulink url="https://creativecommons.org/licenses/by-nd/3.0/us/"/>).
   </para>
   <para>
    SUSE has intellectual property rights relating to technology embodied in
    the product that is described in this document. In particular, and
    without limitation, these intellectual property rights may include one or
    more of the U.S. patents listed at
-   <ulink url="http://www.suse.com/company/legal/"/> and one or more
+   <ulink url="https://www.suse.com/company/legal/"/> and one or more
    additional patents or pending patent applications in the U.S. and other
    countries.
   </para>
   <para>
    For SUSE trademarks, see SUSE Trademark and Service Mark list
-   (<ulink url="http://www.suse.com/company/legal/"/>). All third-party
+   (<ulink url="https://www.suse.com/company/legal/"/>). All third-party
    trademarks are the property of their respective owners.
-  </para>
- </section>
- <section>
-  <title>Colophon</title>
-  <para>
-   Thanks for using SUSE Container as a Service Platform in your business.
-  </para>
-  <para>
-   The SUSE Container as a Service Platform Team.
   </para>
  </section>
 </article>
