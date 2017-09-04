@@ -7,17 +7,17 @@
  <title>Release Notes</title>
  <articleinfo>
 <?dbsuse-bugtracker url="https://bugzilla.suse.com/enter_bug.cgi"
-   product="SUSE Container as a Service Platform 1.0"
+   product="SUSE Container as a Service Platform 2.0"
    component="Documentation"
    assignee="sknorr@suse.com" ?>
   <releaseinfo>@VERSION@</releaseinfo><productname>SUSE CaaS Platform</productname>
-  <productnumber>1.0</productnumber><date>
+  <productnumber>2.0</productnumber><date>
 <?dbtimestamp format="Y-m-d"?></date>
   <abstract>
    <para>
     This document provides guidance and an overview of high-level general
-    features and updates for SUSE CaaS Platform 1.0. It describes the
-    capabilities and limitations of SUSE CaaS Platform 1.0.
+    features and updates for SUSE CaaS Platform 2.0. It describes the
+    capabilities and limitations of SUSE CaaS Platform 2.0.
    </para>
 
    <para>
@@ -26,8 +26,8 @@
    </para>
   </abstract>
  </articleinfo>
- <section id="Intro" remap="Intro">
-  <title>SUSE CaaS Platform 1.0</title>
+ <section id="Intro">
+  <title>SUSE CaaS Platform 2.0</title>
   <para>
    SUSE CaaS Platform (Container as a Service Platform) combines the
    benefits of an enterprise ready OS with the agility of an orchestration
@@ -165,8 +165,6 @@
    running applications in public and private clouds.
   </para> -->
 <!-- FIXME: TechInfo, as defined by FATE category?? - sknorr, 2017-03-27 -->
-<!--v Items below imported from FATE-->
-<!--^ End of Items imported from FATE-->
   <section id="Intro.Advantages">
    <title>Advantages of SUSE CaaS Platform</title>
    <para>
@@ -230,11 +228,11 @@
     enterprise-quality support services.
    </para>
    <para>
-    The support for version SUSE CaaS Platform 1.0 ends with the release of
-    version 2.0. We offer rolling updates allowing customers to upgrade the
-    system via a maintenance update. When releasing version 2.0, SUSE will
+    The support for version SUSE CaaS Platform 2.0 ends with the release of
+    version 3.0. We offer rolling updates allowing customers to upgrade the
+    system via a maintenance update. When releasing version 3.0, SUSE will
     offer maintenance updates including packages enabling our customers to
-    move to version 2.0 via a simple update.
+    move to version 3.0 via a simple update.
    </para>
    <para>
     For more information, check our Support Policy page
@@ -355,11 +353,9 @@
    </itemizedlist>
 
   </section> -->
-  <section id="Intro.Documentation" remap="Intro:Documentation">
+  <section id="Intro.Documentation">
    <title>Documentation and Other Information</title>
    <para/>
-<!--v Items below imported from FATE-->
-<!--^ End of Items imported from FATE-->
    <section id="Intro.Documentation.Media">
     <title>Available on the Product Media</title>
     <itemizedlist>
@@ -387,7 +383,7 @@
      <listitem>
       <para>
        Find more information in the <filename>docu</filename> directory of
-       the media of SUSE CaaS Platform 1.0.
+       the media of SUSE CaaS Platform 2.0.
 <!-- This directory includes PDF versions of the
        &caasp; &this-version; Installation Quick Start and Deployment Guides.
        Documentation (if installed) is available below the
@@ -411,7 +407,7 @@
 <!-- <itemizedlist>-->
 <!-- <listitem>-->
     <para>
-     Documentation for SUSE CaaS Platform 1.0 is available at
+     Documentation for SUSE CaaS Platform 2.0 is available at
      <ulink url="https://www.suse.com/documentation/suse-caasp-1/"/>.
 <!-- FIXME:  -->
     </para>
@@ -426,7 +422,7 @@
 <!--    </itemizedlist>-->
    </section>
   </section>
-  <section id="Intro.Sourcecode" remap="Intro:Sourcecode">
+  <section id="Intro.Sourcecode">
    <title>How to Obtain Source Code</title>
 <!-- msvec and legal (ciaran), 2013-05-13 -->
 <!-- moved from the abstract to this location as the first section -->
@@ -445,10 +441,8 @@
     <ulink url="https://www.suse.com/download-linux/source-code.html"/>.
     SUSE may charge a reasonable fee to recover distribution costs.
    </para>
-<!--v Items below imported from FATE-->
-<!--^ End of Items imported from FATE-->
   </section>
-  <section id="Intro.Support" remap="Intro:Support">
+  <section id="Intro.Support">
    <title>Support Statement for SUSE CaaS Platform</title>
    <para>
     To receive support, you need an appropriate subscription with SUSE. For
@@ -493,7 +487,7 @@
     </varlistentry>
    </variablelist>
    <para>
-    For contracted customers and partners, SUSE CaaS Platform 1.0 is
+    For contracted customers and partners, SUSE CaaS Platform 2.0 is
     delivered with L3 support for all packages, except the following:
    </para>
    <itemizedlist>
@@ -522,8 +516,6 @@
     SUSE will only support the usage of original (that is, unchanged and
     un-recompiled) packages.
    </para>
-<!--v Items below imported from FATE-->
-<!--^ End of Items imported from FATE-->
   </section>
 <!-- see fate#316990 -->
 <!-- Removed as requested by aherzig. - sknorr, 2017-03-28 -->
@@ -583,41 +575,9 @@
    &caasp; &this-version;.
   </para> -->
 <!--v Items below imported from FATE-->
-  <section role="notoc" id="fate-323184" remap="InfraPackArch:ArchIndependent">
+  <section role="notoc" id="fate-323989" remap="InfraPackArch:ArchIndependent">
 <!-- sort_key="None"; non-rn-fate-cats=""; -->
-<!-- href="https://fate.novell.com/323184" -->
-   <title>Transactional Updates</title>
-   <para>
-    A "transactional update" is an atomic update. It is either fully applied
-    or not at all. The update does not influence the running system. The
-    update can be rolled back, this means that if the update fails or if the
-    update is not compatible, you can quickly restore the situation from
-    before the update.
-   </para>
-  </section>
-  <section role="notoc" id="fate-323126" remap="InfraPackArch:ArchIndependent">
-<!-- sort_key="None"; non-rn-fate-cats=""; -->
-<!-- href="https://fate.novell.com/323126" -->
-   <title>Administration Dashboard</title>
-   <para>
-    Velum is the administration dashboard of SUSE Container as a Service
-    Platform, and is the tool to use to deploy and maintain Kubernetes
-    clusters in SUSE Container as a Service Platform. The initial feature
-    set provided by Velum will be compounded by additional features over the
-    life cycle of the product using maintenance updates.
-   </para>
-   <para>
-    Velum is containerized, and runs on top of the administration node
-    together with additional containers.
-   </para>
-   <para>
-    Velum is developed in the open at
-    <ulink url="https://github.com/kubic-project/velum/">https://github.com/kubic-project/velum/</ulink>.
-   </para>
-  </section>
-  <section role="notoc" id="fate-323125" remap="InfraPackArch:ArchIndependent">
-<!-- sort_key="None"; non-rn-fate-cats=""; -->
-<!-- href="https://fate.novell.com/323125" -->
+<!-- href="https://fate.novell.com/323989" -->
    <title>Kubernetes</title>
    <para>
     Over the life cycle of a SUSE Container as a Service Platform version,
@@ -632,52 +592,13 @@
     versions. Only the latest maintenance update is supported.
    </para>
    <para>
-    The initial version of Kubernetes will be version 1.5.
+    The initial version of Kubernetes will be version 1.7.
    </para>
   </section>
 <!--^ End of Items imported from FATE-->
  </section>
  <section id="InstUpgrade">
   <title>Installation and Upgrade</title>
-  <section id="InstUpgrade.Installation" remap="InstUpgrade:Installation">
-   <title>Installation</title>
-   <para>
-    This section includes information related to the initial installation of
-    SUSE CaaS Platform 1.0. For information about installing, see
-    <citetitle>Deployment Guide</citetitle> at
-    <ulink url="https://www.suse.com/documentation/suse-caasp-1/"/>.
-   </para>
-<!--v Items below imported from FATE-->
-   <section role="notoc" id="fate-323752" remap="InstUpgrade:Installation">
-<!-- sort_key="None"; non-rn-fate-cats=""; -->
-<!-- href="https://fate.novell.com/323752" -->
-    <title>Installing Systems from Online Repositories</title>
-    <para>
-     <emphasis>To install CaaS Platform, you need the installation media. If
-     you also mirror the repositories, for example with SMT, this means that
-     effectively you need to download all packages twice: once as a part of
-     the media and additionally from the online repository.</emphasis>
-    </para>
-    <para>
-     For such scenarios, we provide a package named
-     <literal>tftpboot-installation-CAASP-1.0</literal> in the product
-     repositories. This package includes an installer prepared for a network
-     boot environment (PXE).
-    </para>
-    <para>
-     To use this package, configure the PXE environment (DHCP, TFTP servers)
-     and install the package for the respective product and architecture.
-     Make sure to adjust the included configuration, so that the correct
-     local URLs are passed to the installer.
-    </para>
-    <para>
-     For more information about the procedure, see the <emphasis>SUSE CaaS
-     Platform 1.0 Deployment Guide</emphasis> at
-     <ulink url="https://www.suse.com/documentation/suse-caasp-1/"/>.
-    </para>
-   </section>
-<!--^ End of Items imported from FATE-->
-  </section>
   <section id="InstUpgrade.More">
    <title>For More Information</title>
    <para>
@@ -753,7 +674,7 @@
     for the AArch64 architecture.
    </para>
   </section> -->
- <section id="TechInfo" remap="TechInfo">
+ <section id="TechInfo">
   <title>Technical Information</title>
   <para>
    This section contains information about system limits, several technical
@@ -807,8 +728,6 @@
     </listitem>
    </varlistentry>
   </variablelist>
-<!--v Items below imported from FATE-->
-<!--^ End of Items imported from FATE-->
   <section id="TechInfo.Kernel">
    <title>Kernel Limits</title>
 <!-- FIXME: The current link is for SLES. Limits are the same, but we should still get a CaaSP page
@@ -817,7 +736,7 @@
  </para> -->
    <para>
     This table summarizes the various limits which exist in our recent
-    kernels and utilities (if related) for SUSE CaaS Platform 1.0.
+    kernels and utilities (if related) for SUSE CaaS Platform 2.0.
    </para>
    <informaltable frame="all">
     <tgroup cols="2">
@@ -825,7 +744,7 @@
      <colspec colnum="2" colname="x86-64"/>
      <thead>
       <row>
-       <entry><emphasis>SUSE CaaS Platform 1.0 (Linux 4.4)</emphasis>
+       <entry><emphasis>SUSE CaaS Platform 2.0 (Linux 4.4)</emphasis>
        </entry>
        <entry>Intel 64/AMD64 (x86-64)</entry>
       </row>
@@ -953,7 +872,7 @@
    <section id="TechInfo.Filesystems.Comparison">
     <title>Comparison of Supported File Systems</title>
     <para>
-     SUSE CaaS Platform 1.0 exclusively supports the file system types Btrfs
+     SUSE CaaS Platform 2.0 exclusively supports the file system types Btrfs
      and OverlayFS. The root file system is a read-only Btrfs which enables
      transactional updates.
     </para>
