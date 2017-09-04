@@ -5,8 +5,8 @@
 <!ENTITY autoyast "AutoYaST">
 
 <!ENTITY suse "SUSE">
-<!ENTITY this-version "1.0">
-<!ENTITY next-version "2.0">
+<!ENTITY this-version "2.0">
+<!ENTITY next-version "3.0">
 <!ENTITY opensuse "open&suse;">
 <!ENTITY sle "&suse; Linux Enterprise">
 <!ENTITY sled "&sle; Desktop">
@@ -36,4 +36,5 @@
 <!ENTITY ibmz "IBM z Systems">
 <!ENTITY kernel-version "4.4">
 <!ENTITY mdash "—">
+<!-- FIXME URL is still 1.0 -->
 <!ENTITY doc-url "https://www.suse.com/documentation/suse-caasp-1/">

@@ -14,7 +14,7 @@
  <articleinfo>
   <?dbsuse-bugtracker
    url="https://bugzilla.suse.com/enter_bug.cgi"
-   product="SUSE Container as a Service Platform 1.0"
+   product="SUSE Container as a Service Platform 2.0"
    component="Documentation"
    assignee="sknorr@suse.com" ?>
   <releaseinfo>&rversion;</releaseinfo>
