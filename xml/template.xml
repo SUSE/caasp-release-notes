@@ -43,7 +43,7 @@
   </para>
   <para>
    The basis of &caasp; is &mos;.
-   &mos; is a modern Linux Operating System, designed for containers and
+   &mos; is a modern Linux operating system, designed for containers and
    optimized for large, clustered deployments. &mos; inherits the benefits of
    &sle; while redefining the operating system into a small, efficient and
    reliable distribution.
@@ -110,13 +110,13 @@
   <itemizedlist>
    <listitem>
     <para>
-     Very flexible and already well-known by administrators in the cloud
-     environment
+     Very flexible and already well-known by administrators in cloud
+     environments
     </para>
    </listitem>
    <listitem>
     <para>
-     <command>cloud-init</command> has been enhanced to be able to configure
+     <command>cloud-init</command> has been enhanced, so it can configure
      Zypp repositories and read configuration from local directories
     </para>
    </listitem>
@@ -386,16 +386,10 @@
       <para>Check the <filename>ChangeLog</filename> file in the top level of the media for a
        chronological log of all changes made to the updated packages. </para>
      </listitem>
-     <!-- Apparently, there will be no on-media documentation. -->
      <listitem>
       <para>
        Find more information in the <filename>docu</filename> directory of
        the media of &caasp; &this-version;.
-       <!-- This directory includes PDF versions of the
-       &caasp; &this-version; Installation Quick Start and Deployment Guides.
-       Documentation (if installed) is available below the
-       <filename>/usr/share/doc/</filename> directory of an installed system.
-       -->
       </para>
      </listitem>
      <listitem>
@@ -412,22 +406,21 @@
 
    <section id="Intro.Documentation.External">
     <title>Externally Provided Documentation</title>
-     <!-- <itemizedlist>-->
-      <!-- <listitem>-->
+    <itemizedlist>
+     <listitem>
       <para>
        Documentation for &caasp; &this-version; is available at
        <ulink url="&doc-url;"/>.
-       <!-- FIXME:  -->
       </para>
-     <!-- </listitem>-->
-     <!-- <listitem>
+     </listitem>
+     <listitem>
       <para>
        Find a collection of White Papers in the &caasp; Resource Library
        at <ulink
-       url="https://www.suse.com/products/server/resource-library"/>.
+       url="https://www.suse.com/products/caas-platform/resource-library/"/>.
       </para>
-     </listitem> -->
-<!--    </itemizedlist>-->
+     </listitem>
+    </itemizedlist>
    </section>
   </section>
 
