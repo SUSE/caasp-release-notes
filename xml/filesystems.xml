@@ -26,12 +26,12 @@
   https://bugzilla.suse.com/attachment.cgi?id=687340 -->
   <informaltable>
    <tgroup cols="2">
-    <colspec colnum="1" colname="feature" colwidth="32*"/>
+    <colspec colnum="1" colname="feature" colwidth="17*"/>
     <colspec colnum="2" colname="1-0" colwidth="17*"/>
     <thead>
      <row>
       <entry>Feature</entry>
-      <entry>&caasp; &this-version;</entry>
+      <entry>Btrfs on &caasp; &this-version;</entry>
      </row>
     </thead>
     <tbody>
