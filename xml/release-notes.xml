@@ -7,7 +7,7 @@
  <title>Release Notes</title>
  <articleinfo>
 <?dbsuse-bugtracker url="https://bugzilla.suse.com/enter_bug.cgi"
-   product="SUSE Container as a Service Platform 2.0"
+   product="SUSE CaaS Platform 2"
    component="Documentation"
    assignee="sknorr@suse.com" ?>
   <releaseinfo>@VERSION@</releaseinfo><productname>SUSE CaaS Platform</productname>
@@ -22,7 +22,7 @@
 
    <para>
     General documentation can be found at:
-    <ulink url="https://www.suse.com/documentation/suse-caasp-1/"/>.
+    <ulink url="https://www.suse.com/documentation/suse-caasp/"/>.
    </para>
   </abstract>
  </articleinfo>
@@ -35,7 +35,7 @@
   </para>
   <para>
    The basis of SUSE CaaS Platform is SUSE MicroOS. SUSE MicroOS is a modern
-   Linux Operating System, designed for containers and optimized for large,
+   Linux operating system, designed for containers and optimized for large,
    clustered deployments. SUSE MicroOS inherits the benefits of SUSE Linux
    Enterprise while redefining the operating system into a small, efficient
    and reliable distribution.
@@ -103,13 +103,13 @@
   <itemizedlist>
    <listitem>
     <para>
-     Very flexible and already well-known by administrators in the cloud
-     environment
+     Very flexible and already well-known by administrators in cloud
+     environments
     </para>
    </listitem>
    <listitem>
     <para>
-     <command>cloud-init</command> has been enhanced to be able to configure
+     <command>cloud-init</command> has been enhanced, so it can configure
      Zypp repositories and read configuration from local directories
     </para>
    </listitem>
@@ -379,16 +379,10 @@
        packages.
       </para>
      </listitem>
-<!-- Apparently, there will be no on-media documentation. -->
      <listitem>
       <para>
        Find more information in the <filename>docu</filename> directory of
        the media of SUSE CaaS Platform 2.0.
-<!-- This directory includes PDF versions of the
-       &caasp; &this-version; Installation Quick Start and Deployment Guides.
-       Documentation (if installed) is available below the
-       <filename>/usr/share/doc/</filename> directory of an installed system.
-       -->
       </para>
      </listitem>
      <listitem>
@@ -404,22 +398,21 @@
    </section>
    <section id="Intro.Documentation.External">
     <title>Externally Provided Documentation</title>
-<!-- <itemizedlist>-->
-<!-- <listitem>-->
-    <para>
-     Documentation for SUSE CaaS Platform 2.0 is available at
-     <ulink url="https://www.suse.com/documentation/suse-caasp-1/"/>.
-<!-- FIXME:  -->
-    </para>
-<!-- </listitem>-->
-<!-- <listitem>
+    <itemizedlist>
+     <listitem>
       <para>
-       Find a collection of White Papers in the &caasp; Resource Library
-       at <ulink
-       url="https://www.suse.com/products/server/resource-library"/>.
+       Documentation for SUSE CaaS Platform 2.0 is available at
+       <ulink url="https://www.suse.com/documentation/suse-caasp/"/>.
       </para>
-     </listitem> -->
-<!--    </itemizedlist>-->
+     </listitem>
+     <listitem>
+      <para>
+       Find a collection of White Papers in the SUSE CaaS Platform Resource
+       Library at
+       <ulink url="https://www.suse.com/products/caas-platform/resource-library/"/>.
+      </para>
+     </listitem>
+    </itemizedlist>
    </section>
   </section>
   <section id="Intro.Sourcecode">
@@ -599,14 +592,11 @@
  </section>
  <section id="InstUpgrade">
   <title>Installation and Upgrade</title>
-  <section id="InstUpgrade.More">
-   <title>For More Information</title>
-   <para>
-    For more information, see
-    <xref linkend="InfraPackArch.ArchIndependent"/> and the sections
-    relating to your respective hardware architecture.
-   </para>
-  </section>
+  <para>
+   For information about general preparations and supported installation
+   methods and upgrade paths, see the documentation at
+   <ulink url="https://www.suse.com/documentation/suse-caasp/"/>.
+  </para>
  </section>
 <!-- There is only x86-64. - sknorr, 2017-03-28 -->
 <!--<section id="InfraPackArch.Power" role="remove-empty">
@@ -867,356 +857,318 @@
   <section id="TechInfo.Filesystems">
    <title>File Systems</title>
    <para>
-    <ulink url="https://www.suse.com/products/server/technical-information/#FileSystem"/>
+    SUSE CaaS Platform 2.0 exclusively supports the file system types Btrfs
+    and OverlayFS. The root file system is a read-only Btrfs which enables
+    transactional updates.
    </para>
-   <section id="TechInfo.Filesystems.Comparison">
-    <title>Comparison of Supported File Systems</title>
-    <para>
-     SUSE CaaS Platform 2.0 exclusively supports the file system types Btrfs
-     and OverlayFS. The root file system is a read-only Btrfs which enables
-     transactional updates.
-    </para>
-    <para>
-     <simplelist>
-      <member><emphasis role="bold">+</emphasis> supported</member>
-      <member><emphasis role="bold">–</emphasis> unsupported</member>
-     </simplelist>
-    </para>
-    <informaltable frame="all">
-     <tgroup cols="2">
-      <colspec colnum="1" colname="c1" colwidth="28*"/>
-      <colspec colnum="2" colname="c2" colwidth="18*"/>
-      <thead>
-       <row>
-        <entry>Feature</entry>
-        <entry>Btrfs</entry>
-       </row>
-      </thead>
-      <tbody>
-       <row>
-        <entry>
-         <para>
-          Data/metadata journaling
-         </para>
-        </entry>
-        <entry>
-         <para>
-          N/A *
-         </para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>
-          Journal internal/external
-         </para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>
-          Offline extend/shrink
-         </para>
-        </entry>
-        <entry>
-         <para>
-          + / +
-         </para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>
-          Online extend/shrink
-         </para>
-        </entry>
-        <entry>
-         <para>
-          + / +
-         </para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>
-          Inode allocation map
-         </para>
-        </entry>
-        <entry>
-         <para>
-          B-tree
-         </para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>
-          Sparse files
-         </para>
-        </entry>
-        <entry>
-         <para>
-          +
-         </para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>
-          Tail packing
-         </para>
-        </entry>
-        <entry>
-         <para>
-          +
-         </para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>
-          Defrag
-         </para>
-        </entry>
-        <entry>
-         <para>
-          +
-         </para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>
-          ExtAttr/ACLs
-         </para>
-        </entry>
-        <entry>
-         <para>
-          + / +
-         </para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>
-          Quotas
-         </para>
-        </entry>
-        <entry>
-         <para>
-          +
-         </para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>
-          Dump/restore
-         </para>
-        </entry>
-        <entry>
-         <para>
-          –
-         </para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>
-          Block size default
-         </para>
-        </entry>
-        <entry>
-         <para>
-          4 KiB
-         </para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>
-          Maximum file system size
-         </para>
-        </entry>
-        <entry>
-         <para>
-          16 EiB
-         </para>
-        </entry>
-       </row>
-       <row>
-        <entry>
-         <para>
-          Maximum file size
-         </para>
-        </entry>
-        <entry>
-         <para>
-          16 EiB
-         </para>
-        </entry>
-       </row>
-      </tbody>
-     </tgroup>
-    </informaltable>
-    <para>
-     <emphasis role="bold">*</emphasis> Btrfs is a copy-on-write file
-     system. Instead of journaling changes before writing them in-place, it
-     writes them to a new location and then links the new location in. Until
-     the last write, the changes are not <quote>committed</quote>. Because
-     of the nature of the file system, quotas are implemented based on
-     subvolumes (<literal>qgroups</literal>).
-    </para>
-    <para>
-     The maximum file size above can be larger than the file system's actual
-     size because of usage of sparse blocks. The numbers in the above tables
-     assume that the file systems are using 4 KiB block size. When using
-     different block sizes, the results are different, but 4 KiB reflects
-     the most common standard.
-    </para>
-    <para>
-     In this document: 1024 Bytes = 1 KiB; 1024 KiB = 1 MiB; 1024 MiB = 1
-     GiB; 1024 GiB = 1 TiB; 1024 TiB = 1 PiB; 1024 PiB = 1 EiB. See also
-     <ulink url="http://physics.nist.gov/cuu/Units/binary.html"/>.
-    </para>
-   </section>
-   <section>
-    <title>Supported Btrfs Features</title>
-    <para>
-     The following table lists supported and unsupported Btrfs features
-     across multiple SUSE CaaS Platform versions.
-    </para>
-    <para>
-     <simplelist>
-      <member><emphasis role="bold">+</emphasis> supported</member>
-      <member><emphasis role="bold">–</emphasis> unsupported</member>
-     </simplelist>
-    </para>
+   <para>
+    The following table lists supported and unsupported Btrfs features
+    across multiple SUSE CaaS Platform versions.
+   </para>
+   <para>
+    <simplelist>
+     <member><emphasis role="bold">+</emphasis> supported</member>
+     <member><emphasis role="bold">–</emphasis> unsupported</member>
+    </simplelist>
+   </para>
 <!-- Table according to bsc#979501, this attachment:
   https://bugzilla.suse.com/attachment.cgi?id=687340 -->
-    <informaltable>
-     <tgroup cols="2">
-      <colspec colnum="1" colname="feature" colwidth="32*"/>
-      <colspec colnum="2" colname="1-0" colwidth="17*"/>
-      <thead>
-       <row>
-        <entry>Feature</entry>
-        <entry>SUSE CaaS Platform 1.0</entry>
-       </row>
-      </thead>
-      <tbody>
-       <row>
-        <entry>Copy on Write</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>Snapshots/Subvolumes</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>Metadata Integrity</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>Data Integrity</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>Online Metadata Scrubbing</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>Automatic Defragmentation</entry>
-        <entry>–</entry>
-       </row>
-       <row>
-        <entry>Manual Defragmentation</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>In-band Deduplication</entry>
-        <entry>–</entry>
-       </row>
-       <row>
-        <entry>Out-of-band Deduplication</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>Quota Groups</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>Metadata Duplication</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>Multiple Devices</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>RAID 0</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>RAID 1</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>RAID 10</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>RAID 5</entry>
-        <entry>–</entry>
-       </row>
-       <row>
-        <entry>RAID 6</entry>
-        <entry>–</entry>
-       </row>
-       <row>
-        <entry>Hot Add/Remove</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>Device Replace</entry>
-        <entry>–</entry>
-       </row>
-       <row>
-        <entry>Seeding Devices</entry>
-        <entry>–</entry>
-       </row>
-       <row>
-        <entry>Compression</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>Big Metadata Blocks</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>Skinny Metadata</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>Send Without File Data</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>Send/Receive</entry>
-        <entry>+</entry>
-       </row>
-       <row>
-        <entry>Inode Cache</entry>
-        <entry>–</entry>
-       </row>
-       <row>
-        <entry>Fallocate with Hole Punch</entry>
-        <entry>+</entry>
-       </row>
-      </tbody>
-     </tgroup>
-    </informaltable>
-   </section>
+   <informaltable>
+    <tgroup cols="2">
+     <colspec colnum="1" colname="feature" colwidth="32*"/>
+     <colspec colnum="2" colname="1-0" colwidth="17*"/>
+     <thead>
+      <row>
+       <entry>Feature</entry>
+       <entry>SUSE CaaS Platform 2.0</entry>
+      </row>
+     </thead>
+     <tbody>
+<!-- The SLES File System feature comparison table starts here
+     (de-duplicated). -->
+<!-- "Data/metadata journaling" moved to bottom of table. -->
+<!-- "Journal internal/external" irrelevant, removed. -->
+      <row>
+       <entry>
+        <para>
+         Offline extend/shrink
+        </para>
+       </entry>
+       <entry>
+        <para>
+         + / +
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         Online extend/shrink
+        </para>
+       </entry>
+       <entry>
+        <para>
+         + / +
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         Inode allocation map
+        </para>
+       </entry>
+       <entry>
+        <para>
+         B-tree
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         Sparse files
+        </para>
+       </entry>
+       <entry>
+        <para>
+         +
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         Tail packing
+        </para>
+       </entry>
+       <entry>
+        <para>
+         +
+        </para>
+       </entry>
+      </row>
+<!-- "Defragmentation": duplicated between tables, removed. -->
+      <row>
+       <entry>
+        <para>
+         ExtAttr/ACLs
+        </para>
+       </entry>
+       <entry>
+        <para>
+         + / +
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         Quotas
+        </para>
+       </entry>
+       <entry>
+        <para>
+         +
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         Dump/restore
+        </para>
+       </entry>
+       <entry>
+        <para>
+         –
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         Block size default
+        </para>
+       </entry>
+       <entry>
+        <para>
+         4 KiB
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         Maximum file system size
+        </para>
+       </entry>
+       <entry>
+        <para>
+         16 EiB
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         Maximum file size
+        </para>
+       </entry>
+       <entry>
+        <para>
+         16 EiB
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         Data/metadata journaling
+        </para>
+       </entry>
+       <entry>
+        <para>
+         N/A *
+        </para>
+       </entry>
+      </row>
+<!-- The SLES Btrfs features table content starts here. -->
+      <row>
+       <entry>Copy on Write</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>Snapshots/Subvolumes</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>Metadata Integrity</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>Data Integrity</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>Online Metadata Scrubbing</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>Automatic Defragmentation</entry>
+       <entry>–</entry>
+      </row>
+      <row>
+       <entry>Manual Defragmentation</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>In-band Deduplication</entry>
+       <entry>–</entry>
+      </row>
+      <row>
+       <entry>Out-of-band Deduplication</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>Quota Groups</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>Metadata Duplication</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>Multiple Devices</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>RAID 0</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>RAID 1</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>RAID 10</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>RAID 5</entry>
+       <entry>–</entry>
+      </row>
+      <row>
+       <entry>RAID 6</entry>
+       <entry>–</entry>
+      </row>
+      <row>
+       <entry>Hot Add/Remove</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>Device Replace</entry>
+       <entry>–</entry>
+      </row>
+      <row>
+       <entry>Seeding Devices</entry>
+       <entry>–</entry>
+      </row>
+      <row>
+       <entry>Compression</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>Big Metadata Blocks</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>Skinny Metadata</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>Send Without File Data</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>Send/Receive</entry>
+       <entry>+</entry>
+      </row>
+      <row>
+       <entry>Inode Cache</entry>
+       <entry>–</entry>
+      </row>
+      <row>
+       <entry>Fallocate with Hole Punch</entry>
+       <entry>+</entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </informaltable>
+   <para>
+    <emphasis role="bold">*</emphasis> Btrfs is a copy-on-write file system.
+    Instead of journaling changes before writing them in-place, it writes
+    them to a new location and then links the new location in. Until the
+    last write, the changes are not <quote>committed</quote>. Because of the
+    nature of the file system, quotas are implemented based on subvolumes
+    (<literal>qgroups</literal>).
+   </para>
+   <para>
+    The maximum file size above can be larger than the file system's actual
+    size because of usage of sparse blocks. The numbers in the above table
+    assume that the file systems are using 4 KiB block size. When using
+    different block sizes, the results are different, but 4 KiB reflects the
+    most common standard.
+   </para>
+   <para>
+    In this document: 1024 Bytes = 1 KiB; 1024 KiB = 1 MiB; 1024 MiB = 1
+    GiB; 1024 GiB = 1 TiB; 1024 TiB = 1 PiB; 1024 PiB = 1 EiB. See also
+    <ulink url="http://physics.nist.gov/cuu/Units/binary.html"/>.
+   </para>
+   <para>
+    For more information, also see:
+    <ulink url="https://www.suse.com/products/caas-platform/technical-information/#FileSystem"/>
+   </para>
   </section>
  </section>
  <section id="Legal">
