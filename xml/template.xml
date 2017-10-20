@@ -689,31 +689,23 @@
  </section>
 
  <section id="InstUpgrade">
-  <title>Installation and Upgrade</title> 
+  <title>Installation and Upgrade</title>
+  <para>
+   For information about general preparations and supported installation and
+   upgrade methods and paths, see the documentation at
+   <ulink url="&doc-url;"/>.
+  </para>
   <section id="InstUpgrade.Installation" role="remove-empty">
    <title>Installation</title>
    <para>
     This section includes information related to the initial installation of
     &caasp; &this-version;.
-    For information about installing, see
-    <citetitle>Deployment Guide</citetitle> at
-    <ulink url="&doc-url;"/>.
    </para>
   </section>
   <section id="InstUpgrade.Upgrade" role="remove-empty">
    <title>Upgrade-Related Notes</title>
    <para>
     This section includes upgrade-related information for &caasp; &this-version;.
-    For information about general preparations and supported upgrade methods
-    and paths, see the documentation at
-    <ulink url="&doc-url;"/>.
-   </para>
-  </section>
-  <section id="InstUpgrade.More">
-   <title>For More Information</title>
-   <para>
-    For more information, see <xref linkend="InfraPackArch.ArchIndependent"/>
-    and the sections relating to your respective hardware architecture.
    </para>
   </section>
  </section>

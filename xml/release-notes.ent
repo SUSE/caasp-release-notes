@@ -36,5 +36,4 @@
 <!ENTITY ibmz "IBM z Systems">
 <!ENTITY kernel-version "4.4">
 <!ENTITY mdash "—">
-<!-- FIXME URL is still 1.0 -->
-<!ENTITY doc-url "https://www.suse.com/documentation/suse-caasp-1/">
+<!ENTITY doc-url "https://www.suse.com/documentation/suse-caasp/">
