@@ -691,8 +691,8 @@
  <section id="InstUpgrade">
   <title>Installation and Upgrade</title>
   <para>
-   For information about general preparations and supported installation and
-   upgrade methods and paths, see the documentation at
+   For information about general preparations and supported installation
+   methods and upgrade paths, see the documentation at
    <ulink url="&doc-url;"/>.
   </para>
   <section id="InstUpgrade.Installation" role="remove-empty">
@@ -705,7 +705,8 @@
   <section id="InstUpgrade.Upgrade" role="remove-empty">
    <title>Upgrade-Related Notes</title>
    <para>
-    This section includes upgrade-related information for &caasp; &this-version;.
+    This section includes upgrade-related information for &caasp;
+    &this-version;.
    </para>
   </section>
  </section>
