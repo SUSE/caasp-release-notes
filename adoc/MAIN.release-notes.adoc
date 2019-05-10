@@ -1,4 +1,5 @@
 include::entities.adoc[]
+
 = {productname} {productversion} Release Notes
 
 [WARNING]
