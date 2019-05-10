@@ -1,2 +1,90 @@
+include::entities.adoc[]
 = {productname} {productversion} Release Notes
 
+[WARNING]
+!!! This is a preview release. Not to be distributed outside of SUSE !!!
+
+[WARNING]
+This software is not ready for productive use.
+
+[NOTE]
+The released version is SUSE CaaS Platform 4.0.0 Milestone 4
+
+== Changes to Base OS
+
+=== Base operating system now SLE15 SP1
+
+The previous version used a minimal OS image called MicroOS. CaaSP 4 uses standard SUSE Linux Enterprise Server 15 SP1 as the base platform OS. You install CaaSP as a extension on top of that.
+
+Transactional-updates are available as a technical preview but SUSE CaaS Platform 4.0 will ship without the transactional-update mechanism enabled. The regular zypper workflow allows use of interruption free node reboot.
+
+=== Software now shipped as packages instead of disk image
+
+In the previous version the deployment of the software occured by downloading and installing a disk image with a pre-baked version of the product. In CaaSP 4.0 the software is distributed as RPM packages from an extension module in SLE15 SP1.
+
+=== Components even more containerized
+
+We moved even more of the components into containers. Now the only pieces running uncontainerized are CRI-O, kubelet and kubeadm.
+
+== Changes to Kubernetes Stack
+
+=== Updated Kubernetes
+
+SUSE CaaS Platform now ships with Kubernetes {kube_version}.
+
+=== CRI-O replaces Docker
+
+SUSE CaaS Platform now uses CRI-O {crio_version} as the default container runtime.
+
+=== Cilium replaces flannel
+
+SUSE CaaS Platform now uses Cilium {cilium_version} as the Container Networking Interface enabling networking policy support.
+
+== Obsolete Components
+
+=== Salt
+
+Orchestration of the cluster no longer relies on Salt. Orchestration is instead achieved with kubeadm and caaspctl.
+
+=== Admin Node / Velum
+
+The Admin Node is no longer necessary. The cluster will now be controlled by the master nodes and through API with caaspctl (CaaSP control) on the local workstation. This also means the Velum dashboard is no longer available.
+
+== Known Issues
+
+=== Deployment on VMWare
+
+Deployment on VMWare currently requires additional manual steps to prepare the SUSE Linux Enterprise Server 15 SP1 installation media, because cloud-init is missing from the SUSE SLES-15-SP1JeOS image build and Cilium requires an additional kernel module to be activated.
+
+    Bug 1132083 - vxlan kernel module not included
+    https://jira.suse.de/browse/PM-1073 - create a new JeOS flavor VMware-cloud with cloud-init instead of default jeos-firstboot
+
+Please refer to the Deployment Guide for detailed instructions.
+
+=== Other Known Issues:
+
+VMWare deployments currently use btrfs as the filesystem instead of the XFS default in SLE 15 SP1. This is due to the used JeOS image for VMWare.
+
+SUSE OpenStack Cloud deployments currently still uses terraform configurations with the RPM package repository instead of the SCC extension.
+
+* caaspctl option "control-plane" not marked as required in help output: gh#SUSE/avant-garde#118
+* caaspctl should ensure that the right kubelet version is running on the remote host - gh#SUSE/avant-garde#180
+* Unable to remove powered off node - gh#SUSE/avant-garde#138
+* MemoryAccounting and CPUAccounting not enabled - gh#SUSE/avant-garde#109
+* Hardcoded user causing cloud-init to fail - gh#SUSE/avant-garde#95
+* Unable to remove first master node - gh#SUSE/avant-garde#179
+* etcd & pause images pulled from k8s.gcr.io - gh#SUSE/avant-garde#101
+* expose ignorePreflightErrors in `caaspctl reset` - gh#SUSE/avant-garde#192
+* Implement Log Levels - gh#SUSE/avant-garde#190
+* Error in logs: 'cilium status' from runtime service failed - gh#SUSE/avant-garde#187
+* Wrong instructions for the user from kubeadm - gh#SUSE/caaspctl#143
+* Better error message when ssh agent doesn't have any identity gh#SUSE/caaspctl#107
+* Insufficient memory causes nodes to be overloaded during conformance tests. Use a 8gb/4vcpu configuration for all the machines as a work around. The underlying cause is being investigated. - gh#SUSE/caaspctl#142
+* Successfully removing a node produces an error draining the node. - gh#SUSE/caaspctl#155
+* Not specifying a node name during node reset produces a runtime error - ghSUSE/caaspctl/#156
+* Pods fail with an Error status when using an k8s.gcr.io/etcd:3.3.10 image after removing/re-adding nodes - gh#SUSE/caaspctl#158
+* After `node remove` and `node reset` a node cannot be rejoined due to masked kubelet.service  - gh#SUSE/caaspctl#161
+* AppArmor is disabled for pod deployments because of missing AppArmor profiles - gh#SUSE/avant-garde#221
+
+[NOTE]
+gh#SUSE/avant-garde#X stands for https://github.com/SUSE/avant-garde/issues/X . This is a private repo. We will be migrating to https://bugzilla.suse.com latest for our public releases. Let us know if you can't access and you want further info on an issue. Sorry for any inconvenience.
