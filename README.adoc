@@ -1,0 +1,86 @@
+== Release Notes for SUSE CaaS Platform
+
+You can view these release notes in two ways:
+
+* The official version on the
+link:https://www.suse.com/releasenotes/[SUSE Web site].
+
+* The GitHub preview of the in-development release notes is at
+<<adoc/MAIN.release-notes.adoc#>>.
+
+
+=== Contributing
+
+Want to help? We love to hear that! Below are a few hints to guide you.
+
+==== Writing
+
+These release notes are written in the AsciiDoc (`*.adoc`) format. For some
+great AsciiDoc documentation, see https://asciidoctor.org/docs/asciidoc-writers-guide/.
+
+==== Updating Content
+
+. Fork this repository.
+
+. Make the intended changes. (Make sure to read <<sec.github-preview>>.)
+
+. Validate and build a test version (see below for more details)
+
+. Submit the changes as a pull request
+
+// FIXME: Not completely sure whether we can use Travis here, since this is a
+// private repo.
+////
+Travis CI will automatically check whether your pull request's content is
+compatible AsciiDoc.
+////
+
+=== Building the Release Notes Documents
+
+The final version for the product is build in the SUSE Build Service.
+
+For validation and test purposes follow the steps below:
+
+. Install the DocBook Authoring and Publishing Suite (daps) package from the
+link:https://build.opensuse.org/package/show/Documentation:Tools/daps[Documentation:Tools]
+openSUSE Build Service project.
+
+. Use the `make` to build all required documents. For a single HTML document,
+for example `make single-html`.
+
+[id="sec.github-preview"]
+=== Keeping the GitHub Preview of These Release Notes Intact
+
+The GitHub preview mode is handy but comes with a couple of snags compared to
+the build of the release notes that is used for the SUSE Web site:
+
+** GitHub will simply render a preview of a single `*.adoc` file using
+AsciiDoctor's built-in HTML conversion. GitHub previews do not support
+embedding one AsciiDoc file in another, you can only use links between them.
+
+** The SUSE Web site build combines multiple `*.adoc` files into a single HTML
+output file. It is based on AsciiDoctor's AsciiDoc-to-DocBook-XML conversion,
+the result of which is then further converted into HTML/PDF using DAPS and the
+DocBook XSL stylesheets.
+
+For this reason, the central file `adoc/MAIN.release-notes.adoc` contains
+somewhat unsightly `ifdef`/`ifndef` blocks that check whether the file is
+displayed in the GitHub preview, switching between using links to other files
+for GitHub and `include::` statement in all other cases.
+
+The issue of not being able to embed other AsciiDoc files when using the GitHub
+preview also affects the "attribute entries" file `adoc/entities.adoc`.
+Attribute entries allow easily referencing text used multiple (similar to
+entities in XML).
+Hence, for the GitHub preview, each file contains a copy of the entire attribute
+entry file at the top. When updating attribute entries, always make sure to:
+
+  . Edit `adoc/entities.adoc` first (these are used for the regular build)
+  . Run `make update-entries` to update the dependent attribute entries in each
+  of the `*.adoc` files (these are used for GitHub previews).
+
+
+=== Updating the Release Notes on the Website
+
+The website is automatically updated when we release a new version of the
+`release-notes-caasp` package as maintenance update.
