@@ -5,7 +5,7 @@ You can view these release notes in two ways:
 * The official version on the
 link:https://www.suse.com/releasenotes/[SUSE Web site].
 
-* The GitHub preview of the in-development release notes is at
+* The GitHub/GitLab preview of the in-development release notes is at
 <<adoc/MAIN.release-notes.adoc#>>.
 
 
@@ -49,13 +49,13 @@ openSUSE Build Service project.
 for example `make single-html`.
 
 [id="sec.github-preview"]
-=== Keeping the GitHub Preview of These Release Notes Intact
+=== Keeping the GitHub/GitLab Preview of These Release Notes Intact
 
-The GitHub preview mode is handy but comes with a couple of snags compared to
+The GitHub/GitLab preview mode is handy but comes with a couple of snags compared to
 the build of the release notes that is used for the SUSE Web site:
 
-** GitHub will simply render a preview of a single `*.adoc` file using
-AsciiDoctor's built-in HTML conversion. GitHub previews do not support
+** GitHub/GitLab will simply render a preview of a single `*.adoc` file using
+AsciiDoctor's built-in HTML conversion. GitHub/GitLab previews do not support
 embedding one AsciiDoc file in another, you can only use links between them.
 
 ** The SUSE Web site build combines multiple `*.adoc` files into a single HTML
@@ -65,19 +65,19 @@ DocBook XSL stylesheets.
 
 For this reason, the central file `adoc/MAIN.release-notes.adoc` contains
 somewhat unsightly `ifdef`/`ifndef` blocks that check whether the file is
-displayed in the GitHub preview, switching between using links to other files
-for GitHub and `include::` statement in all other cases.
+displayed in the GitHub/GitLab preview, switching between using links to other files
+for GitHub/GitLab and `include::` statement in all other cases.
 
-The issue of not being able to embed other AsciiDoc files when using the GitHub
+The issue of not being able to embed other AsciiDoc files when using the GitHub/GitLab
 preview also affects the "attribute entries" file `adoc/entities.adoc`.
 Attribute entries allow easily referencing text used multiple (similar to
 entities in XML).
-Hence, for the GitHub preview, each file contains a copy of the entire attribute
+Hence, for the GitHub/GitLab preview, each file contains a copy of the entire attribute
 entry file at the top. When updating attribute entries, always make sure to:
 
   . Edit `adoc/entities.adoc` first (these are used for the regular build)
   . Run `make update-entries` to update the dependent attribute entries in each
-  of the `*.adoc` files (these are used for GitHub previews).
+  of the `*.adoc` files (these are used for GitHub/GitLab previews).
 
 
 === Updating the Release Notes on the Website
