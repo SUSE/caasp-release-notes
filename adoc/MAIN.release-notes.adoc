@@ -1,3 +1,4 @@
+include::attributes.adoc[]
 include::entities.adoc[]
 
 = {productname} {productversion} Release Notes
