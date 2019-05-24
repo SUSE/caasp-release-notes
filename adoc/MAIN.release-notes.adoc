@@ -1,4 +1,3 @@
-include::attributes.adoc[]
 include::entities.adoc[]
 
 = {productname} {productversion} Release Notes
@@ -23,7 +22,7 @@ This release supports deployment on
 
 === Base operating system now SLE15 SP1
 
-The previous version used a minimal OS image called MicroOS. CaaSP 4 uses standard SUSE Linux Enterprise Server 15 SP1 as the base platform OS. You install CaaSP as a extension on top of that.
+The previous version used a minimal OS image called MicroOS. {productname} 4 uses standard SUSE Linux Enterprise Server 15 SP1 as the base platform OS. You install {productname} as a extension on top of that.
 
 Transactional-updates are available as a technical preview but {productname} 4.0 will ship without the transactional-update mechanism enabled. The regular zypper workflow allows use of interruption free node reboot.
 
@@ -61,38 +60,28 @@ The Admin Node is no longer necessary. The cluster will now be controlled by the
 
 == Known Issues
 
-=== Deployment on {soc}
+*  caaspctl option "control-plane" not marked as required in help output: gh#SUSE/avant-garde#118
+*  caaspctl should ensure that the right kubelet version is running on the remote host - gh#SUSE/avant-garde#180
+*  Unable to remove powered off node - gh#SUSE/avant-garde#138
+*  MemoryAccounting and CPUAccounting not enabled - gh#SUSE/avant-garde#109
+*  expose ignorePreflightErrors in `caaspctl reset` - gh#SUSE/avant-garde#192
+*  Error in logs: 'cilium status' from runtime service failed - gh#SUSE/avant-garde#187
+*  Insufficient memory causes nodes to be overloaded during conformance tests. Use a 8gb/4vcpu configuration for all the machines as a work around. The underlying cause is being investigated. - gh#SUSE/caaspctl#142
+*  Successfully removing a node produces an error draining the node. - gh#SUSE/caaspctl#155
+*  Pods fail with an Error status when using an k8s.gcr.io/etcd:3.3.10 image after removing/re-adding nodes - gh#SUSE/caaspctl#158
+*  After `node remove` and `node reset` a node cannot be rejoined due to masked kubelet.service  - gh#SUSE/caaspctl#161
+*  AppArmor is disabled for pod deployments because of missing AppArmor profiles - gh#SUSE/avant-garde#221
+*  Wrong instructions for the user from kubeadm - gh#SUSE/avant-garde#143
+*  Cilium pod gets terminated and then fixes itself - gh#SUSE/avant-garde#223
+*  Cilium cannot run on kernel-default-base in JeOS - gh#SUSE/avant-garde#291
+*  Disk size for individual instances is not customizable by the user:  https://bugzilla.suse.com/show_bug.cgi?id=1136045
+*  Kubectl relies on a single user during deployment, multiple administrators are therefore not supported  as they would have to use the same configuration file, and thus the same account: https://bugzilla.suse.com/show_bug.cgi?id=1135998
+*  Any user authenticated to ETCD will have access to all (including sensitive) data and functions in the data store: https://bugzilla.suse.com/show_bug.cgi?id=1135997
+*  https://bugzilla.suse.com/show_bug.cgi?id=1135996  TODO - Default user `sles` has very open permissions and is in `sudoers`, security best practices must be applied to design appropriate permissions for this user
+*  https://bugzilla.suse.com/show_bug.cgi?id=1135945  TODO a fix for this should be mentioned in the deployment guide - we need to tell the user what to change in the terraform files.  bug is fixed and documentation warns against removing packages from the list.
+*  Reset commands  on wrong IP addresses successfully pass: https://bugzilla.suse.com/show_bug.cgi?id=1135927
+*  missing variable definition for vmware and hence the tf vmware provisioning doesn't work https://bugzilla.suse.com/show_bug.cgi?id=1136181 ... can be simply fixed  by adding variable "caasp_registry_code" {}into /usr/share/caasp/terraform/vmware/variables.tf The fix is on its way to SCC https://build.suse.de/request/show/193442
 
-Please use the new `SLES15-SP1-JeOS-RC1-with-fixed-kernel-default` image,
-available in the Engineering Cloud Platform (ECP). The `SUSE SLES-15-SP1 JeOS` image
-*will NOT work* because of missing kernel modules (https://bugzilla.suse.com/show_bug.cgi?id=1134743).
-
-=== Deployment on VMWare
-
-Deployment on VMWare currently requires additional manual steps to prepare the SUSE Linux Enterprise Server 15 SP1 installation media, because cloud-init is missing from the SUSE SLES-15-SP1JeOS image build and Cilium requires an additional kernel module to be activated.
-
-* https://bugzilla.suse.com/show_bug.cgi?id=1134743 - Missing kernel modules
-* https://jira.suse.de/browse/PM-1073 - create a new JeOS flavor VMware-cloud with cloud-init instead of default jeos-firstboot
-
-Please refer to the Deployment Guide for detailed instructions.
-
-=== Other Known Issues:
-
-* SUSE OpenStack Cloud deployments currently still uses terraform configurations with the RPM package repository instead of the SCC extension. - gh#SUSE/caaspctl#294
-* caaspctl option "control-plane" not marked as required in help output: gh#SUSE/avant-garde#118
-* caaspctl should ensure that the right kubelet version is running on the remote host - gh#SUSE/avant-garde#180
-* Unable to remove powered off node - gh#SUSE/avant-garde#138
-* MemoryAccounting and CPUAccounting not enabled - gh#SUSE/avant-garde#109
-* expose ignorePreflightErrors in `caaspctl reset` - gh#SUSE/avant-garde#192
-* Error in logs: 'cilium status' from runtime service failed - gh#SUSE/avant-garde#187
-* Insufficient memory causes nodes to be overloaded during conformance tests. Use a 8gb/4vcpu configuration for all the machines as a work around. The underlying cause is being investigated. - gh#SUSE/caaspctl#142
-* Successfully removing a node produces an error draining the node. - gh#SUSE/caaspctl#155
-* Pods fail with an Error status when using an k8s.gcr.io/etcd:3.3.10 image after removing/re-adding nodes - gh#SUSE/caaspctl#158
-* After `node remove` and `node reset` a node cannot be rejoined due to masked kubelet.service  - gh#SUSE/caaspctl#161
-* AppArmor is disabled for pod deployments because of missing AppArmor profiles - gh#SUSE/avant-garde#221
-* Wrong instructions for the user from kubeadm - gh#SUSE/avant-garde#143
-* Cilium pod gets terminated and then fixes itself - gh#SUSE/avant-garde#223
-* Cilium cannot run on kernel-default-base in JeOS - gh#SUSE/avant-garde#291
 
 [NOTE]
 gh#SUSE/avant-garde#X stands for https://github.com/SUSE/avant-garde/issues/X . This is a private repo. We will be migrating to https://bugzilla.suse.com latest for our public releases. Let us know if you can't access and you want further info on an issue. Sorry for any inconvenience.
