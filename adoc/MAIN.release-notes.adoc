@@ -14,6 +14,26 @@ This software is not ready for productive use.
 [NOTE]
 The released version is {productname} {productversion}
 
+== RAW NOTES
+
+Release Date: 24th July 2019
+
+https://github.com/SUSE/avant-garde/milestone/7
+
+Release criteria for Beta3:
+
+Upgrade strategy
+
+How do we roll out upgrades of the cluster ?
+
+    upgrade of caasp container images
+    upgrade of caasp node packages
+    upgrade of caasp node kernels (-> reboot, kured ?!)
+    upgrade of k8s to next major version
+    upgrade of caasp node OS to next service pack (15 SP1 to 15 SP2)
+
+
+
 == Supported Platforms
 
 This release supports deployment on
