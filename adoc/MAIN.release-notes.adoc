@@ -103,7 +103,7 @@ The Admin Node is no longer necessary. The cluster will now be controlled by the
 
 === Renaming `caaspctl`
 
-The `caaspctl` tool will be renamed from it's working title to `skuba` with the release of {productname} Beta 3.
+The `caaspctl` tool will be renamed from it's working title to `caaspctl` with the release of {productname} Beta 3.
 
 === Other Known Issues:
 
@@ -120,5 +120,5 @@ The `caaspctl` tool will be renamed from it's working title to `skuba` with the 
 * Reset commands  on wrong IP addresses successfully pass: https://bugzilla.suse.com/show_bug.cgi?id=113527
 * User creation with terraform fails and renders cluster unusable: https://bugzilla.suse.com/show_bug.cgi?id=1136366
 * The `caaspctl cluster init my-cluster` does not pass without the "control-plane" option: https://bugzilla.suse.com/show_bug.cgi?id=1136368
-* Caaspctl package contains terraform examples with internal configuration: https://bugzilla.suse.com/show_bug.cgi?id=1136218
+* caaspctl package contains terraform examples with internal configuration: https://bugzilla.suse.com/show_bug.cgi?id=1136218
 * SUSE-CaaSP-Management pattern installs base system on fresh SLE-15-SP1 server: https://bugzilla.suse.com/show_bug.cgi?id=1136177
