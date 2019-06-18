@@ -16,7 +16,7 @@ The released version is {productname} {productversion}
 
 == RAW NOTES
 
-Release Date: 24th July 2019
+Release Date: 21st June 2019
 
 https://github.com/SUSE/avant-garde/milestone/7
 
