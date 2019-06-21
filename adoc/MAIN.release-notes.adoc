@@ -1,3 +1,4 @@
+
 include::attributes.adoc[]
 include::entities.adoc[]
 
@@ -14,25 +15,6 @@ This software is not ready for productive use.
 [NOTE]
 The released version is {productname} {productversion}
 
-== RAW NOTES
-
-Release Date: 21st June 2019
-
-https://github.com/SUSE/avant-garde/milestone/7
-
-Release criteria for Beta3:
-
-Upgrade strategy
-
-How do we roll out upgrades of the cluster ?
-
-    upgrade of caasp container images
-    upgrade of caasp node packages
-    upgrade of caasp node kernels (-> reboot, kured ?!)
-    upgrade of k8s to next major version
-    upgrade of caasp node OS to next service pack (15 SP1 to 15 SP2)
-
-
 
 == Supported Platforms
 
@@ -41,19 +23,35 @@ This release supports deployment on
 * {soc} 8
 * VMWare ESXi {vmware_version}
 
+* Bare metal
+
+
+
 == Changes To Base Os
 
 === Base Operating System Now Sle15 Sp1
 
-The previous version used a minimal OS image called MicroOS. {productname} {productmajor} uses standard {sle} Server 15 SP1 as the base platform OS. CaaSP can be installed as an extension on top of that. Because SLES 15 is designed to address both cloud native and legacy workloads, these changes make it easier for customers who want to modernize their infrastructure by moving existing workloads to a {kube} framework.
+The previous version used a minimal OS image called MicroOS. {productname}
+{productmajor} uses standard {sle} Server 15 SP1 as the base platform OS.
+CaaSP can be installed as an extension on top of that. Because SLES 15 is
+designed to address both cloud native and legacy workloads,
+these changes make it easier for customers who want to modernize their
+infrastructure by moving existing workloads to a {kube} framework.
 
-Transactional-updates are available as a technical preview but {productname} {productmajor} will initially ship without the transactional-update mechanism enabled. The regular zypper workflow allows use of interruption free node reboot. The SLES update process should help customers integrate a Kubernetes platform into their existing operational infrastructure more easily, nevertheless transactional updates are still the preferred process for some customers, which is why we provide both options.
+Transactional-updates are available as a technical preview but {productname}
+{productmajor} will initially ship without the transactional-update mechanism enabled.
+The regular zypper workflow allows use of interruption free node reboot.
+The SLES update process should help customers integrate a Kubernetes platform
+into their existing operational infrastructure more easily, nevertheless transactional
+updates are still the preferred process for some customers,
+which is why we provide both options.
 
 === Software Now Shipped As Packages Instead Of Disk Image
 
 In the previous version the deployment of the software was done by downloading and installing a disk
 image with a pre-baked version of the product. In {productname} {productmajor} the software is distributed
- as RPM packages from an extension module in {sle} 15 SP1. This adaptation towards containers and {sles} mainly gives customers more deployment flexibility.
+as RPM packages from an extension module in {sle} 15 SP1.
+This adaptation towards containers and {sles} mainly gives customers more deployment flexibility.
 
 === Components Even More Containerized
 
@@ -63,9 +61,31 @@ The only pieces that are now running uncontainerized are `CRI-O`, `kubelet` and 
 
 === New Deployment Methods
 
-We are using a combination of `caaspctl` (custom wrapper around kubeadm) and HashiCorp Terraform to deploy SUSE CaaS Platform machines and clusters. We provide terraform state examples that you can modify to roll out clusters.
+We are using a combination of `skuba` (custom wrapper around kubeadm) and
+HashiCorp Terraform to deploy SUSE CaaS Platform machines and clusters.
+We provide terraform state examples that you can modify to roll out clusters.
 
-Note: You must roll out a load balancer manually, this is currently not possible by using terraform. Find an example of a possible load balancer configuration based on SUSE Linux Enterprise 15 SP1 and nginx in the Deployment guide:  https://susedoc.github.io/doc-caasp/master/caasp-deployment/single-html/#_load_balancer
+Deployment on Bare metal using AutoYaST has now also been tested and documented:
+ https://susedoc.github.io/doc-caasp/beta/caasp-deployment/single-html/#_deployment_on_bare_metal
+
+Note: You must roll out a load balancer manually,
+this is currently not possible by using terraform.
+Find an example of a possible load balancer configuration
+based on SUSE Linux Enterprise 15 SP1 and nginx in the Deployment guide:
+ https://susedoc.github.io/doc-caasp/beta/caasp-deployment/single-html/#_load_balancer
+
+
+=== Updates Using Kured
+
+Updates are implemented with `skuba-update`, that makes use of the `kured`
+tool and the SLE package manager. This is implemented in the skuba-update
+tool which glues zypper and the kured tool (https://github.com/weaveworks/kured).
+Kured (KUbernetes REboot Daemon) is a Kubernetes daemonset that performs safe
+automatic node reboots when the need to do so is indicated by the package
+management system of the underlying OS. Automatic updates can be manually
+disabled and configured: https://susedoc.github.io/doc-caasp/beta/caasp-admin/single-html/#_cluster_updates
+
+
 
 == Changes To Kubernetes Stack
 
@@ -81,44 +101,53 @@ The choice of CRI-O allows us to pursue our open-source agenda better than compe
 
 CRI-O's simplified architecture is tailored explicitly for {kube} and has a reduced footprint but also
 guarantees full compatibility with existing customer images thanks to its adherence to OCI standards.
-Other than Docker, CRI-O allows to update the container runtime without stopping workloads; providing improved flexibility and maintainabilitty to all {productname} users.
+Other than Docker, CRI-O allows to update the container runtime without stopping workloads;
+providing improved flexibility and maintainabilitty to all {productname} users.
 
 We will strive to maintain {productname}'s compatibility with Docker in the future.
 
 === Cilium Replaces Flannel
 
-{productname} now uses Cilium {cilium_version} as the Container Networking Interface enabling networking policy support.
+{productname} now uses Cilium {cilium_version} as the Container Networking
+Interface enabling networking policy support.
+
+
+== Centralized logging
+
+The deployment of a Centralized Logging node is now supported for the purpose of
+aggregating logs from all the nodes in the kubernetes cluster.
+Centralized Logging forwards system and Kubernetes cluster logs to a
+specified external logging service, specifically the Rsyslog server,
+using Kubernetes Metadata Module - `mmkubernetes`.
 
 == Obsolete Components
 
 === Salt
 
-Orchestration of the cluster no longer relies on Salt. Orchestration is instead achieved with `kubeadm` and `caaspctl`.
+Orchestration of the cluster no longer relies on Salt.
+Orchestration is instead achieved with `kubeadm` and `skuba`.
 
 === Admin Node / Velum
 
-The Admin Node is no longer necessary. The cluster will now be controlled by the master nodes and through API with `caaspctl` on the local workstation. This also means the Velum dashboard is no longer available.
+The Admin Node is no longer necessary. The cluster will now be controlled
+by the master nodes and through API with `skuba` on the local workstation.
+This also means the Velum dashboard is no longer available.
 
 == Known Issues
 
-=== Renaming `caaspctl`
+=== Renaming `caaspctl` to `skuba`
 
-The `caaspctl` tool will be renamed from it's working title to `caaspctl` with the release of {productname} Beta 3.
+The `caaspctl` tool has been renamed from it's working title to
+`skuba` with the release of {productname} Beta 3.
 
 === Other Known Issues:
 
-* caaspctl option "control-plane" not marked as required in help output: https://bugzilla.suse.com/show_bug.cgi?id=1136368
-* MemoryAccounting and CPUAccounting not enabled: https://bugzilla.suse.com/show_bug.cgi?id=1136363
-* Insufficient memory causes nodes to be overloaded during conformance tests: https://bugzilla.suse.com/show_bug.cgi?id=1135916
-** Use a 8gb/4vcpu configuration for all the machines as a work around
-* After `node remove` and `node reset` a node cannot be rejoined due to masked kubelet.service: https://bugzilla.suse.com/show_bug.cgi?id=1136371
-* AppArmor is disabled for pod deployments because of missing AppArmor profiles: https://bugzilla.suse.com/show_bug.cgi?id=1136403
-* Wrong instructions for the user from kubeadm: https://bugzilla.suse.com/show_bug.cgi?id=1136404
-* Cilium pod gets terminated and then fixes itself: https://bugzilla.suse.com/show_bug.cgi?id=1136406
-* Cilium cannot run on kernel-default-base in JeOS: https://bugzilla.suse.com/show_bug.cgi?id=1134743
-* Disk size for individual instances is not customizable by the user: https://bugzilla.suse.com/show_bug.cgi?id=1136045
-* Reset commands  on wrong IP addresses successfully pass: https://bugzilla.suse.com/show_bug.cgi?id=113527
-* User creation with terraform fails and renders cluster unusable: https://bugzilla.suse.com/show_bug.cgi?id=1136366
-* The `caaspctl cluster init my-cluster` does not pass without the "control-plane" option: https://bugzilla.suse.com/show_bug.cgi?id=1136368
-* caaspctl package contains terraform examples with internal configuration: https://bugzilla.suse.com/show_bug.cgi?id=1136218
-* SUSE-CaaSP-Management pattern installs base system on fresh SLE-15-SP1 server: https://bugzilla.suse.com/show_bug.cgi?id=1136177
+* https://bugzilla.suse.com/show_bug.cgi?id=1138908 - `skuba node remove` removes the node only temporarily until you restart.
+* https://bugzilla.suse.com/show_bug.cgi?id=1138859 - Terraform network variables are not interpolated.
+* https://bugzilla.suse.com/show_bug.cgi?id=1137879 - All cilium pods are terminated & replaced after adding worker node.
+* https://bugzilla.suse.com/show_bug.cgi?id=1138139 - Node removal freezes on drain without timeout.
+* https://bugzilla.suse.com/show_bug.cgi?id=1138267 - conntrack binary is missing for kube-proxy.
+* https://bugzilla.suse.com/show_bug.cgi?id=1137591 - Failed disarming kubelet during node removal.
+* https://bugzilla.suse.com/show_bug.cgi?id=1136960 - Failed to change role from worker to master.
+* https://bugzilla.suse.com/show_bug.cgi?id=1137333 - kubernetes-client not present in Management pattern (kubectl).
+* https://bugzilla.suse.com/show_bug.cgi?id=1137628 - Multiple coredns containers running on master node.

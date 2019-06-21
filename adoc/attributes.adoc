@@ -19,7 +19,7 @@
 
 // Component Versions
 
-:cilium_version: 1.5.1
+:cilium_version: 1.5.3
 :crio_version: 1.14.1
 :dex_version: 2.16.0
 :etcd_version: 3.3.11
