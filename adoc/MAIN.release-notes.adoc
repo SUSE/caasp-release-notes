@@ -10,7 +10,7 @@ ifeval::['{release_type}' != 'public']
 endif::[]
 
 [WARNING]
-This software is not ready for productive use.
+This software is not ready for production use.
 
 [NOTE]
 The released version is {productname} {productversion}
