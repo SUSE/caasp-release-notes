@@ -135,6 +135,10 @@ This also means the Velum dashboard is no longer available.
 
 == Known Issues
 
+=== Layer 7 Policies in Cilium
+
+The current implementation of Cilium in {productname} does not support Layer 7 policies!
+
 === Renaming `caaspctl` to `skuba`
 
 The `caaspctl` tool has been renamed from it's working title to
