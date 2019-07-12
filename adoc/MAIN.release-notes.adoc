@@ -22,10 +22,9 @@ This release supports deployment on
 
 * {soc} 8
 * VMWare ESXi {vmware_version}
-
 * Bare metal
 
-
+//Main features of Beta 4: Dex/Gangway, Supportconfig, k8s 1.15
 
 == Changes To Base Os
 
@@ -33,7 +32,7 @@ This release supports deployment on
 
 The previous version used a minimal OS image called MicroOS. {productname}
 {productmajor} uses standard {sle} Server 15 SP1 as the base platform OS.
-CaaSP can be installed as an extension on top of that. Because SLES 15 is
+CaaSP can be installed as an extension on top of that. Because {slsa} 15 is
 designed to address both cloud native and legacy workloads,
 these changes make it easier for customers who want to modernize their
 infrastructure by moving existing workloads to a {kube} framework.
@@ -91,7 +90,15 @@ disabled and configured: https://susedoc.github.io/doc-caasp/beta/caasp-admin/si
 
 === Updated Kubernetes
 
-{productname} {productversion} ships with Kubernetes {kube_version}.
+{productname} {productversion} ships with {kube} {kube_version}.
+This latest version mainly contains enhancements to core {kube} APIs:
+CustomResourceDefinitions Pruning, -Defaulting and -OpenAPI Publishing.
+cluster life cycle stability and usability has been enhanced
+(`kubeadm init` and `kubeadm join` can now be used to configure and deploy an HA control plane)
+and new functionality of the Container Storage Interface (volume cloning) is available.
+Read up about the details of the new features of {kube} {kube_version} here:
+https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.15.md#115-whats-new
+
 
 === CRI-O Replaces Docker
 
