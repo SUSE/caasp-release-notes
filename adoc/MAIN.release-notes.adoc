@@ -41,16 +41,15 @@ See the platfrom upgrades documentation: https://susedoc.github.io/doc-caasp/bet
 
 ==== Upgrade from Previous 4.0.0 Beta 3 Release
 
-Current beta release allows to upgrade from previous {productname} 4.0.0 Beta 3 to
+The current beta release allows to upgrade from previous {productname} 4.0.0 Beta 3 to
 the current {productversion} release. Using new `skuba` features such as
-`upgrade plan` and `upgrade apply` is possible on top of the previous 4.0.0 Beta 3
+`upgrade plan` and `upgrade apply`, is possible on top of the previous 4.0.0 Beta 3
 following the procedure documented in: https://susedoc.github.io/doc-caasp/beta/caasp-admin/single-html/#_applying_updates
 
 [NOTE]
 ====
 Note this is a temporary procedure likely to change in further releases.
 ====
-
 
 === Role Based Access Control (RBAC)
 
@@ -83,12 +82,13 @@ generates a `/var/log/nts_*.txz` archive with system information including
 
 == New in {productname} 4.0.0
 
-=== Base Operating System Now Sle15 Sp1
+=== Base Operating System Now {SLE} 15 SP1
 
 The previous version used a minimal OS image called MicroOS. {productname}
 {productmajor} uses standard {sle} Server 15 SP1 as the base platform OS.
-CaaSP can be installed as an extension on top of that. Because SLES 15 is
-designed to address both cloud native and legacy workloads,
+{productname} can be installed as an extension on top of that.
+
+Because {sle} 15 is designed to address both cloud native and legacy workloads,
 these changes make it easier for customers who want to modernize their
 infrastructure by moving existing workloads to a {kube} framework.
 
@@ -120,13 +120,13 @@ HashiCorp Terraform to deploy SUSE CaaS Platform machines and clusters.
 We provide terraform state examples that you can modify to roll out clusters.
 
 Deployment on Bare metal using AutoYaST has now also been tested and documented:
- https://susedoc.github.io/doc-caasp/beta/caasp-deployment/single-html/#_deployment_on_bare_metal
+https://susedoc.github.io/doc-caasp/beta/caasp-deployment/single-html/#_deployment_on_bare_metal
 
 Note: You must roll out a load balancer manually,
 this is currently not possible by using terraform.
 Find an example of a possible load balancer configuration
 based on SUSE Linux Enterprise 15 SP1 and nginx in the Deployment guide:
- https://susedoc.github.io/doc-caasp/beta/caasp-deployment/single-html/#_load_balancer
+https://susedoc.github.io/doc-caasp/beta/caasp-deployment/single-html/#_load_balancer
 
 
 === Updates Using Kured
@@ -143,10 +143,12 @@ disabled and configured: https://susedoc.github.io/doc-caasp/beta/caasp-admin/si
 
 {productname} {productversion} ships with {kube} {kube_version}.
 This latest version mainly contains enhancements to core {kube} APIs:
-CustomResourceDefinitions Pruning, -Defaulting and -OpenAPI Publishing.
-cluster life cycle stability and usability has been enhanced
+CustomResourceDefinitions Pruning, -Defaulting and -OpenAPI publishing.
+
+Cluster life cycle stability and usability has been enhanced
 (`kubeadm init` and `kubeadm join` can now be used to configure and deploy an HA control plane)
 and new functionality of the Container Storage Interface (volume cloning) is available.
+
 Read up about the details of the new features of {kube} {kube_version} here:
 https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.15.md#115-whats-new
 
@@ -203,4 +205,3 @@ This also means the Velum dashboard is no longer available.
 * https://bugzilla.suse.com/show_bug.cgi?id=1138139 - Node removal freezes on drain without timeout.
 * https://bugzilla.suse.com/show_bug.cgi?id=1141131 - skuba-update is installed by the CaaSP Management pattern
 * https://bugzilla.suse.com/show_bug.cgi?id=1137879 - All cilium pods are terminated & replaced after adding worker node.
-
