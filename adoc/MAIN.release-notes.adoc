@@ -162,3 +162,6 @@ The `caaspctl` tool has been renamed from it's working title to
 * https://bugzilla.suse.com/show_bug.cgi?id=1136960 - Failed to change role from worker to master.
 * https://bugzilla.suse.com/show_bug.cgi?id=1137333 - kubernetes-client not present in Management pattern (kubectl).
 * https://bugzilla.suse.com/show_bug.cgi?id=1137628 - Multiple coredns containers running on master node.
+
+
+include::legal.adoc[Legal Notices]
