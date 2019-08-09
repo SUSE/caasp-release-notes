@@ -1,5 +1,6 @@
 // Release type, set this to either 'public' or 'internal'
 :release_type: public
+:current_year: 2019
 
 // Media Locations
 :caasp_repo_url: http://download.suse.de/ibs/SUSE:/SLE-15-SP1:/Update:/Products:/CASP40/standard/
