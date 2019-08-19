@@ -26,51 +26,52 @@ This release supports deployment on
 
 //Main features of Beta 4: Dex/Gangway, Supportconfig, k8s 1.15
 
-== Changes To Base Os
+== Changes To Base OS
 
-=== Base Operating System Now Sle15 Sp1
+=== Base Operating System Is Now {slsa} 15 SP1
 
 The previous version used a minimal OS image called MicroOS. {productname}
-{productmajor} uses standard {sle} Server 15 SP1 as the base platform OS.
-CaaSP can be installed as an extension on top of that. Because {slsa} 15 is
-designed to address both cloud native and legacy workloads,
+{productmajor} uses standard {sls} 15 SP1 as the base platform OS.
+{productname} can be installed as an extension on top of that. Because {slsa} 15 is
+designed to address both cloud-native and legacy workloads,
 these changes make it easier for customers who want to modernize their
 infrastructure by moving existing workloads to a {kube} framework.
 
-Transactional-updates are available as a technical preview but {productname}
+Transactional updates are available as a technical preview but {productname}
 {productmajor} will initially ship without the transactional-update mechanism enabled.
-The regular zypper workflow allows use of interruption free node reboot.
-The SLES update process should help customers integrate a Kubernetes platform
+The regular zypper workflow allows use of interruption-free node reboot.
+The {slsa} update process should help customers integrate a Kubernetes platform
 into their existing operational infrastructure more easily, nevertheless transactional
 updates are still the preferred process for some customers,
 which is why we provide both options.
 
 === Software Now Shipped As Packages Instead Of Disk Image
 
-In the previous version the deployment of the software was done by downloading and installing a disk
-image with a pre-baked version of the product. In {productname} {productmajor} the software is distributed
+In the previous version, the deployment of the software was done by downloading and installing a disk
+image with a pre-baked version of the product. In {productname} {productmajor}, the software is distributed
 as RPM packages from an extension module in {sle} 15 SP1.
 This adaptation towards containers and {sles} mainly gives customers more deployment flexibility.
 
-=== Components Even More Containerized
+=== More Containerized Components
 
 We moved more of the components into containers, namely all the control plane components:
-`etcd`, `kube-apiserver`, `kube-controller-manager` and `kube-scheduler`.
+`etcd`, `kube-apiserver`, `kube-controller-manager`, and `kube-scheduler`.
 The only pieces that are now running uncontainerized are `CRI-O`, `kubelet` and `kubeadm`.
 
 === New Deployment Methods
 
 We are using a combination of `skuba` (custom wrapper around kubeadm) and
-HashiCorp Terraform to deploy SUSE CaaS Platform machines and clusters.
-We provide terraform state examples that you can modify to roll out clusters.
+HashiCorp Terraform to deploy {productname} machines and clusters.
+We provide Terraform state examples that you can modify to roll out clusters.
 
-Deployment on Bare metal using AutoYaST has now also been tested and documented:
+Deployment on bare metal using AutoYaST has now also been tested and documented:
  https://susedoc.github.io/doc-caasp/beta/caasp-deployment/single-html/#_deployment_on_bare_metal
 
-Note: You must roll out a load balancer manually,
+[NOTE]
+You must roll out a load balancer manually,
 this is currently not possible by using terraform.
 Find an example of a possible load balancer configuration
-based on SUSE Linux Enterprise 15 SP1 and nginx in the Deployment guide:
+based on {sle} 15 SP1 and nginx in the __{productname} Deployment Guide__:
  https://susedoc.github.io/doc-caasp/beta/caasp-deployment/single-html/#_load_balancer
 
 
@@ -111,7 +112,7 @@ guarantees full compatibility with existing customer images thanks to its adhere
 Other than Docker, CRI-O allows to update the container runtime without stopping workloads;
 providing improved flexibility and maintainabilitty to all {productname} users.
 
-We will strive to maintain {productname}'s compatibility with Docker in the future.
+We will strive to maintain {productname}'s compatibility with the Docker Engine in the future.
 
 === Cilium Replaces Flannel
 
@@ -148,7 +149,7 @@ The current implementation of Cilium in {productname} does not support Layer 7 p
 
 === Renaming `caaspctl` to `skuba`
 
-The `caaspctl` tool has been renamed from it's working title to
+The `caaspctl` tool has been renamed from its working title to
 `skuba` with the release of {productname} Beta 3.
 
 === Other Known Issues:
