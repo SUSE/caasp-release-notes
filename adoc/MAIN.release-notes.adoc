@@ -145,7 +145,7 @@ This also means the Velum dashboard is no longer available.
 
 === Updating from Beta to RC 1
 
-RC 1, unlike beta 4 or beta 5, is not published as an update. Updating from
+RC 1, unlike Beta 4 or Beta 5, is not published as an update. Updating from
 any Beta to RC 1 is not supported.
 
 === Layer 7 Policies in Cilium
