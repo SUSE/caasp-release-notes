@@ -50,7 +50,7 @@ which is why we provide both options.
 In the previous version, the deployment of the software was done by downloading and installing a disk
 image with a pre-baked version of the product. In {productname} {productmajor}, the software is distributed
 as RPM packages from an extension module in {sle} 15 SP1.
-This adaptation towards containers and {sles} mainly gives customers more deployment flexibility.
+This adaptation towards containers and {sls} mainly gives customers more deployment flexibility.
 
 === More Containerized Components
 
