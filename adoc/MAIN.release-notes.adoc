@@ -9,9 +9,9 @@ ifeval::['{release_type}' != 'public']
 !!! This is a preview release. Not to be distributed outside of SUSE !!!
 endif::[]
 
-SUSE CaaS Platform is an enterprise-ready Kubernetes-based container management solution
+{productname} is an enterprise-ready Kubernetes-based container management solution
 
-These release notes are updated periodically. The latest version is always available at https://www.suse.com/releasenotes. General documentation can be found at: https://www.suse.com/documentation/suse.caasp-4.
+These release notes are updated periodically. The latest version is always available at https://documentation.suse.com/suse-caasp/4/.
 
 [WARNING]
 This software is not ready for production use.
@@ -28,9 +28,9 @@ Entries can be listed multiple times if they are important and belong to multipl
 
 Release notes usually only list changes that happened between two subsequent releases. Certain important entries from the release notes documents of previous product versions may be repeated. To make such entries easier to identify, they contain a note to that effect.
 
-== SUSE CaaS Platform
+== {productname}
 
-SUSE CaaS Platform is an enterprise-ready Kubernetes-based container management solution used by application development and DevOps teams to more easily and efficiently deploy and manage containerized applications and services. Enterprises use SUSE CaaS Platform to reduce application delivery cycle times and improve business agility.
+{productname} is an enterprise-ready {kube}-based container management solution used by application development and DevOps teams to more easily and efficiently deploy and manage containerized applications and services. Enterprises use {productname} to reduce application delivery cycle times and improve business agility.
 
 == Supported Platforms
 
@@ -44,9 +44,7 @@ This release supports deployment on
 
 == What is New
 
-=== Changes To Base OS
-
-==== Base Operating System Is Now {slsa} 15 SP1
+=== Base Operating System Is Now {slsa} 15 SP1
 
 The previous version used a minimal OS image called MicroOS. {productname}
 {productmajor} uses standard {slsa} 15 SP1 as the base platform OS.
@@ -58,25 +56,25 @@ infrastructure by moving existing workloads to a {kube} framework.
 Transactional updates are available in {slsa} 15 SP1 as a technical preview but {productname}
 {productmajor} will initially ship without the transactional-update mechanism enabled.
 The regular zypper workflow allows use of interruption-free node reboot.
-The {slsa} update process should help customers integrate a Kubernetes platform
+The {slsa} update process should help customers integrate a {kube} platform
 into their existing operational infrastructure more easily, nevertheless transactional
 updates are still the preferred process for some customers,
 which is why we provide both options.
 
-==== Software Now Shipped As Packages Instead Of Disk Image
+=== Software Now Shipped As Packages Instead Of Disk Image
 
 In the previous version, the deployment of the software was done by downloading and installing a disk
 image with a pre-baked version of the product. In {productname} {productmajor}, the software is distributed
 as RPM packages from an extension module in {slsa} 15 SP1.
-This adaptation towards containers and {sles} mainly gives customers more deployment flexibility.
+This adaptation towards containers and {sls} mainly gives customers more deployment flexibility.
 
-==== More Containerized Components
+=== More Containerized Components
 
 We moved more of the components into containers, namely all the control plane components:
 `etcd`, `kube-apiserver`, `kube-controller-manager`, and `kube-scheduler`.
 The only pieces that are now running uncontainerized are `CRI-O`, `kubelet` and `kubeadm`.
 
-==== New Deployment Methods
+=== New Deployment Methods
 
 We are using a combination of `skuba` (custom wrapper around kubeadm) and
 HashiCorp Terraform to deploy {productname} machines and clusters.
@@ -93,19 +91,19 @@ based on {sle} 15 SP1 and nginx in the __{productname} Deployment Guide__:
  https://susedoc.github.io/doc-caasp/beta/caasp-deployment/single-html/#_load_balancer
 
 
-==== Updates Using Kured
+=== Updates Using Kured
 
 Updates are implemented with `skuba-update`, that makes use of the `kured`
 tool and the SLE package manager. This is implemented in the skuba-update
 tool which glues zypper and the kured tool (https://github.com/weaveworks/kured).
-Kured (KUbernetes REboot Daemon) is a Kubernetes daemonset that performs safe
+Kured (KUbernetes REboot Daemon) is a {kube} daemonset that performs safe
 automatic node reboots when the need to do so is indicated by the package
 management system of the underlying OS. Automatic updates can be manually
 disabled and configured: https://susedoc.github.io/doc-caasp/beta/caasp-admin/single-html/#_cluster_updates
 
 
 
-=== Changes To Kubernetes Stack
+=== Changes To {kube} Stack
 
 ==== Updated Kubernetes
 
@@ -141,10 +139,11 @@ Interface enabling networking policy support.
 === Centralized logging
 
 The deployment of a Centralized Logging node is now supported for the purpose of
-aggregating logs from all the nodes in the kubernetes cluster.
-Centralized Logging forwards system and Kubernetes cluster logs to a
+aggregating logs from all the nodes in the {kube} cluster.
+Centralized Logging forwards system and {kube} cluster logs to a
 specified external logging service, specifically the Rsyslog server,
-using Kubernetes Metadata Module - `mmkubernetes`.
+using {kube} Metadata Module - `mmkubernetes`.
+
 
 === Obsolete Components
 
@@ -156,14 +155,14 @@ Orchestration is instead achieved with `kubeadm` and `skuba`.
 ==== Admin Node / Velum
 
 The Admin Node is no longer necessary. The cluster will now be controlled
-by the master nodes and through API with `skuba` on any SUSE Linux enterprise system, such as a local workstation.
+by the master nodes and through API with `skuba` on any {sle} system, such as a local workstation.
 This also means the Velum dashboard is no longer available.
 
 == Known Issues
 
-=== Updating to {productname} 
+=== Updating to {productname} {productmajor}
 
-In-place upgrades from earlier versions or from version 4 beta to the generally available release is not supported. We recommend standing up a new cluster and redeploying workloads. For customers with production servers that cannot be redeployed, contact SUSE Consulting Services or your account team for further information.
+In-place upgrades from earlier versions or from Beta 4 version to the generally available release is not supported. We recommend standing up a new cluster and redeploying workloads. For customers with production servers that cannot be redeployed, contact SUSE Consulting Services or your account team for further information.
 
 === Other Known Issues:
 
@@ -183,42 +182,44 @@ In-place upgrades from earlier versions or from version 4 beta to the generally 
 
 For more information, check our Support Policy page https://www.suse.com/support/policy.html.
 
-== Support Statement for {productname} {LINK]REPORT BUG#
+== Support Statement for {productname}
 To receive support, you need an appropriate subscription with SUSE. For more information, see https://www.suse.com/support/programs/subscriptions/?id=SUSE_CaaS_Platform.
 
 The following definitions apply:
 
-L1
+L1::
 Problem determination, which means technical support designed to provide compatibility information, usage support, ongoing maintenance, information gathering and basic troubleshooting using available documentation.
 
-L2
+L2::
 Problem isolation, which means technical support designed to analyze data, reproduce customer problems, isolate problem area and provide a resolution for problems not resolved by Level 1 or prepare for Level 3.
 
-L3
+L3::
 Problem resolution, which means technical support designed to resolve problems by engaging engineering to resolve product defects which have been identified by Level 2 Support.
 
 For contracted customers and partners, {productname} {productmajor} is delivered with L3 support for all packages, except for the following:
 
-Technology Previews
+* Technology Previews
 
-Packages that require an additional customer contract
+* Packages that require an additional customer contract
 
-Packages with names ending in -devel (containing header files and similar developer resources) will only be supported together with their main packages.
+* Packages with names ending in -devel (containing header files and similar developer resources) will only be supported together with their main packages.
 
 SUSE will only support the usage of original packages. That is, packages that are unchanged and not recompiled.
 
 == Documentation and Other Information
 
-=== Available on the Product Media 
+=== Available on the Product Media
 
-Read the READMEs on the media.
-
-Get the detailed change log information about a particular package from the RPM (where <FILENAME>.rpm is the name of the RPM):
-
-rpm --changelog -qp <FILENAME>.rpm
-Check the ChangeLog file in the top level of the media for a chronological log of all changes made to the updated packages.
-
-Find more information in the docu directory of the media of SUSE Linux Enterprise Server 15 SP1. This directory includes PDF versions of the SUSE Linux Enterprise Server 15 SP1 Installation Quick Start Guide.
+* Read the READMEs on the media.
+* Get the detailed change log information about a particular package from the RPM (where `_FILENAME_.rpm` is the name of the RPM):
++
+----
+rpm --changelog -qp FILENAME.rpm
+----
+* Check the `ChangeLog` file in the top level of the media for a chronological log of all changes made to the updated packages.
+* Find more information in the `docu` directory of the media of {productname}{nbsp}{productmajor}.
+This directory includes PDF versions of the {productname}{nbsp}{productmajor} Installation Quick Start Guide and Deployment Guides.
+Documentation (if installed) is available below the `/usr/share/doc/` directory of an installed system.
 
 === Externally Provided Documentation
 
@@ -226,7 +227,16 @@ For the most up-to-date version of the documentation for {productname} {productm
 
 Find a collection of resources in the {productname} Resource Library: https://www.suse.com/products/caas-platform/#resources
 
-== Obtaining Source Code REPORT BUG#
-This SUSE product includes materials licensed to SUSE under the GNU General Public License (GPL). The GPL requires SUSE to provide the source code that corresponds to the GPL-licensed material. The source code is available for download at http://www.suse.com/download-linux/source-code.html. Also, for up to three years after distribution of the SUSE product, upon request, SUSE will mail a copy of the source code. Requests should be sent by e-mail to mailto:sle_source_request@suse.com or as otherwise instructed at http://www.suse.com/download-linux/source-code.html. SUSE may charge a reasonable fee to recover distribution costs.
+== Obtaining Source Code
+
+This {suse} product includes materials licensed to {suse} under the GNU
+General Public License (GPL).
+The GPL requires {suse} to provide the source code that corresponds to the GPL-licensed material.
+The source code is available for download at http://www.suse.com/download-linux/source-code.html.
+Also, for up to three years after distribution of the {suse} product, upon request,
+{suse} will mail a copy of the source code.
+Requests should be sent by e-mail to sle_source_request@suse.com or as otherwise instructed at
+http://www.suse.com/download-linux/source-code.html.
+{suse} may charge a reasonable fee to recover distribution costs.
 
 include::legal.adoc[Legal Notices]
