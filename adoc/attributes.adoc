@@ -29,7 +29,7 @@
 :kube_version: 1.15.2
 :kubedoc: https://kubernetes.io/docs/home/
 :kured_version: 1.2.0
-:vmware_version: 6.7.0.20000
+:vmware_version: 6.7
 
 // API versions
 

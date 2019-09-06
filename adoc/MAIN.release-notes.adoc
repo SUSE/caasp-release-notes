@@ -34,17 +34,20 @@ Release notes usually only list changes that happened between two subsequent rel
 
 == Supported Platforms
 
-This release supports deployment on
+This release supports deployment on:
 
 * {soc} 8
 * VMWare ESXi {vmware_version}
 * Bare metal
++
+({productname} {productversion} supports hardware that is certified for {slsa}
+through the YES certification program. You will find a database of certified
+hardware at https://www.suse.com/yessearch/.)
 
-//Main features of Beta 4: Dex/Gangway, Supportconfig, k8s 1.15
 
-== What is New
+== What Is New
 
-=== Base Operating System is Now {slsa} 15 SP1
+=== Base Operating System Is Now {slsa} 15 SP1
 
 The previous version used a minimal OS image called MicroOS. {productname}
 {productmajor} uses standard {slsa} 15 SP1 as the base platform OS.
@@ -172,7 +175,7 @@ account team for further information.
 To avoid fails, avoid parallel deployment of nodes.
 Joining master or worker nodes to an existing cluster should be done serially,
 meaning the nodes have to be added separately one after another.
-This issue will be fixed in the next release. 
+This issue will be fixed in the next release.
 
 
 === Other Known Issues
