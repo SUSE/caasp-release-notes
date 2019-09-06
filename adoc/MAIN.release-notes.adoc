@@ -44,7 +44,7 @@ This release supports deployment on
 
 == What is New
 
-=== Base Operating System Is Now {slsa} 15 SP1
+=== Base Operating System is Now {slsa} 15 SP1
 
 The previous version used a minimal OS image called MicroOS. {productname}
 {productmajor} uses standard {slsa} 15 SP1 as the base platform OS.
@@ -61,7 +61,7 @@ into their existing operational infrastructure more easily, nevertheless transac
 updates are still the preferred process for some customers,
 which is why we provide both options.
 
-=== Software Now Shipped As Packages Instead Of Disk Image
+=== Software Now Shipped as Packages Instead of Disk Image
 
 In the previous version, the deployment of the software was done by downloading and installing a disk
 image with a pre-baked version of the product. In {productname} {productmajor}, the software is distributed
@@ -103,7 +103,7 @@ disabled and configured: https://susedoc.github.io/doc-caasp/beta/caasp-admin/si
 
 
 
-=== Changes To {kube} Stack
+=== Changes to the {kube} Stack
 
 ==== Updated Kubernetes
 
@@ -136,7 +136,7 @@ We will strive to maintain {productname}'s compatibility with the Docker Engine 
 Interface enabling networking policy support.
 
 
-=== Centralized logging
+=== Centralized Logging
 
 The deployment of a Centralized Logging node is now supported for the purpose of
 aggregating logs from all the nodes in the {kube} cluster.
@@ -154,7 +154,7 @@ Orchestration is instead achieved with `kubeadm` and `skuba`.
 
 ==== Admin Node / Velum
 
-The Admin Node is no longer necessary. The cluster will now be controlled
+The admin node is no longer necessary. The cluster will now be controlled
 by the master nodes and through API with `skuba` on any {sle} system, such as a local workstation.
 This also means the Velum dashboard is no longer available.
 
@@ -162,17 +162,31 @@ This also means the Velum dashboard is no longer available.
 
 === Updating to {productname} {productmajor}
 
-In-place upgrades from earlier versions or from Beta 4 version to the generally available release is not supported. We recommend standing up a new cluster and redeploying workloads. For customers with production servers that cannot be redeployed, contact SUSE Consulting Services or your account team for further information.
+In-place upgrades from earlier versions or from Beta 4 version to the generally available release is not supported.
+We recommend standing up a new cluster and redeploying workloads. For customers with
+production servers that cannot be redeployed, contact SUSE Consulting Services or your
+account team for further information.
 
-=== Other Known Issues:
+=== Parallel Deployment
 
-* https://bugzilla.suse.com/show_bug.cgi?id=1144991 - ceph-common, xfsprogs, nfs-client should be installed by default or configurable in skuba
-* https://bugzilla.suse.com/show_bug.cgi?id=1145301 - upgrading a node should trigger a drain
-* https://bugzilla.suse.com/show_bug.cgi?id=1145599 - [autoyast] install set net.ipv4.ip_forward=0 in /etc/sysctl.conf. To handle this make sure that /etc/sysctl.conf is empty, a fix is coming soon.
+To avoid fails, avoid parallel deployment of nodes.
+Joining master or worker nodes to an existing cluster should be done serially,
+meaning the nodes have to be added separately one after another.
+This issue will be fixed in the next release. 
+
+
+=== Other Known Issues
+
+* https://bugzilla.suse.com/show_bug.cgi?id=1148988 - Joining worker nodes in parallel fails with increasing node count
+* https://bugzilla.suse.com/show_bug.cgi?id=1149605 - Kernel-default-base from JeOS lacks support for connecting to SES/ceph cluster
+* https://bugzilla.suse.com/show_bug.cgi?id=1149242 - Worker fails to join if node was previously attempted to be deployed as Master
+* https://bugzilla.suse.com/show_bug.cgi?id=1145301 - Upgrading a node should trigger a drain
 * https://bugzilla.suse.com/show_bug.cgi?id=1145568 - [remove-node] failed disarming kubelet due to 63 characters limitation
-* https://bugzilla.suse.com/show_bug.cgi?id=1145718 - Services do not promote their logs with the right priority to journald
 * https://bugzilla.suse.com/show_bug.cgi?id=1145773 - Server can't halt/reboot when Ceph RBD volume are mapped
-* https://bugzilla.suse.com/show_bug.cgi?id=1145904 - Some kured pods are in CrashLoopBackOff because they can't connect to apiserver. Fix is coming with next release.
+* https://bugzilla.suse.com/show_bug.cgi?id=1144991 - ceph-common, xfsprogs, nfs-client should be installed by default or configurable in skuba
+* https://bugzilla.suse.com/show_bug.cgi?id=1137879 - All cilium pods are terminated & replaced after adding worker node
+* https://bugzilla.suse.com/show_bug.cgi?id=1137628 - Multiple coredns containers running on master node.
+
 
 include::common.adoc[Common sections]
 
