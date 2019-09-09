@@ -11,7 +11,8 @@ endif::[]
 
 {productname} is an enterprise-ready Kubernetes-based container management solution
 
-These release notes are updated periodically. The latest version is always available at https://documentation.suse.com/suse-caasp/4/.
+These release notes are updated periodically. The latest version is always available at https://susedoc.github.io/caasp-release-notes/beta/release-notes/single-html/.
+//For public release change to: https://documentation.suse.com/suse-caasp/4/.
 
 [WARNING]
 This software is not ready for production use.
@@ -22,7 +23,8 @@ The released version is {productname} {productversion}
 
 == About the Release Notes
 
-The most recent version of the Release Notes is available online at https://www.suse.com/releasenotes.
+The most recent version of the Release Notes is available online at https://susedoc.github.io/caasp-release-notes/beta/release-notes/single-html/.
+//For public release change to: https://www.suse.com/releasenotes.
 
 Entries can be listed multiple times if they are important and belong to multiple sections.
 
