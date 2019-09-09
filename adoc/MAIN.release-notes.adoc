@@ -4,27 +4,13 @@ include::entities.adoc[]
 
 = {productname} {productversion} Release Notes
 
-ifeval::['{release_type}' != 'public']
-[WARNING]
-!!! This is a preview release. Not to be distributed outside of SUSE !!!
-endif::[]
-
-{productname} is an enterprise-ready Kubernetes-based container management solution
-
-These release notes are updated periodically. The latest version is always available at https://susedoc.github.io/caasp-release-notes/beta/release-notes/single-html/.
-//For public release change to: https://documentation.suse.com/suse-caasp/4/.
-
-[WARNING]
-This software is not ready for production use.
-
-[NOTE]
-The released version is {productname} {productversion}
+{productname} is an enterprise-ready Kubernetes-based container management solution.
 
 
 == About the Release Notes
 
 The most recent version of the Release Notes is available online at https://susedoc.github.io/caasp-release-notes/beta/release-notes/single-html/.
-//For public release change to: https://www.suse.com/releasenotes.
+//For public release change to: https://www.suse.com/releasenotes or https://documentation.suse.com/suse-caasp/4/.
 
 Entries can be listed multiple times if they are important and belong to multiple sections.
 
