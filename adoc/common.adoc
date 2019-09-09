@@ -34,7 +34,7 @@ SUSE will only support the usage of original packages. That is, packages that ar
 
 === Available on the Product Media
 
-* Get the detailed change log information about a particular package from the RPM (where `_FILENAME_.rpm` is the name of the RPM):
+Get the detailed change log information about a particular package from the RPM (where `_FILENAME_.rpm` is the name of the RPM):
 +
 ----
 rpm --changelog -qp FILENAME.rpm
