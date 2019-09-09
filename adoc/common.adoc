@@ -34,16 +34,11 @@ SUSE will only support the usage of original packages. That is, packages that ar
 
 === Available on the Product Media
 
-//* Read the READMEs on the media.
 * Get the detailed change log information about a particular package from the RPM (where `_FILENAME_.rpm` is the name of the RPM):
 +
 ----
 rpm --changelog -qp FILENAME.rpm
 ----
-* Check the `ChangeLog` file in the top level of the media for a chronological log of all changes made to the updated packages.
-//* Find more information in the `docu` directory of the media of {productname}{nbsp}{productmajor}.
-//This directory includes PDF versions of the {productname}{nbsp}{productmajor} Installation Quick Start Guide and Deployment Guides.
-//Documentation (if installed) is available below the `/usr/share/doc/` directory of an installed system.
 
 === Externally Provided Documentation
 
