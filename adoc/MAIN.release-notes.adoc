@@ -90,10 +90,10 @@ Deployment on bare metal using AutoYaST has now also been tested and documented:
 
 [NOTE]
 You must deploy a load balancer manually.
-This is currently not possible by using terraform.
-You can find an example of a possible load balancer configuration
-based on {sle} 15 SP1 and nginx in the __{productname} Deployment Guide__:
- https://susedoc.github.io/doc-caasp/beta/caasp-deployment/single-html/#_load_balancer
+This is currently not possible using Terraform.
+Find an example load balancer configuration
+based on {sle} 15 SP1 and Nginx in the __{productname} Deployment Guide__:
+https://susedoc.github.io/doc-caasp/beta/caasp-deployment/single-html/#_load_balancer
 
 
 === Updates Using Kured
