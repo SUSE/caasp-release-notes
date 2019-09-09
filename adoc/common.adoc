@@ -1,0 +1,59 @@
+== Support and Life Cycle
+
+{productname} is backed by award-winning support from SUSE, an established technology leader with a proven history of delivering enterprise-quality support services.
+
+{productname} {productmajor} has a two-year life cycle. Each version will receive updates while it is current, and will be subject to critical updates for the remainder of its life cycle.
+
+For more information, check our Support Policy page https://www.suse.com/support/policy.html.
+
+== Support Statement for {productname}
+To receive support, you need an appropriate subscription with SUSE. For more information, see https://www.suse.com/support/programs/subscriptions/?id=SUSE_CaaS_Platform.
+
+The following definitions apply:
+
+L1::
+Problem determination, which means technical support designed to provide compatibility information, usage support, ongoing maintenance, information gathering and basic troubleshooting using available documentation.
+
+L2::
+Problem isolation, which means technical support designed to analyze data, reproduce customer problems, isolate problem area and provide a resolution for problems not resolved by Level 1 or prepare for Level 3.
+
+L3::
+Problem resolution, which means technical support designed to resolve problems by engaging engineering to resolve product defects which have been identified by Level 2 Support.
+
+For contracted customers and partners, {productname} {productmajor} is delivered with L3 support for all packages, except for the following:
+
+* Technology Previews
+
+* Packages that require an additional customer contract
+
+* Packages with names ending in -devel (containing header files and similar developer resources) will only be supported together with their main packages.
+
+SUSE will only support the usage of original packages. That is, packages that are unchanged and not recompiled.
+
+== Documentation and Other Information
+
+=== Available on the Product Media
+
+* Get the detailed change log information about a particular package from the RPM (where `_FILENAME_.rpm` is the name of the RPM):
++
+----
+rpm --changelog -qp FILENAME.rpm
+----
+
+=== Externally Provided Documentation
+
+For the most up-to-date version of the documentation for {productname} {productmajor}, see https://www.suse.com/documentation/caas-platform-4.
+
+Find a collection of resources in the {productname} Resource Library: https://www.suse.com/products/caas-platform/#resources
+
+== Obtaining Source Code
+
+This {suse} product includes materials licensed to {suse} under the GNU
+General Public License (GPL).
+The GPL requires {suse} to provide the source code that corresponds to the GPL-licensed material.
+The source code is available for download at http://www.suse.com/download-linux/source-code.html.
+Also, for up to three years after distribution of the {suse} product, upon request,
+{suse} will mail a copy of the source code.
+Requests should be sent by e-mail to sle_source_request@suse.com or as otherwise instructed at
+http://www.suse.com/download-linux/source-code.html.
+{suse} may charge a reasonable fee to recover distribution costs.

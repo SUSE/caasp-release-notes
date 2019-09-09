@@ -32,7 +32,7 @@ Copyright © 2010-{current_year} SUSE LLC.
 This release notes document is licensed under a Creative Commons
 Attribution-ShareAlike 4.0 International License (CC-BY-SA-4.0). You should
 have received a copy of the license along with this document. If not, see
-https://creativecommons.org/licenses/by-nd/4.0/.
+https://creativecommons.org/licenses/by-sa/4.0/.
 
 {suse} has intellectual property rights relating to technology embodied
 in the product that is described in this document. In particular, and
