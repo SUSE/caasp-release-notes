@@ -52,7 +52,7 @@ into their existing operational infrastructure more easily, nevertheless transac
 updates are still the preferred process for some customers,
 which is why we provide both options.
 
-=== Software Now Shipped as Packages Instead of Disk Image
+=== Software Now Shipped As Packages Instead Of Disk Image
 
 In the previous version, the deployment of the software was done by downloading and installing a disk
 image with a pre-baked version of the product. In {productname} {productmajor}, the software is distributed
@@ -72,15 +72,14 @@ HashiCorp Terraform to deploy {productname} machines and clusters.
 We provide Terraform state examples that you can modify to roll out clusters.
 
 Deployment on bare metal using AutoYaST has now also been tested and documented:
- https://susedoc.github.io/doc-caasp/beta/caasp-deployment/single-html/#_deployment_on_bare_metal
+link:https://documentation.suse.com/suse-caasp/4/single-html/caasp-deployment/#deployment_bare_metal[]
 
 [NOTE]
 You must deploy a load balancer manually.
 This is currently not possible using Terraform.
-Find an example load balancer configuration
-based on {sle} 15 SP1 and Nginx in the __{productname} Deployment Guide__:
-https://susedoc.github.io/doc-caasp/beta/caasp-deployment/single-html/#_load_balancer
-
+Find example load balancer configurations
+based on {sle} 15 SP1 and Nginx or HAProxy in the __{productname} Deployment Guide__:
+https://documentation.suse.com/suse-caasp/4/single-html/caasp-deployment/#_load_balancer[]
 
 === Updates Using Kured
 
@@ -90,9 +89,14 @@ tool which glues zypper and the kured tool (https://github.com/weaveworks/kured)
 Kured (KUbernetes REboot Daemon) is a {kube} daemonset that performs safe
 automatic node reboots when the need to do so is indicated by the package
 management system of the underlying OS. Automatic updates can be manually
-disabled and configured: https://susedoc.github.io/doc-caasp/beta/caasp-admin/single-html/#_cluster_updates
+disabled and configured: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_cluster_updates
 
+=== Automatic Installation Of Packages For Storage Backends Discontinued
 
+In previous versions {productname} would ship with packages to support all available storage backends.
+This negated the minimal install size approach and is discontinued. If you require a specific software
+package for your storage backend please install it using {ay}, {tf} or `zypper`.
+Refer to: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_software_management
 
 === Changes to the {kube} Stack
 
