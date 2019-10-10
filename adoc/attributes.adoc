@@ -14,8 +14,8 @@
 //Counting upwards from 0, tied to kubernetes releases
 :productminor: 0
 //Counting upwards from 0, tied to maintenance release
-:productpatch: 0
-:prerelease: GMC
+:productpatch: 1
+:prerelease:
 :productversion: {productmajor}.{productminor}.{productpatch}
 :github_url: https://github.com/SUSE/doc-caasp
 
@@ -29,7 +29,8 @@
 :kube_version: 1.15.2
 :kubedoc: https://kubernetes.io/docs/home/
 :kured_version: 1.2.0
-:vmware_version: 6.7
+:vmware_version: 6.7.0.20000
+:helm_tiller_version: 2.14.2
 
 // API versions
 
