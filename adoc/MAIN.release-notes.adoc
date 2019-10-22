@@ -6,7 +6,6 @@ include::entities.adoc[]
 
 {productname} is an enterprise-ready Kubernetes-based container management solution.
 
-
 == About the Release Notes
 
 The most recent version of the Release Notes is available online at https://susedoc.github.io/caasp-release-notes/beta/release-notes/single-html/.
@@ -32,6 +31,9 @@ This release supports deployment on:
 through the YES certification program. You will find a database of certified
 hardware at https://www.suse.com/yessearch/.)
 
+== Required Actions
+
+. You must update the gangway image in your cluster manually. Refer to: <<gangway-update>>.
 
 == What Is New
 
@@ -100,6 +102,27 @@ Refer to: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_
 
 === Changes to the {kube} Stack
 
+[[gangway-update]]
+==== Update the gangway image
+
+The gangway image that shipped with {productname} 4.0 must be updated manually by performing the following steps:
+
+* Delete the gangway deployment completely
++
+====
+kubectl -f delete addons/gangway/gangway.yaml
+====
+* Delete the original image from node where gangway is running
++
+====
+sudo crictl rmi <gangway-image-id>
+====
+* Re-apply the gangway deployment
++
+====
+kubectl -f apply addons/gangway/gangway.yaml
+====
+
 ==== Updated Kubernetes
 
 {productname} {productversion} ships with {kube} {kube_version}.
@@ -129,7 +152,6 @@ We will strive to maintain {productname}'s compatibility with the Docker Engine 
 
 {productname} now uses Cilium {cilium_version} as the Container Networking
 Interface enabling networking policy support.
-
 
 === Centralized Logging
 
