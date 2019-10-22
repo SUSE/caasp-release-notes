@@ -37,7 +37,7 @@ kubectl -f delete addons/gangway/gangway.yaml
 * Delete the original image from node where gangway is running
 +
 ====
-sudo crictl rmi <gangway-image-id>
+sudo crictl rmi GANGWAY_IMAGE_ID
 ====
 * Re-apply the gangway deployment
 +
@@ -47,9 +47,9 @@ kubectl -f apply addons/gangway/gangway.yaml
 
 == Known Issues
 
-You must update the gangway container image manually after update (see <<required-actions-401>>).
+You must update the gangway container image manually after update (see <<required-actions-401>> ).
 
-For a full list of Known Issues refer to: link:https://bugzilla.suse.com/buglist.cgi?bug_status=__open__&list_id=12463857&order=Importance&product=SUSE%20CaaS%20Platform%204&query_format=specific[Bugzilla].
+For a full list of Known Issues refer to: link:{bugzilla_url}[Bugzilla].
 
 == Supported Platforms
 
