@@ -21,6 +21,10 @@ Release notes usually only list changes that happened between two subsequent rel
 
 == Changes in 4.0.1
 
+* Updated Gangway container image (see <<required-actions-401>>)
+* Added link:https://documentation.suse.com/suse-caasp/4/single-html/caasp-deployment/#_airgapped_deployment[air gap deployment instructions]
+* Various bug fixes and improvements
+
 [[required-actions-401]]
 === Required Actions
 
