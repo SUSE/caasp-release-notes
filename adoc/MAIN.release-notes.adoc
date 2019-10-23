@@ -37,7 +37,7 @@ kubectl -f delete addons/gangway/gangway.yaml
 * Delete the original image from node where gangway is running
 +
 ====
-sudo crictl rmi GANGWAY_IMAGE_ID
+sudo crictl rmi registry.suse.com/caasp/v4/gangway:3.1.0
 ====
 * Re-apply the gangway deployment
 +
