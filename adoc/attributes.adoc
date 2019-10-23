@@ -6,6 +6,7 @@
 :caasp_repo_url: http://download.suse.de/ibs/SUSE:/SLE-15-SP1:/Update:/Products:/CASP40/standard/
 :isofile: SLE-15-SP1-Installer-DVD-x86_64-Build225.1-Media1.iso
 :jeos_product_page_url: https://www.suse.com/products/server/jeos/
+:bugzilla_url: https://bugzilla.suse.com/buglist.cgi?bug_status=__open__&list_id=12463857&order=Importance&product=SUSE%20CaaS%20Platform%204&query_format=specific
 
 // Product Versions
 
@@ -25,7 +26,7 @@
 :crio_version: 1.15.0
 :dex_version: 2.16.0
 :etcd_version: 3.3.11
-:gangway_version: 3.1.0
+:gangway_version: 3.1.0-rev4
 :kube_version: 1.15.2
 :kubedoc: https://kubernetes.io/docs/home/
 :kured_version: 1.2.0
