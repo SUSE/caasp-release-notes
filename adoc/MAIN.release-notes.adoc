@@ -22,6 +22,21 @@ Release notes usually only list changes that happened between two subsequent rel
 
 {productname} is an enterprise-ready {kube}-based container management solution used by application development and DevOps teams to more easily and efficiently deploy and manage containerized applications and services. Enterprises use {productname} to reduce application delivery cycle times and improve business agility.
 
+== Changes in 4.0.2
+
+[[required-actions-402]]
+=== Required Actions
+
+[WARNING]
+====
+This is an incremental update, you must have the updates for version `4.0.1` installed and
+have performed the gangway update. If you install 4.0.2 without applying the gangway update,
+all your dex and gangway settings will be erased!
+
+<<gangway-update>>
+====
+
+
 == Changes in 4.0.1
 
 * Updated Gangway container image (see <<required-actions-401>>)
