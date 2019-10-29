@@ -24,8 +24,24 @@ Release notes usually only list changes that happened between two subsequent rel
 
 == Changes in 4.0.2
 
+[NOTE]
+====
+Core addons are addons deployed automatically by `skuba` when you bootstrap a cluster. Namely:
+* Cilium
+* Dex
+* Gangway
+* Kured
+* Default Pod Security Policies (PSP's)
+====
+
+* `skuba addon` command has been introduced to handle core addons
+** `skuba addon upgrade plan` will inform about what core addons will be upgraded
+** `skuba addon upgrade apply` will upgrade core addons in the current cluster
+
 [[required-actions-402]]
 === Required Actions
+
+* When using `skuba addon upgrade apply`, all settings of all addons will be reverted to the defaults. Make sure to reapply your changes after running `skuba addon upgrade apply`, had you modified the default settings of core addons.
 
 [WARNING]
 ====
