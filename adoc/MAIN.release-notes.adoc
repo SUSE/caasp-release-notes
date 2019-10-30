@@ -45,9 +45,7 @@ Core addons are addons deployed automatically by `skuba` when you bootstrap a cl
 
 [WARNING]
 ====
-This is an incremental update, you must have the updates for version `4.0.1` installed and
-have performed the gangway update. If you install 4.0.2 without applying the gangway update,
-all your dex and gangway settings will be erased!
+If you have not applied 4.0.1, the gangway configurations will be reverted to the defaults when applying this update, thus you will have to reapply your changes to addons/gangway/gangway.yaml after running `skuba addon upgrade apply`
 
 <<gangway-update>>
 ====
