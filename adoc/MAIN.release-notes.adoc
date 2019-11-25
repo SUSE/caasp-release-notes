@@ -64,6 +64,7 @@ Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin
 * Unified use of placeholders in code examples to `<PLACEHOLDER>` format
 * Added information on using a cluster wide root CA to admin guide
 * Add note about NTP client requirement for management workstation
+* Various minor formatting and wording fixes
 
 === Bugs fixed in 4.0.3 since 4.0.2
 
