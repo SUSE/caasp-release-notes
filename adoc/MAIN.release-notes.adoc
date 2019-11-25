@@ -18,45 +18,52 @@ Entries can be listed multiple times if they are important and belong to multipl
 
 Release notes usually only list changes that happened between two subsequent releases. Certain important entries from the release notes documents of previous product versions may be repeated. To make such entries easier to identify, they contain a note to that effect.
 
-== {productname}
-
-{productname} is an enterprise-ready {kube}-based container management solution used by application development and DevOps teams to more easily and efficiently deploy and manage containerized applications and services. Enterprises use {productname} to reduce application delivery cycle times and improve business agility.
-
 == Changes in 4.0.3
 
-* Prometheus and Grafana: official monitoring solution for CaaSPv4
-* Airgap: Format change of https://documentation.suse.com/external-tree/en-us/suse-caasp/4/skuba-cluster-images.txt
-* 389-ds fixes
-* skuba fixes
+* Prometheus and Grafana: official monitoring solution for {productname}
+* Airgap: format change of https://documentation.suse.com/external-tree/en-us/suse-caasp/4/skuba-cluster-images.txt
+* 389-ds fixes (see below)
+* skuba fixes (see below)
 
-=== Prometheus and Grafana: official monitoring solution for CaaSPv4
+=== Prometheus and Grafana: official monitoring solution for {productname}
+Prometheus and Grafana were already link:https://documentation.suse.com/suse-caasp/4.0/html/caasp-admin/_monitoring.html#_monitoring_stack[documented] but based on upstream helm charts and containers.
 
-P&G were already in our documentation, but we were using upstream helm charts and containers. In 4.0.3 version, official SUSE helm carts and containers have been deployed in kubernetes-charts.suse.com and registry.suse.com.
+
+In version {productversion}, official SUSE helm carts and containers are now available in the helm chart repository (`+kubernetes-charts.suse.com+`) and the container registry (`+registry.suse.com+`).
 
 === Airgap: Format change
 
-The format of https://documentation.suse.com/external-tree/en-us/suse-caasp/4/skuba-cluster-images.txt was changed to be able to express more data. Specifically to add skuba and caasp versions, so that
-one can match the images that should be pulled with the CaaSP and skuba version. This way, a customer having a production cluster and a staging cluster with different CaaSP versions, will know which images need where.
+The format of https://documentation.suse.com/external-tree/en-us/suse-caasp/4/skuba-cluster-images.txt was changed to be able to express more data.
+Specifically to add skuba and {productname} versions, so that one can match the images that should be pulled with the respective version.
+
+This way, you can run air gapped production and staging clusters with different {productname} versions.
 
 === Required Actions
 
 ==== Prometheus and Grafana installation instructions
 
-You will need to use helm and kubectl to deploy P&G. See instructions at the link:https://documentation.suse.com/suse-caasp/4.0.3/html/caasp-admin/_monitoring.html#_monitoring_stack[Monitoring chapter in the CaaSP admin guide]
+You will need to use `helm` and `kubectl` to deploy Prometheus and Grafana.
+Refer to: link:https://documentation.suse.com/suse-caasp/4.0/html/caasp-admin/_monitoring.html#_monitoring_stack[Monitoring chapter in the {productname} admin guide]
 
 ==== 389-ds update instructions
 
-389-ds containers have been updated in registry.suse.com (see Bugs fixed below). In order to deploy your 389-ds container, see link:https://susedoc.github.io/doc-caasp/master/caasp-admin/single-html/#_configuring_an_external_ldap_server[Configuring and external ldap server at the CaaSP admin guide]
+`389-ds` containers have been updated in `+registry.suse.com+` (see Bugs fixed below).
+In order to deploy your `389-ds` container, see link:https://susedoc.github.io/doc-caasp/master/caasp-admin/single-html/#_configuring_an_external_ldap_server[Configuring and external ldap server at the {productname} admin guide]
 
 ==== skuba update instructions
 
-Update skuba on your management host as you would do with any other package:
+Update skuba on your management workstation as you would do with any other package:
 
-`zypper install skuba`
+`zypper patch skuba`
 
 === Documentation changes
 
-
+* Updated monitoring documentation in the admin guide to reflect official charts/containers for monitoring stack
+* Added/Updated information about `389-ds` deployment and configuration
+* Added information about subnet sizing to deployment guide system requirements
+* Unified use of placeholders in code examples to `<PLACEHOLDER>` format
+* Added information on using a cluster wide root CA to admin guide
+* Add note about NTP client requirement for management workstation
 
 === Bugs fixed in 4.0.3 since 4.0.2
 
@@ -68,236 +75,3 @@ Update skuba on your management host as you would do with any other package:
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1151343[bsc#1151343] [389-ds] - The config /etc/dirsrv/slapd-*/dse.ldif can not be accessed. Attempting restore
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1151414[bsc#1151414] [389-ds] - NOTICE - dblayer_start - Detected Disorderly Shutdown last time Directory Server was running, recovering database.
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1157332[bsc#1157332] [patterns-caasp] - caasp-release rpm not installed - probably should be included in the patterns?
-
-
-== Changes in 4.0.2
-
-[NOTE]
-====
-Core addons are addons deployed automatically by `skuba` when you bootstrap a cluster. Namely:
-* Cilium
-* Dex
-* Gangway
-* Kured
-* Default Pod Security Policies (PSP's)
-====
-
-* `skuba addon` command has been introduced to handle core addons
-** `skuba addon upgrade plan` will inform about what core addons will be upgraded
-** `skuba addon upgrade apply` will upgrade core addons in the current cluster
-
-[[required-actions-402]]
-=== Required Actions
-
-* When using `skuba addon upgrade apply`, all settings of all addons will be reverted to the defaults. Make sure to reapply your changes after running `skuba addon upgrade apply`, had you modified the default settings of core addons.
-
-[WARNING]
-====
-If you have not applied 4.0.1, the gangway configurations will be reverted to the defaults when applying this update, thus you will have to reapply your changes to addons/gangway/gangway.yaml after running `skuba addon upgrade apply`
-
-<<gangway-update>>
-====
-
-=== Bugs fixed in 4.0.2 since 4.0.1
-
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1145568[bsc#1145568] [remove-node] failed disarming kubelet due to 63 character limitation
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1145907[bsc#1145907] LB dies when removing a master node in VMWare
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1146774[bsc#1146774] AWS: pod to service connectivity broken in certain cases
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1148090[bsc#1148090] Multinode cluster upgrade fails on 2nd master due to TLS handshake timeout
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1148412[bsc#1148412] Gangway uses CSS stylesheet from cloudflare.com
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1148524[bsc#1148524] Allow easy recovery from bootstrap failed during add-ons deployment phase
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1148700[bsc#1148700] worker node upgrade needs to use kubeletVersion in nodeVersionInfoUpdate type
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1149637[bsc#1149637] Misspelling of bootstrapping in a common error message
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1153913[bsc#1153913] Can not bootstrap an new cluster if a valid `kubectl` config is present
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1153928[bsc#1153928] Reboot can be triggered before skuba-update finishes
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1154085[bsc#1154085] skuba node upgrade shows component downgrade
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1154754[bsc#1154754] oauth2: cannot fetch token after 24 hours
-
-== Changes in 4.0.1
-
-* Updated Gangway container image (see <<required-actions-401>>)
-* Added link:https://documentation.suse.com/suse-caasp/4/single-html/caasp-deployment/#_airgapped_deployment[air gap deployment instructions]
-* Various bug fixes and improvements
-
-[[required-actions-401]]
-=== Required Actions
-
-[[gangway-update]]
-==== Update the gangway image
-
-The gangway image that shipped with {productname} 4.0 must be updated manually by performing the following steps:
-
-* Delete the gangway deployment completely
-+
-====
-kubectl -f delete addons/gangway/gangway.yaml
-====
-* Delete the original image from node where gangway is running
-+
-====
-sudo crictl rmi registry.suse.com/caasp/v4/gangway:3.1.0
-====
-* Re-apply the gangway deployment
-+
-====
-kubectl -f apply addons/gangway/gangway.yaml
-====
-
-== Known Issues
-
-You must update the gangway container image manually after update (see <<required-actions-401>> ).
-
-For a full list of Known Issues refer to: link:{bugzilla_url}[Bugzilla].
-
-== Supported Platforms
-
-This release supports deployment on:
-
-* {soc} 8
-* VMWare ESXi {vmware_version}
-* Bare metal
-+
-({productname} {productversion} supports hardware that is certified for {slsa}
-through the YES certification program. You will find a database of certified
-hardware at https://www.suse.com/yessearch/.)
-
-== What Is New in CaaSP 4.0
-
-=== Base Operating System Is Now {slsa} 15 SP1
-
-The previous version used a minimal OS image called MicroOS. {productname}
-{productmajor} uses standard {slsa} 15 SP1 as the base platform OS.
-{productname} can be installed as an extension on top of that. Because {slsa} 15 is
-designed to address both cloud-native and legacy workloads,
-these changes make it easier for customers who want to modernize their
-infrastructure by moving existing workloads to a {kube} framework.
-
-Transactional updates are available in {slsa} 15 SP1 as a technical preview but {productname}
-{productmajor} will initially ship without the transactional-update mechanism enabled.
-The regular zypper workflow allows use of interruption-free node reboot.
-The {slsa} update process should help customers integrate a {kube} platform
-into their existing operational infrastructure more easily, nevertheless transactional
-updates are still the preferred process for some customers,
-which is why we provide both options.
-
-=== Software Now Shipped As Packages Instead Of Disk Image
-
-In the previous version, the deployment of the software was done by downloading and installing a disk
-image with a pre-baked version of the product. In {productname} {productmajor}, the software is distributed
-as RPM packages from an extension module in {slsa} 15 SP1.
-This adaptation towards containers and {sls} mainly gives customers more deployment flexibility.
-
-=== More Containerized Components
-
-We moved more of the components into containers, namely all the control plane components:
-`etcd`, `kube-apiserver`, `kube-controller-manager`, and `kube-scheduler`.
-The only pieces that are now running uncontainerized are `CRI-O`, `kubelet` and `kubeadm`.
-
-=== New Deployment Methods
-
-We are using a combination of `skuba` (custom wrapper around kubeadm) and
-HashiCorp Terraform to deploy {productname} machines and clusters.
-We provide Terraform state examples that you can modify to roll out clusters.
-
-Deployment on bare metal using AutoYaST has now also been tested and documented:
-link:https://documentation.suse.com/suse-caasp/4/single-html/caasp-deployment/#deployment_bare_metal[]
-
-[NOTE]
-You must deploy a load balancer manually.
-This is currently not possible using Terraform.
-Find example load balancer configurations
-based on {sle} 15 SP1 and Nginx or HAProxy in the __{productname} Deployment Guide__:
-https://documentation.suse.com/suse-caasp/4/single-html/caasp-deployment/#_load_balancer[]
-
-=== Updates Using Kured
-
-Updates are implemented with `skuba-update`, that makes use of the `kured`
-tool and the SLE package manager. This is implemented in the skuba-update
-tool which glues zypper and the kured tool (https://github.com/weaveworks/kured).
-Kured (KUbernetes REboot Daemon) is a {kube} daemonset that performs safe
-automatic node reboots when the need to do so is indicated by the package
-management system of the underlying OS. Automatic updates can be manually
-disabled and configured: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_cluster_updates
-
-=== Automatic Installation Of Packages For Storage Backends Discontinued
-
-In previous versions {productname} would ship with packages to support all available storage backends.
-This negated the minimal install size approach and is discontinued. If you require a specific software
-package for your storage backend please install it using {ay}, {tf} or `zypper`.
-Refer to: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_software_management
-
-=== Changes to the {kube} Stack
-
-
-
-==== Updated Kubernetes
-
-{productname} {productversion} ships with {kube} {kube_version}.
-This latest version mainly contains enhancements to core {kube} APIs:
-CustomResourceDefinitions Pruning, -Defaulting and -OpenAPI Publishing.
-cluster life cycle stability and usability has been enhanced
-(`kubeadm init` and `kubeadm join` can now be used to configure and deploy an HA control plane)
-and new functionality of the Container Storage Interface (volume cloning) is available.
-Read up about the details of the new features of {kube} {kube_version} here:
-https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.15.md#115-whats-new
-
-
-==== CRI-O Replaces Docker
-
-{productname} now uses CRI-O {crio_version} as the default container runtime.
-CRI-O is a container runtime interface based on the OCI standard technology.
-The choice of CRI-O allows us to pursue our open-source agenda better than competing technologies.
-
-CRI-O's simplified architecture is tailored explicitly for {kube} and has a reduced footprint but also
-guarantees full compatibility with existing customer images thanks to its adherence to OCI standards.
-Other than Docker, CRI-O allows to update the container runtime without stopping workloads;
-providing improved flexibility and maintainabilitty to all {productname} users.
-
-We will strive to maintain {productname}'s compatibility with the Docker Engine in the future.
-
-==== Cilium Replaces Flannel
-
-{productname} now uses Cilium {cilium_version} as the Container Networking
-Interface enabling networking policy support.
-
-=== Centralized Logging
-
-The deployment of a Centralized Logging node is now supported for the purpose of
-aggregating logs from all the nodes in the {kube} cluster.
-Centralized Logging forwards system and {kube} cluster logs to a
-specified external logging service, specifically the Rsyslog server,
-using {kube} Metadata Module - `mmkubernetes`.
-
-
-=== Obsolete Components
-
-==== Salt
-
-Orchestration of the cluster no longer relies on Salt.
-Orchestration is instead achieved with `kubeadm` and `skuba`.
-
-==== Admin Node / Velum
-
-The admin node is no longer necessary. The cluster will now be controlled
-by the master nodes and through API with `skuba` on any {sle} system, such as a local workstation.
-This also means the Velum dashboard is no longer available.
-
-== Known Issues
-
-=== Updating to {productname} {productmajor}
-
-In-place upgrades from earlier versions or from Beta 4 version to the generally available release is not supported.
-We recommend standing up a new cluster and redeploying workloads. For customers with
-production servers that cannot be redeployed, contact SUSE Consulting Services or your
-account team for further information.
-
-=== Parallel Deployment
-
-To avoid fails, avoid parallel deployment of nodes.
-Joining master or worker nodes to an existing cluster should be done serially,
-meaning the nodes have to be added separately one after another.
-This issue will be fixed in the next release.
-
-include::common.adoc[Common sections]
-
-include::legal.adoc[Legal Notices]
