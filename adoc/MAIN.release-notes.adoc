@@ -52,9 +52,9 @@ In order to deploy your `389-ds` container, see link:https://susedoc.github.io/d
 
 ==== skuba update instructions
 
-Update skuba on your management workstation as you would do with any other package:
+Update skuba on your management workstation as you would do with any other package.
 
-`zypper patch skuba`
+Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup[{sls} 15 SP1 Admin Guide: Updating Software with Zypper]
 
 === Documentation changes
 
