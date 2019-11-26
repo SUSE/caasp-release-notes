@@ -56,12 +56,13 @@ Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin
 
 === Documentation changes
 
-* Updated monitoring documentation in the admin guide to reflect official charts/containers for monitoring stack
-* Added/Updated information about `389-ds` deployment and configuration
-* Added information about subnet sizing to deployment guide system requirements
+* link:https://documentation.suse.com/suse-caasp/4.0/single-html/caasp-admin/#_monitoring_stack[Updated monitoring documentation in the admin guide to reflect official charts/containers for monitoring stack]
+* link:https://documentation.suse.com/suse-caasp/4.0/single-html/caasp-admin#_deploying_an_external_389_directory_server[Added/Updated information about `389-ds` deployment and configuration]
+* link:https://documentation.suse.com/suse-caasp/4.0/single-html/caasp-deployment/#_networking[Added information about subnet sizing to deployment guide system requirements]
+* link:https://documentation.suse.com/suse-caasp/4.0/single-html/caasp-admin/#_deployment_with_a_custom_ca_certificate[Added information on using a cluster wide root CA to admin guide]
+* link:https://documentation.suse.com/suse-caasp/4.0/single-html/caasp-deployment/#_management_workstation[Add note about NTP client requirement for management workstation]
+* link:https://documentation.suse.com/suse-caasp/4.0/single-html/caasp-deployment/#_configuring_the_load_balancer[Added less aggressive nginx timeout values to examples]
 * Unified use of placeholders in code examples to `<PLACEHOLDER>` format
-* Added information on using a cluster wide root CA to admin guide
-* Add note about NTP client requirement for management workstation
 * Various minor formatting and wording fixes
 
 === Bugs fixed in 4.0.3 since 4.0.2
