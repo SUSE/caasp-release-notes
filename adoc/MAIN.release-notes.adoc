@@ -17,6 +17,17 @@ Entries can be listed multiple times if they are important and belong to multipl
 
 Release notes usually only list changes that happened between two subsequent releases. Certain important entries from the release notes documents of previous product versions may be repeated. To make such entries easier to identify, they contain a note to that effect.
 
+== Changes in 4.1.0?
+
+Kubernetes release shipped in CaaSP is now 1.16.
+More than 31 enhancements were merged in the kubernetes release 1.16
+(https://kubernetes.io/blog/2019/09/18/kubernetes-1-16-release-announcement/).
+
+Custom Resources Definitions (CRD) are out of beta, and
+are now generally available in the ``apiextensions.k8s.io/v1`` group.
+
+IPv4/IPv6 dual stack is now officially in alpha in 1.16.
+
 == Changes in 4.0.3
 
 * Prometheus and Grafana: official monitoring solution for {productname}
@@ -37,6 +48,34 @@ Specifically to add skuba and {productname} versions, so that one can match the 
 This way, you can run air gapped production and staging clusters with different {productname} versions.
 
 === Required Actions
+
+==== Update your kubernetes manifests for kubernetes 1.16
+
+Some API resources are moved to stable, while others have been
+moved to different groups or deprecated.
+
+The following will impact your deployment manifests:
+- ``DaemonSet``, ``Deployment``, ``StatefulSet``, and ``ReplicaSet`` in
+  ``extensions/`` (both ``v1beta1`` and ``v1beta2``) is deprecated.
+  Migrate to ``apps/v1`` group instead for all those objects.
+  Please note that ``kubectl convert`` can help you migrate all the
+  necessary fields.
+- ``PodSecurityPolicy`` in ``extensions/v1beta1`` is deprecated. Migrate to
+  ``policy/v1beta1`` group for ``PodSecurityPolicy``
+  Please note that ``kubectl convert`` can help you migrate all the
+  necessary fields.
+- ``NetworkPolicy`` in ``extensions/v1beta1`` is deprecated. Migrate to
+  ``networking.k8s.io/v1`` group for ``NetworkPolicy``
+  Please note that ``kubectl convert`` can help you migrate all the
+  necessary fields.
+- ``Ingress`` in ``extensions/v1beta1`` is being phased out. Migrate to
+  ``networking.k8s.io/v1beta1`` as soon as possible.
+  This new API does not need to update other API fields and therefore
+  only a path change is necessary.
+- Custom resource definitions have moved from ``apiextensions.k8s.io/v1beta1``
+  to ``apiextensions.k8s.io/v1``
+
+Please also see https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/ for more details.
 
 ==== Prometheus and Grafana installation instructions
 
