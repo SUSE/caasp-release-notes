@@ -15,18 +15,15 @@ The most recent version of the Release Notes is available online at https://www.
 
 Entries can be listed multiple times if they are important and belong to multiple sections.
 
-Release notes usually only list changes that happened between two subsequent releases. Certain important entries from the release notes documents of previous product versions may be repeated. To make such entries easier to identify, they contain a note to that effect.
+Release notes usually only list changes that happened between two subsequent releases.
+Certain important entries from the release notes documents of previous product versions may be repeated.
+To make such entries easier to identify, they contain a note to that effect.
 
-== Changes in 4.1.0?
+== Changes in 4.1.0
 
-Kubernetes release shipped in CaaSP is now 1.16.
-More than 31 enhancements were merged in the kubernetes release 1.16
-(https://kubernetes.io/blog/2019/09/18/kubernetes-1-16-release-announcement/).
-
-Custom Resources Definitions (CRD) are out of beta, and
-are now generally available in the ``apiextensions.k8s.io/v1`` group.
-
-IPv4/IPv6 dual stack is now officially in alpha in 1.16.
+{productname} now ships with {kube} {kube_version}.
+Most of the significant changes relate to this upgrade, as more than 31 enhancements were merged in the {kube} {kube_version} release.
+You can read a short summary of the changes under [[kubernetes_updates]].
 
 == Changes in 4.0.3
 
@@ -49,7 +46,7 @@ This way, you can run air gapped production and staging clusters with different 
 
 === Required Actions
 
-==== Update your kubernetes manifests for kubernetes 1.16
+==== Update your {kube} manifests for {kube} {kube_version}:
 
 Some API resources are moved to stable, while others have been
 moved to different groups or deprecated.
@@ -61,11 +58,11 @@ The following will impact your deployment manifests:
   Please note that ``kubectl convert`` can help you migrate all the
   necessary fields.
 - ``PodSecurityPolicy`` in ``extensions/v1beta1`` is deprecated. Migrate to
-  ``policy/v1beta1`` group for ``PodSecurityPolicy``
+  ``policy/v1beta1`` group for ``PodSecurityPolicy``.
   Please note that ``kubectl convert`` can help you migrate all the
   necessary fields.
 - ``NetworkPolicy`` in ``extensions/v1beta1`` is deprecated. Migrate to
-  ``networking.k8s.io/v1`` group for ``NetworkPolicy``
+  ``networking.k8s.io/v1`` group for ``NetworkPolicy``.
   Please note that ``kubectl convert`` can help you migrate all the
   necessary fields.
 - ``Ingress`` in ``extensions/v1beta1`` is being phased out. Migrate to
@@ -73,7 +70,7 @@ The following will impact your deployment manifests:
   This new API does not need to update other API fields and therefore
   only a path change is necessary.
 - Custom resource definitions have moved from ``apiextensions.k8s.io/v1beta1``
-  to ``apiextensions.k8s.io/v1``
+  to ``apiextensions.k8s.io/v1``.
 
 Please also see https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/ for more details.
 
@@ -272,18 +269,16 @@ This negated the minimal install size approach and is discontinued. If you requi
 package for your storage backend please install it using {ay}, {tf} or `zypper`.
 Refer to: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_software_management
 
+<<kubernetes_updates>>
 === Changes to the {kube} Stack
 
 ==== Updated Kubernetes
 
 {productname} {productversion} ships with {kube} {kube_version}.
-This latest version mainly contains enhancements to core {kube} APIs:
-CustomResourceDefinitions Pruning, -Defaulting and -OpenAPI Publishing.
-cluster life cycle stability and usability has been enhanced
-(`kubeadm init` and `kubeadm join` can now be used to configure and deploy an HA control plane)
-and new functionality of the Container Storage Interface (volume cloning) is available.
-Read up about the details of the new features of {kube} {kube_version} here:
-https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.15.md#115-whats-new
+In this latest version Custom Resources Definitions (CRD) are out of the beta version and are now generally available in the `apiextensions.k8s.io/v1` group.
+Additionally, the IPv4/IPv6 dual stack is now officially in alpha as of {kube} {kube_version}.
+You can read about the details of the new features of {kube} {kube_version} here:
+https://kubernetes.io/blog/2019/09/18/kubernetes-1-16-release-announcement/.
 
 ==== CRI-O Replaces Docker
 
