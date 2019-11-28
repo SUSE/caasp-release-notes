@@ -26,25 +26,6 @@ Most of the significant changes relate to this upgrade, as more than 31 enhancem
 You can read a short summary of the changes under [[kubernetes_updates]].
 Manual actions are required for 4.1.0 release.
 
-== Changes in 4.0.3
-
-* Prometheus and Grafana: official monitoring solution for {productname}
-* Airgap: format change of https://documentation.suse.com/external-tree/en-us/suse-caasp/4/skuba-cluster-images.txt
-* 389-ds fixes (see below)
-* skuba fixes (see below)
-
-=== Prometheus and Grafana: official monitoring solution for {productname}
-Prometheus and Grafana were already link:https://documentation.suse.com/suse-caasp/4.0/html/caasp-admin/_monitoring.html#_monitoring_stack[documented] but based on upstream helm charts and containers.
-
-In version {productversion}, official SUSE helm carts and containers are now available in the helm chart repository (`+kubernetes-charts.suse.com+`) and the container registry (`+registry.suse.com+`).
-
-=== Airgap: Format change
-
-The format of https://documentation.suse.com/external-tree/en-us/suse-caasp/4/skuba-cluster-images.txt was changed to be able to express more data.
-Specifically to add skuba and {productname} versions, so that one can match the images that should be pulled with the respective version.
-
-This way, you can run air gapped production and staging clusters with different {productname} versions.
-
 === Required Actions
 
 ==== skuba update instructions
@@ -52,6 +33,8 @@ This way, you can run air gapped production and staging clusters with different 
 Update skuba on your management workstation as you would do with any other package.
 
 Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup[{sls} 15 SP1 Admin Guide: Updating Software with Zypper]
+
+==== Upgrade your {kube} cluster:
 
 ==== Update your {kube} manifests for {kube} {kube_version}:
 
@@ -80,6 +63,33 @@ The following will impact your deployment manifests:
   to ``apiextensions.k8s.io/v1``.
 
 Please also see https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/ for more details.
+
+== Changes in 4.0.3
+
+* Prometheus and Grafana: official monitoring solution for {productname}
+* Airgap: format change of https://documentation.suse.com/external-tree/en-us/suse-caasp/4/skuba-cluster-images.txt
+* 389-ds fixes (see below)
+* skuba fixes (see below)
+
+=== Prometheus and Grafana: official monitoring solution for {productname}
+Prometheus and Grafana were already link:https://documentation.suse.com/suse-caasp/4.0/html/caasp-admin/_monitoring.html#_monitoring_stack[documented] but based on upstream helm charts and containers.
+
+In version {productversion}, official SUSE helm carts and containers are now available in the helm chart repository (`+kubernetes-charts.suse.com+`) and the container registry (`+registry.suse.com+`).
+
+=== Airgap: Format change
+
+The format of https://documentation.suse.com/external-tree/en-us/suse-caasp/4/skuba-cluster-images.txt was changed to be able to express more data.
+Specifically to add skuba and {productname} versions, so that one can match the images that should be pulled with the respective version.
+
+This way, you can run air gapped production and staging clusters with different {productname} versions.
+
+=== Required Actions
+
+==== skuba update instructions
+
+Update skuba on your management workstation as you would do with any other package.
+
+Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup[{sls} 15 SP1 Admin Guide: Updating Software with Zypper]
 
 ==== Prometheus and Grafana installation instructions
 
