@@ -24,6 +24,7 @@ To make such entries easier to identify, they contain a note to that effect.
 {productname} now ships with {kube} {kube_version}.
 Most of the significant changes relate to this upgrade, as more than 31 enhancements were merged in the {kube} {kube_version} release.
 You can read a short summary of the changes under [[kubernetes_updates]].
+Manual actions are required for 4.1.0 release.
 
 == Changes in 4.0.3
 
@@ -45,6 +46,12 @@ Specifically to add skuba and {productname} versions, so that one can match the 
 This way, you can run air gapped production and staging clusters with different {productname} versions.
 
 === Required Actions
+
+==== skuba update instructions
+
+Update skuba on your management workstation as you would do with any other package.
+
+Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup[{sls} 15 SP1 Admin Guide: Updating Software with Zypper]
 
 ==== Update your {kube} manifests for {kube} {kube_version}:
 
@@ -83,12 +90,6 @@ Refer to: link:https://documentation.suse.com/suse-caasp/4.0/html/caasp-admin/_m
 
 `389-ds` containers have been updated in `+registry.suse.com+` (see Bugs fixed below).
 In order to deploy your `389-ds` container, see link:https://susedoc.github.io/doc-caasp/master/caasp-admin/single-html/#_configuring_an_external_ldap_server[Configuring and external ldap server at the {productname} admin guide]
-
-==== skuba update instructions
-
-Update skuba on your management workstation as you would do with any other package.
-
-Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup[{sls} 15 SP1 Admin Guide: Updating Software with Zypper]
 
 === Documentation changes
 
@@ -270,8 +271,6 @@ package for your storage backend please install it using {ay}, {tf} or `zypper`.
 Refer to: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_software_management
 
 <<kubernetes_updates>>
-=== Changes to the {kube} Stack
-
 ==== Updated Kubernetes
 
 {productname} {productversion} ships with {kube} {kube_version}.
