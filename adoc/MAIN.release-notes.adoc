@@ -36,6 +36,23 @@ Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin
 
 ==== Upgrade your {kube} cluster:
 
+. Check if upgrades are available:
+  ``skuba cluster upgrade plan``
+. Check upgrades at the node level
+  ``skuba node upgrade plan <nodename>``
+. Upgrade all control plane node, one by one, by running
+  ``skuba node upgrade apply`` on each of them.
+  This has to happen serially, but the order of the control nodes does not mater.
+. Upgrade all worker nodes, one by one, by running ``skuba node upgrade apply``
+  on each of then.
+
+Then apply upgrade for addons in the cluster:
+
+. Check the addon upgrade plan
+  ``skuba addon upgrade plan``
+. Apply addon upgrades
+  ``skuba addon upgrade apply``
+
 ==== Update your {kube} manifests for {kube} {kube_version}:
 
 Some API resources are moved to stable, while others have been
