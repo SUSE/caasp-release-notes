@@ -23,7 +23,7 @@ To make such entries easier to identify, they contain a note to that effect.
 
 {productname} now ships with {kube} {kube_version}.
 Most of the significant changes relate to this upgrade, as more than 31 enhancements were merged in the {kube} {kube_version} release.
-You can read a short summary of the changes under [[kubernetes_updates]].
+You can read a short summary of the changes under <<kubernetes_updates>>.
 Manual actions are required for 4.1.0 release.
 
 === Required Actions
@@ -283,9 +283,10 @@ This negated the minimal install size approach and is discontinued. If you requi
 package for your storage backend please install it using {ay}, {tf} or `zypper`.
 Refer to: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_software_management
 
+
+[[kubernetes_updates]]
 === Changes to the {kube} Stack
 
-<<kubernetes_updates>>
 ==== Updated Kubernetes
 
 {productname} {productversion} ships with {kube} {kube_version}.
