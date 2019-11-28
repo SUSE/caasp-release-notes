@@ -275,9 +275,13 @@ Refer to: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_
 ==== Updated Kubernetes
 
 {productname} {productversion} ships with {kube} {kube_version}.
-In this latest version Custom Resources Definitions (CRD) are out of the beta version and are now generally available in the `apiextensions.k8s.io/v1` group.
-Additionally, the IPv4/IPv6 dual stack is now officially in alpha as of {kube} {kube_version}.
-You can read about the details of the new features of {kube} {kube_version} here:
+
+{kube} version 1.16 contains the following notable changes:
+
+* Custom Resources Definitions (CRD) are out of the beta version and are
+  generally available in the `apiextensions.k8s.io/v1` group.
+* IPv4/IPv6 dual stack is officially in alpha.
+* A more detailed list of the new features is here:
 https://kubernetes.io/blog/2019/09/18/kubernetes-1-16-release-announcement/.
 
 ==== CRI-O Replaces Docker
