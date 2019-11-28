@@ -280,6 +280,8 @@ This negated the minimal install size approach and is discontinued. If you requi
 package for your storage backend please install it using {ay}, {tf} or `zypper`.
 Refer to: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_software_management
 
+=== Changes to the {kube} Stack
+
 <<kubernetes_updates>>
 ==== Updated Kubernetes
 
@@ -290,8 +292,17 @@ Refer to: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_
 * Custom Resources Definitions (CRD) are out of the beta version and are
   generally available in the `apiextensions.k8s.io/v1` group.
 * IPv4/IPv6 dual stack is officially in alpha.
-* A more detailed list of the new features is here:
+Read up about the details of the new features of {kube} 1.16 here:
 https://kubernetes.io/blog/2019/09/18/kubernetes-1-16-release-announcement/.
+
+{kube} version 1.15 mainly contains enhancements to core {kube} APIs:
+
+* CustomResourceDefinitions Pruning, -Defaulting and -OpenAPI Publishing.
+* cluster life cycle stability and usability has been enhanced
+  (`kubeadm init` and `kubeadm join` can now be used to configure and deploy an HA control plane)
+* new functionality of the Container Storage Interface (volume cloning) is available.
+Read up about the details of the new features of {kube} 1.15 here:
+https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.15.md#115-whats-new
 
 ==== CRI-O Replaces Docker
 
