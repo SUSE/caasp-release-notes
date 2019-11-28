@@ -28,17 +28,17 @@ Manual actions are required for 4.1.0 release.
 
 === Required Actions
 
-==== skuba update instructions
+==== Skuba Update Instructions
 
 Update skuba on your management workstation as you would do with any other package.
 
 Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup[{sls} 15 SP1 Admin Guide: Updating Software with Zypper]
 
-==== Upgrade your {kube} cluster
+==== Upgrade Your {kube} Cluster
 
 Use skuba to upgrade your {kube} cluster as documented in the Administration guide.
 
-==== Update your {kube} manifests for {kube} {kube_version}:
+==== Update Your {kube} Manifests for {kube} {kube_version}:
 
 Some API resources are moved to stable, while others have been
 moved to different groups or deprecated.
@@ -79,7 +79,7 @@ Prometheus and Grafana were already link:https://documentation.suse.com/suse-caa
 
 In version {productversion}, official SUSE helm carts and containers are now available in the helm chart repository (`+kubernetes-charts.suse.com+`) and the container registry (`+registry.suse.com+`).
 
-=== Airgap: Format change
+=== Airgap: Format Change
 
 The format of https://documentation.suse.com/external-tree/en-us/suse-caasp/4/skuba-cluster-images.txt was changed to be able to express more data.
 Specifically to add skuba and {productname} versions, so that one can match the images that should be pulled with the respective version.
@@ -88,23 +88,23 @@ This way, you can run air gapped production and staging clusters with different 
 
 === Required Actions
 
-==== skuba update instructions
+==== Skuba Update Instructions
 
 Update skuba on your management workstation as you would do with any other package.
 
 Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup[{sls} 15 SP1 Admin Guide: Updating Software with Zypper]
 
-==== Prometheus and Grafana installation instructions
+==== Prometheus and Grafana Installation Instructions
 
 You will need to use `helm` and `kubectl` to deploy Prometheus and Grafana.
 Refer to: link:https://documentation.suse.com/suse-caasp/4.0/html/caasp-admin/_monitoring.html#_monitoring_stack[Monitoring chapter in the {productname} admin guide]
 
-==== 389-ds update instructions
+==== 389-ds Update Instructions
 
 `389-ds` containers have been updated in `+registry.suse.com+` (see Bugs fixed below).
 In order to deploy your `389-ds` container, see link:https://susedoc.github.io/doc-caasp/master/caasp-admin/single-html/#_configuring_an_external_ldap_server[Configuring and external ldap server at the {productname} admin guide]
 
-=== Documentation changes
+=== Documentation Changes
 
 * link:https://documentation.suse.com/suse-caasp/4.0/single-html/caasp-admin/#_monitoring_stack[Updated monitoring documentation in the admin guide to reflect official charts/containers for monitoring stack]
 * link:https://documentation.suse.com/suse-caasp/4.0/single-html/caasp-admin#_deploying_an_external_389_directory_server[Added/Updated information about `389-ds` deployment and configuration]
@@ -115,7 +115,7 @@ In order to deploy your `389-ds` container, see link:https://susedoc.github.io/d
 * Unified use of placeholders in code examples to `<PLACEHOLDER>` format
 * Various minor formatting and wording fixes
 
-=== Bugs fixed in 4.0.3 since 4.0.2
+=== Bugs Fixed in 4.0.3 since 4.0.2
 
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1156667[bsc#1156667] [Prometheus and Grafana] - User "system:serviceaccount:monitoring:prometheus-kube-state-metrics" cannot list resource
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1140533[bsc#1140533] [Prometheus and Grafana] -  Prometheus and grafana images and helm charts on registry.suse.com
@@ -180,7 +180,7 @@ If you have not applied 4.0.1, the gangway configurations will be reverted to th
 === Required Actions
 
 [[gangway-update]]
-==== Update the gangway image
+==== Update the Gangway Image
 
 The gangway image that shipped with {productname} 4.0 must be updated manually by performing the following steps:
 
@@ -237,7 +237,7 @@ into their existing operational infrastructure more easily, nevertheless transac
 updates are still the preferred process for some customers,
 which is why we provide both options.
 
-=== Software Now Shipped As Packages Instead Of Disk Image
+=== Software Now Shipped as Packages Instead of Disk Image
 
 In the previous version, the deployment of the software was done by downloading and installing a disk
 image with a pre-baked version of the product. In {productname} {productmajor}, the software is distributed
@@ -276,7 +276,7 @@ automatic node reboots when the need to do so is indicated by the package
 management system of the underlying OS. Automatic updates can be manually
 disabled and configured: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_cluster_updates
 
-=== Automatic Installation Of Packages For Storage Backends Discontinued
+=== Automatic Installation of Packages For Storage Backends Discontinued
 
 In previous versions {productname} would ship with packages to support all available storage backends.
 This negated the minimal install size approach and is discontinued. If you require a specific software
