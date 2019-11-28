@@ -44,24 +44,25 @@ Some API resources are moved to stable, while others have been
 moved to different groups or deprecated.
 
 The following will impact your deployment manifests:
-- ``DaemonSet``, ``Deployment``, ``StatefulSet``, and ``ReplicaSet`` in
+
+*  ``DaemonSet``, ``Deployment``, ``StatefulSet``, and ``ReplicaSet`` in
   ``extensions/`` (both ``v1beta1`` and ``v1beta2``) is deprecated.
   Migrate to ``apps/v1`` group instead for all those objects.
   Please note that ``kubectl convert`` can help you migrate all the
   necessary fields.
-- ``PodSecurityPolicy`` in ``extensions/v1beta1`` is deprecated. Migrate to
+*  ``PodSecurityPolicy`` in ``extensions/v1beta1`` is deprecated. Migrate to
   ``policy/v1beta1`` group for ``PodSecurityPolicy``.
   Please note that ``kubectl convert`` can help you migrate all the
   necessary fields.
-- ``NetworkPolicy`` in ``extensions/v1beta1`` is deprecated. Migrate to
+*  ``NetworkPolicy`` in ``extensions/v1beta1`` is deprecated. Migrate to
   ``networking.k8s.io/v1`` group for ``NetworkPolicy``.
   Please note that ``kubectl convert`` can help you migrate all the
   necessary fields.
-- ``Ingress`` in ``extensions/v1beta1`` is being phased out. Migrate to
+*  ``Ingress`` in ``extensions/v1beta1`` is being phased out. Migrate to
   ``networking.k8s.io/v1beta1`` as soon as possible.
   This new API does not need to update other API fields and therefore
   only a path change is necessary.
-- Custom resource definitions have moved from ``apiextensions.k8s.io/v1beta1``
+*  Custom resource definitions have moved from ``apiextensions.k8s.io/v1beta1``
   to ``apiextensions.k8s.io/v1``.
 
 Please also see https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/ for more details.
