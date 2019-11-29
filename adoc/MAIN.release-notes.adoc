@@ -36,7 +36,7 @@ Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin
 
 ==== Upgrade Your {kube} Cluster
 
-Use skuba to upgrade your {kube} cluster as documented in the Administration guide.
+Use skuba to upgrade your {kube} cluster as link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#handling_updates[documented in the Administration guide].
 
 ==== Update Your {kube} Manifests for {kube} {kube_version}:
 
