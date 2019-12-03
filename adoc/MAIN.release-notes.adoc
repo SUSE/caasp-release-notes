@@ -15,7 +15,57 @@ The most recent version of the Release Notes is available online at https://www.
 
 Entries can be listed multiple times if they are important and belong to multiple sections.
 
-Release notes usually only list changes that happened between two subsequent releases. Certain important entries from the release notes documents of previous product versions may be repeated. To make such entries easier to identify, they contain a note to that effect.
+Release notes usually only list changes that happened between two subsequent releases.
+Certain important entries from the release notes documents of previous product versions may be repeated.
+To make such entries easier to identify, they contain a note to that effect.
+
+== Changes in 4.1.0
+
+{productname} now ships with {kube} {kube_version}.
+Most of the significant changes relate to this upgrade, as more than 31 enhancements were merged in the {kube} {kube_version} release.
+You can read a short summary of the changes under <<kubernetes_updates>>.
+Manual actions are required for 4.1.0 release.
+
+=== Required Actions
+
+==== Skuba Update Instructions
+
+Update skuba on your management workstation as you would do with any other package.
+
+Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup[{sls} 15 SP1 Admin Guide: Updating Software with Zypper]
+
+==== Upgrade Your {kube} Cluster
+
+Use skuba to upgrade your {kube} cluster as link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#handling_updates[documented in the Administration guide].
+
+==== Update Your {kube} Manifests for {kube} {kube_version}:
+
+Some API resources are moved to stable, while others have been
+moved to different groups or deprecated.
+
+The following will impact your deployment manifests:
+
+*  ``DaemonSet``, ``Deployment``, ``StatefulSet``, and ``ReplicaSet`` in
+  ``extensions/`` (both ``v1beta1`` and ``v1beta2``) is deprecated.
+  Migrate to ``apps/v1`` group instead for all those objects.
+  Please note that ``kubectl convert`` can help you migrate all the
+  necessary fields.
+*  ``PodSecurityPolicy`` in ``extensions/v1beta1`` is deprecated. Migrate to
+  ``policy/v1beta1`` group for ``PodSecurityPolicy``.
+  Please note that ``kubectl convert`` can help you migrate all the
+  necessary fields.
+*  ``NetworkPolicy`` in ``extensions/v1beta1`` is deprecated. Migrate to
+  ``networking.k8s.io/v1`` group for ``NetworkPolicy``.
+  Please note that ``kubectl convert`` can help you migrate all the
+  necessary fields.
+*  ``Ingress`` in ``extensions/v1beta1`` is being phased out. Migrate to
+  ``networking.k8s.io/v1beta1`` as soon as possible.
+  This new API does not need to update other API fields and therefore
+  only a path change is necessary.
+*  Custom resource definitions have moved from ``apiextensions.k8s.io/v1beta1``
+  to ``apiextensions.k8s.io/v1``.
+
+Please also see https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/ for more details.
 
 == Changes in 4.0.3
 
@@ -29,7 +79,7 @@ Prometheus and Grafana were already link:https://documentation.suse.com/suse-caa
 
 In version {productversion}, official SUSE helm carts and containers are now available in the helm chart repository (`+kubernetes-charts.suse.com+`) and the container registry (`+registry.suse.com+`).
 
-=== Airgap: Format change
+=== Airgap: Format Change
 
 The format of https://documentation.suse.com/external-tree/en-us/suse-caasp/4/skuba-cluster-images.txt was changed to be able to express more data.
 Specifically to add skuba and {productname} versions, so that one can match the images that should be pulled with the respective version.
@@ -38,23 +88,23 @@ This way, you can run air gapped production and staging clusters with different 
 
 === Required Actions
 
-==== Prometheus and Grafana installation instructions
-
-You will need to use `helm` and `kubectl` to deploy Prometheus and Grafana.
-Refer to: link:https://documentation.suse.com/suse-caasp/4.0/html/caasp-admin/_monitoring.html#_monitoring_stack[Monitoring chapter in the {productname} admin guide]
-
-==== 389-ds update instructions
-
-`389-ds` containers have been updated in `+registry.suse.com+` (see Bugs fixed below).
-In order to deploy your `389-ds` container, see link:https://susedoc.github.io/doc-caasp/master/caasp-admin/single-html/#_configuring_an_external_ldap_server[Configuring and external ldap server at the {productname} admin guide]
-
-==== skuba update instructions
+==== Skuba Update Instructions
 
 Update skuba on your management workstation as you would do with any other package.
 
 Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup[{sls} 15 SP1 Admin Guide: Updating Software with Zypper]
 
-=== Documentation changes
+==== Prometheus and Grafana Installation Instructions
+
+You will need to use `helm` and `kubectl` to deploy Prometheus and Grafana.
+Refer to: link:https://documentation.suse.com/suse-caasp/4.0/html/caasp-admin/_monitoring.html#_monitoring_stack[Monitoring chapter in the {productname} admin guide]
+
+==== 389-ds Update Instructions
+
+`389-ds` containers have been updated in `+registry.suse.com+` (see Bugs fixed below).
+In order to deploy your `389-ds` container, see link:https://susedoc.github.io/doc-caasp/master/caasp-admin/single-html/#_configuring_an_external_ldap_server[Configuring and external ldap server at the {productname} admin guide]
+
+=== Documentation Changes
 
 * link:https://documentation.suse.com/suse-caasp/4.0/single-html/caasp-admin/#_monitoring_stack[Updated monitoring documentation in the admin guide to reflect official charts/containers for monitoring stack]
 * link:https://documentation.suse.com/suse-caasp/4.0/single-html/caasp-admin#_deploying_an_external_389_directory_server[Added/Updated information about `389-ds` deployment and configuration]
@@ -65,7 +115,7 @@ Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin
 * Unified use of placeholders in code examples to `<PLACEHOLDER>` format
 * Various minor formatting and wording fixes
 
-=== Bugs fixed in 4.0.3 since 4.0.2
+=== Bugs Fixed in 4.0.3 since 4.0.2
 
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1156667[bsc#1156667] [Prometheus and Grafana] - User "system:serviceaccount:monitoring:prometheus-kube-state-metrics" cannot list resource
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1140533[bsc#1140533] [Prometheus and Grafana] -  Prometheus and grafana images and helm charts on registry.suse.com
@@ -130,7 +180,7 @@ If you have not applied 4.0.1, the gangway configurations will be reverted to th
 === Required Actions
 
 [[gangway-update]]
-==== Update the gangway image
+==== Update the Gangway Image
 
 The gangway image that shipped with {productname} 4.0 must be updated manually by performing the following steps:
 
@@ -187,7 +237,7 @@ into their existing operational infrastructure more easily, nevertheless transac
 updates are still the preferred process for some customers,
 which is why we provide both options.
 
-=== Software Now Shipped As Packages Instead Of Disk Image
+=== Software Now Shipped as Packages Instead of Disk Image
 
 In the previous version, the deployment of the software was done by downloading and installing a disk
 image with a pre-baked version of the product. In {productname} {productmajor}, the software is distributed
@@ -226,24 +276,36 @@ automatic node reboots when the need to do so is indicated by the package
 management system of the underlying OS. Automatic updates can be manually
 disabled and configured: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_cluster_updates
 
-=== Automatic Installation Of Packages For Storage Backends Discontinued
+=== Automatic Installation of Packages For Storage Backends Discontinued
 
 In previous versions {productname} would ship with packages to support all available storage backends.
 This negated the minimal install size approach and is discontinued. If you require a specific software
 package for your storage backend please install it using {ay}, {tf} or `zypper`.
 Refer to: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_software_management
 
+
+[[kubernetes_updates]]
 === Changes to the {kube} Stack
 
 ==== Updated Kubernetes
 
 {productname} {productversion} ships with {kube} {kube_version}.
-This latest version mainly contains enhancements to core {kube} APIs:
-CustomResourceDefinitions Pruning, -Defaulting and -OpenAPI Publishing.
-cluster life cycle stability and usability has been enhanced
-(`kubeadm init` and `kubeadm join` can now be used to configure and deploy an HA control plane)
-and new functionality of the Container Storage Interface (volume cloning) is available.
-Read up about the details of the new features of {kube} {kube_version} here:
+
+{kube} version 1.16 contains the following notable changes:
+
+* Custom Resources Definitions (CRD) are out of the beta version and are
+  generally available in the `apiextensions.k8s.io/v1` group.
+* IPv4/IPv6 dual stack is officially in alpha.
+Read up about the details of the new features of {kube} 1.16 here:
+https://kubernetes.io/blog/2019/09/18/kubernetes-1-16-release-announcement/.
+
+{kube} version 1.15 mainly contains enhancements to core {kube} APIs:
+
+* CustomResourceDefinitions Pruning, -Defaulting and -OpenAPI Publishing.
+* cluster life cycle stability and usability has been enhanced
+  (`kubeadm init` and `kubeadm join` can now be used to configure and deploy an HA control plane)
+* new functionality of the Container Storage Interface (volume cloning) is available.
+Read up about the details of the new features of {kube} 1.15 here:
 https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.15.md#115-whats-new
 
 ==== CRI-O Replaces Docker
