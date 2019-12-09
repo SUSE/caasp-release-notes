@@ -26,6 +26,8 @@ Most of the significant changes relate to this upgrade, as more than 31 enhancem
 You can read a short summary of the changes under <<kubernetes_updates>>.
 Manual actions are required for 4.1.0 release.
 
+On top of that, helm has been updated to fix a security issue (CVE-2019-18658) and supporconfig has been updated to gather more support data (bsc#1152335).
+
 === Required Actions
 
 ==== Skuba Update Instructions
@@ -66,6 +68,20 @@ The following will impact your deployment manifests:
   to ``apiextensions.k8s.io/v1``.
 
 Please also see https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/ for more details.
+
+==== Supportconfig update instructions
+
+Supportconfig update should be installed as a base os update in the nodes:
+
+https://documentation.suse.com/suse-caasp/4.0/html/caasp-admin/_cluster_updates.html#_base_os_updates
+
+
+==== helm update instructions
+
+Update helm on your management workstation as you would do with any other package.
+                                                                                
+Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup[{sls} 15 SP1 Admin Guide: Updating Software with Zypper]
+
 
 == Changes in 4.0.3
 
