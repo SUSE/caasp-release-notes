@@ -79,14 +79,31 @@ https://documentation.suse.com/suse-caasp/4.0/html/caasp-admin/_cluster_updates.
 ==== helm update instructions
 
 Update helm on your management workstation as you would do with any other package.
-                                                                                
+
 Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup[{sls} 15 SP1 Admin Guide: Updating Software with Zypper]
+
+[WARNING]
+====
+When running helm-init you may hit a link:https://bugzilla.suse.com/show_bug.cgi?id=1159047[known bug on the certificate validation]:
+
+----
+https://kubernetes-charts.storage.googleapis.com is not a valid chart repository or cannot be reached: Get https://kubernetes-charts.storage.googleapis.com/index.yaml: x509: certificate signed by unknown authority
+----
+
+In order to fix this, run:
+
+----
+sudo update-ca-certificates
+----
+
+====
+
 
 === Bugs Fixed in 4.1.0 since 4.0.3
 
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1144065[bsc#1144065] [cri-o] - (link:https://www.suse.com/security/cve/CVE-2019-10214[CVE-2019-10214]) VUL-0: CVE-2019-10214: libcontainers-common: library does not enforce TLS connections
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1118898[bsc#1118898] [cri-o] - (link:https://www.suse.com/security/cve/CVE-2018-16874[CVE-2018-16874]) VUL-0: CVE-2018-16874: go: cmd/go: directory traversal
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1100838[bsc#1100838] [cri-o] - cri-o does not block /proc/acpi pathnames (i.e., also affected by (link:https://www.suse.com/security/cve/CVE-2018-10892[CVE-2018-10892])) 
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1100838[bsc#1100838] [cri-o] - cri-o does not block /proc/acpi pathnames (i.e., also affected by (link:https://www.suse.com/security/cve/CVE-2018-10892[CVE-2018-10892]))
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1118897[bsc#1118897] [etcd] - (link:https://www.suse.com/security/cve/CVE-2018-16873[CVE-2018-16873]) VUL-0: CVE-2018-16873: go: cmd/go: remote command execution
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1118899[bsc#1118899] [etcd] - (link:https://www.suse.com/security/cve/CVE-2018-16875[CVE-2018-16875]) VUL-0: CVE-2018-16875: go: crypto/x509: CPU denial of service
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1156646[bsc#1156646] [helm] - (link:https://www.suse.com/security/cve/CVE-2019-18658[CVE-2019-18658]) VUL-0: CVE-2019-18658: helm: commands that deal with loading a chart as a directory or packaging a chart provide an opportunity for a maliciously designed chart to include sensitive content such as /etc/passwd
