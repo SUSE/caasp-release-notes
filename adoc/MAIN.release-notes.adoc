@@ -32,13 +32,22 @@ On top of that, helm has been updated to fix a security issue (CVE-2019-18658) a
 
 ==== Skuba Update Instructions
 
-Update skuba on your management workstation as you would do with any other package.
+In order to update skuba, run the following command:
 
-Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup[{sls} 15 SP1 Admin Guide: Updating Software with Zypper]
+`zypper install skuba`
+
+===
+4.1.0 is considered a feature upgrade, and because of this, running `zypper patch` will not install 4.1.0. This is why you are requested to run `zypper install skuba`, instead.
+===
 
 ==== Upgrade Your {kube} Cluster
 
 Use skuba to upgrade your {kube} cluster as link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#handling_updates[documented in the Administration guide].
+
+[WARNING]
+====
+Please, do not run `zypper patch` manually on your nodes. If you do, you will see an error about a conflict when patching cri-o. This is expected, because the patch is not supposed to be installed this way. Instead, cluster updates are being handled by skuba link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#handling_updates[documented in the Administration guide] 
+====
 
 ==== Update Your {kube} Manifests for {kube} {kube_version}:
 
