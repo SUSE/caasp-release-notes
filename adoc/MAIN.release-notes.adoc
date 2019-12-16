@@ -32,13 +32,27 @@ On top of that, helm has been updated to fix a security issue (CVE-2019-18658) a
 
 ==== Skuba Update Instructions
 
-Update skuba on your management workstation as you would do with any other package.
+[IMPORTANT]
+===
+`4.1.0` is considered a feature upgrade, and because of this, running `zypper patch` will not install 4.1.0. This is why you are requested to run `zypper install skuba`, instead.
+===
 
-Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup[{sls} 15 SP1 Admin Guide: Updating Software with Zypper]
+In order to update skuba, run the following command:
+
+`zypper install skuba`
 
 ==== Upgrade Your {kube} Cluster
 
 Use skuba to upgrade your {kube} cluster as link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#handling_updates[documented in the Administration guide].
+
+[WARNING]
+====
+Please, do not run `zypper patch` manually on your nodes.
+If you do, you will see an error about a conflict when patching {crio}.
+This is expected, because the patch is not supposed to be installed this way.
+
+Instead, cluster updates are being handled by skuba as link:{docurl}caasp-admin/#handling_updates[documented in the Administration guide].
+====
 
 ==== Update Your {kube} Manifests for {kube} {kube_version}:
 
@@ -98,7 +112,6 @@ sudo update-ca-certificates
 
 ====
 
-
 === Bugs Fixed in 4.1.0 since 4.0.3
 
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1144065[bsc#1144065] [cri-o] - (link:https://www.suse.com/security/cve/CVE-2019-10214[CVE-2019-10214]) VUL-0: CVE-2019-10214: libcontainers-common: library does not enforce TLS connections
@@ -113,6 +126,16 @@ sudo update-ca-certificates
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1143813[bsc#1143813] [kubernetes] - kubelet sometimes starting too fast
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1143813[bsc#1143813] [skuba] - CaaSP SSL / PKI / CA Infrastructure unclear and probably inconsistent and wrong?
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1152335[bsc#1152335] [supportutils-plugin-suse-caasp] - supportconfig adjustments for CaaSP v4 missing
+
+=== Documentation Updates
+
+* Switched examples to use SUSE supported helm, Prometheus, nginx-ingress and Grafana charts and images
+* link:{docurl}caasp-admin/single-html/_security.html#_deployment_with_a_custom_ca_certificate[Added instructions on how to replace {kube} certificates with custom CA certificate]
+* link:{docurl}caasp-admin/single-html/_security.html#_replace_server_certificate_signed_by_a_trusted_ca_certificate[Added instructions to configure custom certificates for gangway and dex]
+* link:{docurl}caasp-admin/single-html/_software_management.html#_installing_tiller[Added instructions for secured Tiller deployment]
+* link:{docurl}caasp-deployment/single-html/#machine-id[Added notes about unique `machine-id` requirement]
+* link:{docurl}caasp-deployment/single-html/#_autoyast_preparation[Added timezone configuration example for {ay}]
+* link:https://github.com/SUSE/doc-caasp/pulls?q=is%3Apr+is%3Aclosed+sort%3Aupdated-desc[Various minor bugfixes and improvements]
 
 == Changes in 4.0.3
 
