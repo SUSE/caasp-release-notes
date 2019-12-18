@@ -26,7 +26,7 @@ Most of the significant changes relate to this upgrade, as more than 31 enhancem
 You can read a short summary of the changes under <<kubernetes_updates>>.
 Manual actions are required for 4.1.0 release.
 
-Moreover, helm has been updated to fix a security issue (CVE-2019-18658).
+Moreover, helm has been updated to fix a security issue (link:https://www.suse.com/security/cve/CVE-2019-18658/[CVE-2019-18658]).
 
 === Required Actions
 
@@ -34,7 +34,7 @@ Moreover, helm has been updated to fix a security issue (CVE-2019-18658).
 
 Update skuba and helm on your management workstation as you would do with any othe package.
 
-Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup-update
+Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup-update[https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup-update]
 
 [WARNING]
 ====
