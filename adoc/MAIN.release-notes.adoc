@@ -32,7 +32,7 @@ Moreover, helm has been updated to fix a security issue (link:https://www.suse.c
 
 ==== Skuba and helm update Instructions
 
-Update skuba and helm on your management workstation as you would do with any othe package.
+Update skuba and helm on your management workstation as you would do with any other package.
 
 Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup-update[https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup-update]
 
@@ -133,7 +133,7 @@ Please also see https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/ 
 
 === Known issue: skuba upgrade could not parse "Unknown" as version ====
 
-Running "skuba node upgrade plan" might fail with the error "could not parse "Unknown" as version" when a  worker, after running "skuba node upgrade apply", had not fully started yet.
+Running "skuba node upgrade plan" might fail with the error "could not parse "Unknown" as version" when a worker, after running "skuba node upgrade apply", had not fully started yet.
 
 If you are running into this issue, please add some delay after running "skuba node upgrade apply" and prior to running "skuba node upgrade plan".
 
@@ -221,13 +221,6 @@ Core addons are addons deployed automatically by `skuba` when you bootstrap a cl
 
 * When using `skuba addon upgrade apply`, all settings of all addons will be reverted to the defaults. Make sure to reapply your changes after running `skuba addon upgrade apply`, had you modified the default settings of core addons.
 
-[WARNING]
-====
-If you have not applied 4.0.1, the gangway configurations will be reverted to the defaults when applying this update, thus you will have to reapply your changes to addons/gangway/gangway.yaml after running `skuba addon upgrade apply`
-
-<<gangway-update>>
-====
-
 === Bugs fixed in 4.0.2 since 4.0.1
 
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1145568[bsc#1145568] [remove-node] failed disarming kubelet due to 63 character limitation
@@ -255,22 +248,12 @@ If you have not applied 4.0.1, the gangway configurations will be reverted to th
 [[gangway-update]]
 ==== Update the Gangway Image
 
-The gangway image that shipped with {productname} 4.0 must be updated manually by performing the following steps:
+The gangway image that shipped with {productname} 4.0 must be updated manually by performing the following step:
 
-* Delete the gangway deployment completely
-+
 ====
-kubectl -f delete addons/gangway/gangway.yaml
-====
-* Delete the original image from node where gangway is running
-+
-====
-sudo crictl rmi registry.suse.com/caasp/v4/gangway:3.1.0
-====
-* Re-apply the gangway deployment
-+
-====
-kubectl -f apply addons/gangway/gangway.yaml
+kubectl set image deployment/oidc-gangway \
+    oidc-gangway=registry.suse.com/caasp/v4/gangway:3.1.0-rev4 \
+    --namespace kube-system
 ====
 
 == Known Issues
