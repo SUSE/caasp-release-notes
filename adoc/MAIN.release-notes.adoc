@@ -19,6 +19,76 @@ Release notes usually only list changes that happened between two subsequent rel
 Certain important entries from the release notes documents of previous product versions may be repeated.
 To make such entries easier to identify, they contain a note to that effect.
 
+== Changes in 4.1.2
+
+{productname} can now be deployed with {tf} 0.12. All details of the new version
+can be found here: link: https://www.hashicorp.com/blog/terraform-0-1-2-preview/.
+The official webpage for the {tf} 0.12 upgrade is here:
+link:https://www.terraform.io/upgrade-guides/0-12.html
+
+=== Required Actions
+
+==== Upgrade terraform files and state
+
+{tf} 0.12 needs the following:
+
+* all files must follow the new syntax for the hashicorp configuration language included in 0.12;
+* all booleans must be ``true`` or ``false`` and not 0 or 1;
+* all variables must be explicitly declared;
+* all dependencies must be explicitly declared to reach the expected behaviour.
+
+(Recommended) If you can tear down your existing cluster, delete your cluster
+before upgrading to {tf} 0.12. You can then create a cluster following our
+documentation. It is the cleanest path.
+
+If you are using {tf} 0.11 and you cannot tear down your cluster, you will
+need to update your {tf} files (and states) in place for {tf} 0.12.
+
+For this, enter your {tf} files/state folder and:
+
+* Migrate {tf} files with the automatic migration tool by running ``terraform 0.12upgrade``.
+* Run the extra operations for in-place upgrade below.
+
+==== Extra operations for in-place upgrade of OpenStack terraform files
+
+* Replace any boolean written as a number to false/true. For example, replace
+  ``default = 0`` with ``default = false`` in ``openstack/variables.tf``.
+* Introduce a new variable ``password`` in ``variables.tf``.
+* Introduce a ``depends_on`` on the resource ``"openstack_compute_floatingip_associate_v2" "master_ext_ip"``:
+  ``
+  depends_on = [openstack_compute_instance_v2.master]
+  ``
+* Introduce a ``depends_on`` on the resource ``"master_wait_cloudinit"``:
+  ``
+  depends_on = [
+    openstack_compute_instance_v2.master,
+    openstack_compute_floatingip_associate_v2.master_ext_ip
+  ]
+  ``
+* Introduce a ``depends_on`` on the resources
+  ``"openstack_compute_floatingip_associate_v2" "worker_ext_ip"`` and
+  ``"null_resource" "worker_wait_cloudinit"``, similarly to the ones for master.
+  Replace ``master`` with ``worker`` on the examples above.
+
+* Update the resources ``resource "openstack_compute_instance_v2" "master"``
+  and ``resource "openstack_compute_instance_v2" "worker"`` in respectively
+  ``master-instance.tf`` and ``worker-instance.tf``. Add in those resources:
+  ``
+  lifecycle {
+    ignore_changes = [user_data]
+  }
+  ``
+  This will make it possible to update your cluster from a terraform 0.11 state
+  into a terraform 0.12 state without tearing it down completely.
+
+[WARNING]
+=========
+When adding ``lifecycle { ignore_change = [user_data] }`` in your master and
+worker instances, you will effectively prevent updates of nodes, should you or
+SUSE update the user_data. This should be removed as soon as you can after the
+migration to 0.12.
+=========
+
 == Changes in 4.1.1
 
 * skuba fixes (see below)
