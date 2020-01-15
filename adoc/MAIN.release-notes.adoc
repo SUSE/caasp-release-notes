@@ -94,7 +94,7 @@ Please, do not run `zypper patch` manually on your nodes.
 If you do, you will see an error about a conflict when patching {crio}.
 This is expected, because the patch is not supposed to be installed this way.
 
-Instead, cluster updates are being handled by skuba as link:{docurl}caasp-admin/#handling_updates[documented in the Administration guide].
+Instead, cluster updates are being handled by skuba as link:{docurl}/single-html/caasp-admin/#handling_updates[documented in the Administration guide].
 ====
 
 ==== Update Your {kube} Manifests for {kube} {kube_version}:
