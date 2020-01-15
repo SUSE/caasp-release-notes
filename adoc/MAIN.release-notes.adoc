@@ -21,12 +21,34 @@ To make such entries easier to identify, they contain a note to that effect.
 
 == Changes in 4.1.0
 
+=== {kube} update
+
 {productname} now ships with {kube} {kube_version}.
 Most of the significant changes relate to this upgrade, as more than 31 enhancements were merged in the {kube} {kube_version} release.
 You can read a short summary of the changes under <<kubernetes_updates>>.
 Manual actions are required for 4.1.0 release.
 
+=== Helm security update
+
 Moreover, helm has been updated to fix a security issue (link:https://www.suse.com/security/cve/CVE-2019-18658/[CVE-2019-18658]).
+
+=== Stratos, a web console for {kube}
+
+Stratos is now available as tech preview for {productname}. Stratos is a
+web console for {kube} and for Cloud Foundry.
+A single instance of Stratos can be used to monitor and interact with different
+{kube} clusters as long as their API endpoints are reachable by Stratos.
+
+Stratos integrates with Prometheus: it can scrape metrics collected
+by Prometheus and show them using pre-built charts.
+
+Finally Stratos can be used to interact with helm chart repositories. It can
+show the charts available and install them straight from its web interface.
+It can also show all the workloads that are running on a {kube} that have
+been created by helm chart.
+
+**Note well:** the helm chart integration is a tech preview feature of Stratos
+that must be enabled at deployment time.
 
 === Required Actions
 
