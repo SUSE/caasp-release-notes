@@ -19,6 +19,29 @@ Release notes usually only list changes that happened between two subsequent rel
 Certain important entries from the release notes documents of previous product versions may be repeated.
 To make such entries easier to identify, they contain a note to that effect.
 
+== Changes in 4.1.1
+
+* Dex and Gangway fixes (see below)
+* skuba fixes (see below)
+* supportutils-plugin-suse-caasp fixes (see below)
+
+=== Required Actions
+
+==== Dex/Gangway Adjust Replica Instructions
+
+`oidc-dex/oidc-gangway` containers deployment configuration have been updated (see Bugs fixed below).
+In order to adjust `oidc-dex/oidc-gangway` replica, see link:{docurl}/caasp-deployment/single-html/#_replicas[Replicas at the {productname} deployment guide]
+
+=== Bugs Fixed in 4.1.1 since 4.1.0
+
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1157337[bsc#1157337] [dex/gangway] - Fixed after cluster creation all DEX and all GANGWAY pods run on the first master
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1157338[bsc#1157338] [skuba] - Fixed after cluster creation all DEX and all GANGWAY pods run on the first master
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1159452[bsc#1159452] [skuba] - Fixed do not panic when version is unknown
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1157802[bsc#1157802] [skuba] - Enhanced skuba auth login help/error message
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1155810[bsc#1155810] [skuba] - Refactored to fix CaaSP SSL / PKI / CA Infrastructure unclear and probably inconsistent and wrong?
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1160443[bsc#1160443] [supportutils-plugin-suse-caasp] - Extend supportconfig to check certificates expiration time
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1152335[bsc#1152335] [supportutils-plugin-suse-caasp] - Add etcd logs for v4
+
 == Changes in 4.1.0
 
 {productname} now ships with {kube} {kube_version}.
