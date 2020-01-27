@@ -21,35 +21,81 @@ To make such entries easier to identify, they contain a note to that effect.
 
 == Changes in 4.1.1
 
-* Dex and Gangway fixes (see below)
 * skuba fixes (see below)
 * supportutils-plugin-suse-caasp fixes (see below)
+* kubernetes and cri-o fixes (see below)
+* caasp-release-notes fixes (see below)
+* prometheus fixes (see below)
 
 === Required Actions
 
-==== Dex/Gangway Adjust Replica Instructions
+Update skuba, kubernetes-client and kubernetes-kubeadm packages on your management workstation as you would do with any other package.
 
-`oidc-dex/oidc-gangway` containers deployment configuration have been updated (see Bugs fixed below).
-In order to adjust `oidc-dex/oidc-gangway` replica, see link:{docurl}/caasp-deployment/single-html/#_replicas[Replicas at the {productname} deployment guide]
+Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup-update[https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup-update]
+
+Packages on your cluster nodes (cri-o, kubernetes, supportutils-plugin-suse-caasp) will be updated automatically by `skuba-update` link:https://documentation.suse.com/suse-caasp/4.1/html/caasp-admin/_cluster_updates.html#_base_os_updates
+
+Finally, to apply the prometheus fix, enable it in your helm chart https://github.com/SUSE/kubernetes-charts-suse-com/blob/master/stable/prometheus/values.yaml#L848 and use `helm ugrade` command link:https://helm.sh/docs/intro/using_helm/#helm-upgrade-and-helm-rollback-upgrading-a-release-and-recovering-on-failure.
 
 === Bugs Fixed in 4.1.1 since 4.1.0
 
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1157337[bsc#1157337] [dex/gangway] - Fixed after cluster creation all DEX and all GANGWAY pods run on the first master
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1161179[bsc#1161179] [cri-o] - cilium crashes with "apparmor failed to apply profile: write /proc/self/attr/exec: no such file or directory
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1161056[bsc#1161056] [cri-o] - upgrade from 4.0.3 to 4.1.0 - skuba node upgrade - fails due to crio-wipe.service not starting
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1155323[bsc#1155323] [cri-o] - Include system proxy settings in service if present
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1157338[bsc#1157338] [skuba] - Fixed after cluster creation all DEX and all GANGWAY pods run on the first master
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1159452[bsc#1159452] [skuba] - Fixed do not panic when version is unknown
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1157802[bsc#1157802] [skuba] - Enhanced skuba auth login help/error message
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1155810[bsc#1155810] [skuba] - Refactored to fix CaaSP SSL / PKI / CA Infrastructure unclear and probably inconsistent and wrong?
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1157802[bsc#1157802] [skuba] - skuba auth login help should mention the port that needs to be use (:32000)
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1137337[bsc#1137337] [skuba] - Skuba log level description is missing
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1155593[bsc#1155593] [kubernetes] - second master join always fails
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1160443[bsc#1160443] [supportutils-plugin-suse-caasp] - Extend supportconfig to check certificates expiration time
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1152335[bsc#1152335] [supportutils-plugin-suse-caasp] - Add etcd logs for v4
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1160600[bsc#1160600] [caasp-release-notes] - caasp-release package points to caasp-release-notes 4.0
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1159074[bsc#1159074] [prometheus] - Prometheus pushgateway image v0.8.0 missing on registry.suse.com/caasp/v4
+
+=== Documentation Changes
+
+* Added instructions for link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_stratos_web_console[Stratos Web Console (Tech Preview)]
+* Added instructions for link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-deployment/#_storage_performance[etcd storage performance testing]
+* Added instructions for link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#troubleshooting-etcd[`etcd` troubleshooting]
+* Updated upgrade instructions with more link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#disabling_automatic_updates[information about manual upgrades and reboots]
+* Various minor fixes and improvements (Refer to: https://github.com/SUSE/doc-caasp/releases)
+
 
 == Changes in 4.1.0
+
+=== {kube} update
 
 {productname} now ships with {kube} {kube_version}.
 Most of the significant changes relate to this upgrade, as more than 31 enhancements were merged in the {kube} {kube_version} release.
 You can read a short summary of the changes under <<kubernetes_updates>>.
 Manual actions are required for 4.1.0 release.
 
+=== Helm security update
+
 Moreover, helm has been updated to fix a security issue (link:https://www.suse.com/security/cve/CVE-2019-18658/[CVE-2019-18658]).
+
+=== Stratos, a web console for {kube}
+
+Stratos is now available as tech preview for {productname}. Stratos is a
+web console for {kube} and for Cloud Foundry.
+A single instance of Stratos can be used to monitor and interact with different
+{kube} clusters as long as their API endpoints are reachable by Stratos.
+
+Stratos integrates with Prometheus: it can scrape metrics collected
+by Prometheus and show them using pre-built charts.
+
+Finally Stratos can be used to interact with helm chart repositories. It can
+show the charts available and install them straight from its web interface.
+It can also show all the workloads that are running on a {kube} that have
+been created by helm chart.
+
+[NOTE]
+====
+The helm chart integration is a tech preview feature of Stratos
+that must be enabled at deployment time.
+====
 
 === Required Actions
 
@@ -84,7 +130,6 @@ helm init \
     --service-account tiller --upgrade
 ----
 
-
 ==== Upgrade Your {kube} Cluster
 
 Use skuba to upgrade your {kube} cluster as link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#handling_updates[documented in the Administration guide].
@@ -95,7 +140,7 @@ Please, do not run `zypper patch` manually on your nodes.
 If you do, you will see an error about a conflict when patching {crio}.
 This is expected, because the patch is not supposed to be installed this way.
 
-Instead, cluster updates are being handled by skuba as link:{docurl}caasp-admin/#handling_updates[documented in the Administration guide].
+Instead, cluster updates are being handled by skuba as link:{docurl}/single-html/caasp-admin/#handling_updates[documented in the Administration guide].
 ====
 
 ==== Update Your {kube} Manifests for {kube} {kube_version}:
@@ -126,8 +171,6 @@ The following will impact your deployment manifests:
   to ``apiextensions.k8s.io/v1``.
 
 Please also see https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/ for more details.
-
-
 
 === Bugs Fixed in 4.1.0 since 4.0.3
 
