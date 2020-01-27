@@ -19,6 +19,16 @@ Release notes usually only list changes that happened between two subsequent rel
 Certain important entries from the release notes documents of previous product versions may be repeated.
 To make such entries easier to identify, they contain a note to that effect.
 
+== Changes in 4.1.1
+
+=== Documentation Changes
+
+* Added instructions for link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_stratos_web_console[Stratos Web Console (Tech Preview)]
+* Added instructions for link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-deployment/#_storage_performance[etcd storage performance testing]
+* Added instructions for link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#troubleshooting-etcd[`etcd` troubleshooting]
+* Updated upgrade instructions with more link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#disabling_automatic_updates[information about manual upgrades and reboots]
+* Various minor fixes and improvements (Refer to: https://github.com/SUSE/doc-caasp/releases)
+
 == Changes in 4.1.0
 
 === {kube} update
@@ -47,8 +57,11 @@ show the charts available and install them straight from its web interface.
 It can also show all the workloads that are running on a {kube} that have
 been created by helm chart.
 
-**Note well:** the helm chart integration is a tech preview feature of Stratos
+[NOTE]
+====
+The helm chart integration is a tech preview feature of Stratos
 that must be enabled at deployment time.
+====
 
 === Required Actions
 
@@ -82,7 +95,6 @@ helm init \
     --tiller-image registry.suse.com/caasp/v4/helm-tiller:2.16.1 \
     --service-account tiller --upgrade
 ----
-
 
 ==== Upgrade Your {kube} Cluster
 
@@ -125,8 +137,6 @@ The following will impact your deployment manifests:
   to ``apiextensions.k8s.io/v1``.
 
 Please also see https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/ for more details.
-
-
 
 === Bugs Fixed in 4.1.0 since 4.0.3
 
