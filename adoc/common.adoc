@@ -26,7 +26,7 @@ For contracted customers and partners, {productname} {productmajor} is delivered
 
 * Packages that require an additional customer contract
 
-* Packages with names ending in -devel (containing header files and similar developer resources) will only be supported together with their main packages.
+* Packages with names ending in `-devel` (containing header files and similar developer resources) will only be supported together with their main packages.
 
 SUSE will only support the usage of original packages. That is, packages that are unchanged and not recompiled.
 
@@ -41,8 +41,7 @@ rpm --changelog -qp FILENAME.rpm
 
 === Externally Provided Documentation
 
-For the most up-to-date version of the documentation for {productname} {productmajor}, see https://www.suse.com/betaprogram/caasp-beta/#documentation
-// Prblic release: https://www.suse.com/documentation/caas-platform-4.
+For the most up-to-date version of the documentation for {productname} {productmajor}, see https://documentation.suse.com/#suse-caasp
 
 Find a collection of resources in the {productname} Resource Library: https://www.suse.com/products/caas-platform/#resources
 
