@@ -21,6 +21,39 @@ To make such entries easier to identify, they contain a note to that effect.
 
 == Changes in 4.1.1
 
+* skuba fixes (see below)
+* supportutils-plugin-suse-caasp fixes (see below)
+* kubernetes and cri-o fixes (see below)
+* caasp-release-notes fixes (see below)
+* prometheus fixes (see below)
+
+=== Required Actions
+
+Update skuba, kubernetes-client and kubernetes-kubeadm packages on your management workstation as you would do with any other package.
+
+Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup-update[https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup-update]
+
+Packages on your cluster nodes (cri-o, kubernetes, supportutils-plugin-suse-caasp) will be updated automatically by `skuba-update` link:https://documentation.suse.com/suse-caasp/4.1/html/caasp-admin/_cluster_updates.html#_base_os_updates
+
+Finally, to apply the prometheus fix, enable it in your helm chart https://github.com/SUSE/kubernetes-charts-suse-com/blob/master/stable/prometheus/values.yaml#L848 and use `helm ugrade` command link:https://helm.sh/docs/intro/using_helm/#helm-upgrade-and-helm-rollback-upgrading-a-release-and-recovering-on-failure.
+
+=== Bugs Fixed in 4.1.1 since 4.1.0
+
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1161179[bsc#1161179] [cri-o] - cilium crashes with "apparmor failed to apply profile: write /proc/self/attr/exec: no such file or directory
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1161056[bsc#1161056] [cri-o] - upgrade from 4.0.3 to 4.1.0 - skuba node upgrade - fails due to crio-wipe.service not starting
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1155323[bsc#1155323] [cri-o] - Include system proxy settings in service if present
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1157338[bsc#1157338] [skuba] - Fixed after cluster creation all DEX and all GANGWAY pods run on the first master
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1159452[bsc#1159452] [skuba] - Fixed do not panic when version is unknown
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1157802[bsc#1157802] [skuba] - Enhanced skuba auth login help/error message
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1155810[bsc#1155810] [skuba] - Refactored to fix CaaSP SSL / PKI / CA Infrastructure unclear and probably inconsistent and wrong?
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1157802[bsc#1157802] [skuba] - skuba auth login help should mention the port that needs to be use (:32000)
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1137337[bsc#1137337] [skuba] - Skuba log level description is missing
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1155593[bsc#1155593] [kubernetes] - second master join always fails
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1160443[bsc#1160443] [supportutils-plugin-suse-caasp] - Extend supportconfig to check certificates expiration time
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1152335[bsc#1152335] [supportutils-plugin-suse-caasp] - Add etcd logs for v4
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1160600[bsc#1160600] [caasp-release-notes] - caasp-release package points to caasp-release-notes 4.0
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1159074[bsc#1159074] [prometheus] - Prometheus pushgateway image v0.8.0 missing on registry.suse.com/caasp/v4
+
 === Documentation Changes
 
 * Added instructions for link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_stratos_web_console[Stratos Web Console (Tech Preview)]
@@ -28,6 +61,7 @@ To make such entries easier to identify, they contain a note to that effect.
 * Added instructions for link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#troubleshooting-etcd[`etcd` troubleshooting]
 * Updated upgrade instructions with more link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#disabling_automatic_updates[information about manual upgrades and reboots]
 * Various minor fixes and improvements (Refer to: https://github.com/SUSE/doc-caasp/releases)
+
 
 == Changes in 4.1.0
 
