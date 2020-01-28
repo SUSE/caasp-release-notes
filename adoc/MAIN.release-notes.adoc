@@ -35,9 +35,9 @@ Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin
 
 Packages on your cluster nodes (cri-o, kubernetes, supportutils-plugin-suse-caasp) will be updated automatically by `skuba-update` link:https://documentation.suse.com/suse-caasp/4.1/html/caasp-admin/_cluster_updates.html#_base_os_updates
 
-Use `helm upgrade` command to fix prometheus kube-state-metrics image.          
-                                                                                
-Finally, to apply the prometheus pushgateway fix, enable it in your helm chart https://github.com/SUSE/kubernetes-charts-suse-com/blob/master/stable/prometheus/values.yaml#L848 and use helm ugrade command link:https://helm.sh/docs/intro/using_helm/#helm-upgrade-and-helm-rollback-upgrading-a-release-and-recovering-on-failure.
+Use `helm upgrade` command to fix the Prometheus `kube-state-metrics` image.
+
+Finally, to apply the Prometheus `pushgateway` fix, enable it in your helm chart link:https://github.com/SUSE/kubernetes-charts-suse-com/blob/master/stable/prometheus/values.yaml#L848[] and use the `helm ugrade` command link:https://helm.sh/docs/intro/using_helm/#helm-upgrade-and-helm-rollback-upgrading-a-release-and-recovering-on-failure[].
 
 === Bugs Fixed in 4.1.1 since 4.1.0
 
