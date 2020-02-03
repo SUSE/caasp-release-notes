@@ -26,6 +26,7 @@ To make such entries easier to identify, they contain a note to that effect.
 * kubernetes and cri-o fixes (see below)
 * caasp-release-notes fixes (see below)
 * prometheus fixes (see below)
+* {crio} now uses the system proxy settings (see <<docs-changes-411>>)
 
 === Required Actions
 
@@ -56,12 +57,14 @@ Finally, to apply the Prometheus `pushgateway` fix, enable it in your helm chart
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1159074[bsc#1159074] [prometheus] - Prometheus pushgateway image v0.8.0 missing on registry.suse.com/caasp/v4
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1161975[bsc#1161975] [prometheus] - kube-state-metrics - endless "Failed to list *v1beta1.ReplicaSet: the server could not find the requested resource" on 1.16.2
 
+[[docs-changes-411]]
 === Documentation Changes
 
-* Added instructions for link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_stratos_web_console[Stratos Web Console (Tech Preview)]
-* Added instructions for link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-deployment/#_storage_performance[etcd storage performance testing]
-* Added instructions for link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#troubleshooting-etcd[`etcd` troubleshooting]
-* Updated upgrade instructions with more link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#disabling_automatic_updates[information about manual upgrades and reboots]
+* Added instructions for link:{docurl}single-html/caasp-admin/#_stratos_web_console[Stratos Web Console (Tech Preview)]
+* Added instructions for link:{docurl}single-html/caasp-deployment/#_storage_performance[etcd storage performance testing]
+* Added instructions for link:{docurl}single-html/caasp-admin/#troubleshooting-etcd[`etcd` troubleshooting]
+* Updated link:{docurl}single-html/caasp-admin/#_configuring_httphttps_proxy_for_cri_o[{crio} proxy configuration instructions]
+* Updated upgrade instructions with more link:{docurl}/single-html/caasp-admin/#disabling_automatic_updates[information about manual upgrades and reboots]
 * Various minor fixes and improvements (Refer to: https://github.com/SUSE/doc-caasp/releases)
 
 
