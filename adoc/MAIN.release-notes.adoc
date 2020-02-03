@@ -29,7 +29,7 @@ To make such entries easier to identify, they contain a note to that effect.
 
 === Required Actions
 
-Update skuba, kubernetes-client and kubernetes-kubeadm packages on your management workstation as you would do with any other package.
+Update skuba and kubernetes-client packages on your management workstation as you would do with any other package.
 
 Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup-update[https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup-update]
 
