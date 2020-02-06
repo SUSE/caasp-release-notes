@@ -30,12 +30,14 @@ To make such entries easier to identify, they contain a note to that effect.
 
 === Required Actions
 
+==== Update packages for general fixes and added supportconfig plugin
 Update skuba and kubernetes-client packages on your management workstation as you would do with any other package.
 
 Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup-update[https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup-update]
 
 Packages on your cluster nodes (cri-o, kubernetes, supportutils-plugin-suse-caasp) will be updated automatically by `skuba-update` link:https://documentation.suse.com/suse-caasp/4.1/html/caasp-admin/_cluster_updates.html#_base_os_updates
 
+==== Fix Prometheus `kube-state-metrics`
 Use `helm upgrade` command to fix the Prometheus `kube-state-metrics` image.
 
 Finally, in order to use new Prometheus `pushgateway` image, enable the service in your `prometheus-config-values.yaml` config file:
@@ -45,9 +47,9 @@ pushgateway:
   enabled: true
 ----
 
-and use `helm upgrade` command link:https://helm.sh/docs/intro/using_helm/#helm-upgrade-and-helm-rollback-upgrading-a-release-and-recovering-on-failure[].
+Then run the `helm upgrade` command link:https://helm.sh/docs/intro/using_helm/#helm-upgrade-and-helm-rollback-upgrading-a-release-and-recovering-on-failure[].
 
-Refer to: link:https://documentation.suse.com/suse-caasp/4.1/html/caasp-admin/_monitoring.html#_prometheus[].
+Afterwards you can deploy Prometheus as usual. Refer to: link:https://documentation.suse.com/suse-caasp/4.1/html/caasp-admin/_monitoring.html#_prometheus[].
 
 === Bugs Fixed in 4.1.1 since 4.1.0
 
