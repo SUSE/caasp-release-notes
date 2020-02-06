@@ -38,7 +38,16 @@ Packages on your cluster nodes (cri-o, kubernetes, supportutils-plugin-suse-caas
 
 Use `helm upgrade` command to fix the Prometheus `kube-state-metrics` image.
 
-Finally, to apply the Prometheus `pushgateway` fix, enable it in your helm chart link:https://github.com/SUSE/kubernetes-charts-suse-com/blob/master/stable/prometheus/values.yaml#L848[] and use the `helm ugrade` command link:https://helm.sh/docs/intro/using_helm/#helm-upgrade-and-helm-rollback-upgrading-a-release-and-recovering-on-failure[].
+Finally, in order to use new Prometheus `pushgateway` image, enable the service in your `prometheus-config-values.yaml` config file:
+
+----
+pushgateway:
+  enabled: true
+----
+
+and use `helm upgrade` command link:https://helm.sh/docs/intro/using_helm/#helm-upgrade-and-helm-rollback-upgrading-a-release-and-recovering-on-failure[].
+
+Refer to: link:https://documentation.suse.com/suse-caasp/4.1/html/caasp-admin/_monitoring.html#_prometheus[].
 
 === Bugs Fixed in 4.1.1 since 4.1.0
 
