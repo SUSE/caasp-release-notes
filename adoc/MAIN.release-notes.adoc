@@ -55,13 +55,13 @@ To do this, enter your {tf} files/state folder and:
 * Replace any boolean values written as a number with ``false``/``true``. For example, replace
   ``default = 0`` with ``default = false`` in ``openstack/variables.tf``.
 * Introduce a new variable ``password`` in ``variables.tf``.
-* Introduce a ``depends_on`` on the resource ``"openstack_compute_floatingip_associate_v2" "master_ext_ip"``:
+* Introduce a ``depends_on`` on the resource ``"openstack_compute_floatingip_associate_v2" "master_ext_ip"`` in ``master-instance.tf``:
 +
 ----
 depends_on = [openstack_compute_instance_v2.master]
 ----
 +
-* Introduce a ``depends_on`` on the resource ``"master_wait_cloudinit"``:
+* Introduce a ``depends_on`` on the resource ``"master_wait_cloudinit"`` in ``master-instance.tf``:
 +
 ----
 depends_on = [
@@ -72,7 +72,7 @@ depends_on = [
 +
 * Introduce a ``depends_on`` on the resources
   ``"openstack_compute_floatingip_associate_v2" "worker_ext_ip"`` and
-  ``"null_resource" "worker_wait_cloudinit"``, similarly to the ones for master.
+  ``"null_resource" "worker_wait_cloudinit"`` in ``worker-instance.tf``, similarly to the ones for master.
   Replace ``master`` with ``worker`` in the examples above.
 * Update the resources ``resource "openstack_compute_instance_v2" "master"``
   and ``resource "openstack_compute_instance_v2" "worker"`` with
