@@ -48,7 +48,7 @@ need to update your {tf} files (and states) in place for {tf} 0.12.
 To do this, enter your {tf} files/state folder and:
 
 * Migrate {tf} files with the automatic migration tool by running ``terraform 0.12upgrade``.
-* Run the extra operations for in-place upgrade, which follow just below.
+* For OpenStack, run the extra operations for in-place upgrade, which follow just below.
 
 ==== Extra Operations for In-place Upgrade of OpenStack {tf} Files
 
