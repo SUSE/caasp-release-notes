@@ -56,7 +56,7 @@ To do this, enter your {tf} files/state folder and:
   For example, for the variables in ``openstack/variables.tf``
   (and their equivalent in your ``terraform.tfvars`` file), replace
   ``default = 0`` with ``default = false`` in the variables
-  ``workers_vol_enabled``, ``dnsentry``, ``cpi_enable``. Do the same for
+  ``workers_vol_enabled`` and ``dnsentry``. Do the same for
   any extra boolean variable you might have added.
 * Introduce a new variable ``password`` in ``variables.tf``.
 * Introduce a ``depends_on`` on the resource ``"openstack_compute_floatingip_associate_v2" "master_ext_ip"`` in ``master-instance.tf``:
