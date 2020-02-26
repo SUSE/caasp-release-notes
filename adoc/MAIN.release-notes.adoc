@@ -49,6 +49,8 @@ To do this, enter your {tf} files/state folder and:
 
 * Migrate {tf} files with the automatic migration tool by running ``terraform 0.12upgrade``.
 * For OpenStack, run the extra operations for in-place upgrade, which follow just below.
+* For VMware, there is no extra operation.
+* You can then run the ``terraform init/plan/apply`` commands as usual.
 
 ==== Extra Operations for In-place Upgrade of OpenStack {tf} Files
 
