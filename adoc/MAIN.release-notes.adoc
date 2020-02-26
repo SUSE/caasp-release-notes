@@ -19,6 +19,15 @@ Release notes usually only list changes that happened between two subsequent rel
 Certain important entries from the release notes documents of previous product versions may be repeated.
 To make such entries easier to identify, they contain a note to that effect.
 
+== Changes in 4.2
+
+  * skuba fixes (see below)
+
+=== Bugs Fixed in 4.2 since 4.1.2
+
+* link:https://github.com/SUSE/skuba/issues/919[github#919] [skuba] - skuba should disable firewalld when bootstrapping/joining a node. Adds a startup step to check that firewalld is disabled.
+
+
 == Changes in 4.1.2
 
 {productname} can now be deployed with *{tf} 0.12*. All details of the new version
@@ -99,6 +108,7 @@ worker instances, you will effectively prevent updates of nodes, should you or
 SUSE update the ``user_data``. This should be removed as soon as possible after the
 migration to {tf} 0.12.
 =========
+
 
 == Changes in 4.1.1
 
