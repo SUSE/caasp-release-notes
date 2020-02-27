@@ -28,7 +28,7 @@ Deployment of {productname} on Amazon Web Services (AWS) has been tested and doc
 For detailed instructions please see link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-deployment/#_deployment_on_amazon_aws[the Deployment Guide].
 Please note that {productname} deployment on AWS may not be functionally complete, and is not intended for production use.
 
-=== Terraform Upgarde
+=== Terraform Upgrade
 {productname} can now be deployed with *{tf} 0.12*. All details of the new version
 can be found in the link:https://www.hashicorp.com/blog/terraform-0-1-2-preview/[HashiCorp Documentation].
 The official website for the {tf} 0.12 upgrade is https://www.terraform.io/upgrade-guides/0-12.html.
