@@ -19,6 +19,10 @@ Release notes usually only list changes that happened between two subsequent rel
 Certain important entries from the release notes documents of previous product versions may be repeated.
 To make such entries easier to identify, they contain a note to that effect.
 
+== Changes in 4.2.0
+
+{vmware} {tf} config now supports setting a datastore cluster as the storage backend. Please refer to the  link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-deployment/_deployment_instructions.html#_deploying_vms_from_the_template[Deployment Instructions] for more information.
+
 == Changes in 4.1.2
 
 {productname} can now be deployed with *{tf} 0.12*. All details of the new version
