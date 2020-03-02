@@ -414,9 +414,7 @@ Core addons are addons deployed automatically by `skuba` when you bootstrap a cl
 The gangway image that shipped with {productname} 4.0 must be updated manually by performing the following step:
 
 ====
-kubectl set image deployment/oidc-gangway \
-    oidc-gangway=registry.suse.com/caasp/v4/gangway:3.1.0-rev4 \
-    --namespace kube-system
+kubectl set image deployment/oidc-gangway oidc-gangway=registry.suse.com/caasp/v4/gangway:3.1.0-rev4 --namespace kube-system
 ====
 
 == Known Issues
