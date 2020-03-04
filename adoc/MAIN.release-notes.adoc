@@ -437,6 +437,7 @@ This release supports deployment on:
 
 * {soc} 8
 * VMWare ESXi {vmware_version}
+* KVM
 * Bare metal
 +
 ({productname} {productversion} supports hardware that is certified for {slsa}
