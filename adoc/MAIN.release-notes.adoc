@@ -24,6 +24,7 @@ To make such entries easier to identify, they contain a note to that effect.
 {productname} can now be deployed with *{tf} 0.12*. All details of the new version
 can be found in the link:https://www.hashicorp.com/blog/terraform-0-1-2-preview/[HashiCorp Documentation].
 The official website for the {tf} 0.12 upgrade is https://www.terraform.io/upgrade-guides/0-12.html.
+Add CLI etcdctl to provide access to etcd container.
 
 === Required Actions
 
@@ -99,6 +100,20 @@ worker instances, you will effectively prevent updates of nodes, should you or
 SUSE update the ``user_data``. This should be removed as soon as possible after the
 migration to {tf} 0.12.
 =========
+
+=== Bugs Fixed in 4.1.2 since 4.1.1
+
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1161056[bsc#1161056] [cri-o] - Fix upgrade from 4.0.3 to 4.1.0 - skuba node upgrade - fails due to crio-wipe.service not starting
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1161179[bsc#1161179] [cri-o] - Fix invalid apparmor profile
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1158440[bsc#1158440] [terraform] - Update in SLE-15 (bsc#1158440, CVE-2019-19316)
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1148092[bsc#1148092] [terraform] - Include in SLE-15 (bsc#1148092, jsc#ECO-134)
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1145003[bsc#1145003] [terraform-provider-openstack] - Update to version 1.19.0
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1159082[bsc#1159082] [grafana] - Fix some missing container images of grafana helm chart
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1161225[bsc#1161225] [grafana] - Fix grafana helm chart has app version 6.4.2 but version is 6.2.5
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1161110[bsc#1161110] [grafana] - Fix Grafana dashboard should not name "CaaSP" but "SUSE (r) CaaS Platform"
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1162093[bsc#1162093] [kubelet] - Release fix for volume-plugin-dir in kubernetes packages
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1160463[bsc#1160463] [skuba] - Fix skuba-update --version always 0.0.0
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1157323[bsc#1157323] [skuba] - Fix need a way to report on current available CaaSP version vs. installed version
 
 == Changes in 4.1.1
 
