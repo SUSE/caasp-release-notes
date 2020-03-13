@@ -109,6 +109,32 @@ SUSE update the ``user_data``. This should be removed as soon as possible after 
 migration to {tf} 0.12.
 =========
 
+==== Extra precautions for automations based on `output.tf` on VMWare
+
+If you are running any automations on your VMWare deployment of {productname} that
+relies on the {tf} output as defined in `output.tf`, you might encounter some `null` values in the value slice after
+the update to {tf} 0.12. For example:
+
+----
+Outputs:
+ip_load_balancer = [
+  "10.84.73.8",
+]
+ip_masters = [
+  [
+    null,
+  ],
+]
+ip_workers = [
+  [
+    null,
+  ],
+]
+----
+
+You can work around this problem by joining another node to the cluster once {tf} 0.12 is installed.
+
+
 === Bugs Fixed in 4.1.2 since 4.1.1
 
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1161056[bsc#1161056] [cri-o] - Fix upgrade from 4.0.3 to 4.1.0 - skuba node upgrade - fails due to crio-wipe.service not starting
