@@ -29,6 +29,7 @@ For detailed instructions please see link:https://documentation.suse.com/suse-ca
 Please note that {productname} deployment on AWS may not be functionally complete, and is not intended for production use.
 
 === Terraform Upgrade
+
 {productname} can now be deployed with *{tf} 0.12*. All details of the new version
 can be found in the link:https://www.hashicorp.com/blog/terraform-0-1-2-preview/[HashiCorp Documentation].
 The official website for the {tf} 0.12 upgrade is https://www.terraform.io/upgrade-guides/0-12.html.
@@ -41,7 +42,7 @@ Add CLI etcdctl to provide access to etcd container.
 In order to seamlessly switch to {tf} 0.12 you need to make sure that:
 
 * all files follow the new syntax for the HashiCorp Configuration Language included in {tf} 0.12;
-* all boolean values are ``true`` or ``false`` and *not* 0 or 1;
+* all boolean values are `true` or `false` and *not* 0 or 1;
 * all variables are explicitly declared;
 * all dependencies are explicitly declared to reach the expected behavior.
 
@@ -56,26 +57,26 @@ need to update your {tf} files (and states) in place for {tf} 0.12.
 
 To do this, enter your {tf} files/state folder and:
 
-* Migrate {tf} files with the automatic migration tool by running ``terraform 0.12upgrade``.
+* Migrate {tf} files with the automatic migration tool by running `terraform 0.12upgrade`.
 * For OpenStack, run the extra operations for in-place upgrade, which follow just below.
 * For VMware, there is no extra operation.
-* You can then run the ``terraform init/plan/apply`` commands as usual.
+* You can then run the `terraform init/plan/apply` commands as usual.
 
 ==== Extra Operations for In-place Upgrade of OpenStack {tf} Files
 
-* Replace any boolean values written as a number with ``false``/``true``.
-  For example, for the variables in ``openstack/variables.tf``
-  (and their equivalent in your ``terraform.tfvars`` file), replace
-  ``default = 0`` with ``default = false`` in the variables
-  ``workers_vol_enabled`` and ``dnsentry``. Do the same for
+* Replace any boolean values written as a number with `false`/`true`.
+  For example, for the variables in `openstack/variables.tf`
+  (and their equivalent in your `terraform.tfvars` file), replace
+  `default = 0` with `default = false` in the variables
+  `workers_vol_enabled` and `dnsentry`. Do the same for
   any extra boolean variable you might have added.
-* Introduce a ``depends_on`` on the resource ``"openstack_compute_floatingip_associate_v2" "master_ext_ip"`` in ``master-instance.tf``:
+* Introduce a `depends_on` on the resource `"openstack_compute_floatingip_associate_v2" "master_ext_ip"` in `master-instance.tf`:
 +
 ----
 depends_on = [openstack_compute_instance_v2.master]
 ----
 +
-* Introduce a ``depends_on`` on the resource ``"master_wait_cloudinit"`` in ``master-instance.tf``:
+* Introduce a `depends_on` on the resource `"master_wait_cloudinit"` in `master-instance.tf`:
 +
 ----
 depends_on = [
@@ -84,13 +85,13 @@ depends_on = [
 ]
 ----
 +
-* Introduce a ``depends_on`` on the resources
-  ``"openstack_compute_floatingip_associate_v2" "worker_ext_ip"`` and
-  ``"null_resource" "worker_wait_cloudinit"`` in ``worker-instance.tf``, similarly to the ones for master.
-  Replace ``master`` with ``worker`` in the examples above.
-* Update the resources ``resource "openstack_compute_instance_v2" "master"``
-  and ``resource "openstack_compute_instance_v2" "worker"`` with
-  ``master-instance.tf`` and ``worker-instance.tf`` respectively. Add the following resources:
+* Introduce a `depends_on` on the resources
+  `"openstack_compute_floatingip_associate_v2" "worker_ext_ip"` and
+  `"null_resource" "worker_wait_cloudinit"` in `worker-instance.tf`, similarly to the ones for master.
+  Replace `master` with `worker` in the examples above.
+* Update the resources `resource "openstack_compute_instance_v2" "master"`
+  and `resource "openstack_compute_instance_v2" "worker"` with
+  `master-instance.tf` and `worker-instance.tf` respectively. Add the following resources:
 +
 ----
 lifecycle {
@@ -103,9 +104,9 @@ into a {tf} 0.12 state without tearing it down completely.
 
 [WARNING]
 =========
-When adding ``lifecycle { ignore_change = [user_data] }`` in your master and
+When adding `lifecycle { ignore_change = [user_data] }` in your master and
 worker instances, you will effectively prevent updates of nodes, should you or
-SUSE update the ``user_data``. This should be removed as soon as possible after the
+SUSE update the `user_data`. This should be removed as soon as possible after the
 migration to {tf} 0.12.
 =========
 
@@ -296,25 +297,25 @@ moved to different groups or deprecated.
 
 The following will impact your deployment manifests:
 
-*  ``DaemonSet``, ``Deployment``, ``StatefulSet``, and ``ReplicaSet`` in
-  ``extensions/`` (both ``v1beta1`` and ``v1beta2``) is deprecated.
-  Migrate to ``apps/v1`` group instead for all those objects.
-  Please note that ``kubectl convert`` can help you migrate all the
+*  `DaemonSet`, `Deployment`, `StatefulSet`, and `ReplicaSet` in
+  `extensions/` (both `v1beta1` and `v1beta2`) is deprecated.
+  Migrate to `apps/v1` group instead for all those objects.
+  Please note that `kubectl convert` can help you migrate all the
   necessary fields.
-*  ``PodSecurityPolicy`` in ``extensions/v1beta1`` is deprecated. Migrate to
-  ``policy/v1beta1`` group for ``PodSecurityPolicy``.
-  Please note that ``kubectl convert`` can help you migrate all the
+*  `PodSecurityPolicy` in `extensions/v1beta1` is deprecated. Migrate to
+  `policy/v1beta1` group for `PodSecurityPolicy`.
+  Please note that `kubectl convert` can help you migrate all the
   necessary fields.
-*  ``NetworkPolicy`` in ``extensions/v1beta1`` is deprecated. Migrate to
-  ``networking.k8s.io/v1`` group for ``NetworkPolicy``.
-  Please note that ``kubectl convert`` can help you migrate all the
+*  `NetworkPolicy` in `extensions/v1beta1` is deprecated. Migrate to
+  `networking.k8s.io/v1` group for `NetworkPolicy`.
+  Please note that `kubectl convert` can help you migrate all the
   necessary fields.
-*  ``Ingress`` in ``extensions/v1beta1`` is being phased out. Migrate to
-  ``networking.k8s.io/v1beta1`` as soon as possible.
+*  `Ingress` in `extensions/v1beta1` is being phased out. Migrate to
+  `networking.k8s.io/v1beta1` as soon as possible.
   This new API does not need to update other API fields and therefore
   only a path change is necessary.
-*  Custom resource definitions have moved from ``apiextensions.k8s.io/v1beta1``
-  to ``apiextensions.k8s.io/v1``.
+*  Custom resource definitions have moved from `apiextensions.k8s.io/v1beta1`
+  to `apiextensions.k8s.io/v1`.
 
 Please also see https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/ for more details.
 
