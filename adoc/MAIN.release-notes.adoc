@@ -57,9 +57,12 @@ need to update your {tf} files (and states) in place for {tf} 0.12.
 
 To do this, enter your {tf} files/state folder and:
 
+* Install the latest version of {tf} using `zypper in terraform` (the installed version should be 0.12.19)
+* Navigate to your {tf} root folder (e.g. `/usr/share/caasp/terraform/vmware`)
 * Migrate {tf} files with the automatic migration tool by running `terraform 0.12upgrade`.
-* For OpenStack, run the extra operations for in-place upgrade, which follow just below.
-* For VMware, there is no extra operation.
+** For OpenStack, run the extra operations for in-place upgrade, which follow just below.
+** For VMware, there is no extra operation but please note <<vmware_precaution_nullstrings>>.
+* Run `zypper up skuba`
 * You can then run the `terraform init/plan/apply` commands as usual.
 
 ==== Extra Operations for In-place Upgrade of OpenStack {tf} Files
@@ -110,6 +113,7 @@ SUSE update the `user_data`. This should be removed as soon as possible after th
 migration to {tf} 0.12.
 =========
 
+[[vmware_precaution_nullstrings]]
 ==== Extra precautions for automations based on `output.tf` on VMWare
 
 If you are running any automations on your VMWare deployment of {productname} that
