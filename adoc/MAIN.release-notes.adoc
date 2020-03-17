@@ -19,6 +19,12 @@ Release notes usually only list changes that happened between two subsequent rel
 Certain important entries from the release notes documents of previous product versions may be repeated.
 To make such entries easier to identify, they contain a note to that effect.
 
+== Deprecations in 4.2.x
+
+- The hyperkube image, combining multiple kubernetes binaries, is planned for
+  removal in 4.3.0. If running {productname} in an airgapped environment,
+  please ensure that all our images are mirrored.
+
 == Changes in 4.1.2
 
 === Deployment on AWS as Technology Preview
