@@ -48,14 +48,7 @@ In order to seamlessly switch to {tf} 0.12 you need to make sure that:
 
 ==== Recommended Procedure
 
-If you can tear down your existing cluster, do delete your cluster
-before upgrading to {tf} 0.12. After that, follow our documentation to create a new cluster.
-That will lead to the cleanest upgrade result.
-
-If you are using {tf} 0.11 and you cannot tear down your cluster, you will
-need to update your {tf} files (and states) in place for {tf} 0.12.
-
-To do this, enter your {tf} files/state folder and:
+Enter your {tf} files/state folder and:
 
 * Install the latest version of {tf} using `zypper in terraform` (the installed version should be 0.12.19)
 * Navigate to your {tf} root folder (e.g. `/usr/share/caasp/terraform/vmware`)
@@ -108,6 +101,11 @@ lifecycle {
   ignore_changes = [user_data]
 }
 ----
++
+[NOTE]
+====
+The above option is needed because {tf} will detect all machines as new resources when `user_data` changes during the upgrade.
+====
 +
 This will make it possible to update your cluster from a {tf} 0.11 state
 into a {tf} 0.12 state without tearing it down completely.
