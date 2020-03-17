@@ -41,15 +41,15 @@ Add CLI etcdctl to provide access to etcd container.
 
 In order to seamlessly switch to {tf} 0.12 you need to make sure that:
 
-* all files follow the new syntax for the HashiCorp Configuration Language included in {tf} 0.12;
-* all boolean values are `true` or `false` and *not* 0 or 1;
-* all variables are explicitly declared;
-* all dependencies are explicitly declared to reach the expected behavior.
+* All files follow the new syntax for the link:https://github.com/hashicorp/hcl[HashiCorp Configuration Language] included in {tf} 0.12
+* All boolean values are `true` or `false` and *not* 0 or 1
+* All variables are explicitly declared
+* All dependencies are explicitly declared to reach the expected behavior
 
 ==== Recommended Procedure
 
 If you can tear down your existing cluster, do delete your cluster
-before upgrading to {tf} 0.12. After that follow our documentation to create a new cluster.
+before upgrading to {tf} 0.12. After that, follow our documentation to create a new cluster.
 That will lead to the cleanest upgrade result.
 
 If you are using {tf} 0.11 and you cannot tear down your cluster, you will
@@ -60,11 +60,20 @@ To do this, enter your {tf} files/state folder and:
 * Install the latest version of {tf} using `zypper in terraform` (the installed version should be 0.12.19)
 * Navigate to your {tf} root folder (e.g. `/usr/share/caasp/terraform/vmware`)
 * Migrate {tf} files with the automatic migration tool by running `terraform 0.12upgrade`.
-** For OpenStack, run the extra operations for in-place upgrade, which follow just below.
-** For VMware, there is no extra operation but please note <<vmware_precaution_nullstrings>>.
+** For OpenStack, run the <<terraform-openstack-extra-ops>>
+** For VMware, run `terraform apply` to update the {tf} definitions to the new format used by 0.12.
++
+[IMPORTANT]
+====
+This problem only exists on VMWare deployments.
+
+If you do not update the definitions before running {tf} again your output might contain `nil` or `null` strings where you would expect output strings.
+This can break automations based on the output. Please make sure you have updated/applied all definitions before running {tf}.
+====
 * Run `zypper up skuba`
 * You can then run the `terraform init/plan/apply` commands as usual.
 
+[[terraform-openstack-extra-ops]]
 ==== Extra Operations for In-place Upgrade of OpenStack {tf} Files
 
 * Replace any boolean values written as a number with `false`/`true`.
@@ -112,33 +121,6 @@ worker instances, you will effectively prevent updates of nodes, should you or
 SUSE update the `user_data`. This should be removed as soon as possible after the
 migration to {tf} 0.12.
 =========
-
-[[vmware_precaution_nullstrings]]
-==== Extra precautions for automations based on `output.tf` on VMWare
-
-If you are running any automations on your VMWare deployment of {productname} that
-relies on the {tf} output as defined in `output.tf`, you might encounter some `null` values in the value slice after
-the update to {tf} 0.12. For example:
-
-----
-Outputs:
-ip_load_balancer = [
-  "10.84.73.8",
-]
-ip_masters = [
-  [
-    null,
-  ],
-]
-ip_workers = [
-  [
-    null,
-  ],
-]
-----
-
-You can work around this problem by joining another node to the cluster once {tf} 0.12 is installed.
-
 
 === Bugs Fixed in 4.1.2 since 4.1.1
 
