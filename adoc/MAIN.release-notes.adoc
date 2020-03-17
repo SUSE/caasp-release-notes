@@ -59,16 +59,14 @@ To do this, enter your {tf} files/state folder and:
 
 * Install the latest version of {tf} using `zypper in terraform` (the installed version should be 0.12.19)
 * Navigate to your {tf} root folder (e.g. `/usr/share/caasp/terraform/vmware`)
-* Migrate {tf} files with the automatic migration tool by running `terraform 0.12upgrade`.
-** For OpenStack, run the <<terraform-openstack-extra-ops>>
-** For VMware, run `terraform apply` to update the {tf} definitions to the new format used by 0.12.
+* Migrate {tf} files with the automatic migration tool by running `terraform 0.12upgrade`
+** For OpenStack, run the <<terraform-openstack-extra-ops>> (see below)
+** Run `terraform apply` to update the {tf} definitions to the new format used by 0.12
 +
 [IMPORTANT]
 ====
-This problem only exists on VMWare deployments.
-
-If you do not update the definitions before running {tf} again your output might contain `nil` or `null` strings where you would expect output strings.
-This can break automations based on the output. Please make sure you have updated/applied all definitions before running {tf}.
+If you do not update the definitions before running {tf} again your output might contain `nil`/`null` strings when you run `terraform refresh` followed by `terraform output`.
+This can break automations that are based on the output. Please make sure you have updated/applied all definitions before running {tf}.
 ====
 * Run `zypper up skuba`
 * You can then run the `terraform init/plan/apply` commands as usual.
