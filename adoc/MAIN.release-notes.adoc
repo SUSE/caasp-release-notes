@@ -35,7 +35,7 @@ The official website for the {tf} 0.12 upgrade is https://www.terraform.io/upgra
 
 === Add CLI etcdctl
 
-You can now install etcdctl, the CLI to provide access to etcd container from the management host.
+You can now install `etcdctl`, the CLI to provide access to etcd container from the management host.
 
 === Required Actions
 
