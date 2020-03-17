@@ -32,7 +32,10 @@ Please note that {productname} deployment on AWS may not be functionally complet
 {productname} can now be deployed with *{tf} 0.12*. All details of the new version
 can be found in the link:https://www.hashicorp.com/blog/terraform-0-1-2-preview/[HashiCorp Documentation].
 The official website for the {tf} 0.12 upgrade is https://www.terraform.io/upgrade-guides/0-12.html.
-Add CLI etcdctl to provide access to etcd container.
+
+=== Add CLI etcdctl
+
+You can now install etcdctl, the CLI to provide access to etcd container from the management host.
 
 === Required Actions
 
@@ -108,6 +111,19 @@ worker instances, you will effectively prevent updates of nodes, should you or
 SUSE update the ``user_data``. This should be removed as soon as possible after the
 migration to {tf} 0.12.
 =========
+
+==== etcdctl
+Run `zypper in etcdctl` in the management host to install etcdctl.
+
+==== Update packages for general fixes
+Update skuba package and patterns-caasp-Management on your management workstation as you would do with any other package.
+
+Refer to: link:https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup-update[https://documentation.suse.com/sles/15-SP1/single-html/SLES-admin/#sec-zypper-softup-update]
+
+Updating patterns-caasp-Management will install the new terraform providers for AWS.
+
+Packages on your cluster nodes (cri-o) will be updated automatically by `skuba-update` link:https://documentation.suse.com/suse-caasp/4.1/html/caasp-admin/_cluster_updates.html#_base_os_updates
+
 
 === Bugs Fixed in 4.1.2 since 4.1.1
 
