@@ -38,9 +38,18 @@ Please note that {productname} deployment on AWS may not be functionally complet
 can be found in the link:https://www.hashicorp.com/blog/terraform-0-1-2-preview/[HashiCorp Documentation].
 The official website for the {tf} 0.12 upgrade is https://www.terraform.io/upgrade-guides/0-12.html.
 
-=== Add CLI etcdctl
+=== etcd Backup and Restore for Master Nodes Disaster Recovery
 
-You can now install `etcdctl`, the CLI to provide access to etcd container from the management host.
+* Provide etcd backup process on-demand or on a schedule to prevent etcd data corruption.
+* Provide etcd restore process to recover failed master node(s) to restore etcd quorum for cluster serving. 
+
+For detailed instructions please see link: https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_backup_etcd_cluster_data[the Administration Guide].
+
+=== Velero for Disaster Recovery
+
+* Provide Velero as a solution for data protection and data migration by backing up and migrating Kubernetes resources and persistent volumes to and from externally supported storage backend on demand or on a schedule. 
+
+For detailed instructions please see link: https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_disaster_recovery[the Administration Guide].
 
 === Required Actions
 
