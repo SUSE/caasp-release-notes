@@ -40,7 +40,7 @@ You can now install `etcdctl`, the CLI to provide access to etcd cluster from th
 
 === Add Discover and Recovery 
 
-You can now install `velero`, the CLI to provide access to backup cluster data to S3 storage or S3-compatible storage and recover/migrate to a different cluster. For detailed instructions please see link: https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-deployment/#_disaster_Recovery[the Deployment Guide].
+You can now install `velero`, the CLI to provide access to backup cluster data to S3 storage or S3-compatible storage and recover/migrate to a different cluster. For detailed instructions please see link: https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_disaster_recovery[the Deployment Guide].
 
 === Required Actions
 
