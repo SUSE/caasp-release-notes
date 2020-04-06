@@ -36,11 +36,24 @@ The official website for the {tf} 0.12 upgrade is https://www.terraform.io/upgra
 
 === Add CLI etcdctl
 
-You can now install `etcdctl`, the CLI to provide access to etcd cluster from the management host to backup and restore cluster data. For detailed instructions please see link: https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_backup_etcd_cluster_data[the Deployment Guide].
+You can now install `etcdctl`, the CLI to provide access to etcd cluster from the management host.
 
-=== Add Discover and Recovery 
+==== etcd Backup and Restore for Master Nodes Disaster Recovery
 
-You can now install `velero`, the CLI to provide access to backup cluster data to S3 storage or S3-compatible storage and recover/migrate to a different cluster. For detailed instructions please see link: https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_disaster_recovery[the Deployment Guide].
+* Provide etcd backup process to protect etcd data corruption on-demand or by schedule.
+* Provide etcd restore process to recover failed master node(s) to restore etcd quorum for cluster serving. 
+
+For detailed instructions please see link: https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_backup_etcd_cluster_data[the Administration Guide].
+
+=== Add CLI Velero
+
+You can now install `velero`, the CLI to provide access to backup cluster data to S3 storage or S3-compatible storage and recover/migrate to a different cluster.
+
+==== Velero for Disaster Recovery
+
+* Provide Velero as a solution for data protection and data migration by backing up and migrating Kubernetes resources and persistent volumes to and from externally supported storage backend on demand or by schedule. 
+
+For detailed instructions please see link: https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_disaster_recovery[the Administration Guide].
 
 === Required Actions
 
