@@ -36,7 +36,7 @@ The official website for the {tf} 0.12 upgrade is https://www.terraform.io/upgra
 
 === Add CLI etcdctl
 
-You can now install `etcdctl`, the CLI to provide access to etcd cluster from the management host to backup and restore cluster data. For detailed instructions please see link: https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-deployment/#_backup_etcd_cluster_data[the Deployment Guide].
+You can now install `etcdctl`, the CLI to provide access to etcd cluster from the management host to backup and restore cluster data. For detailed instructions please see link: https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_backup_etcd_cluster_data[the Deployment Guide].
 
 === Add Discover and Recovery 
 
