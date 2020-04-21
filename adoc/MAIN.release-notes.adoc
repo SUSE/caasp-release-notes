@@ -39,7 +39,8 @@ Replace `CLUSTER-DEFINITION-PATH` with the path to your existing cluster definti
 
 ----
 skuba cluster init --control-plane MASTER-NODE-IP /tmp/new-cluster-init
-cp /tmp/new-cluster-init/addons CLUSTER-DEFINITION-PATH
+mv CLUSTER-DEFINITION-PATH/addons CLUSTER-DEFINITION-PATH/addons-old
+cp -r /tmp/new-cluster-init/addons CLUSTER-DEFINITION-PATH/
 ----
 
 This will generate the existing addon configurations in the new format so you can amend them.
