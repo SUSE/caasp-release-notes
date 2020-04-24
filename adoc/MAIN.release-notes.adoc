@@ -95,6 +95,13 @@ cp -r /tmp/new-cluster-init/addons CLUSTER-DEFINITION-PATH/
 This will generate the existing addon configurations in the new format so you can amend them.
 
 
+=== Deprecations in 4.2.x
+
+- The hyperkube image, combining multiple kubernetes binaries, is planned for
+  removal in 4.3.0, due to upstream deprecations.
+  If running {productname} in an airgapped environment, please ensure that all
+  our images are mirrored.
+
 == Changes in 4.1.2
 
 === Deployment on AWS as Technology Preview
