@@ -21,7 +21,53 @@ To make such entries easier to identify, they contain a note to that effect.
 
 == Changes in 4.2.0
 
+=== {kube} update
+
+FILLIN what is new
+
+=== datastore for vmware
+
 {vmware} {tf} config now supports setting a datastore cluster as the storage backend. Please refer to the  link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-deployment/_deployment_instructions.html#_deploying_vms_from_the_template[Deployment Instructions] for more information.
+
+
+=== Bugs Fixed in 4.2.0 since 4.1.2
+
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1161056[bsc#1161056] [cri-o] - Fix upgrade from 4.0.3 to 4.1.0 - skuba node upgrade - fails due to crio-wipe.service not starting
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1159108[bsc#1159108] [admin-guide] grafana helm chart version newer than upstream but older image version / grafana version!
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1157337[bsc#1157337] [skuba] After cluster creation all DEX and all GANGWAY pods run on the first master
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1152334[bsc#1152334] [skuba] skuba update management - HAS-UPDATES HAS-DISRUPTIVE-UPDATES -> no vs none
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1160460[bsc#1160460] [podman] Update podman to 1.8.0
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1164390[bsc#1164390] [conmon] Add conmon to SLE15 Containers Module
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1162093[bsc#1162093] [kubernetes] kubelet referenced wrong volume-plugin dir after upgrade
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1121353[bsc#1121353] [kubernetes] Kubernetes – Master node pod configured with Privileged PSP
+
+[[docs-changes-420]]
+=== Documentation Changes
+
+FILLIN
+
+=== Known issues
+
+==== Updating packages without updating k8s
+
+FILLIN
+
+=== Required Actions
+
+== Kubernetes 1.17
+
+In order to update to kubernetes 1.17, follow the instructions in the admin guide https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_updating_kubernetes_components .
+
+MENTION known bug
+
+== conmon and cri-o
+
+Conmon and cri-o will be updated by `skuba-update`. No action is required from your side. For more info see https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_base_os_updates
+
+== skuba
+
+In order to update skuba, you need to update the admin workstation. See detailed instructions at https://documentation.suse.com/suse-caasp/4.1/html/caasp-admin/_cluster_updates.html#_update_management_workstation
+
 
 == Changes in 4.1.2
 
