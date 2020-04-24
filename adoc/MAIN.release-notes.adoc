@@ -59,18 +59,25 @@ FILLIN
 
 === Known issues
 
-==== Updating packages without updating k8s
+==== skuba-update error: patterns-caasp-Node conflicting with cri-o update
 
-FILLIN
+If your cluster is not up-to-date, meaning it is not in the latest kubernetes version, skuba-update will try to install the latest cri-o, which will create a conflict with
+the current installed kubernetes packages.
+
+More precisly, you will see an error similar to this one:
+
+"patterns-caasp-Node conflicts with cri-o"
+
+The solution is to upgrade the cluster by running `skuba node upgrade` for each node.
 
 
 === Required Actions
 
 ==== Kubernetes 1.17
 
-In order to update to kubernetes 1.17, follow the instructions in the admin guide https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_updating_kubernetes_components .
+In order to update to kubernetes 1.17, follow the instructions in the admin guide https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_updating_kubernetes_components.
 
-MENTION known bug
+If it happens that your cluster is not in the latest kubernetes version prior to applying the update, you will encounter an issue when `skuba-update` tries to update your nodes. See the "Known bugs" section for how to proceed.
 
 
 ==== conmon and cri-o
