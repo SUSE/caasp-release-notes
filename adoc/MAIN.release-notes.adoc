@@ -23,8 +23,9 @@ To make such entries easier to identify, they contain a note to that effect.
 
 === {kube} update
 
-FILLIN what is new
+4.2.0 brings in a kubernetes update, precisely to 1.17. The list of features and bug fixes is long, see:
 
+See more at https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.17.md
 
 === Addon customization persistence
 
@@ -106,6 +107,8 @@ This will generate the existing addon configurations in the new format so you ca
   removal in 4.3.0, due to upstream deprecations.
   If running {productname} in an airgapped environment, please ensure that all
   our images are mirrored.
+
+- Remove ability to re-enable serving deprecated APIs: extensions/v1beta1, apps/v1beta1, and apps/v1beta2 types. See more at https://github.com/kubernetes/kubernetes/issues/43214
 
 == Changes in 4.1.2
 
