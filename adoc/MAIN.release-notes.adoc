@@ -31,6 +31,11 @@ FILLIN what is new
 This release adds `kustomize` to persist addon configuration changes across updates and reboots.
 
 
+=== skuba: Disabling firewalld
+
+skuba should disable firewalld when bootstrapping/joining a node. Adds a startup step to check that firewalld is disabled. This was done using cloud init but this would not work on bare metal, so we make skuba ensure firewalld is disabled.
+
+
 === datastore for vmware
 
 {vmware} {tf} config now supports setting a datastore cluster as the storage backend. Please refer to the  link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-deployment/_deployment_instructions.html#_deploying_vms_from_the_template[Deployment Instructions] for more information.
