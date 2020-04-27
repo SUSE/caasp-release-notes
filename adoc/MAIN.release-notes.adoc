@@ -3,7 +3,7 @@ include::entities.adoc[]
 
 = {productname} {productversion} Release Notes
 
-{productname} is an enterprise-ready Kubernetes-based container management solution.
+{productname} is an enterprise-ready {kube}-based container management solution.
 
 == About the Release Notes
 
@@ -23,7 +23,7 @@ To make such entries easier to identify, they contain a note to that effect.
 
 === {kube} update
 
-4.2.0 brings in a kubernetes update, precisely to 1.17. The list of features and bug fixes is long, see:
+4.2.0 brings in a {kube} update, precisely to 1.17. The list of features and bug fixes is long, see:
 
 See more at https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.17.md
 
@@ -34,8 +34,7 @@ This release adds `kustomize` to persist addon configuration changes across upda
 
 === skuba: Disabling firewalld
 
-skuba should disable firewalld when bootstrapping/joining a node. Adds a startup step to check that firewalld is disabled. This was done using cloud init but this would not work on bare metal, so we make skuba ensure firewalld is disabled.
-
+skuba should disable firewalld when bootstrapping/joining a node. Adds a startup step to check that firewalld is disabled. This was previously done using `cloud-init` but this would not work on bare metal.
 
 === datastore for vmware
 
@@ -69,14 +68,14 @@ FILLIN
 
 ==== Kubernetes 1.17
 
-In order to update to kubernetes 1.17, follow the instructions in the admin guide https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_updating_kubernetes_components .
+In order to update to {kube} 1.17, follow the instructions in the link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_updating_kubernetes_components[admin guide].
 
 MENTION known bug
 
 
-==== conmon and cri-o
+==== `conmon` and {crio}
 
-Conmon and cri-o will be updated by `skuba-update`. No action is required from your side. For more info see https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_base_os_updates
+Conmon and [crio} will be updated by `skuba-update`. No action is required from your side. For more info see https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_base_os_updates
 
 
 ==== skuba
