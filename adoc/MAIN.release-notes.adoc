@@ -55,6 +55,9 @@ skuba should disable firewalld when bootstrapping/joining a node. Adds a startup
 [[docs-changes-420]]
 === Documentation Changes
 
+* The QuickStart Guide has been removed pending review and rewrite.
+Please use the link:{docurl}single-html/caasp-deployment/[Deployment Guide].
+
 FILLIN
 
 === Known issues
