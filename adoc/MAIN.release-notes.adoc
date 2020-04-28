@@ -28,15 +28,15 @@ FILLIN what is new
 
 === Addon customization persistence
 
-This release adds `kustomize` to persist addon configuration changes across updates and reboots.
+This release introduces `kustomize` to persist addon configuration changes across updates and reboots.
 
 
-=== skuba: Disabling firewalld
+=== Skuba: Disabling `firewalld`
 
-skuba should disable firewalld when bootstrapping/joining a node. Adds a startup step to check that firewalld is disabled. This was done using cloud init but this would not work on bare metal, so we make skuba ensure firewalld is disabled.
+Skuba should disable `firewalld` when bootstrapping/joining a node, so it adds a startup step to check whether `firewalld` is disabled. This was done using cloud init, which however does not work on bare metal deployments. So in order to ensure that `firewalld` is disabled, this check was introduced into `skuba`.
 
 
-=== datastore for vmware
+=== Datastore for {vmware}
 
 {vmware} {tf} config now supports setting a datastore cluster as the storage backend. Please refer to the  link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-deployment/_deployment_instructions.html#_deploying_vms_from_the_template[Deployment Instructions] for more information.
 
@@ -57,43 +57,44 @@ skuba should disable firewalld when bootstrapping/joining a node. Adds a startup
 
 FILLIN
 
-=== Known issues
+[[known-issues-420]]
+=== Known Issues
 
-==== skuba-update error: patterns-caasp-Node conflicting with cri-o update
+==== `skuba-update` Error: `patterns-caasp-Node` Conflicts with {crio} Update
 
-If your cluster is not up-to-date, meaning it is not in the latest kubernetes version, skuba-update will try to install the latest cri-o, which will create a conflict with
-the current installed kubernetes packages.
+If your cluster is not up-to-date, meaning it is not in the latest {kube} version, `skuba-update` will try to install the latest version of {crio}, which will create a conflict with
+the currently installed {kube} packages.
 
-More precisly, you will see an error similar to this one:
+More precisely, you might encounter an error similar to this:
 
-"patterns-caasp-Node conflicts with cri-o"
+"patterns-caasp-Node conflicts with {crio}"
 
-The solution is to upgrade the cluster by running `skuba node upgrade` for each node.
+In that case, the recommended solution is to upgrade the cluster by running `skuba node upgrade` on each node.
 
 
 === Required Actions
 
 ==== Kubernetes 1.17
 
-In order to update to kubernetes 1.17, follow the instructions in the admin guide https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_updating_kubernetes_components.
+In order to update to {kube} 1.17, follow the link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_updating_kubernetes_components[instructions in the Admin Guide].
 
-If it happens that your cluster is not in the latest kubernetes version prior to applying the update, you will encounter an issue when `skuba-update` tries to update your nodes. See the "Known bugs" section for how to proceed.
-
-
-==== conmon and cri-o
-
-Conmon and cri-o will be updated by `skuba-update`. No action is required from your side. For more info see https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_base_os_updates
+If your cluster is not on the latest {kube} version prior to applying the update, you will encounter an issue when `skuba-update` tries to update your nodes. See the <<[known-issues-420>> section for instructions on how to proceed.
 
 
-==== skuba
+==== Conmon and {crio}
 
-In order to update skuba, you need to update the admin workstation. See detailed instructions at https://documentation.suse.com/suse-caasp/4.1/html/caasp-admin/_cluster_updates.html#_update_management_workstation
+Conmon and {crio} will be updated by `skuba-update`. No action is required from your side. For more info see the link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_base_os_updates[Cluster Updates section in the Admin Guide].
 
 
-==== Generate the `kustomize` style addon configurations
+==== Skuba
+
+In order to update `skuba`, you also need to update the admin workstation. For detailed instructions, see link:https://documentation.suse.com/suse-caasp/4.1/html/caasp-admin/_cluster_updates.html#_update_management_workstation[this section in the Admin Guide].
+
+
+==== Generate the `kustomize` Style Addon Configurations
 
 You must convert your addon manifests to the new `kustomize` aware file structure and formats.
-To do so please run the following command from your management workstation.
+To do so please run the following commands from your management workstation.
 
 Replace `MASTER-NODE-IP` with an IP address/FQDN of one of your master nodes.
 Replace `CLUSTER-DEFINITION-PATH` with the path to your existing cluster defintion files that were generated during the intial bootstrap/deployment.
