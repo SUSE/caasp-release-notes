@@ -19,6 +19,20 @@ Release notes usually only list changes that happened between two subsequent rel
 Certain important entries from the release notes documents of previous product versions may be repeated.
 To make such entries easier to identify, they contain a note to that effect.
 
+== Changes in 4.3.0
+
+=== cri-o
+
+This release upgrades `cri-o` to 1.18, which brings support for Kubernetes 1.18. This new version, though, requires some manual steps for the upgrade, since the configuration files have been migrated from `sysconfig` to `/etc/crio/crio.conf.d/`. In order to upgrade, then, you will have to perform the following commands:
+
+----
+skuba cluster init --control-plane <PUBLIC_IP> /tmp/test-cluster
+mv /tmp/test-cluster/addons/cri/conf.d <CURRENT-CLUSTER-NAME>/addons/cri/
+rm <CURRENT-CLUSTER-NAME>/addons/cri/default_flags
+----
+
+After this you will be able to perform all the `skuba` commands that you would call normally when upgrading SUSE CaaS Platform.
+
 == Changes in 4.2.0
 
 === {kube} update
