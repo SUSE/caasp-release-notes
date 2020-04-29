@@ -32,9 +32,9 @@ See more at https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANG
 This release adds `kustomize` to persist addon configuration changes across updates and reboots.
 
 
-=== skuba: Disabling firewalld
+=== skuba: Disabling `firewalld`
 
-skuba should disable firewalld when bootstrapping/joining a node. Adds a startup step to check that firewalld is disabled. This was previously done using `cloud-init` but this would not work on bare metal.
+skuba should disable `firewalld` when bootstrapping/joining a node. Adds a startup step to check that `firewalld` is disabled. This was previously done using `cloud-init` but this would not work on bare metal.
 
 === datastore for vmware
 
