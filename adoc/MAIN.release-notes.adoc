@@ -57,6 +57,17 @@ skuba should disable firewalld when bootstrapping/joining a node. Adds a startup
 
 * The QuickStart Guide has been removed pending review and rewrite.
 Please use the link:{docurl}single-html/caasp-deployment/[Deployment Guide].
+* link:{docurl}single-html/caasp-admin/#_disaster_recovery[Disaster Recovery] is now documented in the Admin Guide.
+* A link:{docurl}single-html/caasp-deployment/deployment-system-requirements.html#_replicas[subchapter on Managing Replicas] has been added to Deployment Requirements.
+* The link:{docurl}single-html/caasp-deployment/#airgap-container_registry-mirror[list of required addon images] was updated.
+* {cap} integration was removed from the {productname} Admin Guide. Please now refer to: link:https://documentation.suse.com/suse-cap/{cap_version}/single-html/cap-guides/#cha-cap-depl-caasp[Deploying SUSE Cloud Application Platform on SUSE CaaS Platform].
+* A note about using the `--non-interactive-include-reboot-patches` was added to the link:{docurl}/single-html/caasp-admin/#disabling-automatic-updates[Admin Guide].
+* Instructions on how to update Dex have been enhanced. For details, see link:{docurl}single-html/caasp-admin/#_sec.admin.security.rbac.update[the Admin Guide].
+* Updated the air gapped deployment with a new diagram. See the link:{docurl}single-html/caasp-deployment/#airgap-concepts[Admin Guide].
+* Added example how to set up link:{docurl}single-html/caasp-admin/caasp-admin.html#recording_rules_configuration_example[Prometheur Recording Rules].
+* Added link:{docurl}single-html/caasp-deployment/caasp-deployment.html#aws-iam-profile-cli[instructions how to manually create AWS IAM role/role policy/instance profile through AWS CLI].
+* The link:{docurl}single-html/caasp-deployment/#_glossary[Glossary] was reintroduced to all our guides.
+* Various other fixes and improvements (Refer to: https://github.com/SUSE/doc-caasp/releases).
 
 FILLIN
 
