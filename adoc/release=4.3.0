@@ -1,0 +1,7 @@
+== Changes in 4.3.0
+
+=== Deprecations
+
+- The hyperkube image, combining multiple kubernetes binaries was removed
+  in this version. If running {productname} in an airgapped environment,
+  please ensure that all our images are mirrored.
