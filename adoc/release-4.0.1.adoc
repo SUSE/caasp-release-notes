@@ -1,0 +1,36 @@
+== Changes in 4.0.1
+
+* Updated Gangway container image (see <<required-actions-401>>)
+* Added link:https://documentation.suse.com/suse-caasp/4/single-html/caasp-deployment/#_airgapped_deployment[air gap deployment instructions]
+* Various bug fixes and improvements
+
+[[required-actions-401]]
+=== Required Actions
+
+[[gangway-update]]
+==== Update the Gangway Image
+
+The gangway image that shipped with {productname} 4.0 must be updated manually by performing the following step:
+
+====
+kubectl set image deployment/oidc-gangway oidc-gangway=registry.suse.com/caasp/v4/gangway:3.1.0-rev4 --namespace kube-system
+====
+
+=== Known Issues
+
+You must update the gangway container image manually after update (see <<required-actions-401>> ).
+
+For a full list of Known Issues refer to: link:{bugzilla_url}[Bugzilla].
+
+=== Supported Platforms
+
+This release supports deployment on:
+
+* {soc} 8
+* VMWare ESXi {vmware_version}
+* KVM
+* Bare metal
++
+({productname} {productversion} supports hardware that is certified for {slsa}
+through the YES certification program. You will find a database of certified
+hardware at https://www.suse.com/yessearch/.)
