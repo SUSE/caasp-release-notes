@@ -69,7 +69,6 @@ Please use the link:{docurl}single-html/caasp-deployment/[Deployment Guide].
 * The link:{docurl}single-html/caasp-deployment/#_glossary[Glossary] was reintroduced to all our guides.
 * Various other fixes and improvements (Refer to: https://github.com/SUSE/doc-caasp/releases).
 
-FILLIN
 
 === Known issues
 
