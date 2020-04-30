@@ -23,7 +23,7 @@ To make such entries easier to identify, they contain a note to that effect.
 
 === Deprecations in 4.2.0
 
-- The hyperkube image, combining multiple kubernetes binaries, is planned for
+- The hyperkube image, combining multiple {kube} binaries, is planned for
   removal in 4.3.0, due to upstream deprecations.
   If running {productname} in an airgapped environment, please ensure that all
   our images are mirrored.
@@ -39,7 +39,7 @@ For more information check: https://github.com/kubernetes/kubernetes/issues/4321
 
 4.2.0 brings in a {kube} update, precisely to 1.17. The list of features and bug fixes is long, see:
 
-See more at https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.17.md
+https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.17.md
 
 === Addon customization persistence
 
@@ -77,9 +77,9 @@ Please use the link:{docurl}single-html/caasp-deployment/[Deployment Guide].
 * {cap} integration was removed from the {productname} Admin Guide. Please now refer to: link:https://documentation.suse.com/suse-cap/{cap_version}/single-html/cap-guides/#cha-cap-depl-caasp[Deploying SUSE Cloud Application Platform on SUSE CaaS Platform].
 * A note about using the `--non-interactive-include-reboot-patches` was added to the link:{docurl}/single-html/caasp-admin/#disabling-automatic-updates[Admin Guide].
 * Instructions on how to update Dex have been enhanced. For details, see link:{docurl}single-html/caasp-admin/#_sec.admin.security.rbac.update[the Admin Guide].
-* Updated the air gapped deployment with a new diagram. See the link:{docurl}single-html/caasp-deployment/#airgap-concepts[Admin Guide].
-* Added example how to set up link:{docurl}single-html/caasp-admin/caasp-admin.html#recording_rules_configuration_example[Prometheur Recording Rules].
-* Added link:{docurl}single-html/caasp-admin/caasp-admin.html#_aws_deployment_fails_with_cannot_attach_profile_error[instructions how to troubleshoot the `"cannot attach profile" error` from AWS].
+* We updated the air gapped deployment with a new diagram. See the link:{docurl}single-html/caasp-deployment/#airgap-concepts[Admin Guide].
+* We added an example on how to set up link:{docurl}single-html/caasp-admin/caasp-admin.html#recording_rules_configuration_example[Prometheur Recording Rules].
+* link:{docurl}single-html/caasp-admin/caasp-admin.html#_aws_deployment_fails_with_cannot_attach_profile_error[Instructions on how to troubleshoot the `"cannot attach profile" error` from AWS] have been added.
 * The link:{docurl}single-html/caasp-deployment/#_glossary[Glossary] was reintroduced to all our guides.
 * Various other fixes and improvements (Refer to: https://github.com/SUSE/doc-caasp/releases).
 
