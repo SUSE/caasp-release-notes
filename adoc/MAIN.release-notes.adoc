@@ -65,6 +65,7 @@ Please use the link:{docurl}single-html/caasp-deployment/[Deployment Guide].
 * Instructions on how to update Dex have been enhanced. For details, see link:{docurl}single-html/caasp-admin/#_sec.admin.security.rbac.update[the Admin Guide].
 * Updated the air gapped deployment with a new diagram. See the link:{docurl}single-html/caasp-deployment/#airgap-concepts[Admin Guide].
 * Added example how to set up link:{docurl}single-html/caasp-admin/caasp-admin.html#recording_rules_configuration_example[Prometheur Recording Rules].
+* Added link:{docurl}single-html/caasp-admin/caasp-admin.html#_aws_deployment_fails_with_cannot_attach_profile_error[instructions how to troubleshoot the `"cannot attach profile" error` from AWS].
 * The link:{docurl}single-html/caasp-deployment/#_glossary[Glossary] was reintroduced to all our guides.
 * Various other fixes and improvements (Refer to: https://github.com/SUSE/doc-caasp/releases).
 
