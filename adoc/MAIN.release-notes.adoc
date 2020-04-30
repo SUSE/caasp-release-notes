@@ -3,7 +3,7 @@ include::entities.adoc[]
 
 = {productname} {productversion} Release Notes
 
-{productname} is an enterprise-ready Kubernetes-based container management solution.
+{productname} is an enterprise-ready {kube}-based container management solution.
 
 == About the Release Notes
 
@@ -21,20 +21,34 @@ To make such entries easier to identify, they contain a note to that effect.
 
 == Changes in 4.2.0
 
+=== Deprecations in 4.2.0
+
+- The hyperkube image, combining multiple kubernetes binaries, is planned for
+  removal in 4.3.0, due to upstream deprecations.
+  If running {productname} in an airgapped environment, please ensure that all
+  our images are mirrored.
+
+- Remove ability to re-enable serving deprecated APIs types: 
+* `extensions/v1beta1`
+* `apps/v1beta1`
+* `apps/v1beta2`
+
+For more information check: https://github.com/kubernetes/kubernetes/issues/43214
+
 === {kube} update
 
-FILLIN what is new
+4.2.0 brings in a {kube} update, precisely to 1.17. The list of features and bug fixes is long, see:
 
+See more at https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.17.md
 
 === Addon customization persistence
 
 This release adds `kustomize` to persist addon configuration changes across updates and reboots.
 
 
-=== skuba: Disabling firewalld
+=== skuba: Disabling `firewalld`
 
-skuba should disable firewalld when bootstrapping/joining a node. Adds a startup step to check that firewalld is disabled. This was done using cloud init but this would not work on bare metal, so we make skuba ensure firewalld is disabled.
-
+skuba should disable `firewalld` when bootstrapping/joining a node. Adds a startup step to check that `firewalld` is disabled. This was previously done using `cloud-init` but this would not work on bare metal.
 
 === datastore for vmware
 
@@ -81,14 +95,14 @@ FILLIN
 
 ==== Kubernetes 1.17
 
-In order to update to kubernetes 1.17, follow the instructions in the admin guide https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_updating_kubernetes_components .
+In order to update to {kube} 1.17, follow the instructions in the link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_updating_kubernetes_components[admin guide].
 
 MENTION known bug
 
 
-==== conmon and cri-o
+==== `conmon` and {crio}
 
-Conmon and cri-o will be updated by `skuba-update`. No action is required from your side. For more info see https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_base_os_updates
+Conmon and [crio} will be updated by `skuba-update`. No action is required from your side. For more info see https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_base_os_updates
 
 
 ==== skuba
@@ -111,14 +125,6 @@ cp -r /tmp/new-cluster-init/addons CLUSTER-DEFINITION-PATH/
 ----
 
 This will generate the existing addon configurations in the new format so you can amend them.
-
-
-=== Deprecations in 4.2.x
-
-- The hyperkube image, combining multiple kubernetes binaries, is planned for
-  removal in 4.3.0, due to upstream deprecations.
-  If running {productname} in an airgapped environment, please ensure that all
-  our images are mirrored.
 
 == Changes in 4.1.2
 
