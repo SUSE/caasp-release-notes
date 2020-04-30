@@ -132,7 +132,9 @@ Please also see https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/ 
 * link:{docurl}caasp-deployment/single-html/#_autoyast_preparation[Added timezone configuration example for {ay}]
 * link:https://github.com/SUSE/doc-caasp/pulls?q=is%3Apr+is%3Aclosed+sort%3Aupdated-desc[Various minor bugfixes and improvements]
 
-=== Known issue: skuba upgrade could not parse "Unknown" as version ====
+=== Known Issues
+
+==== Skuba-upgrade could not parse "Unknown" as version 
 
 Running "skuba node upgrade plan" might fail with the error "could not parse "Unknown" as version" when a worker, after running "skuba node upgrade apply", had not fully started yet.
 
