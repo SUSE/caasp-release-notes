@@ -67,9 +67,11 @@ the currently installed {kube} packages.
 
 More precisely, you might encounter an error similar to this:
 
-"patterns-caasp-Node conflicts with {crio}"
+----
+patterns-caasp-Node conflicts with CRI-O
+----
 
-In that case, the recommended solution is to upgrade the cluster by running `skuba node upgrade` on each node.
+In that case, the *recommended solution* is to upgrade the cluster to the latest Kubernetes version available, this can be done by running the regular {productname} Kubernetes upgrade procedure  based on the command `skuba node upgrade`, which is described in the link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_updating_kubernetes_components[Admin Guide].
 
 
 === Required Actions
