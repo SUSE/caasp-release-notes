@@ -14,13 +14,13 @@
 
 For more information check: https://github.com/kubernetes/kubernetes/issues/43214
 
-=== {kube} update
+=== {kube} Update
 
 4.2.0 brings in a {kube} update, precisely to 1.17. The list of features and bug fixes is long, see:
 
 https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.17.md
 
-=== Addon customization persistence
+=== Addon Customization Persistence
 
 This release introduces `kustomize` to persist addon configuration changes across updates and reboots.
 
@@ -39,7 +39,7 @@ Skuba should disable `firewalld` when bootstrapping/joining a node, so it adds a
 
 In order to update to {kube} 1.17, follow the link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_updating_kubernetes_components[instructions in the Admin Guide].
 
-If your cluster is not on the latest {kube} version prior to applying the update, you will encounter an issue when `skuba-update` tries to update your nodes. See the <<[known-issues-420>> section for instructions on how to proceed.
+If your cluster is not on the latest {kube} version prior to applying the update, you will encounter an issue when `skuba-update` tries to update your nodes. See the <<known-issues-420>> section for instructions on how to proceed.
 
 
 ==== Conmon and {crio}
