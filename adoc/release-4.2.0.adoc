@@ -84,7 +84,7 @@ This will generate the existing addon configurations in the new format so you ca
 
 * The QuickStart Guide has been removed pending review and rewrite.
 Please use the link:{docurl}single-html/caasp-deployment/[Deployment Guide].
-* link:{docurl}single-html/caasp-admin/#_disaster_recovery[Disaster Recovery] is now documented in the Admin Guide.
+* link:{docurl}single-html/caasp-admin/#_backup_and_restore_with_velero[Disaster Recovery with Velero] is now documented in the Admin Guide.
 * A link:{docurl}single-html/caasp-deployment/deployment-system-requirements.html#_replicas[subchapter on Managing Replicas] has been added to Deployment Requirements.
 * The link:{docurl}single-html/caasp-deployment/#airgap-container_registry-mirror[list of required addon images] was updated.
 * {cap} integration was removed from the {productname} Admin Guide. Please now refer to: link:https://documentation.suse.com/suse-cap/{cap_version}/single-html/cap-guides/#cha-cap-depl-caasp[Deploying SUSE Cloud Application Platform on SUSE CaaS Platform].
