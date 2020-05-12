@@ -85,13 +85,13 @@ This will generate the existing addon configurations in the new format so you ca
 * The QuickStart Guide has been removed pending review and rewrite.
 Please use the link:{docurl}single-html/caasp-deployment/[Deployment Guide].
 * link:{docurl}single-html/caasp-admin/#_backup_and_restore_with_velero[Disaster Recovery with Velero] is now documented in the Admin Guide.
-* A link:{docurl}single-html/caasp-deployment/deployment-system-requirements.html#_replicas[subchapter on Managing Replicas] has been added to Deployment Requirements.
+* A link:{docurl}single-html/caasp-deployment/#_replicas[subchapter on Managing Replicas] has been added to Deployment Requirements.
 * The link:{docurl}single-html/caasp-deployment/#airgap-container_registry-mirror[list of required addon images] was updated.
 * {cap} integration was removed from the {productname} Admin Guide. Please now refer to: link:https://documentation.suse.com/suse-cap/{cap_version}/single-html/cap-guides/#cha-cap-depl-caasp[Deploying SUSE Cloud Application Platform on SUSE CaaS Platform].
 * A note about using the `--non-interactive-include-reboot-patches` was added to the link:{docurl}/single-html/caasp-admin/#disabling-automatic-updates[Admin Guide].
 * Instructions on how to update Dex have been enhanced. For details, see link:{docurl}single-html/caasp-admin/#_sec.admin.security.rbac.update[the Admin Guide].
 * We updated the air gapped deployment with a new diagram. See the link:{docurl}single-html/caasp-deployment/#airgap-concepts[Admin Guide].
-* We added an example on how to set up link:{docurl}single-html/caasp-admin/caasp-admin.html#recording_rules_configuration_example[Prometheur Recording Rules].
+* We added an example on how to set up link:{docurl}single-html/caasp-admin/caasp-admin.html#recording_rules_configuration_example[Prometheus Recording Rules].
 * link:{docurl}single-html/caasp-admin/caasp-admin.html#_aws_deployment_fails_with_cannot_attach_profile_error[Instructions on how to troubleshoot the `"cannot attach profile" error` from AWS] have been added.
 * The link:{docurl}single-html/caasp-deployment/#_glossary[Glossary] was reintroduced to all our guides.
 * Various other fixes and improvements (Refer to: https://github.com/SUSE/doc-caasp/releases).
