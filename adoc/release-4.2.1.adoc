@@ -1,0 +1,14 @@
+== Changes in 4.2.1
+
+=== Deprecations in 4.2.1
+
+=== Required Actions
+
+=== Bugs Fixed in 4.2.1 since 4.2.0
+
+[[docs-changes-421]]
+=== Documentation Changes
+* Added instructions how to enable and configure link:{docurl}single-html/caasp-admin/#_audit_log[Kubernetes Audit Log]
+
+[[known-issues-421]]
+=== Known Issues
