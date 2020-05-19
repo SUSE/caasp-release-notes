@@ -9,6 +9,7 @@
 [[docs-changes-421]]
 === Documentation Changes
 * Added instructions how to enable and configure link:{docurl}single-html/caasp-admin/#_audit_log[Kubernetes Audit Log]
+* Fixed the location for the link:{docurl}single-html/caasp-admin/#_flexvolume_configuration[flexvolume driver] in the documentation.
 
 [[known-issues-421]]
 === Known Issues
