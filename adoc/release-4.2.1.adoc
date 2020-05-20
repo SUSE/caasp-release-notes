@@ -2,13 +2,28 @@
 
 === Deprecations in 4.2.1
 
+=== {Cilium} Update to 1.6.6 with Envoy
+* Updated Cilium from version 1.5.3 to version 1.6.6
+https://github.com/cilium/cilium/blob/v1.6.6/CHANGELOG.md
+* Provide Envoy-proxy support for Cilium
+* Envoy and its dependencies packaged for version 1.12.2
+* Cilium uses CRD and ConfigMap points on etcd are removed
+
+=== {Skuba}
+* Cilium 1.6.6 deployment with CRD
+
 === Required Actions
+* Migration from etcd to CRD in case of upgrade as described at https://docs.cilium.io/en/v1.6/install/upgrade/
 
 === Bugs Fixed in 4.2.1 since 4.2.0
 
 [[docs-changes-421]]
 === Documentation Changes
 * Added instructions how to enable and configure link:{docurl}single-html/caasp-admin/#_audit_log[Kubernetes Audit Log]
+* Updated Network Policy administration with Cilium at link:{docurl}single-html/caasp-admin/#_network_policies[Network Policies] 
+* Added instructions for deployment of Cilium Network policies with Envoy at link:{docurl}single-html/caasp-deployment/#_cilium_network_policy_config_examples[Cilium Network Policy Config Examples]
+* Updated architecture description with Cilium-Envoy integration at link:{docurl}single-html/caasp-architecture/#_product_description[Product Description]
 
 [[known-issues-421]]
 === Known Issues
+* Kubeproxy is not fully deprecated since envoyproxy requires support of Linux Kernel 5.3 and upwards.
