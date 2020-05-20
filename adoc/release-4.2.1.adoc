@@ -3,6 +3,7 @@
 === Deprecations in 4.2.1
 
 === {Cilium} Update to 1.6.6 with Envoy
+
 * Updated Cilium from version 1.5.3 to version 1.6.6
 https://github.com/cilium/cilium/blob/v1.6.6/CHANGELOG.md
 * Provide Envoy-proxy support for Cilium
@@ -10,15 +11,25 @@ https://github.com/cilium/cilium/blob/v1.6.6/CHANGELOG.md
 * Cilium uses CRD and ConfigMap points on etcd are removed
 
 === {Skuba}
+
 * Cilium 1.6.6 deployment with CRD
 
 === Required Actions
+
 * Migration from etcd to CRD in case of upgrade as described at https://docs.cilium.io/en/v1.6/install/upgrade/
 
 === Bugs Fixed in 4.2.1 since 4.2.0
 
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1138686[bsc#1138686] [cilium] - Update to version 1.5.3
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1161056[bsc#1161056] [cri-o] - modified the crio.conf file before updating from 1.15 to 1.16
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1162651[bsc#1162651] [skuba] - 10 revisionHistoryLimit value seems too high for our workloads
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1169506[bsc#1169506] [skuba] - fix issue for aws iam profile
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1138908[bsc#1138908] [skuba] - Fix PSP for kubelet disarm job
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1121353[bsc#1121353] [skuba] - Fix psp for control plane pods
+
 [[docs-changes-421]]
 === Documentation Changes
+
 * Added instructions how to enable and configure link:{docurl}single-html/caasp-admin/#_audit_log[Kubernetes Audit Log]
 * Updated Network Policy administration with Cilium at link:{docurl}single-html/caasp-admin/#_network_policies[Network Policies] 
 * Added instructions for deployment of Cilium Network policies with Envoy at link:{docurl}single-html/caasp-deployment/#_cilium_network_policy_config_examples[Cilium Network Policy Config Examples]
@@ -27,4 +38,6 @@ https://github.com/cilium/cilium/blob/v1.6.6/CHANGELOG.md
 
 [[known-issues-421]]
 === Known Issues
+
 * Kubeproxy is not fully deprecated since envoyproxy requires support of Linux Kernel 5.3 and upwards.
+
