@@ -23,6 +23,7 @@ https://github.com/cilium/cilium/blob/v1.6.6/CHANGELOG.md
 * Updated Network Policy administration with Cilium at link:{docurl}single-html/caasp-admin/#_network_policies[Network Policies] 
 * Added instructions for deployment of Cilium Network policies with Envoy at link:{docurl}single-html/caasp-deployment/#_cilium_network_policy_config_examples[Cilium Network Policy Config Examples]
 * Updated architecture description with Cilium-Envoy integration at link:{docurl}single-html/caasp-architecture/#_product_description[Product Description]
+* Fixed the location for the link:{docurl}single-html/caasp-admin/#_flexvolume_configuration[flexvolume driver] in the documentation.
 
 [[known-issues-421]]
 === Known Issues
