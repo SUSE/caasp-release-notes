@@ -2,14 +2,51 @@
 
 === Deprecations in 4.2.1
 
+=== {Cilium} Update to 1.6.6 with Envoy
+
+* Updated Cilium from version 1.5.3 to version 1.6.6
+https://github.com/cilium/cilium/blob/v1.6.6/CHANGELOG.md
+* Provide Envoy-proxy support for Cilium
+* Envoy and its dependencies packaged for version 1.12.2
+* Cilium uses CRD and ConfigMap points on etcd are removed
+
+=== {Skuba}
+
+* Cilium 1.6.6 deployment with CRD
+
+=== Metrics Server
+    
+* Support monitoring of *CPU* and *memory* of a pod or node.
+    
+=== Cert Status Checker
+    
+* Exposes cluster-wide certificates status and use monitoring stack (Prometheus and Grafana) to receives alerts by Prometheus Alertmanager and monitors certificate status by Grafana dashboard.
+    
+=== VSphere VCP
+    
+* Allow Kubernetes pods to use VMWare vSphere Virtual Machine Disk (VMDK) volumes as persistent storage.
+
 === Required Actions
+
+* Migration from etcd to CRD in case of upgrade as described at https://docs.cilium.io/en/v1.6/install/upgrade/
 
 === Bugs Fixed in 4.2.1 since 4.2.0
 
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1162651[bsc#1162651] [skuba] - 10 revisionHistoryLimit value seems too high for our workloads
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1169506[bsc#1169506] [skuba] - fix issue for aws iam profile
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1121353[bsc#1121353] [skuba] - Restrict kube-system control plane pods
+
 [[docs-changes-421]]
 === Documentation Changes
+
 * Added instructions how to enable and configure link:{docurl}single-html/caasp-admin/#_audit_log[Kubernetes Audit Log]
+* Updated Network Policy administration with Cilium at link:{docurl}single-html/caasp-admin/#_network_policies[Network Policies] 
+* Added instructions for deployment of Cilium Network policies with Envoy at link:{docurl}single-html/caasp-deployment/#_cilium_network_policy_config_examples[Cilium Network Policy Config Examples]
+* Updated architecture description with Cilium-Envoy integration at link:{docurl}single-html/caasp-architecture/#_product_description[Product Description]
 * Fixed the location for the link:{docurl}single-html/caasp-admin/#_flexvolume_configuration[flexvolume driver] in the documentation.
 
 [[known-issues-421]]
 === Known Issues
+
+* Kubeproxy is not fully deprecated since envoyproxy requires support of Linux Kernel 5.3 and upwards.
+
