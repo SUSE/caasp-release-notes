@@ -2,7 +2,7 @@
 
 === Deprecations in 4.2.1
 
-=== {Cilium} Update to 1.6.6 with Envoy
+=== Cilium Update to 1.6.6 with Envoy
 
 * Updated Cilium from version 1.5.3 to version 1.6.6
 https://github.com/cilium/cilium/blob/v1.6.6/CHANGELOG.md
@@ -10,25 +10,26 @@ https://github.com/cilium/cilium/blob/v1.6.6/CHANGELOG.md
 * Envoy and its dependencies packaged for version 1.12.2
 * Cilium uses CRD and ConfigMap points on etcd are removed
 
-=== {Skuba}
+=== `skuba`
 
 * Cilium 1.6.6 deployment with CRD
 
 === Metrics Server
-    
+
 * Support monitoring of *CPU* and *memory* of a pod or node.
-    
+
 === Cert Status Checker
-    
+
 * Exposes cluster-wide certificates status and use monitoring stack (Prometheus and Grafana) to receives alerts by Prometheus Alertmanager and monitors certificate status by Grafana dashboard.
-    
+
 === VSphere VCP
-    
+
 * Allow Kubernetes pods to use VMWare vSphere Virtual Machine Disk (VMDK) volumes as persistent storage.
 
 === Required Actions
 
-* Migration from etcd to CRD in case of upgrade as described at https://docs.cilium.io/en/v1.6/install/upgrade/
+* Migration from etcd to CRD in case of upgrade as described in the link:https://docs.cilium.io/en/v1.6/install/upgrade/[official Cilium documentation].
+* Run `skuba addons upgrade apply` to upgrade Cilium to version 1.6.6. See information about a possible warning, which might appear during the upgrade in link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_generating_an_overview_of_available_addon_updates[the Administration Guide].
 
 === Bugs Fixed in 4.2.1 since 4.2.0
 
@@ -40,7 +41,7 @@ https://github.com/cilium/cilium/blob/v1.6.6/CHANGELOG.md
 === Documentation Changes
 
 * Added instructions how to enable and configure link:{docurl}single-html/caasp-admin/#_audit_log[Kubernetes Audit Log]
-* Updated Network Policy administration with Cilium at link:{docurl}single-html/caasp-admin/#_network_policies[Network Policies] 
+* Updated Network Policy administration with Cilium at link:{docurl}single-html/caasp-admin/#_network_policies[Network Policies]
 * Added instructions for deployment of Cilium Network policies with Envoy at link:{docurl}single-html/caasp-deployment/#_cilium_network_policy_config_examples[Cilium Network Policy Config Examples]
 * Updated architecture description with Cilium-Envoy integration at link:{docurl}single-html/caasp-architecture/#_product_description[Product Description]
 * Fixed the location for the link:{docurl}single-html/caasp-admin/#_flexvolume_configuration[flexvolume driver] in the documentation.
@@ -49,4 +50,3 @@ https://github.com/cilium/cilium/blob/v1.6.6/CHANGELOG.md
 === Known Issues
 
 * Kubeproxy is not fully deprecated since envoyproxy requires support of Linux Kernel 5.3 and upwards.
-
