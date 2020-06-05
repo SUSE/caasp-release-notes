@@ -15,9 +15,7 @@ In version 1.6.6 Cilium uses Custom Resource Definition (CRD) and ConfigMap poin
 
 === Metrics Server
 
-The Metrics Server now supports monitoring of *CPU* and *memory* of a pod or node.  You can use commands `kubectl top nodes` get status for node and use `kubectl top pods` to get status for pod. These information can also use and show in be Prometheus or Grafana.
-
-For detailed instructions please see link: https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#monitoring_stack[the Administration Guide]
+The Metrics Server now supports monitoring of *CPU* and *memory* of a pod or node.
 
 === Cert Status Checker
 
