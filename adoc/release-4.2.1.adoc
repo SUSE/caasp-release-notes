@@ -23,13 +23,9 @@ For detailed instructions please see link: https://documentation.suse.com/suse-c
 
 The Cert Status Checker is a new feature, which exposes a cluster-wide certificates status. It uses the monitoring stack (Prometheus and Grafana) to receive alerts by Prometheus Alert manager and monitor certificate status on the Grafana dashboard.
 
-For detailed instructions please see link: https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_monitoring_certificates[the Administration Guide]
-
 === VSphere VCP
 
 * Allow Kubernetes pods to use VMware vSphere Virtual Machine Disk (VMDK) volumes as persistent storage.
-
-For detailed instructions please see link: https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_vsphere_storage[the Administration Guide]
 
 === Required Actions
 
