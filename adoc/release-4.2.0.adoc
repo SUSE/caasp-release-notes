@@ -2,10 +2,8 @@
 
 === Deprecations in 4.2.0
 
-- The hyperkube image, combining multiple {kube} binaries, is planned for
-  removal in 4.3.0, due to upstream deprecations.
-  If running {productname} in an airgapped environment, please ensure that all
-  our images are mirrored.
+- The hyperkube image, combining multiple {kube} binaries, is planned for removal in 4.3.0, due to upstream deprecations.
+  If running {productname} in an airgapped environment, please ensure that all our images are mirrored.
 
 - Remove ability to re-enable serving deprecated APIs types:
 * `extensions/v1beta1`
@@ -16,9 +14,11 @@ For more information check: https://github.com/kubernetes/kubernetes/issues/4321
 
 === {kube} Update
 
-4.2.0 brings in a {kube} update, precisely to 1.17. The list of features and bug fixes is long, see:
+4.2.0 brings in a {kube} update, precisely to 1.17.4.
+The list of features and bug fixes is long, see:
 
-https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.17.md
+https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.17.md#v1174
+
 
 === Addon Customization Persistence
 
@@ -29,9 +29,11 @@ This release introduces `kustomize` to persist addon configuration changes acros
 
 Skuba should disable `firewalld` when bootstrapping/joining a node, so it adds a startup step to check whether `firewalld` is disabled. This was done using cloud init, which however does not work on bare metal deployments. So in order to ensure that `firewalld` is disabled, this check was introduced into `skuba`.
 
+
 === Datastore for {vmware}
 
 {vmware} {tf} config now supports setting a datastore cluster as the storage backend. Please refer to the  link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-deployment/_deployment_instructions.html#_deploying_vms_from_the_template[Deployment Instructions] for more information.
+
 
 === Required Actions
 
