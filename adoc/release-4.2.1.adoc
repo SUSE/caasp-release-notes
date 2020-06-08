@@ -6,7 +6,8 @@
 
 {productname} 4.2.1 comes with an update of Cilium from version 1.5.3 to *version 1.6.6*.
 For a detailed list of all the changes in this most current version, see the link:https://github.com/cilium/cilium/blob/v1.6.6/CHANGELOG.md[Cilium Changelog].
-The update also provides link:https://www.envoyproxy.io/[Envoy] (open source edge and service proxy) support for Cilium. Envoy and its dependencies are packaged in link:https://www.envoyproxy.io/docs/envoy/v1.12.2/[version 1.12.2].
+The update also provides link:https://www.envoyproxy.io/[Envoy] (open source edge and service proxy) support for Cilium.
+Envoy and its dependencies are packaged in link:https://www.envoyproxy.io/docs/envoy/v1.12.2/[version 1.12.2].
 In version 1.6.6 Cilium uses Custom Resource Definition (CRD) and ConfigMap points on etcd have been removed.
 
 === `skuba`
@@ -15,13 +16,15 @@ In version 1.6.6 Cilium uses Custom Resource Definition (CRD) and ConfigMap poin
 
 === Metrics Server
 
-The Metrics Server now supports monitoring of *CPU* and *memory* of a pod or node.  You can use commands `kubectl top nodes` get status for node and use `kubectl top pods` to get status for pod. These information can also use and show in be Prometheus or Grafana.
+The Metrics Server now supports monitoring of *CPU* and *memory* of a pod or node.  You can use commands `kubectl top nodes` get status for node and use `kubectl top pods` to get status for pod.
+This information can also be used and show in be Prometheus or Grafana.
 
-For detailed instructions please see link: https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#monitoring_stack[the Administration Guide]
+For detailed instructions please see link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#monitoring_stack[the Administration Guide]
 
 === Cert Status Checker
 
-The Cert Status Checker is a new feature, which exposes a cluster-wide certificates status. It uses the monitoring stack (Prometheus and Grafana) to receive alerts by Prometheus Alert manager and monitor certificate status on the Grafana dashboard.
+The Cert Status Checker is a new feature, which exposes a cluster-wide certificates status.
+It uses the monitoring stack (Prometheus and Grafana) to receive alerts by Prometheus Alert manager and monitor certificate status on the Grafana dashboard.
 
 === VSphere VCP
 
