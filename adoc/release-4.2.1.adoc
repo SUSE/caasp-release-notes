@@ -61,5 +61,4 @@ For detailed instructions please see link:{docurl}caasp-admin/#_vsphere_storage[
 === Known Issues
 
 * Kubeproxy is not fully deprecated since envoyproxy requires support of Linux Kernel 5.3 and upwards.
-* helm install is failing on "unavailable metrics.k8s.io/v1beta1 API": Before operating with the cluster and using helm, make sure all pods and apiservices are available. link:https://bugzilla.suse.com/show_bug.cgi?id=1172398[bsc#1172398]
-* cilium-init:1.6.6 does not exist in registry link:https://bugzilla.suse.com/show_bug.cgi?id=1172270[bsc#1172270]: cilium-init was deprecated. You can safely ignore this error message.
+* `helm install` is failing on "unavailable metrics.k8s.io/v1beta1 API": Before operating with the cluster and using helm, make sure all pods and apiservices are available. link:https://bugzilla.suse.com/show_bug.cgi?id=1172398[bsc#1172398]
