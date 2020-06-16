@@ -48,10 +48,12 @@ For detailed instructions please see link:{docurl}single-html/caasp-admin/#_vsph
 [[docs-changes-421]]
 === Documentation Changes
 
-* Added instructions how to enable and configure link:{docurl}single-html/caasp-admin/#_audit_log[Kubernetes Audit Log]
-* Updated Network Policy administration with Cilium at link:{docurl}single-html/caasp-admin/#_network_policies[Network Policies]
-* Added instructions for deployment of Cilium Network policies with Envoy at link:{docurl}single-html/caasp-deployment/#_cilium_network_policy_config_examples[Cilium Network Policy Config Examples]
-* Updated architecture description with Cilium-Envoy integration at link:{docurl}single-html/caasp-architecture/#_product_description[Product Description]
+* Added instructions how to enable and configure link:{docurl}single-html/caasp-admin/#_audit_log[Kubernetes Audit Log].
+* Updated Network Policy administration with Cilium at link:{docurl}single-html/caasp-admin/#_network_policies[Network Policies].
+* Added instructions for deployment of Cilium Network policies with Envoy at link:{docurl}single-html/caasp-deployment/#_cilium_network_policy_config_examples[Cilium Network Policy Config Examples].
+* Added link:{docurl}single-html/caasp-deployment/#_networking_whitelist[Networking Whitelist] to deployment guide requirements.
+* Restructured the link:{docurl}single-html/caasp-admin/#_cluster_disaster_recovery[Disaster Recovery] chapter.
+* Added instruction for link:{docurl}single-html/caasp-deployment/#cluster.bootstrap.vcp[vSphere Cloud Provider Integration].
 * Fixed the location for the link:{docurl}single-html/caasp-admin/#_flexvolume_configuration[flexvolume driver] in the documentation.
 
 [[known-issues-421]]
