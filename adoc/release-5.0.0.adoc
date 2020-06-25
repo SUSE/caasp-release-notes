@@ -8,6 +8,6 @@
 
 ===== Updated Kubernetes
 
-=== Updating to {productname} {productmajor} 
+=== Updating to {productname} {productmajor}
 
 === Known Issues
