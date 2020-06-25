@@ -1,0 +1,13 @@
+== Changes in 5.0.0
+
+=== What Is New
+
+==== Base Operating System Is Now {slsa} 15 SP2
+
+==== Changes to the {kube} Stack
+
+===== Updated Kubernetes
+
+=== Updating to {productname} {productmajor} 
+
+=== Known Issues
