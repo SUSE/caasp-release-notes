@@ -50,9 +50,9 @@ Afterwards you can deploy Prometheus as usual. Refer to: link:https://documentat
 [[docs-changes-411]]
 === Documentation Changes
 
-* Added instructions for link:{docurl}single-html/caasp-admin/#_stratos_web_console[Stratos Web Console (Tech Preview)]
-* Added instructions for link:{docurl}single-html/caasp-deployment/#_storage_performance[etcd storage performance testing]
-* Added instructions for link:{docurl}single-html/caasp-admin/#troubleshooting-etcd[`etcd` troubleshooting]
-* Updated link:{docurl}single-html/caasp-admin/#_configuring_httphttps_proxy_for_cri_o[{crio} proxy configuration instructions]
-* Updated upgrade instructions with more link:{docurl}/single-html/caasp-admin/#disabling_automatic_updates[information about manual upgrades and reboots]
+* Added instructions for link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_stratos_web_console[Stratos Web Console (Tech Preview)]
+* Added instructions for link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-deployment/#_storage_performance[etcd storage performance testing]
+* Added instructions for link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#troubleshooting-etcd[`etcd` troubleshooting]
+* Updated link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_configuring_httphttps_proxy_for_cri_o[{crio} proxy configuration instructions]
+* Updated upgrade instructions with more link:https://documentation.suse.com/suse-caasp/4.1//single-html/caasp-admin/#disabling_automatic_updates[information about manual upgrades and reboots]
 * Various minor fixes and improvements (Refer to: https://github.com/SUSE/doc-caasp/releases)

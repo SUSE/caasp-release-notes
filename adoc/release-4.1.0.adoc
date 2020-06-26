@@ -75,7 +75,7 @@ Please, do not run `zypper patch` manually on your nodes.
 If you do, you will see an error about a conflict when patching {crio}.
 This is expected, because the patch is not supposed to be installed this way.
 
-Instead, cluster updates are being handled by skuba as link:{docurl}/single-html/caasp-admin/#handling_updates[documented in the Administration guide].
+Instead, cluster updates are being handled by skuba as link:https://documentation.suse.com/suse-caasp/single-html/caasp-admin/#handling_updates[documented in the Administration guide].
 ====
 
 ==== Update Your {kube} Manifests for {kube} {kube_version}:
@@ -125,16 +125,16 @@ Please also see https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/ 
 === Documentation Updates
 
 * Switched examples to use SUSE supported helm, Prometheus, nginx-ingress and Grafana charts and images
-* link:{docurl}caasp-admin/single-html/_security.html#_deployment_with_a_custom_ca_certificate[Added instructions on how to replace {kube} certificates with custom CA certificate]
-* link:{docurl}caasp-admin/single-html/_security.html#_replace_server_certificate_signed_by_a_trusted_ca_certificate[Added instructions to configure custom certificates for gangway and dex]
-* link:{docurl}caasp-admin/single-html/_software_management.html#_installing_tiller[Added instructions for secured Tiller deployment]
-* link:{docurl}caasp-deployment/single-html/#machine-id[Added notes about unique `machine-id` requirement]
-* link:{docurl}caasp-deployment/single-html/#_autoyast_preparation[Added timezone configuration example for {ay}]
+* link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/caasp-admin.html#_deployment_with_a_custom_ca_certificate[Added instructions on how to replace {kube} certificates with custom CA certificate]
+* link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/caasp-admin.html#_replace_server_certificate_signed_by_a_trusted_ca_certificate[Added instructions to configure custom certificates for gangway and dex]
+* link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/caasp-admin.html#_installing_tiller[Added instructions for secured Tiller deployment]
+* link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-deployment/#machine-id[Added notes about unique `machine-id` requirement]
+* link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-deployment/#_autoyast_preparation[Added timezone configuration example for {ay}]
 * link:https://github.com/SUSE/doc-caasp/pulls?q=is%3Apr+is%3Aclosed+sort%3Aupdated-desc[Various minor bugfixes and improvements]
 
 === Known Issues
 
-==== Skuba-upgrade could not parse "Unknown" as version 
+==== Skuba-upgrade could not parse "Unknown" as version
 
 Running "skuba node upgrade plan" might fail with the error "could not parse "Unknown" as version" when a worker, after running "skuba node upgrade apply", had not fully started yet.
 
