@@ -139,9 +139,9 @@ Packages on your cluster nodes (cri-o) will be updated automatically by `skuba-u
 [[docs-changes-412]]
 === Documentation Changes
 
-* Added link:{docurl}single-html/caasp-deployment/#_deployment_on_amazon_aws[AWS deployment instructions] (Tech Preview)
-* Added link:{docurl}single-html/caasp-deployment/#deployment_bare_metal[KVM deployment instructions]
-* Improved instructions for Monitoring to link:{docurl}single-html/caasp-admin/#_monitoring_stack[deploy Grafana in a sub path] and enhanced ingress settings
-* Fix unspecific expression in link:{docurl}single-html/caasp-admin/#alertmanager_configuration_example[AlertManager example]
-* Added notes on link:single-html/caasp-admin/#_control_plane_nodes_certificates_rotation[certificate rotation for the control plane]
+* Added link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-deployment/#_deployment_on_amazon_web_services_aws[AWS deployment instructions] (Tech Preview)
+* Added link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-deployment/#deployment_bare_metal[KVM deployment instructions]
+* Improved instructions for Monitoring to link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_monitoring_stack[deploy Grafana in a sub path] and enhanced ingress settings
+* Fix unspecific expression in link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#alertmanager_configuration_example[AlertManager example]
+* Added notes on link:https://documentation.suse.com/suse-caasp/4.1/single-html/caasp-admin/#_control_plane_nodes_certificates_rotation[certificate rotation for the control plane]
 * Various other fixes and improvements (Refer to: https://github.com/SUSE/doc-caasp/releases)
