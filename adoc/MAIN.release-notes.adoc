@@ -8,10 +8,10 @@ include::entities.adoc[]
 == About the Release Notes
 
 // for beta release:
-// The most recent version of the Release Notes is available online at https://susedoc.github.io/caasp-release-notes/beta/release-notes/single-html/.
+The most recent version of the Release Notes is available online at https://susedoc.github.io/caasp-release-notes/beta/release-notes/single-html/.
 
 // for public release:
-The most recent version of the Release Notes is available online at https://www.suse.com/releasenotes or https://documentation.suse.com/suse-caasp/4/.
+// The most recent version of the Release Notes is available online at https://www.suse.com/releasenotes or https://documentation.suse.com/suse-caasp/4/.
 
 Entries can be listed multiple times if they are important and belong to multiple sections.
 
@@ -19,29 +19,40 @@ Release notes usually only list changes that happened between two subsequent rel
 Certain important entries from the release notes documents of previous product versions may be repeated.
 To make such entries easier to identify, they contain a note to that effect.
 
+== SUSE CaaS Platform
+
+SUSE CaaS Platform is an enterprise-ready Kubernetes-based container management solution used by application development and DevOps teams to more easily and efficiently deploy and manage containerized applications and services. Enterprises use SUSE CaaS Platform to reduce application delivery cycle times and improve business agility.
+
+== Supported Platforms
+
+This release supports deployment on:
+
+* SUSE OpenStack Cloud 8
+
+* VMWare ESXi 6.7
+
+* Bare metal
+
+(SUSE CaaS Platform {productversion} supports hardware that is certified for SLES through the YES certification program. You will find a database of certified hardware at https://www.suse.com/yessearch/.)
+
 
 // Release specific files, latest on top!
 include::release-5.0.0.adoc[Release 5.0.0]
 
+// Former versions
+////
 include::release-4.2.1.adoc[Release 4.2.1]
-
 include::release-4.2.0.adoc[Release 4.2.0]
-
 include::release-4.1.2.adoc[Release 4.1.2]
-
 include::release-4.1.1.adoc[Release 4.1.1]
-
 include::release-4.1.0.adoc[Release 4.1.0]
-
 include::release-4.0.3.adoc[Release 4.0.3]
-
 include::release-4.0.2.adoc[Release 4.0.2]
-
 include::release-4.0.1.adoc[Release 4.0.1]
-
 include::release-4.0.0.adoc[Release 4.0.0]
+////
 
 // Other includes
-include::common.adoc[Common sections]
+// include::common.adoc[Common sections]
 
 include::legal.adoc[Legal Notices]
