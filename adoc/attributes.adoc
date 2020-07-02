@@ -10,15 +10,15 @@
 :productminor: 0
 //Counting upwards from 0, tied to maintenance release
 :productpatch: 0
-:prerelease: Beta 2
-:productversion: {productmajor}.{productminor}.{productpatch} {prerelease}
+:prerelease: beta
+:productversion: {productmajor}.{productminor}.{productpatch}-{prerelease}
 :github_url: https://github.com/SUSE/doc-caasp
 
 // Component Versions
 :base_os_version: 15 SP1
 :vmware_version: 6.7
 :crio_version: 1.16.1
-:kube_version: 1.17.4
+:kube_version: 1.18
 :kubedoc: https://v1-17.docs.kubernetes.io/docs/
 :cap_version: 1.5.2
 :cilium_release: 1.6
