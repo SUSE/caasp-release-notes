@@ -8,7 +8,11 @@ designed to address both cloud-native and legacy workloads.
 these changes make it easier for customers who want to modernize their
 infrastructure by moving existing workloads to a {kube} framework.
 
-For information on notable changes when going from {slsa} 15 SP1 to {slsa} 15 SP2, refer to the link:https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15-SP2/#_changes_in_15sp2[{slsa} 15 SP2 Release Notes]
+==== Changes in the Installation Media
+
+Please pay attention to the change in the installation media of {slsa} 15 SP2. The Unified Installer and Packages DVDs known from SUSE {slsa} 15 SP1 are deprecated and have been replaced by Online Installation Media and Full Installation Media, for further details see link:https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15-SP2/#_changes_in_15sp2[this section] of the *{slsa} 15 SP2 Release Notes*.
+
+For further information on notable changes when going from {slsa} 15 SP1 to {slsa} 15 SP2, also refer to the link:https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15-SP2/[{slsa} 15 SP2 Release Notes].
 
 === Changes to the {kube} Stack
 
