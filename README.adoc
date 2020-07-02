@@ -48,6 +48,10 @@ openSUSE Build Service project.
 . Use the `make` to build all required documents. For a single HTML document,
 for example `make single-html`.
 
+. Alternatively, you can run the following command, which will build the
+  documentation in your local folder, with the help of a container similar
+  to what is used in our CI: `docker run  -v ./:/usr/src/app -w /usr/src/app susedoc/ci:openSUSE-42.3 make single-html`
+
 [id="sec.github-preview"]
 === Keeping the GitHub/GitLab Preview of These Release Notes Intact
 

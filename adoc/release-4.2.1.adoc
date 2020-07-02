@@ -1,0 +1,64 @@
+== Changes in 4.2.1
+
+=== Cilium Update to 1.6.6 with Envoy
+
+{productname} 4.2.1 comes with an update of Cilium from version 1.5.3 to *version 1.6.6*.
+For a detailed list of all the changes in this most current version, see the link:https://github.com/cilium/cilium/blob/v1.6.6/CHANGELOG.md[Cilium Changelog].
+The update also provides link:https://www.envoyproxy.io/[Envoy] (open source edge and service proxy) support for Cilium.
+Envoy and its dependencies are packaged in link:https://www.envoyproxy.io/docs/envoy/v1.12.2/[version 1.12.2].
+In version 1.6.6 Cilium uses Custom Resource Definition (CRD) and ConfigMap points on etcd have been removed.
+
+=== `skuba`
+
+* Cilium 1.6.6 deployment with CRD
+
+=== Metrics Server
+
+The Metrics Server now supports monitoring of *CPU* and *memory* of a pod or node.  You can use commands `kubectl top nodes` get status for node and use `kubectl top pods` to get status for pod.
+This information can also be used and show in be Prometheus or Grafana.
+
+For detailed instructions please see link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_monitoring_certificates[the Administration Guide]
+
+=== Cert Status Checker
+
+The Cert Status Checker is a new feature, which exposes a cluster-wide certificates status.
+It uses the monitoring stack (Prometheus and Grafana) to receive alerts by Prometheus Alert manager and monitor certificate status on the Grafana dashboard.
+
+For detailed instructions please see link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_monitoring_certificates[the Administration Guide]
+
+=== VSphere VCP
+
+* Allow Kubernetes pods to use VMware vSphere Virtual Machine Disk (VMDK) volumes as persistent storage.
+
+For detailed instructions please see link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_vsphere_storage[the Administration Guide]
+
+=== Required Actions
+
+* To migrate from etcd to CRD in case of upgrade, follow the steps described in the link:https://docs.cilium.io/en/v1.6/install/upgrade/#upgrade-notes[official Cilium documentation].
+* Run `skuba addons upgrade apply` to upgrade Cilium to version 1.6.6. See information about a possible warning, which might appear during the upgrade in link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_generating_an_overview_of_available_addon_updates[the Administration Guide].
+
+* In order to update `skuba` to apply the latest fixes, you also need to update the admin workstation. For detailed instructions, see link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_update_management_workstation[this section in the Admin Guide].
+
+=== Bugs Fixed in 4.2.1 since 4.2.0
+
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1162651[bsc#1162651] [skuba] - 10 revisionHistoryLimit value seems too high for our workloads
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1169506[bsc#1169506] [skuba] - fix issue for aws iam profile
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1121353[bsc#1121353] [skuba] - Restrict kube-system control plane pods
+
+[[docs-changes-421]]
+=== Documentation Changes
+
+* Added instructions how to enable and configure link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_audit_log[Kubernetes Audit Log].
+* Updated Network Policy administration with Cilium at link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_network_policies[Network Policies].
+* Added instructions for deployment of Cilium Network policies with Envoy at link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-deployment/#_cilium_network_policy_config_examples[Cilium Network Policy Config Examples].
+* Added link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-deployment/#_networking_whitelist[Networking Whitelist] to deployment guide requirements.
+* Restructured the link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_cluster_disaster_recovery[Disaster Recovery] chapter.
+* Added instruction for link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-deployment/#cluster.bootstrap.vcp[vSphere Cloud Provider Integration].
+* Fixed the location for the link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_flexvolume_configuration[flexvolume driver] in the documentation.
+* Various other fixes and improvements, refer to: https://github.com/SUSE/doc-caasp/releases/tag/release-4.2.1
+
+[[known-issues-421]]
+=== Known Issues
+
+* Kubeproxy is not fully deprecated since envoyproxy requires support of Linux Kernel 5.3 and upwards.
+* `helm install` is failing on "unavailable metrics.k8s.io/v1beta1 API": Before operating with the cluster and using helm, make sure all pods and apiservices are available. link:https://bugzilla.suse.com/show_bug.cgi?id=1172398[bsc#1172398]
