@@ -29,9 +29,13 @@ This release supports deployment on:
 
 * SUSE OpenStack Cloud 8
 
-* VMWare ESXi 6.7
+* VMware ESXi 6.7
 
-* Bare metal
+* KVM
+
+* Bare Metal x86_64
+
+* Amazon Web Services (technological preview)
 
 (SUSE CaaS Platform {productversion} supports hardware that is certified for SLES through the YES certification program. You will find a database of certified hardware at https://www.suse.com/yessearch/.)
 
