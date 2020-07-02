@@ -22,13 +22,13 @@ For further information on notable changes when going from {slsa} 15 SP1 to {sls
 
 ==== Helm 3
 
-=== Addon Certificate Rotation
+==== Addon Certificate Rotation
 
-=== GPU-Dependent Workloads
+==== GPU-Dependent Workloads
 
 // == Updating to {productname} {productmajor}
 
-== Documentation changes
+== Documentation Changes
 
 * Instructions on how to migrate from Helm 2 to 3, see link:https://susedoc.github.io/doc-caasp/master/single-html/caasp-admin/#helm-2to3-migration[the Administration Guide].
 * New chapter on link:https://susedoc.github.io/doc-caasp/master/single-html/caasp-admin/#addon-certificate-rotation[Addon Certificate Rotation in the Administration Guide].
