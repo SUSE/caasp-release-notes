@@ -8,7 +8,7 @@ include::entities.adoc[]
 == About the Release Notes
 
 // for beta release:
-The most recent version of the Release Notes is available online at https://susedoc.github.io/caasp-release-notes/beta/release-notes/single-html/.
+The most recent version of the Release Notes is available online at https://susedoc.github.io/r/caasp-5-rn.
 
 // for public release:
 // The most recent version of the Release Notes is available online at https://www.suse.com/releasenotes or https://documentation.suse.com/suse-caasp/4/.
