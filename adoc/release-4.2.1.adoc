@@ -2,11 +2,11 @@
 
 === Cilium Update to 1.6.6 with Envoy
 
-{productname} 4.2.1 comes with an update of Cilium from version 1.5.3 to *version 1.6.6*.
-For a detailed list of all the changes in this most current version, see the link:https://github.com/cilium/cilium/blob/v1.6.6/CHANGELOG.md[Cilium Changelog].
-The update also provides link:https://www.envoyproxy.io/[Envoy] (open source edge and service proxy) support for Cilium.
-Envoy and its dependencies are packaged in link:https://www.envoyproxy.io/docs/envoy/v1.12.2/[version 1.12.2].
-In version 1.6.6 Cilium uses Custom Resource Definition (CRD) and ConfigMap points on etcd have been removed.
+- {productname} 4.2.1 comes with an update of Cilium from version 1.5.3 to *version 1.6.6*.
+   For a detailed list of all the changes in this most current version, see the link:https://github.com/cilium/cilium/blob/v1.6.6/CHANGELOG.md[Cilium Changelog].
+- The update also provides link:https://www.envoyproxy.io/[Envoy] (open source edge and service proxy) support for Cilium.
+- Envoy and its dependencies are packaged in link:https://www.envoyproxy.io/docs/envoy/v1.12.2/[version 1.12.2].
+- In version 1.6.6 Cilium uses Custom Resource Definition (CRD) and ConfigMap points on etcd have been removed.
 
 === `skuba`
 
