@@ -13,8 +13,9 @@ None
 === Bugs Fixed in 4.2.2 since 4.2.0
 
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1173039[bsc#1173039] [cilium] - cilium fails to start when IPv6 is disabled
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1173039[bsc#1173055] [skuba]  - dex to AD - error 401 after successful login
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1173039[bsc#1146991] [skuba]  - BPF filesystem is not mounted when cilium pods are restarted
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1173055[bsc#1173055] [skuba]  - dex to AD - error 401 after successful login
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1146991[bsc#1146991] [skuba]  - BPF filesystem is not mounted when cilium pods are restarted
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1173165[bsc#1173165] [gangway] - Insecure SSL/TLS versions in Gangway (v4) 
 
 [[docs-changes-422]]
 //=== Documentation Changes
