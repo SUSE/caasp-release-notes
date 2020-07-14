@@ -14,6 +14,10 @@ Please pay attention to the change in the installation media of {slsa} 15 SP2. T
 
 For further information on notable changes when going from {slsa} 15 SP1 to {slsa} 15 SP2, also refer to the link:https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15-SP2/[{slsa} 15 SP2 Release Notes].
 
+=== Support disabling routable check in {vmware}
+
+{vmware} {tf} config now supports the option `wait_for_guest_net_routable` to disable {tf} from waiting for a routable network on VM creation. This is useful to prevent an upstream issue in which {tf} hangs waiting for a routable IP even when the VM has one. For more information check the link:https://github.com/hashicorp/terraform-provider-vsphere/issues/1127[bug report]
+
 === Changes to the {kube} Stack
 
 ==== Updated Kubernetes
