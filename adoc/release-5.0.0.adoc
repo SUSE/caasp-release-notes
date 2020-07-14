@@ -8,6 +8,10 @@
 
 ===== Updated Kubernetes
 
+=== Support disabling routable check in {vmware}
+
+{vmware} {tf} config now supports the option `wait_for_guest_net_routable` to disable {tf} from waiting for a routable network on VM creation. This is useful to prevent an upstream issue in which {tf} hangs waiting for a routable IP even when the VM has one. For more information check the link:https://github.com/hashicorp/terraform-provider-vsphere/issues/1127[bug report]
+
 === Updating to {productname} {productmajor}
 
 === Known Issues
