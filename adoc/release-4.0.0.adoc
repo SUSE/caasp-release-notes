@@ -1,0 +1,147 @@
+== Changes in 4.0.0
+
+=== What Is New
+
+==== Base Operating System Is Now {slsa} 15 SP1
+
+The previous version used a minimal OS image called MicroOS. {productname}
+{productmajor} uses standard {slsa} 15 SP1 as the base platform OS.
+{productname} can be installed as an extension on top of that. Because {slsa} 15 is
+designed to address both cloud-native and legacy workloads,
+these changes make it easier for customers who want to modernize their
+infrastructure by moving existing workloads to a {kube} framework.
+
+Transactional updates are available in {slsa} 15 SP1 as a technical preview but {productname}
+{productmajor} will initially ship without the transactional-update mechanism enabled.
+The regular zypper workflow allows use of interruption-free node reboot.
+The {slsa} update process should help customers integrate a {kube} platform
+into their existing operational infrastructure more easily, nevertheless transactional
+updates are still the preferred process for some customers,
+which is why we provide both options.
+
+==== Software Now Shipped as Packages Instead of Disk Image
+
+In the previous version, the deployment of the software was done by downloading and installing a disk
+image with a pre-baked version of the product. In {productname} {productmajor}, the software is distributed
+as RPM packages from an extension module in {slsa} 15 SP1.
+This adaptation towards containers and {sls} mainly gives customers more deployment flexibility.
+
+==== More Containerized Components
+
+We moved more of the components into containers, namely all the control plane components:
+`etcd`, `kube-apiserver`, `kube-controller-manager`, and `kube-scheduler`.
+The only pieces that are now running uncontainerized are `CRI-O`, `kubelet` and `kubeadm`.
+
+==== New Deployment Methods
+
+We are using a combination of `skuba` (custom wrapper around kubeadm) and
+HashiCorp Terraform to deploy {productname} machines and clusters.
+We provide Terraform state examples that you can modify to roll out clusters.
+
+Deployment on bare metal using AutoYaST has now also been tested and documented:
+link:https://documentation.suse.com/suse-caasp/4/single-html/caasp-deployment/#deployment_bare_metal[]
+
+[NOTE]
+You must deploy a load balancer manually.
+This is currently not possible using Terraform.
+Find example load balancer configurations
+based on {sle} 15 SP1 and Nginx or HAProxy in the __{productname} Deployment Guide__:
+https://documentation.suse.com/suse-caasp/4/single-html/caasp-deployment/#_load_balancer[]
+
+==== Updates Using Kured
+
+Updates are implemented with `skuba-update`, that makes use of the `kured`
+tool and the SLE package manager. This is implemented in the skuba-update
+tool which glues zypper and the kured tool (https://github.com/weaveworks/kured).
+Kured (KUbernetes REboot Daemon) is a {kube} daemonset that performs safe
+automatic node reboots when the need to do so is indicated by the package
+management system of the underlying OS. Automatic updates can be manually
+disabled and configured: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_cluster_updates
+
+==== Automatic Installation of Packages For Storage Backends Discontinued
+
+In previous versions {productname} would ship with packages to support all available storage backends.
+This negated the minimal install size approach and is discontinued. If you require a specific software
+package for your storage backend please install it using {ay}, {tf} or `zypper`.
+Refer to: https://documentation.suse.com/suse-caasp/4/single-html/caasp-admin/#_software_management
+
+
+[[kubernetes_updates]]
+==== Changes to the {kube} Stack
+
+===== Updated Kubernetes
+
+{productname} {productversion} ships with {kube} {kube_version}.
+
+{kube} version 1.16 contains the following notable changes:
+
+* Custom Resources Definitions (CRD) are out of the beta version and are
+  generally available in the `apiextensions.k8s.io/v1` group.
+* IPv4/IPv6 dual stack is officially in alpha.
+Read up about the details of the new features of {kube} 1.16 here:
+https://kubernetes.io/blog/2019/09/18/kubernetes-1-16-release-announcement/.
+
+{kube} version 1.15 mainly contains enhancements to core {kube} APIs:
+
+* CustomResourceDefinitions Pruning, -Defaulting and -OpenAPI Publishing.
+* cluster life cycle stability and usability has been enhanced
+  (`kubeadm init` and `kubeadm join` can now be used to configure and deploy an HA control plane)
+* new functionality of the Container Storage Interface (volume cloning) is available.
+Read up about the details of the new features of {kube} 1.15 here:
+https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG-1.15.md#115-whats-new
+
+===== CRI-O Replaces Docker
+
+{productname} now uses CRI-O {crio_version} as the default container runtime.
+CRI-O is a container runtime interface based on the OCI standard technology.
+The choice of CRI-O allows us to pursue our open-source agenda better than competing technologies.
+
+CRI-O's simplified architecture is tailored explicitly for {kube} and has a reduced footprint but also
+guarantees full compatibility with existing customer images thanks to its adherence to OCI standards.
+Other than Docker, CRI-O allows to update the container runtime without stopping workloads;
+providing improved flexibility and maintainabilitty to all {productname} users.
+
+We will strive to maintain {productname}'s compatibility with the Docker Engine in the future.
+
+===== Cilium Replaces Flannel
+
+{productname} now uses Cilium {cilium_version} as the Container Networking
+Interface enabling networking policy support.
+
+===== Centralized Logging
+
+The deployment of a Centralized Logging node is now supported for the purpose of
+aggregating logs from all the nodes in the {kube} cluster.
+Centralized Logging forwards system and {kube} cluster logs to a
+specified external logging service, specifically the Rsyslog server,
+using {kube} Metadata Module - `mmkubernetes`.
+
+
+==== Obsolete Components
+
+===== Salt
+
+Orchestration of the cluster no longer relies on Salt.
+Orchestration is instead achieved with `kubeadm` and `skuba`.
+
+===== Admin Node / Velum
+
+The admin node is no longer necessary. The cluster will now be controlled
+by the master nodes and through API with `skuba` on any {sle} system, such as a local workstation.
+This also means the Velum dashboard is no longer available.
+
+=== Known Issues
+
+==== Updating to {productname} {productmajor}
+
+In-place upgrades from earlier versions or from Beta 4 version to the generally available release is not supported.
+We recommend standing up a new cluster and redeploying workloads. For customers with
+production servers that cannot be redeployed, contact SUSE Consulting Services or your
+account team for further information.
+
+==== Parallel Deployment
+
+To avoid fails, avoid parallel deployment of nodes.
+Joining master or worker nodes to an existing cluster should be done serially,
+meaning the nodes have to be added separately one after another.
+This issue will be fixed in the next release.

@@ -1,38 +1,25 @@
-sudo: required
 language: bash
+dist: xenial
 services:
   - docker
 
 env:
   global:
     - secure: A8vV8IPzbg2VkZoFh8MrSsSCZOSUfmcWmmq4rHkMbCoomu/gstf3m4XP/HHhxVpaZXYYYktrsTqriYBW7R54SonufOHkWQqeLc96H+VkIjaREZvWuPcPr2am4fEIKi6b5lUpqGlA1gdSuKfbQvPdvAY6iRnaeRzJcZJh0CxlyrtZF0VCqZDGMARHS5iv80jibrgnLOBCpec8r5MuVHYue3Bg7MGjr5b9WEQHEtsN3vNurFCNKaN4cETXIqNTCiflkIZUJm3pNamxTcTpwC/kGtTap3iVGcY4xvwk6Dp2XKVU06UHM+FVfihyFDb2nU5BqPUJUkE6KY0whY+hz6QWEId3lNCxb+syeAYqwiUfws6X+U60tgWYgm477Hful5DCCl+iA5SscFaHpefraUVCMmbEcSK5p3QYF+1H3j91phL9Y0WclMZ7qR/hSK+cyPvkkYBeiIWj72vtBmLG+Zj/A3l4PRyj4RNkxOsGOp4P0ieNG8qR00hombKd7odm3d1NLlkyQjqwr5zstdWIHXymrY4UOYZWnTsdF+fZLNLCoW6FncCC+TAuhNLJskX08fX4uNcDFzOhQ96vKeCF+BmCfuyhQOX6yD3GBo8hC0cX0c4Fd7Y9CKrbUwBZySAEu2lnELOoaTwQ07Q8RQOgmXAxXgCKjxvqdHeWvpc7H8bw5A8=
-    - COMMIT_AUTHOR_MAIL: "doc-team@suse.com"
-    - LIST_PACKAGES=0
-    - PUBLISH_PRODUCTS="master beta"
 
 before_install:
-  - wget https://raw.githubusercontent.com/openSUSE/doc-ci/develop/travis/travis.sh
-  - docker build -t sle-doc-image .
-  # list the installed packages (just for easier debugging)
-  - docker run --rm -it sle-doc-image rpm -qa | sort
   - echo "TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST" >> env.list
   - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH" >> env.list
-  - echo "SOURCE_BRANCH=$SOURCE_BRANCH" >> env.list
   - echo "TRAVIS_REPO_SLUG=$TRAVIS_REPO_SLUG" >> env.list
-  - echo "LIST_PACKAGES=$LIST_PACKAGES" >> env.list
-  - echo "PUBLISH_PRODUCTS=\"$PUBLISH_PRODUCTS\"" >> env.list
   - echo "ENCRYPTED_PRIVKEY_SECRET=$ENCRYPTED_PRIVKEY_SECRET" >> env.list
   - echo "TRAVIS_COMMIT=$TRAVIS_COMMIT" >> env.list
   - echo "DISABLE_ID_CHECK=1" >> env.list
-  - wget https://raw.githubusercontent.com/openSUSE/doc-ci/develop/travis/travis.sh
-  - ls
-  - echo "Building docker image"
-  - docker build -t sle-doc-image .
+  - wget https://raw.githubusercontent.com/openSUSE/doc-ci/master/travis/travis.sh
 
 script:
-  - docker run --rm -it sle-doc-image /bin/bash -c '/bin/bash travis.sh'
+  - docker run --rm -it --volume ${PWD}:/usr/src/app --workdir /usr/src/app susedoc/ci:latest /bin/bash -c '/bin/bash travis.sh'
 
 notifications:
   email:
     on_success: change
-on_failure: always
+    on_failure: always

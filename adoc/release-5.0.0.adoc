@@ -1,0 +1,45 @@
+== What Is New in 5.0.0-beta
+
+=== Base Operating System Is Now {slsa} 15 SP2
+
+{productname} {productmajor} uses standard *{slsa} 15 SP2* as the base platform OS.
+{productname} can be installed as an extension on top of that. Because {slsa} 15 is
+designed to address both cloud-native and legacy workloads.
+these changes make it easier for customers who want to modernize their
+infrastructure by moving existing workloads to a {kube} framework.
+
+==== Changes in the Installation Media
+
+Please pay attention to the change in the installation media of {slsa} 15 SP2. The Unified Installer and Packages DVDs known from SUSE {slsa} 15 SP1 are deprecated and have been replaced by Online Installation Media and Full Installation Media, for further details see link:https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15-SP2/#_changes_in_15sp2[this section] of the *{slsa} 15 SP2 Release Notes*.
+
+For further information on notable changes when going from {slsa} 15 SP1 to {slsa} 15 SP2, also refer to the link:https://www.suse.com/releasenotes/x86_64/SUSE-SLES/15-SP2/[{slsa} 15 SP2 Release Notes].
+
+=== Support disabling routable check in {vmware}
+
+{vmware} {tf} config now supports the option `wait_for_guest_net_routable` to disable {tf} from waiting for a routable network on VM creation. This is useful to prevent an upstream issue in which {tf} hangs waiting for a routable IP even when the VM has one. For more information check the link:https://github.com/hashicorp/terraform-provider-vsphere/issues/1127[bug report]
+
+=== Changes to the {kube} Stack
+
+==== Updated Kubernetes
+
+{productname} 5.0.0-beta comes with *{kube} 1.18*. The new {kube} version includes for example notable upgrades to kubectl, storage enhancements, Horizontal Pod Autoscaler (HPI) and advanced scheduling. Some of these features have been available in {productname} for a couple of versions now. For a summary, you can view the link:https://www.suse.com/c/whats-new-in-kubernetes-v1-18-0/[SUSE blog] or see the full version in the link:https://kubernetes.io/docs/setup/release/notes/[official Kubernetes documentation].
+
+
+////
+==== Helm 3
+
+==== Addon Certificate Rotation
+
+==== GPU-Dependent Workloads
+
+// == Updating to {productname} {productmajor}
+
+== Documentation Changes
+
+* Instructions on how to migrate from Helm 2 to 3, see link:https://susedoc.github.io/doc-caasp/master/single-html/caasp-admin/#helm-2to3-migration[the Administration Guide].
+* New chapter on link:https://susedoc.github.io/doc-caasp/master/single-html/caasp-admin/#addon-certificate-rotation[Addon Certificate Rotation in the Administration Guide].
+* New chapter on link:https://susedoc.github.io/doc-caasp/master/single-html/caasp-admin/#_gpu_dependent_workloads[GPU-Dependent Workloads in the Administration Guide].
+// * Various other fixes and improvements, refer to: https://github.com/SUSE/doc-caasp/releases/tag/release-5.0.0-beta
+////
+
+== Known Issues

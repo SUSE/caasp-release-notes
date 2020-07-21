@@ -1,0 +1,115 @@
+== Changes in 4.2.0
+
+=== Deprecations in 4.2.0
+
+- The hyperkube image, combining multiple {kube} binaries, is planned for removal in 4.3.0, due to upstream deprecations.
+  If running {productname} in an airgapped environment, please ensure that all our images are mirrored.
+
+- Remove ability to re-enable serving deprecated APIs types:
+* `extensions/v1beta1`
+* `apps/v1beta1`
+* `apps/v1beta2`
+
+For more information check: https://github.com/kubernetes/kubernetes/issues/43214
+
+=== {kube} Update
+
+4.2.0 brings in a {kube} update, precisely to 1.17.4.
+The list of features and bug fixes is long, see:
+
+https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.17.md#v1174
+
+
+=== Addon Customization Persistence
+
+This release introduces `kustomize` to persist addon configuration changes across updates and reboots.
+
+
+=== Skuba: Disabling `firewalld`
+
+Skuba should disable `firewalld` when bootstrapping/joining a node, so it adds a startup step to check whether `firewalld` is disabled. This was done using cloud init, which however does not work on bare metal deployments. So in order to ensure that `firewalld` is disabled, this check was introduced into `skuba`.
+
+
+=== Datastore for {vmware}
+
+{vmware} {tf} config now supports setting a datastore cluster as the storage backend. Please refer to the  link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-deployment/_deployment_instructions.html#_deploying_vms_from_the_template[Deployment Instructions] for more information.
+
+
+=== Required Actions
+
+==== Kubernetes 1.17
+
+In order to update to {kube} 1.17, follow the link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_updating_kubernetes_components[instructions in the Admin Guide].
+
+If your cluster is not on the latest {kube} version prior to applying the update, you will encounter an issue when `skuba-update` tries to update your nodes. See the <<known-issues-420>> section for instructions on how to proceed.
+
+
+==== Conmon and {crio}
+
+Conmon and {crio} will be updated by `skuba-update`. No action is required from your side. For more info see the link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_base_os_updates[Cluster Updates section in the Admin Guide].
+
+
+==== Skuba
+
+In order to update `skuba`, you also need to update the admin workstation. For detailed instructions, see link:https://documentation.suse.com/suse-caasp/4.1/html/caasp-admin/_cluster_updates.html#_update_management_workstation[this section in the Admin Guide].
+
+
+==== Generate the `kustomize` Style Addon Configurations
+
+You must convert your addon manifests to the new `kustomize` aware file structure and formats.
+To do so please run the following commands from your management workstation.
+
+Replace `MASTER-NODE-IP` with an IP address/FQDN of one of your master nodes.
+Replace `CLUSTER-DEFINITION-PATH` with the path to your existing cluster defintion files that were generated during the intial bootstrap/deployment.
+
+----
+skuba cluster init --control-plane MASTER-NODE-IP /tmp/new-cluster-init
+mv CLUSTER-DEFINITION-PATH/addons CLUSTER-DEFINITION-PATH/addons-old
+cp -r /tmp/new-cluster-init/addons CLUSTER-DEFINITION-PATH/
+----
+
+This will generate the existing addon configurations in the new format so you can amend them.
+
+=== Bugs Fixed in 4.2.0 since 4.1.2
+
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1161056[bsc#1161056] [cri-o] - Fix upgrade from 4.0.3 to 4.1.0 - skuba node upgrade - fails due to crio-wipe.service not starting
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1159108[bsc#1159108] [admin-guide] grafana helm chart version newer than upstream but older image version / grafana version!
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1157337[bsc#1157337] [skuba] After cluster creation all DEX and all GANGWAY pods run on the first master
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1152334[bsc#1152334] [skuba] skuba update management - HAS-UPDATES HAS-DISRUPTIVE-UPDATES -> no vs none
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1160460[bsc#1160460] [podman] Update podman to 1.8.0
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1164390[bsc#1164390] [conmon] Add conmon to SLE15 Containers Module
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1162093[bsc#1162093] [kubernetes] kubelet referenced wrong volume-plugin dir after upgrade
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1121353[bsc#1121353] [kubernetes] Kubernetes – Master node pod configured with Privileged PSP
+
+[[docs-changes-420]]
+=== Documentation Changes
+
+* The QuickStart Guide has been removed pending review and rewrite.
+Please use the link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-deployment/[Deployment Guide].
+* link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_backup_and_restore_with_velero[Disaster Recovery with Velero] is now documented in the Admin Guide.
+* A link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-deployment/#_replicas[subchapter on Managing Replicas] has been added to Deployment Requirements.
+* The link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-deployment/#airgap-container_registry-mirror[list of required addon images] was updated.
+* {cap} integration was removed from the {productname} Admin Guide. Please now refer to: link:https://documentation.suse.com/suse-cap/{cap_version}/single-html/cap-guides/#cha-cap-depl-caasp[Deploying SUSE Cloud Application Platform on SUSE CaaS Platform].
+* A note about using the `--non-interactive-include-reboot-patches` was added to the link:https://documentation.suse.com/suse-caasp/4.2//single-html/caasp-admin/#disabling-automatic-updates[Admin Guide].
+* Instructions on how to update Dex have been enhanced. For details, see link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_sec.admin.security.rbac.update[the Admin Guide].
+* We updated the air gapped deployment with a new diagram. See the link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-deployment/#airgap-concepts[Admin Guide].
+* We added an example on how to set up link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/caasp-admin.html#recording_rules_configuration_example[Prometheus Recording Rules].
+* link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/caasp-admin.html#_aws_deployment_fails_with_cannot_attach_profile_error[Instructions on how to troubleshoot the `"cannot attach profile" error` from AWS] have been added.
+* The link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-deployment/#_glossary[Glossary] was reintroduced to all our guides.
+* Various other fixes and improvements (Refer to: https://github.com/SUSE/doc-caasp/releases).
+
+[[known-issues-420]]
+=== Known Issues
+
+==== `skuba-update` Error: `patterns-caasp-Node` Conflicts with {crio} Update
+
+If your cluster is not up-to-date, meaning it is not in the latest {kube} version, `skuba-update` will try to install the latest version of {crio}, which will create a conflict with
+the currently installed {kube} packages.
+
+More precisely, you might encounter an error similar to this:
+
+----
+patterns-caasp-Node conflicts with CRI-O
+----
+
+In that case, the *recommended solution* is to upgrade the cluster to the latest Kubernetes version available, this can be done by running the regular {productname} Kubernetes upgrade procedure  based on the command `skuba node upgrade`, which is described in the link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_updating_kubernetes_components[Admin Guide].
