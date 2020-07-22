@@ -37,6 +37,10 @@ skuba cluster upgrade localconfig
 
 After this you will be able to perform all the `skuba` commands that you would call normally when upgrading {productname}.
 
+=== Kubernetes Audit Log with rsyslog agent
+
+Starting with this version of {productname}, the {kube} audit log will be forwarded to the centralized logging service using `log-agent-rsyslog`.
+
 === Required Actions
 
 You must update the {crio} configuration files on each node before upgrading, please refer to <<crio-118-config-update>>.
@@ -49,6 +53,7 @@ You must update the {crio} configuration files on each node before upgrading, pl
 ==== GPU-Dependent Workloads
 
 // == Updating to {productname} {productmajor}
+////
 
 == Documentation Changes
 
@@ -56,6 +61,6 @@ You must update the {crio} configuration files on each node before upgrading, pl
 * New chapter on link:https://susedoc.github.io/doc-caasp/master/single-html/caasp-admin/#addon-certificate-rotation[Addon Certificate Rotation in the Administration Guide].
 * New chapter on link:https://susedoc.github.io/doc-caasp/master/single-html/caasp-admin/#_gpu_dependent_workloads[GPU-Dependent Workloads in the Administration Guide].
 // * Various other fixes and improvements, refer to: https://github.com/SUSE/doc-caasp/releases/tag/release-5.0.0-beta
-////
+
 
 == Known Issues
