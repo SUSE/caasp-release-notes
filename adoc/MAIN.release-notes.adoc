@@ -37,6 +37,8 @@ This release supports deployment on:
 
 * Amazon Web Services (technological preview)
 
+* Microsoft Azure (technological preview)
+
 (SUSE CaaS Platform {productversion} supports hardware that is certified for SLES through the YES certification program. You will find a database of certified hardware at https://www.suse.com/yessearch/.)
 
 
