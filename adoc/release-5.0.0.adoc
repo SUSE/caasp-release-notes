@@ -64,3 +64,11 @@ You must update the {crio} configuration files on each node before upgrading, pl
 
 
 == Known Issues
+
+=== In the upgrade process, after the restart of crio and kubelet, some pods might not run properly
+
+This happens when there are multiple "NotReady" Pods. A workaround is to make sure that there are no PodSandboxs in "NotReady" state before the upgrade by draining the node before upgrading.
+
+The upstream fix is https://github.com/cri-o/cri-o/pull/4006 which will be included in the next release.
+
+Reference: https://github.com/SUSE/avant-garde/issues/1808
