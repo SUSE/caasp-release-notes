@@ -24,7 +24,7 @@ For further information on notable changes when going from {slsa} 15 SP1 to {sls
 
 {productname} 5.0.0-beta comes with *{kube} 1.18*. The new {kube} version includes for example notable upgrades to kubectl, storage enhancements, Horizontal Pod Autoscaler (HPI) and advanced scheduling. Some of these features have been available in {productname} for a couple of versions now.
 
-You can find a list of changes directly relevant to {productname} here: link:{docurl}/single-html/caasp-admin/caasp-admin.html#k8s-changes-117-118[Changes from {kube} 1.17 to 1.18]
+You can find a list of changes directly relevant to {productname} here: link:{docurl}single-html/caasp-admin/#k8s-changes-117-118[Changes from {kube} 1.17 to 1.18]
 
 For a more generalized summary, you can view the link:https://www.suse.com/c/whats-new-in-kubernetes-v1-18-0/[SUSE blog] or see the full version in the link:https://kubernetes.io/docs/setup/release/notes/[official Kubernetes documentation].
 
@@ -61,9 +61,9 @@ You must update the {crio} configuration files on each node before upgrading, pl
 
 == Documentation Changes
 
-* Instructions on how to migrate from Helm 2 to 3, see link:https://susedoc.github.io/doc-caasp/master/single-html/caasp-admin/#helm-2to3-migration[the Administration Guide].
-* New chapter on link:https://susedoc.github.io/doc-caasp/master/single-html/caasp-admin/#addon-certificate-rotation[Addon Certificate Rotation in the Administration Guide].
-* New chapter on link:https://susedoc.github.io/doc-caasp/master/single-html/caasp-admin/#_gpu_dependent_workloads[GPU-Dependent Workloads in the Administration Guide].
+* Instructions on how to migrate from Helm 2 to 3, see link:{docurl}single-html/caasp-admin/#helm-2to3-migration[the Administration Guide].
+* New chapter on link:{docurl}single-html/caasp-admin/#addon-certificate-rotation[Addon Certificate Rotation in the Administration Guide].
+* New chapter on link:{docurl}single-html/caasp-admin/#_gpu_dependent_workloads[GPU-Dependent Workloads in the Administration Guide].
 // * Various other fixes and improvements, refer to: https://github.com/SUSE/doc-caasp/releases/tag/release-5.0.0-beta
 
 
