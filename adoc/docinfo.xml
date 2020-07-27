@@ -1,0 +1,11 @@
+<dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker>
+    <dm:url>https://github.com/SUSE/caasp-release-notes/issues/new</dm:url>
+    <dm:product>SUSE CaaS Platform</dm:product>
+   </dm:bugtracker>
+   <dm:editurl>https://github.com/SUSE/caasp-release-notes/edit/master/adoc/</dm:editurl>
+   <dm:translation>yes</dm:translation>
+</dm:docmanager>
+
+<productname>SUSE CaaS Platform</productname>
+<productnumber>5.0.0-GMC1</productnumber>
