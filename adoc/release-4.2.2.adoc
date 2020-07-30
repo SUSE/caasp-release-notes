@@ -9,6 +9,7 @@ None
 
 * Run `skuba addons upgrade apply` to update Cilium images to rev5 which has the bug fixes to be installed.
 * In order to use the latest `skuba` fixes, you need to update the admin workstation. For detailed instructions, see the link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_update_management_workstation[Administration Guide]
+* The kubernetes security fix (CVE-2020-8557) will be applied to the kubelet daemon running on the nodes by `skuba-update`. See https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_base_os_updates for more details.
 
 === Bugs Fixed in 4.2.2 since 4.2.0
 
@@ -16,6 +17,7 @@ None
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1173055[bsc#1173055] [skuba]  - dex to AD - error 401 after successful login
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1146991[bsc#1146991] [skuba]  - BPF filesystem is not mounted when cilium pods are restarted
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1173165[bsc#1173165] [gangway] - Insecure SSL/TLS versions in Gangway (v4) 
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1173984[bsc#1173984] [kubernetes] - Node disk DOS by writing to container /etc/hosts CVE-2020-8557
 
 [[docs-changes-422]]
 //=== Documentation Changes
