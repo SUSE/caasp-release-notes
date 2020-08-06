@@ -61,6 +61,7 @@ You must update the {crio} configuration files on each node before upgrading, pl
 
 == Documentation Changes
 
+* Split the airgap deployment guide into a separate document: {docurl}single-html/caasp-airgap/[]
 * Instructions on how to migrate from Helm 2 to 3, see link:{docurl}single-html/caasp-admin/#helm-2to3-migration[the Administration Guide].
 * New chapter on link:{docurl}single-html/caasp-admin/#addon-certificate-rotation[Addon Certificate Rotation in the Administration Guide].
 * New chapter on link:{docurl}single-html/caasp-admin/#_gpu_dependent_workloads[GPU-Dependent Workloads in the Administration Guide].
