@@ -65,6 +65,7 @@ You must update the {crio} configuration files on each node before upgrading, pl
 * Instructions on how to migrate from Helm 2 to 3, see link:{docurl}single-html/caasp-admin/#helm-2to3-migration[the Administration Guide].
 * New chapter on link:{docurl}single-html/caasp-admin/#addon-certificate-rotation[Addon Certificate Rotation in the Administration Guide].
 * New chapter on link:{docurl}single-html/caasp-admin/#_gpu_dependent_workloads[GPU-Dependent Workloads in the Administration Guide].
+* link:{docurl}single-html/caasp-admin/#_logging[Completely overhauled logging section], reordered Admin guide to incorporate this change.
 // * Various other fixes and improvements, refer to: https://github.com/SUSE/doc-caasp/releases/tag/release-5.0.0-beta
 
 
