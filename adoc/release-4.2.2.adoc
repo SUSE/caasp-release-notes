@@ -20,7 +20,9 @@ None
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1173984[bsc#1173984] [kubernetes] - Node disk DOS by writing to container /etc/hosts CVE-2020-8557
 
 [[docs-changes-422]]
-//=== Documentation Changes
+=== Documentation Changes
+
+* Various minor fixes and improvements, refer to: https://github.com/SUSE/doc-caasp/releases
 
 [[known-issues-422]]
 === Known Issues
