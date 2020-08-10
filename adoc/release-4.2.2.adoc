@@ -26,3 +26,7 @@ None
 === Known Issues
 
 * Kubeproxy is not fully deprecated since envoyproxy requires support of Linux Kernel 5.3 and upwards.
+
+==== sles15sp1 aws image is inactive
+
+When deploying on AWS, you need to modify the configuration for {tf} on your management node. You need to set `state = "inactive"` in `/usr/share/caasp/terraform/aws/ami.tf`, to avoid the the error `Error: Invalid index` during deployment of nodes.
