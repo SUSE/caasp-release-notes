@@ -26,3 +26,7 @@ None
 === Known Issues
 
 * Kubeproxy is not fully deprecated since envoyproxy requires support of Linux Kernel 5.3 and upwards.
+
+==== sles15sp1 aws image is inactive
+
+When deploying on AWS, you need to set `state = "inactive"` in ami.tf, otherwise, you will get the error `Error: Invalid index`.
