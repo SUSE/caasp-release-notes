@@ -29,4 +29,4 @@ None
 
 ==== sles15sp1 aws image is inactive
 
-When deploying on AWS, you need to set `state = "inactive"` in /usr/share/caasp/terraform/aws/ami.tf, otherwise, you will get the error `Error: Invalid index`.
+When deploying on AWS, you need to modify the configuration for {tf} on your management node. You need to set `state = "inactive"` in `/usr/share/caasp/terraform/aws/ami.tf`, to avoid the the error `Error: Invalid index` during deployment of nodes.
