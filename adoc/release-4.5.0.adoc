@@ -22,7 +22,7 @@ For further information on notable changes when going from {slsa} 15 SP1 to {sls
 
 ==== Updated Kubernetes
 
-{productname} 5.0.0-beta comes with *{kube} 1.18*. The new {kube} version includes for example notable upgrades to kubectl, storage enhancements, Horizontal Pod Autoscaler (HPI) and advanced scheduling. Some of these features have been available in {productname} for a couple of versions now.
+{productname} 4.5.0 comes with *{kube} 1.18*. The new {kube} version includes for example notable upgrades to kubectl, storage enhancements, Horizontal Pod Autoscaler (HPI) and advanced scheduling. Some of these features have been available in {productname} for a couple of versions now.
 
 You can find a list of changes directly relevant to {productname} here: link:{docurl}single-html/caasp-admin/#k8s-changes-117-118[Changes from {kube} 1.17 to 1.18]
 
@@ -78,3 +78,20 @@ This can happen when there are multiple instances of a PodSandbox in a "NotReady
 The upstream fix is https://github.com/cri-o/cri-o/pull/4006 which will be included in the next release.
 
 Reference: https://github.com/SUSE/avant-garde/issues/1808
+
+
+=== etcd: CVE-2020-15106 and CVE-2020-15112
+
+Note the version of etcd shipped with CaaSP 4.5.0 contains two security issue identified as CVE-2020-15106 and CVE-2020-15112
+
+The etcd endpoints should only be accessible inside the cluster if you have set up the firewall rules / network segmentation, following our suggestions in the admin guide; etcd should only be accessible by k8s nodes (or by trusted nodes). Exploiting this vulnerability requires an attacker to take control of the etcd leader in order to send crafted WAL entries, which means access to the SSL certs or local machine access.
+
+Fixes for these will be provided as a maintenance update.
+
+
+=== envoy: CVE-2020-12605,CVE-2020-8663,CVE-2020-12603 and CVE-2020-12604
+
+Note that the version of envoy shipped with CaaSP 4.5.0 contains security issues idendified as CVE-2020-12605,CVE-2020-8663,CVE-2020-12603 and CVE-2020-12604
+
+These are "Denial of Service" kind, and a fix for them will be provided as a maintenance update.
+
