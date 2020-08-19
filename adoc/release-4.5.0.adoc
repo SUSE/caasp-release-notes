@@ -82,7 +82,7 @@ Reference: https://github.com/SUSE/avant-garde/issues/1808
 
 === etcd: CVE-2020-15106 and CVE-2020-15112
 
-Note the version of etcd shipped with CaaSP 4.5.0 contains two security issue identified as CVE-2020-15106 and CVE-2020-15112
+Note the version of etcd shipped with CaaSP 4.5.0 contains two security issues identified as CVE-2020-15106 and CVE-2020-15112
 
 The etcd endpoints should only be accessible inside the cluster if you have set up the firewall rules / network segmentation, following our suggestions in the admin guide; etcd should only be accessible by k8s nodes (or by trusted nodes). Exploiting this vulnerability requires an attacker to take control of the etcd leader in order to send crafted WAL entries, which means access to the SSL certs or local machine access.
 
@@ -93,5 +93,5 @@ Fixes for these will be provided as a maintenance update.
 
 Note that the version of envoy shipped with CaaSP 4.5.0 contains security issues idendified as CVE-2020-12605,CVE-2020-8663,CVE-2020-12603 and CVE-2020-12604
 
-These are "Denial of Service" kind, and a fix for them will be provided as a maintenance update.
+These are "Denial of Service" vulnerabilities, and do not expose systems to unauthorized access or data exfiltration. A fix for them will be provided as a maintenance update.
 
