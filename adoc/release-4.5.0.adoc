@@ -66,7 +66,7 @@ You must update the {crio} configuration files on each node before upgrading, pl
 * New chapter on link:{docurl}single-html/caasp-admin/#addon-certificate-rotation[Addon Certificate Rotation in the Administration Guide].
 * New chapter on link:{docurl}single-html/caasp-admin/#_gpu_dependent_workloads[GPU-Dependent Workloads in the Administration Guide].
 * link:{docurl}single-html/caasp-admin/#_logging[Completely overhauled logging section], reordered Admin guide to incorporate this change.
-// * Various other fixes and improvements, refer to: https://github.com/SUSE/doc-caasp/releases/tag/release-5.0.0-beta
+* Various other fixes and improvements, refer to: https://github.com/SUSE/doc-caasp/releases
 
 
 == Known Issues
@@ -94,4 +94,3 @@ Fixes for these will be provided as a maintenance update.
 Note that the version of envoy shipped with CaaSP 4.5.0 contains security issues idendified as CVE-2020-12605,CVE-2020-8663,CVE-2020-12603 and CVE-2020-12604
 
 These are "Denial of Service" vulnerabilities, and do not expose systems to unauthorized access or data exfiltration. A fix for them will be provided as a maintenance update.
-
