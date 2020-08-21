@@ -53,7 +53,6 @@ Helm 3 includes many enhancements over Helm 2.
 * One important change is the removal of Tiller, which simplifies deployment and management.
 * Configuration is now stored in Kubernetes Secrets rather than ConfigMaps.
 * Chart releases are now scoped to Kubernetes namespaces.
-* Charts can now be installed from link:https://hub.helm.sh/[the Helm Hub site] and from user configured repositories.
 * Charts can be searched for in Helm Hub or repositories using the `helm search` command.
 * The chart apiVersion has been bumped to "v2" to allow specification changes.
 * Several `helm` command line options have been changed, notably the name for a release is now a required parameter.
