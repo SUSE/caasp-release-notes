@@ -48,7 +48,20 @@ Starting with this version of {productname}, the {kube} audit log will be forwar
 === Helm 3
 
 Helm 3 is now available in the {productname} zypper repositories.
+Helm 3 includes many enhancements over Helm 2.
+
+* One important change is the removal of Tiller, which simplifies deployment and management.
+* Configuration is now stored in Kubernetes Secrets rather than ConfigMaps.
+* Chart releases are now scoped to Kubernetes namespaces.
+* Charts can now be installed from link:https://hub.helm.sh/[the Helm Hub site] and from user configured repositories.
+* Charts can be searched for in Helm Hub or repositories using the `helm search` command.
+* The chart apiVersion has been bumped to "v2" to allow specification changes.
+* Several `helm` command line options have been changed, notably the name for a release is now a required parameter.
+
+These changes and more are documented by the community in the link:https://helm.sh/docs/faq/#changes-since-helm-2[Helm FAQs] and link:https://v3.helm.sh/docs/topics/v2_v3_migration/[Migrating 2 to 3 document].
+
 Helm 2 is still installed by default to avoid forcing a migration of chart releases when upgrading {productname}.
+The Helm 3 version is not a drop in upgrade of Helm 2, though most charts written for "apiVersion: v1" will work with Helm 3.
 However, as the stated end of community support for Helm 2 is November 13, 2020, *you should migrate to Helm 3 as soon as reasonable*.
 We recommend for fresh installations using Helm 3 from the start.  See link:https://helm.sh/blog/covid-19-extending-helm-v2-bug-fixes/[Official Helm blog].
 
