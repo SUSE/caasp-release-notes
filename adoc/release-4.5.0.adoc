@@ -45,13 +45,36 @@ After this you will be able to perform all the `skuba` commands that you would c
 
 Starting with this version of {productname}, the {kube} audit log will be forwarded to the centralized logging service using `log-agent-rsyslog`.
 
+=== Helm 3
+
+Helm 3 is now available in the {productname} zypper repositories.
+Helm 3 includes many enhancements over Helm 2.
+
+* One important change is the removal of Tiller, which simplifies deployment and management.
+* Configuration is now stored in Kubernetes Secrets rather than ConfigMaps.
+* Chart releases are now scoped to Kubernetes namespaces.
+* Charts can be searched for in Helm Hub or repositories using the `helm search` command.
+* The chart apiVersion has been bumped to "v2" to allow specification changes.
+* Several `helm` command line options have been changed, notably the name for a release is now a required parameter.
+
+These changes and more are documented by the community in the link:https://helm.sh/docs/faq/#changes-since-helm-2[Helm FAQs] and link:https://v3.helm.sh/docs/topics/v2_v3_migration/[Migrating 2 to 3 document].
+
+Helm 2 is still installed by default to avoid forcing a migration of chart releases when upgrading {productname}.
+The Helm 3 version is not a drop in upgrade of Helm 2, though most charts written for "apiVersion: v1" will work with Helm 3.
+However, as the stated end of community support for Helm 2 is November 13, 2020, *you should migrate to Helm 3 as soon as reasonable*.
+We recommend for fresh installations using Helm 3 from the start.  See link:https://helm.sh/blog/covid-19-extending-helm-v2-bug-fixes/[Official Helm blog].
+
+The Helm 2 and Helm 3 packages have been named `helm2` and `helm3` to allow both versions to be installed to facilitate migration.
+Through the use of `update-alternatives` the version used by 'helm' command line can be set.
+For detailed steps to select alternatives, see link:{docurl}single-html/caasp-admin/#helm_tiller_install[the Administration Guide].
+
+In the next {productname} release, the default Helm version will be switched to Helm 3, and in the following release Helm 2 will be dropped.
+
 === Required Actions
 
 You must update the {crio} configuration files on each node before upgrading, please refer to <<crio-118-config-update>>.
 
 ////
-==== Helm 3
-
 ==== Addon Certificate Rotation
 
 ==== GPU-Dependent Workloads
@@ -62,6 +85,7 @@ You must update the {crio} configuration files on each node before upgrading, pl
 == Documentation Changes
 
 * Split the airgap deployment guide into a separate document: link:{docurl}single-html/caasp-airgap/[]
+* Installation steps for Helm 3 and alternate command lines for Helm 3 documented in link:{docurl}single-html/caasp-admin/#helm_tiller_install[the Administration Guide].
 * Instructions on how to migrate from Helm 2 to 3, see link:{docurl}single-html/caasp-admin/#helm-2to3-migration[the Administration Guide].
 * New chapter on link:{docurl}single-html/caasp-admin/#addon-certificate-rotation[Addon Certificate Rotation in the Administration Guide].
 * New chapter on link:{docurl}single-html/caasp-admin/#_gpu_dependent_workloads[GPU-Dependent Workloads in the Administration Guide].
@@ -94,3 +118,11 @@ Fixes for these will be provided as a maintenance update.
 Note that the version of envoy shipped with CaaSP 4.5.0 contains security issues idendified as CVE-2020-12605,CVE-2020-8663,CVE-2020-12603 and CVE-2020-12604
 
 These are "Denial of Service" vulnerabilities, and do not expose systems to unauthorized access or data exfiltration. A fix for them will be provided as a maintenance update.
+
+
+=== Helm 2to3 migration plugin requires internet connection to install
+
+The installer for the Helm 2to3 plugin is written to pull the plugin from the official community github site at link:https://github.com/helm/helm-2to3[github.com/helm/helm-2to3].
+This could cause a problem in an air-gapped {productname} installation where an open internet connection is not available.
+
+The simplest workaround is to move the management system (such as a laptop) out of the internal network, install the plugin, then move back in to perform the migration.
