@@ -30,18 +30,21 @@ For a more generalized summary, you can view the link:https://www.suse.com/c/wha
 
 ==== New Kubernetes package names
 
-From {productname} 4.5.0 version Kubernetes packages are built with new package names for example:
-`kubernetes-1.18-1.18.6-1.1.src.rpm`
-`kubernetes-1.18-apiserver-1.18.6-1.1.x86_64.rpm`
-`kubernetes-1.18-client-1.18.6-1.0.x86_64.rpm`
-`kubernetes-1.18-controller-manager-1.18.6-1.1.x86_64.rpm`
-`kubernetes-1.18-extra-1.18.6-1.1.x86_64.rpm`
-`kubernetes-1.18-kubeadm-1.18.6-1.1.x86_64.rpm`
-`kubernetes-1.18-kubelet-1.18.6-1.1.x86_64.rpm`
-`kubernetes-1.18-proxy-1.18.6-1.1.x86_64.rpm`
-`kubernetes-1.18-scheduler-1.18.6-1.1.x86_64.rpm`
+From {productname} version 4.5.0 onwards, {kube} packages are built with new package names; for example:
 
-Kubernetes packages use kubernetes-1.18 pattern name, because link:https://kubic.opensuse.org/[openSUSE Kubic] project already uses kubernetes1.18 but with different package (dependency) semantics. Having two identically named packages from SUSE (one CaaSP, one Kubic) with different semantics could lead to confusion and problems with installation. 
+* `kubernetes-1.18-1.18.6-1.1.src.rpm`
+* `kubernetes-1.18-apiserver-1.18.6-1.1.x86_64.rpm`
+* `kubernetes-1.18-client-1.18.6-1.0.x86_64.rpm`
+* `kubernetes-1.18-controller-manager-1.18.6-1.1.x86_64.rpm`
+* `kubernetes-1.18-extra-1.18.6-1.1.x86_64.rpm`
+* `kubernetes-1.18-kubeadm-1.18.6-1.1.x86_64.rpm`
+* `kubernetes-1.18-kubelet-1.18.6-1.1.x86_64.rpm`
+* `kubernetes-1.18-proxy-1.18.6-1.1.x86_64.rpm`
+* `kubernetes-1.18-scheduler-1.18.6-1.1.x86_64.rpm`
+
+In {productname} {kube} packages use the `kubernetes-1.18-name` pattern. The reason for this is because the link:https://kubic.opensuse.org/[openSUSE Kubic] project already uses the pattern `kubernetes1.18-name` but with different package (dependency) semantics underneath. 
+
+Having two identically named packages from SUSE (one from {productname}, one from  Kubic) with different semantics could lead to confusion and conflicts/problems with installation of the software from either project.
 
 [#crio-118-config-update]
 ==== cri-o
