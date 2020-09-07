@@ -1,5 +1,5 @@
 // Release type, set this to either 'public' or 'internal'
-:release_type: public
+:release_type: private
 :current_year: 2020
 
 // Product Versions
@@ -27,7 +27,7 @@
 :cilium_docs_version: v{cilium_release}
 :envoy_version: 1.12.2
 :etcd_version: 3.4.3
-:skuba_version: 2.0.9
+:skuba_version: 2.1.4
 :dex_version: 2.23.0
 :gangway_version: 3.1.0
 :metrics-server_version: 0.3.6
@@ -50,7 +50,7 @@ ifeval::['{release_type}' == 'public']
 :docurl: https://documentation.suse.com/suse-caasp/{productmajor}.{productminor}/
 endif::[]
 
-:caasp_repo_url: http://download.suse.de/ibs/SUSE:/SLE-15-SP1:/Update:/Products:/CASP40/standard/
+:caasp_repo_url: http://download.suse.de/ibs/SUSE:/SLE-15-SP2:/Update:/Products:/CASP40/standard/
 :isofile: SLE-15-SP2-Full-x86_64-GM-Media1.iso
 :jeos_product_page_url: https://www.suse.com/download/sles/
 :bugzilla_url: https://bugzilla.suse.com/buglist.cgi?bug_status=__open__&list_id=12463857&order=Importance&product=SUSE%20CaaS%20Platform%204&query_format=specific
