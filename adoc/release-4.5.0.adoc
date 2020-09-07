@@ -146,3 +146,11 @@ The installer for the Helm 2to3 plugin is written to pull the plugin from the of
 This could cause a problem in an air-gapped {productname} installation where an open internet connection is not available.
 
 The simplest workaround is to move the management system (such as a laptop) out of the internal network, install the plugin, then move back in to perform the migration.
+
+
+===  Upgraded v4.5 cluster is running etcd from v4 namespace (bsc#1176225)
+
+After performing upgrade from CaaSP 4.2.3 to CaaSP 4.5.0 GMC3 the migrated cluster is running etcd from v4 namespace then. If 4.5.0 is deployed from scratch the cluster is using correct image from v4.5 namespace.
+
+The outdated etcd image from v4 namespace doesn't have any impact for the cluster functionality.
+
