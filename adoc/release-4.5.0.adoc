@@ -146,3 +146,7 @@ The installer for the Helm 2to3 plugin is written to pull the plugin from the of
 This could cause a problem in an air-gapped {productname} installation where an open internet connection is not available.
 
 The simplest workaround is to move the management system (such as a laptop) out of the internal network, install the plugin, then move back in to perform the migration.
+
+== Migrating to 4.5.0
+
+If you are coming from the latest release, just follow the instructions described link:{docurl}single-html/caasp-admin/#caasp-migrate-4.5[here]. Otherwise, if you are coming from older releases, you will have to upgrade to the previous {productname} release first, and then follow the link above.
