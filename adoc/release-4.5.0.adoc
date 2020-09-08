@@ -96,7 +96,14 @@ In the next {productname} release, the default Helm version will be switched to 
 
 === Required Actions
 
+==== Update CRI-O configuration format
+
 You must update the {crio} configuration files on each node before upgrading, please refer to <<crio-118-config-update>>.
+
+==== (VMWare) Enable "Jumbo Frames"
+
+To avoid running into problems with certain integrations and components, VMWare users must enable "Jumbo Frames" and configure maximum transmission unit (MTU) to 9000.
+Refer to: https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.networking.doc/GUID-53F968D9-2F91-41DA-B7B2-48394D997F2A.html
 
 == Documentation Changes
 
@@ -150,4 +157,3 @@ The simplest workaround is to move the management system (such as a laptop) out 
 After performing upgrade from CaaSP 4.2.3 to CaaSP 4.5.0 GMC3 the migrated cluster is running etcd from v4 namespace then. If 4.5.0 is deployed from scratch the cluster is using correct image from v4.5 namespace.
 
 The outdated etcd image from v4 namespace doesn't have any impact for the cluster functionality.
-
