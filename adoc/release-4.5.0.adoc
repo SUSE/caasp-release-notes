@@ -7,7 +7,7 @@ Otherwise, if you are coming from older releases, you will have to upgrade to th
 
 === Base Operating System Is Now {slsa} 15 SP2
 
-{productname} {productmajor} uses standard *{slsa} 15 SP2* as the base platform OS.
+{productname} 4.5 uses standard *{slsa} 15 SP2* as the base platform OS.
 {productname} can be installed as an extension on top of that. Because {slsa} 15 is
 designed to address both cloud-native and legacy workloads.
 these changes make it easier for customers who want to modernize their
