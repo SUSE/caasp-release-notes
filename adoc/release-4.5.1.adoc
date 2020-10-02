@@ -1,0 +1,43 @@
+== Changes in 4.5.1
+
+////
+=== Deprecations in 4.5.1
+None
+////
+
+=== Required Actions
+
+* Run `skuba addons upgrade apply` to update Cilium images to rev3 which has the bug fixes to be installed.
+* In order to use the latest `skuba` fixes, you need to update the admin workstation. For detailed instructions, see the link:{docurl}single-html/caasp-admin/#_update_management_workstation[Administration Guide]
+* Envoy security fixes will be updated with `skuba addons upgrade apply`. The bugs and security fixes applied are listed in the following sections.
+
+=== Bugs Fixed in 4.5.1 since 4.5.0
+
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1173559[bsc#1173559] [envoy] - (CVE-2020-12605) VUL-0: CVE-2020-12605,CVE-2020-8663,CVE-2020-12603,CVE-2020-12604: envoy-proxy, cilium-proxy: multiple resource exhaustion issues
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1176755[bsc#1176755] [helm] - (CVE-2020-15184) VUL-1: CVE-2020-15184: helm,helm2,helm3: `alias` field on a `Chart.yaml` is not properly sanitized
+* https://bugzilla.suse.com/show_bug.cgi?id=1176754[bsc#1176754] [helm] - (CVE-2020-15185) VUL-1: CVE-2020-15185: helm,helm2,helm3: Helm repository can contain duplicates of the same chart
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1176752[bsc#1176752] [helm] - (CVE-2020-15187) VUL-0: CVE-2020-15187: helm,helm2,helm3: plugin can contain duplicates of the same entry
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1174075[bsc#1174075] [kubernetes] - Changing %{_libexecdir} breaks some packages which are misusing the macro
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1167073[bsc#1167073] [envoy] - CaaSPv5: envoy-proxy doesn't build on SLE15SP2
+* link:https://bugzilla.suse.com/show_bug.cgi?id=11776753[bsc#1176753] [helm] - (CVE-2020-15186) VUL-1: CVE-2020-15186: helm,helm2,helm3: plugin names are not sanitized properly
+
+=== Security issues fixed in 4.5.1 since 4.5.0
+
+* CVE-2020-12603: "Envoy version 1.14.2, 1.13.2, 1.12.4 or earlier may consume excessive amounts of memory when proxying HTTP/2 requests or responses with many small (i.e. 1 byte) data frames."
+* CVE-2020-12604: "Envoy version 1.14.2, 1.13.2, 1.12.4 or earlier is susceptible to increased memory usage in the case where an HTTP/2 client requests a large payload but does not send enough window updates to consume the entire stream and does not reset the stream."
+* CVE-2020-12605: "Envoy version 1.14.2, 1.13.2, 1.12.4 or earlier may consume excessive amounts of memory when processing HTTP/1.1 headers with long field names or requests with long URLs."
+* CVE-2020-8663:  "Envoy version 1.14.2, 1.13.2, 1.12.4 or earlier may exhaust file descriptors and/or memory when accepting too many connections."
+* CVE-2020-15187: "In Helm before versions 2.16.11 and 3.3.2, a Helm plugin can contain duplicates of the same entry, with the last one always used. If a plugin is compromised, this lowers the level of access that an attacker needs to modify a plugin's install hooks, causing a local execution attack."
+* CVE-2020-15185: "In Helm before versions 2.16.11 and 3.3.2, a Helm repository can contain duplicates of the same chart, with the last one always used. If a repository is compromised, this lowers the level of access that an attacker needs to inject a bad chart into a repository."
+* CVE-2020-15184: "In Helm before versions 2.16.11 and 3.3.2 there is a bug in which the `alias` field on a `Chart.yaml` is not properly sanitized. This could lead to the injection of unwanted information into a chart."
+* CVE-2020-15186: "In Helm before versions 2.16.11 and 3.3.2 plugin names are not sanitized properly. As a result, a malicious plugin author could use characters in a plugin name that would result in unexpected behavior, such as duplicating the name of another plugin or spoofing the output to `hellm --help`."
+
+[[docs-changes-451]]
+=== Documentation Changes
+
+* None
+
+[[known-issues-451]]
+=== Known Issues
+
+* Kubeproxy is not fully deprecated since envoyproxy requires support of Linux Kernel 5.3 and upwards.
