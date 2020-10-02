@@ -44,7 +44,8 @@ This release supports deployment on:
 
 // Release specific files, latest on top!
 
-include::release-4.5.0.adoc[Release 4.5.0]
+include::release-4.5.1.adoc[Release 4.5.1]
+//include::release-4.5.0.adoc[Release 4.5.0]
 
 //include::release-4.2.2.adoc[Release 4.2.2]
 
