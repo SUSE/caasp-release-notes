@@ -16,7 +16,7 @@
 
 {productname} now supports the metrics server as an addon to monitors the *CPU* and *memory* of a pod or node.  You can use commands `kubectl top nodes` get status for node and use `kubectl top pods` to get status for pod. Also, with metrics-server default built-in by {productname}, the user could set up a horizontal pod autoscaler (HPA) to auto-scales the number of pods or set up a vertical pod autoscaler (VPA) to auto allocates more or less CPUs and memory resource.
 
-{productname} did not detect existed metrics-server installed by the administrator, so please remove the installed metrics-server manually before upgrade addons.
+{productname} did not detect existing metrics-server installed by the administrator, so please remove the installed metrics-server manually before upgrade addons.
 
 ----
 helm delete metrics-server --purge
