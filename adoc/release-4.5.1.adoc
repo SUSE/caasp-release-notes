@@ -39,3 +39,10 @@ None
 === Known Issues
 
 * Kubeproxy is not fully deprecated since envoyproxy requires support of Linux Kernel 5.3 and upwards.
+* If the cluster node(s) was bootstrapped/joined before kubernetes version 1.17, you have to manually modify the contents of `/etc/kubernetes/kubelet.conf` to point to the automatically rotated kubelet client certificates by replacing `client-certificate-data` and `client-key-data` with:
++
+[source,bash]
+----
+client-certificate: /var/lib/kubelet/pki/kubelet-client-current.pem
+client-key: /var/lib/kubelet/pki/kubelet-client-current.pem
+----
