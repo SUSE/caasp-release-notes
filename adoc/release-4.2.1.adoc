@@ -16,14 +16,6 @@
 
 {productname} now supports the metrics server as an addon to monitors the *CPU* and *memory* of a pod or node.  You can use commands `kubectl top nodes` get status for node and use `kubectl top pods` to get status for pod. Also, with metrics-server default built-in by {productname}, the user could set up a horizontal pod autoscaler (HPA) to auto-scales the number of pods or set up a vertical pod autoscaler (VPA) to auto allocates more or less CPUs and memory resource.
 
-{productname} did not detect existing metrics-server installed by the administrator, so please remove the installed metrics-server manually before upgrade addons.
-
-----
-helm delete metrics-server --purge
-----
-
-For detailed instructions please see link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_monitoring_certificates[the Administration Guide]
-
 === Cert Status Checker
 
 The Cert Status Checker is a new feature, which exposes a cluster-wide certificates status.
@@ -40,7 +32,15 @@ For detailed instructions please see link:https://documentation.suse.com/suse-ca
 === Required Actions
 
 * To migrate from etcd to CRD in case of upgrade, follow the steps described in the link:https://docs.cilium.io/en/v1.6/install/upgrade/#upgrade-notes[official Cilium documentation].
+
 * Run `skuba addons upgrade apply` to upgrade Cilium to version 1.6.6. See information about a possible warning, which might appear during the upgrade in link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_generating_an_overview_of_available_addon_updates[the Administration Guide].
+
+* {productname} did not detect existing metrics-server installed by the administrator, so please remove the installed metrics-server manually before upgrade addons.
++
+[source,bash]
+----
+helm delete metrics-server --purge
+----
 
 * In order to update `skuba` to apply the latest fixes, you also need to update the admin workstation. For detailed instructions, see link:https://documentation.suse.com/suse-caasp/4.2/single-html/caasp-admin/#_update_management_workstation[this section in the Admin Guide].
 
