@@ -3,17 +3,10 @@
 === 'helm3' Package Available
 
 Included in 4.2.4 is a package for Helm 3. This package will not be installed by default but is available for users who prefer to use Helm 3 over the default Helm 2 in the 4.2 releases.
-
-To install Helm 3, use this procedure:
-
-    sudo zypper remove helm
-    sudo zypper install helm3
-
-Note the difference in package name, and that both packages cannot be installed at the same time without conflicts.
-Further documentation on using Helm 3 with CaaSP can be found in the CaaSP 4.5 documentation.
+The documentation has been updated to include instructions on migrating to and using Helm 3.
 
 ////
-=== Deprecations in 4.2.3
+=== Deprecations in 4.2.4
 None
 ////
 
