@@ -38,6 +38,8 @@ None
 [[known-issues-451]]
 === Known Issues
 
+https://bugzilla.suse.com/show_bug.cgi?id=1176225 Upgraded v4.5 cluster is running etcd from v4 namespace
+https://bugzilla.suse.com/show_bug.cgi?id=1172270 cilium-init:1.6.6 does not exist in registry
 * Kubeproxy is not fully deprecated since envoyproxy requires support of Linux Kernel 5.3 and upwards.
 * If the cluster node(s) was bootstrapped/joined before kubernetes version 1.17, you have to manually modify the contents of `/etc/kubernetes/kubelet.conf` to point to the automatically rotated kubelet client certificates by replacing `client-certificate-data` and `client-key-data` with:
 +
