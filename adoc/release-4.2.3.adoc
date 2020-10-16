@@ -1,0 +1,36 @@
+== Changes in 4.2.3
+
+////
+=== Deprecations in 4.2.3
+None
+////
+
+=== Required Actions
+
+To apply the fix for the CRI-O bug mentioned below, you must perform `skuba-update`.
+See https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_base_os_updates for more details.
+
+* {productname} did not detect existing `metrics-server` installed by the administrator via helm, so please remove the installed `metrics-server` manually before running `skuba upgrade addons`.
++
+[source,bash]
+----
+helm delete metrics-server --purge
+----
+
+=== Bugs Fixed in 4.2.3 since 4.2.2
+
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1174400[bsc#1174400] [cri-o] $HOME is not used in /etc/passwd when runAsUser is used with crio 1.16.1
+
+[[docs-changes-423]]
+=== Documentation Changes
+
+Minor fixes and improvements, refer to: https://github.com/SUSE/doc-caasp/releases/
+
+[[known-issues-423]]
+=== Known Issues
+
+* Kubeproxy is not fully deprecated since envoyproxy requires support of Linux Kernel 5.3 and upwards.
+
+==== sles15sp1 aws image is inactive
+
+When deploying on AWS, you need to modify the configuration for {tf} on your management node. You need to set `state = "inactive"` in `/usr/share/caasp/terraform/aws/ami.tf`, to avoid the the error `Error: Invalid index` during deployment of nodes.
