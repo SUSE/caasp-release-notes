@@ -1,7 +1,12 @@
 == Changes in 4.2.4
 
+=== 'helm3' Package Available
+
+Included in 4.2.4 is a package for Helm 3. This package will not be installed by default but is available for users who prefer to use Helm 3 over the default Helm 2 in the 4.2 releases.
+The documentation has been updated to include instructions on migrating to and using Helm 3.
+
 ////
-=== Deprecations in 4.2.3
+=== Deprecations in 4.2.4
 None
 ////
 
