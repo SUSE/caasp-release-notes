@@ -1,0 +1,22 @@
+== Changes in 4.5.2
+
+=== Deprecations in 4.5.2
+
+
+
+=== Required Actions
+
+
+=== Bugs Fixed in 4.5.2 since 4.5.1
+
+
+=== Security issues fixed in 4.5.2 since 4.5.1
+
+
+[[docs-changes-452]]
+=== Documentation Changes
+
+
+
+[[known-issues-452]]
+=== Known Issues
