@@ -14,11 +14,13 @@ https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.17.md
 
 === kucero addon
 
-4.2.4 adds the `kucero` (KUbernetes control plane CErtificate ROtation) addon. It rotates all the kubeadm managed certificates and kubeconfigs and signs kubelet server CSR. See link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_security.html#_automatic_certificate_renewal for further details.
+4.2.4 adds the `kucero` (*KU*bernetes control plane *CE*rtificate *RO*tation) addon.
+It rotates all the kubeadm managed certificates and kubeconfigs and signs kubelet server CSR. See link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_security.html#_automatic_certificate_renewal for further details.
 
 === Required Actions
 
-In order to apply addon updates you need to refresh you local addons folder. You must perform `skuba addon refresh localconfig` prior executing the `skuba addon upgrade plan` command. For further details, see link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_generating_an_overview_of_available_platform_updates
+In order to apply addon updates you need to refresh you local addons folder.
+You must perform `skuba addon refresh localconfig` prior executing the `skuba addon upgrade plan` command. For further details, see link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_generating_an_overview_of_available_platform_updates[]
 
 === Bugs Fixed in 4.2.4 since 4.2.3
 
@@ -41,6 +43,7 @@ In order to apply addon updates you need to refresh you local addons folder. You
 
 * Added instructions for automatic certificate renewal link:{docurl}/html/caasp-admin/_security.html#_automatic_certificate_renewal[using the `kucero` addon].
 * Various minor fixes and improvements, refer to: https://github.com/SUSE/doc-caasp/releases
+* Added link:{docurl}html/caasp-admin/_software_management.html#helm-2to3-migration[migration instructions] for new optional Helm 3 installation.
 
 [[known-issues-424]]
 === Known Issues
