@@ -1,25 +1,40 @@
 == Changes in 4.2.4
 
 ////
-=== Deprecations in 4.2.3
+=== Deprecations in 4.2.4
 None
 ////
 
+=== {kube} Update
+
+4.2.4 brings in a {kube} update, precisely to 1.17.13.
+The list of features and bug fixes is long, see:
+
+https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.17.md#v11713
+
+=== kucero addon
+
+4.2.4 adds the `kucero` (KUbernetes control plane CErtificate ROtation) addon. It rotates all the kubeadm managed certificates and kubeconfigs and signs kubelet server CSR. See link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_security.html#_automatic_certificate_renewal for further details.
+
 === Required Actions
 
-To apply the fix for the CRI-O bug mentioned below, you must perform `skuba-update`.
-See https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_base_os_updates for more details.
-
-* {productname} did not detect existing `metrics-server` installed by the administrator via helm, so please remove the installed `metrics-server` manually before running `skuba upgrade addons`.
-+
-[source,bash]
-----
-helm delete metrics-server --purge
-----
+In order to apply addon updates you need to refresh you local addons folder. You must perform `skuba addon refresh localconfig` prior executing the `skuba addon upgrade plan` command. For further details, see link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_generating_an_overview_of_available_platform_updates
 
 === Bugs Fixed in 4.2.4 since 4.2.3
 
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1174400[bsc#1174400] [cri-o] $HOME is not used in /etc/passwd when runAsUser is used with crio 1.16.1
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1177661[bsc#1177661] VUL-0: CVE-2020-8565: kubernetes: Incomplete fix for CVE-2019-11250 allows for token leak in logs when logLevel >= 9
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1177662[bsc#1177662] VUL-0: CVE-2020-8566: kubernetes: Ceph RBD adminSecrets exposed in logs when loglevel >= 4
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1174951[bsc#1174951] VUL-0: CVE-2020-15106,CVE-2020-15112: etcd: a large slice causes panic in decodeRecord method and improper checks in  entry index
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1176755[bsc#1176755] VUL-1: CVE-2020-15184: helm,helm2,helm3: `alias` field on a `Chart.yaml` is not properly sanitized
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1176754[bsc#1176754] VUL-1: CVE-2020-15185: helm,helm2,helm3: Helm repository can contain duplicates of the same chart
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1176753[bsc#1176753] VUL-1: CVE-2020-15186: helm,helm2,helm3: plugin names are not sanitized properly
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1176752[bsc#1176752] VUL-0: CVE-2020-15187: helm,helm2,helm3: plugin can contain duplicates of the same entry
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1177362[bsc#1177362] VUL-0: CVE-2020-8029: skuba: Insecure handling of private key
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1177361[bsc#1177361] VUL-0: CVE-2020-8030: skuba: Insecure /tmp usage when joining node to cluster
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1159274[bsc#1159274] VUL-0: CVE-2019-19794: coredns: The miekg Go DNS package improperly generates random numbers because math/rand is used
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1176903[bsc#1176903] skuba does not renew the client-cert of the admin.conf in the skuba cluster directory
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1165854[bsc#1165854] Sync terraform* with SUSE:SLE-15-SP1
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1174219[bsc#1174219] Mixed /etc/sysconfig/kubelet changes between older/newer CaaSP4 nodes
 
 [[docs-changes-424]]
 === Documentation Changes
@@ -30,8 +45,4 @@ helm delete metrics-server --purge
 [[known-issues-424]]
 === Known Issues
 
-* Kubeproxy is not fully deprecated since envoyproxy requires support of Linux Kernel 5.3 and upwards.
-
-==== sles15sp1 aws image is inactive
-
-When deploying on AWS, you need to modify the configuration for {tf} on your management node. You need to set `state = "inactive"` in `/usr/share/caasp/terraform/aws/ami.tf`, to avoid the the error `Error: Invalid index` during deployment of nodes.
+* Modifying the file `/etc/sysconfig/kubelet` directly is not supported: documentation at https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_miscellaneous.html#_configuring_kubelet
