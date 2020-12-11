@@ -1,9 +1,5 @@
 == Changes in 4.5.2
 
-=== Deprecations in 4.5.2
-
-None
-
 === {kube} Update
 
 4.5.2 brings in a {kube} update, precisely to 1.18.10.
