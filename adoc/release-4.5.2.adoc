@@ -1,0 +1,45 @@
+== Changes in 4.5.2
+
+=== {kube} Update
+
+4.5.2 brings in a {kube} update, precisely to 1.18.10.
+The list of features and bug fixes is long, see:
+
+https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.18.md#v11810
+
+=== Helm 3 is default helm
+
+4.5.2 makes Helm 3 the default helm. For further details see link:{docurl}html/caasp-admin/_software_management.html#helm-install[Installing Helm].
+
+=== Required Actions
+
+* To apply the fix for the CRI-O bug mentioned below, you must perform `skuba-update`.
+See https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_base_os_updates for more details.
+* In order to use the latest `skuba` fixes, you need to update the admin workstation. For detailed instructions, see the link:{docurl}single-html/caasp-admin/#_update_management_workstation[Administration Guide]
+* Run `skuba addons upgrade apply` to update addons to the new release.
+
+=== Bugs Fixed in 4.5.2 since 4.5.1
+
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1174951[bsc#1174951] [etcd] - VUL-0: CVE-2020-15106,CVE-2020-15112: etcd: a large slice causes panic in decodeRecord method and improper checks in entry index
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1174219[bsc#1174219] [cri-o-1.18] - Mixed /etc/sysconfig/kubelet changes between older/newer CaaSP4 nodes
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1178785[bsc#1178785] [cri-o-1.18] - cri-o bug# 3972 - failed to get image stats: rpc error: code = Unknown desc = layer not known
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1173165[bsc#1173165] [gangway] - Insecure SSL/TLS versions in Gangway
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1176904[bsc#1176904] [skuba] - cilium-secret does not get monitored or renewed causing cluster downtime
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1175352[bsc#1175352] [skuba] - Regular pod is assigned to psp kucero by default
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1176903[bsc#1176903] [skuba] - skuba does not renew the client-cert of the admin.conf in the skuba cluster directory
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1176578[bsc#1176578] [skuba] - Complain about certificate in /etc/kubernetes/kubelet.conf
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1173055[bsc#1173055] [skuba] - After changing dex to AD configuration - error 401 after successful login
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1176225[bsc#1176225] [skuba] - Upgraded v4.5 cluster is running etcd from v4 namespace
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1172270[bsc#1172270] [skuba] - cilium-init:1.6.6 does not exist in registry
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1177361[bsc#1177361] [skuba] - VUL-0: CVE-2020-8030: skuba: Insecure /tmp usage when joining node to cluster
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1177362[bsc#1177362] [skuba] - VUL-0: CVE-2020-8029: skuba: Insecure handling of private key
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1177661[bsc#1177661] [kubernetes-1.18] - VUL-0: CVE-2020-8565: kubernetes: Incomplete fix for CVE-2019-11250 allows for token leak in logs when logLevel >= 9
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1177660[bsc#1177660] [kubernetes-1.18] - VUL-0: CVE-2020-8564: kubernetes: Docker config secrets leaked when file is malformed and loglevel >= 4
+
+[[docs-changes-452]]
+=== Documentation Changes
+
+* Added link:{docurl}html/caasp-admin/_software_management.html#helm-2to3-migration[migration instructions] for the new Helm 3 default.
+
+[[known-issues-452]]
+=== Known Issues
