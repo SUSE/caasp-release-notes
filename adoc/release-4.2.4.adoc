@@ -1,9 +1,9 @@
 == Changes in 4.2.4
 
-////
-=== Deprecations in 4.2.4
-None
-////
+=== 'helm3' Package Available
+
+Included in 4.2.4 is a package for Helm 3. This package will not be installed by default but is available for users who prefer to use Helm 3 over the default Helm 2 in the 4.2 releases.
+The documentation has been updated to include instructions on migrating to and using Helm 3.
 
 === {kube} Update
 
@@ -20,7 +20,18 @@ It rotates all the kubeadm managed certificates and kubeconfigs and signs kubele
 === Required Actions
 
 In order to apply addon updates you need to refresh you local addons folder.
-You must perform `skuba addon refresh localconfig` prior executing the `skuba addon upgrade plan` command. For further details, see link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_generating_an_overview_of_available_platform_updates[]
+You must perform `skuba addon refresh localconfig` prior executing the `skuba addon upgrade plan` command.
+For further details, see link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_generating_an_overview_of_available_platform_updates[]
+
+To apply the fix for the CRI-O bug mentioned below, you must perform `skuba-update`.
+See https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_base_os_updates for more details.
+
+* {productname} did not detect existing `metrics-server` installed by the administrator via helm, so please remove the installed `metrics-server` manually before running `skuba upgrade addons`.
++
+[source,bash]
+----
+helm delete metrics-server --purge
+----
 
 === Bugs Fixed in 4.2.4 since 4.2.3
 
