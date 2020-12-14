@@ -60,3 +60,4 @@ helm delete metrics-server --purge
 === Known Issues
 
 * Modifying the file `/etc/sysconfig/kubelet` directly is not supported: documentation at https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_miscellaneous.html#_configuring_kubelet
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1179989[bsc#1179989] `skuba addon upgrade plan` shows an error on stdout when upgrading from v4.2.3 to v4.2.4. Cosmetic issue only, the upgrade procedure is still functional.
