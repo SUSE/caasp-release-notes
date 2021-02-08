@@ -1,0 +1,25 @@
+== Changes in 4.5.3
+
+=== New release of Cilium addon
+
+4.5.3 brings a new release of cilium image including some security fixes. See the list below.
+
+=== Required Actions
+
+* In order to use the latest `skuba` fixes, you need to update the admin workstation. For detailed instructions, see the link:{docurl}single-html/caasp-admin/#_update_management_workstation[Administration Guide]
+* Run `skuba addons upgrade apply` to update addons to the new release.
+
+=== Bugs Fixed in 4.5.3 since 4.5.2
+
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1173559[bsc#1173559] [envoy-proxy] VUL-0: CVE-2020-12605,CVE-2020-8663,CVE-2020-12603,CVE-2020-12604: multiple resource exhaustion issues
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1177348[bsc#1177348] [bpftool] Bpftool is installing a program with bpf_probe_write_user helper that may corrupt user memory
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1178931[bsc#1178931] [cilium] Add missing ClusterRoles rules
+
+[[known-issues-453]]
+=== Known Issues
+
+Kubernetes public announcement: CVE-2020-8554 Man in the middle using LoadBalancer or ExternalIPs:
+
+Multi-tenant clusters that grant tenants the ability to create and update services and pods are vulnerable. This issue is a design flaw that cannot be mitigated without user-facing changes. With this public announcement, we can begin conversations about a long-term fix.
+    
+To restrict the use of external IPs we are providing an admission webhook container: k8s.gcr.io/multitenancy/externalip-webhook:v1.0.0. The source code and deployment instructions are published at https://github.com/kubernetes-sigs/externalip-webhook.
