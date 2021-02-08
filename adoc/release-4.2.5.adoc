@@ -1,0 +1,19 @@
+== Changes in 4.2.5
+
+=== Skuba Update
+
+4.2.5 Bring a new skuba release that fixes a cosmetic issue when upgrading to v4.5 CaaSP based in SLE-15-SP2.
+
+=== Required Actions
+
+* To apply the fix for the CRI-O bug mentioned below, you must perform `skuba-update`.
+See https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_base_os_updates for more details.
+
+=== Bugs Fixed in 4.2.5 since 4.2.4
+
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1179989[bsc#1179989] [skuba] Issue with skuba addon upgrade plan and kucero.
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1174182[bsc#1174182] [cri-o] crio-shutdown.service ExecStop fails
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1181702[bsc#1181702] Last public cloud update of terraform packages causes inconsistencies on admin node
+
+[[known-issues-425]]
+=== Known Issues
