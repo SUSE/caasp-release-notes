@@ -14,6 +14,3 @@ See https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_upda
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1179989[bsc#1179989] [skuba] Issue with skuba addon upgrade plan and kucero.
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1174182[bsc#1174182] [cri-o] crio-shutdown.service ExecStop fails
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1181702[bsc#1181702] Last public cloud update of terraform packages causes inconsistencies on admin node
-
-[[known-issues-425]]
-=== Known Issues
