@@ -15,7 +15,7 @@ None
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1176755[bsc#1176755] [helm3] - CVE-2020-15184: helm3: `alias` field on a `Chart.yaml` is not properly sanitized
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1176754[bsc#1176754] [helm] - CVE-2020-15185: helm3: Helm repository can contain duplicates of the same chart
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1176752[bsc#1176752] [helm3] - CVE-2020-15187: helm3: plugin can contain duplicates of the same entry
-* link:https://bugzilla.suse.com/show_bug.cgi?id=1174075[bsc#1174075] [kubernetes] - Changing %{_libexecdir} breaks some packages which are misusing the macro
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1174075[bsc#1174075] [kubernetes] - Changing `%\{_libexecdir\}` breaks some packages which are misusing the macro
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1167073[bsc#1167073] [envoy] - CaaSPv5: envoy-proxy doesn't build on SLE15SP2
 * link:https://bugzilla.suse.com/show_bug.cgi?id=11776753[bsc#1176753] [helm3] - CVE-2020-15186: helm3: plugin names are not sanitized properly
 
