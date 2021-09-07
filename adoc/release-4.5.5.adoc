@@ -1,0 +1,15 @@
+== Changes in 4.5.5
+
+=== New release of addon images
+
+4.5.5 upgrades {kube} to {kube_version} including a backport for relevant security bugs.
+
+=== Required Actions
+
+* In order to use the latest `skuba` fixes, you need to update the admin workstation. For detailed instructions, see the link:{docurl}single-html/caasp-admin/#_update_management_workstation[Administration Guide]
+* In order to update to {kube} {kube_version} follow the link:https://documentation.suse.com/suse-caasp/4.5/html/caasp-admin/_cluster_updates.html#_updating_kubernetes_components[instructions in the Admin Guide]
+
+=== Bugs Fixed in 4.5.5 since 4.5.4
+
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1189416[bsc#1189416] [kubernetes] CVE-2021-25741: Symlink Exchange Can Allow Host Filesystem Access
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1182185[bsc#1182185] [kubernetes] CVE-2021-3121: gogo/protobuf: plugin/unmarshal/unmarshal.go lacks certain index validation
