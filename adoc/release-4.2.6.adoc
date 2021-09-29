@@ -1,0 +1,15 @@
+== Changes in 4.2.6
+
+=== {kube} Update
+
+4.2.6 brings in a {kube} update, precisely to {kube_version}.
+
+It includes a backport to fix CVE-2021-25741.
+
+=== Required Actions
+
+In order to update to {kube} {kube_version}, follow the link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/_cluster_updates.html#_updating_kubernetes_components[instructions in the Admin Guide].
+
+=== Bugs Fixed in 4.2.6 since 4.2.5
+
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1189416[bsc#1189416] [kubernetes] CVE-2021-25741: Symlink Exchange Can Allow Host Filesystem Access

@@ -9,7 +9,7 @@
 //Counting upwards from 0, tied to kubernetes releases
 :productminor: 2
 //Counting upwards from 0, tied to maintenance release
-:productpatch: 5
+:productpatch: 6
 :prerelease:
 :productversion: {productmajor}.{productminor}.{productpatch}
 :github_url: https://github.com/SUSE/doc-caasp
@@ -18,7 +18,7 @@
 :base_os_version: 15 SP1
 :vmware_version: 6.7
 :crio_version: 1.16.1
-:kube_version: 1.17.13
+:kube_version: 1.17.17
 :kubedoc: https://v1-17.docs.kubernetes.io/docs/
 :cap_version: 1.5.2
 :cilium_release: 1.6
@@ -27,7 +27,7 @@
 :cilium_docs_version: v{cilium_release}
 :envoy_version: 1.12.2
 :etcd_version: 3.4.13
-:skuba_version: 1.4.12
+:skuba_version: 1.4.13
 :dex_version: 2.16.0
 :gangway_version: 3.1.0
 :metrics-server_version: 0.3.6
