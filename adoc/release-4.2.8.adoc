@@ -1,0 +1,16 @@
+== Changes in 4.2.8
+
+=== {crio} Update
+
+4.2.7 brings in a {crio} update, precisely to {crio_version}.
+
+It includes a the fix for bsc#1196424
+
+=== Required Actions
+
+In order to update to {crio} {crio_version}, a regular ugprade process is required as decribed in link:https://documentation.suse.com/suse-caasp/4.2/html/caasp-admin/id-cluster-updates.html#[Cluster Updates from the Admin Guide].
+
+=== Bugs Fixed in 4.2.8 since 4.2.7
+
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1196424[bsc#1196424] [cri-o] crio-1.19 seems to increase CPU throttling
+i
