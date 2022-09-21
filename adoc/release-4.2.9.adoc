@@ -13,4 +13,3 @@ In order to update to {crio} {crio_version}, a regular ugprade process is requir
 === Bugs Fixed in 4.2.9 since 4.2.8
 
 * link:https://bugzilla.suse.com/show_bug.cgi?id=1200285[bsc#1200285] [cri-o] VUL-0: CVE-2022-1708: cri-o: memory exhaustion on the node when access to the kube API
-i
