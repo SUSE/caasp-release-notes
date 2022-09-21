@@ -17,7 +17,7 @@
 // Component Versions
 :base_os_version: 15 SP1
 :vmware_version: 6.7
-:crio_version: 1.19.6
+:crio_version: 1.19.7
 :kube_version: 1.17.17
 :kubedoc: https://v1-17.docs.kubernetes.io/docs/
 :cap_version: 1.5.2
@@ -27,7 +27,7 @@
 :cilium_docs_version: v{cilium_release}
 :envoy_version: 1.12.2
 :etcd_version: 3.4.13
-:skuba_version: 1.4.15
+:skuba_version: 1.4.16
 :dex_version: 2.16.0
 :gangway_version: 3.1.0
 :metrics-server_version: 0.3.6
