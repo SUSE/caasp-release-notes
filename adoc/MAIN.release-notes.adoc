@@ -22,6 +22,8 @@ To make such entries easier to identify, they contain a note to that effect.
 
 // Release specific files, latest on top!
 //include::release-5.0.0.adoc[Release 5.0.0]
+include::release-4.2.10.adoc[Release 4.2.10]
+
 include::release-4.2.9.adoc[Release 4.2.9]
 
 include::release-4.2.8.adoc[Release 4.2.8]

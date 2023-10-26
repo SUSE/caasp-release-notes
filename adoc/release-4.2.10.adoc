@@ -1,0 +1,13 @@
+== Changes in 4.2.10
+
+=== Cilium Update
+
+4.2.10 brings in a Cilium addon rebuild to include fixes for bsc#1215713. More specific, the build of Cilium and Envoy now includes a patched version of nghttp2 codec.
+
+=== Required Actions
+
+* Run `skuba addons upgrade apply` to update Cilium images to rev6 which has the bug fixes to be installed.
+
+=== Bugs Fixed in 4.2.10 since 4.2.9
+
+* link:https://bugzilla.suse.com/show_bug.cgi?id=1215713[bsc#1215713] [cilium] VUL-0: CVE-2023-35945: nghttp2: HTTP/2 memory leak in nghttp2 codec 
